@@ -147,13 +147,13 @@ const SocialMediaPage = () => {
       `}</style>
       <section className="relative z-[2] m-0 w-full p-0 leading-none">
         <img
-          src="https://buzziwah.com/wp-content/uploads/2026/03/SSD_Performance-Marketing-Webpage-4-1-scaled.png"
+          src="/social-media/SSD_Banners.jpg"
           alt="Social Media Management"
           className="block h-auto w-full"
         />
       </section>
 
-      <section className="relative z-[1] -mt-[200px] bg-gradient-to-br from-[#1a0533] via-[#2d1b69] to-[#1a0533] px-5 pb-10 pt-[210px] sm:px-10">
+      <section className="relative z-[1] bg-gradient-to-br from-[#1a0533] via-[#2d1b69] to-[#1a0533] px-5 pb-10 pt-10 sm:px-10">
         <div className="mx-auto flex max-w-[1200px] flex-col items-center gap-12 lg:flex-row">
           <div className="flex-1 flex justify-center items-end">
             <img
@@ -164,56 +164,35 @@ const SocialMediaPage = () => {
           </div>
           <div className="max-w-[580px] text-left translate-y-6 lg:translate-y-10 bbbbb-fiu" style={{ '--fiu-delay': '0.1s' }}>
             <h2 className="mb-5 font-['Montserrat'] text-[clamp(24px,3vw,40px)] font-bold leading-tight text-[#83cd15]">
-              Being Present Vs. Being Positioned
+              Social Media Management
             </h2>
             <p className="mb-6 text-[16px] font-medium leading-[1.8] text-white/90">
-              Social media management is a continuous process of telling your audience who you are and positioning your brand in their minds.
-            </p>
-            <p className="mb-6 text-[16px] font-medium leading-[1.8] text-white/90">
-              Which means showing up, where they already are, and where they actually interact.
-            </p>
-            <p className="mb-6 text-[18px] font-bold leading-[1.8] text-[#83cd15]">
-              How you look is how you're seen
+              We all know it&apos;s not just about posting; it&apos;s about crafting messages that resonate
+              deeply with your audience and move them to action.
             </p>
             <ul className="growth-list mb-9 !max-w-none">
               <li>
                 <span className="growth-list-icon" aria-hidden="true">✦</span>
-                <span>Content Planning & Calendar</span>
+                <span>The real magic lies in the right communication and strategy, tailored to capture attention and inspire action.</span>
               </li>
               <li>
                 <span className="growth-list-icon" aria-hidden="true">✦</span>
-                <span>Reels, Carousels & Static Creatives</span>
+                <span>Lasting social media relationships are built through a blend of technical expertise and creative thinking.</span>
               </li>
               <li>
                 <span className="growth-list-icon" aria-hidden="true">✦</span>
-                <span>Captions & Copywriting</span>
+                <span>By engaging authentically and sharing value-driven content, you foster trust, loyalty, and stronger brand recall.</span>
               </li>
               <li>
                 <span className="growth-list-icon" aria-hidden="true">✦</span>
-                <span>Posting & Scheduling</span>
-              </li>
-              <li>
-                <span className="growth-list-icon" aria-hidden="true">✦</span>
-                <span>Community Management (comments & DMs)</span>
-              </li>
-              <li>
-                <span className="growth-list-icon" aria-hidden="true">✦</span>
-                <span>Trend-based Content</span>
-              </li>
-              <li>
-                <span className="growth-list-icon" aria-hidden="true">✦</span>
-                <span>Performance Tracking & Insights</span>
-              </li>
-              <li>
-                <span className="growth-list-icon" aria-hidden="true">✦</span>
-                <span>Platform Management (Instagram, YouTube, etc.)</span>
+                <span>That consistency transforms followers into brand advocates who engage, return, and convert.</span>
               </li>
             </ul>
             <a
               href="http://linkedin.com/in/satish-ms-b7842a8b"
               target="_blank"
               rel="noreferrer"
-              className="inline-flex items-center gap-2 rounded-md px-7 py-3 font-['Montserrat'] text-xs font-bold uppercase tracking-[0.08em] text-white border-2 border-transparent transition-all duration-200 hover:text-[#68a311] hover:border-white" style={{ background: 'linear-gradient(135deg,#7c3aed,#9333ea)', transition: 'background 0.2s, color 0.2s, border-color 0.2s' }} onMouseEnter={e => e.currentTarget.style.background='#ffffff'} onMouseLeave={e => e.currentTarget.style.background='linear-gradient(135deg,#7c3aed,#9333ea)'}
+              className="inline-flex items-center gap-2 rounded-md px-7 py-3 font-['Montserrat'] text-xs font-bold uppercase tracking-[0.08em] text-white border-2 border-transparent transition-all duration-200 hover:text-[#68a311] hover:border-white" style={{ background: 'linear-gradient(135deg,#7c3aed,#9333ea)', transition: 'background 0.2s, color 0.2s, border-color 0.2s' }} onMouseEnter={e => e.currentTarget.style.background = '#ffffff'} onMouseLeave={e => e.currentTarget.style.background = 'linear-gradient(135deg,#7c3aed,#9333ea)'}
             >
               Know More
             </a>
@@ -309,7 +288,7 @@ const SocialMediaPage = () => {
             </p>
             <a
               href="#"
-              className="inline-flex items-center gap-2 rounded-full px-7 py-3 font-['Montserrat'] text-xs font-bold uppercase tracking-[0.08em] text-black" style={{ background: '#7fc52b', transition: 'background 0.2s, color 0.2s, border-color 0.2s' }} onMouseEnter={e => { e.currentTarget.style.background='#4a1a98'; e.currentTarget.style.color='#ffffff'; e.currentTarget.style.borderColor='#ffffff'; }} onMouseLeave={e => { e.currentTarget.style.background='#7fc52b'; e.currentTarget.style.color='#000000'; e.currentTarget.style.borderColor='transparent'; }}
+              className="inline-flex items-center gap-2 rounded-full px-7 py-3 font-['Montserrat'] text-xs font-bold uppercase tracking-[0.08em] text-black" style={{ background: '#7fc52b', transition: 'background 0.2s, color 0.2s, border-color 0.2s' }} onMouseEnter={e => { e.currentTarget.style.background = '#4a1a98'; e.currentTarget.style.color = '#ffffff'; e.currentTarget.style.borderColor = '#ffffff'; }} onMouseLeave={e => { e.currentTarget.style.background = '#7fc52b'; e.currentTarget.style.color = '#000000'; e.currentTarget.style.borderColor = 'transparent'; }}
             >
               EXPLORE MORE
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -424,12 +403,12 @@ const FlipCard = ({ src, alt }) => {
 const Section4 = () => {
   const rows = [
     [
-      { src: 'https://buzziwah.com/wp-content/uploads/2025/05/2.png', alt: 'Social Media 1' },
-      { src: 'https://buzziwah.com/wp-content/uploads/2025/05/1.png', alt: 'Social Media 2' },
+      { src: 'https://sripadastudiosdigital.com/wp-content/uploads/2025/05/2.png', alt: 'Social Media 1' },
+      { src: 'https://sripadastudiosdigital.com/wp-content/uploads/2025/05/1.png', alt: 'Social Media 2' },
     ],
     [
-      { src: 'https://buzziwah.com/wp-content/uploads/2025/05/The-most-appreciated-fitness-brand-page-1.png', alt: 'Fitness Brand' },
-      { src: 'https://buzziwah.com/wp-content/uploads/2025/05/4.png', alt: 'Social Media 4' },
+      { src: 'https://sripadastudiosdigital.com/wp-content/uploads/2025/05/The-most-appreciated-fitness-brand-page-1.png', alt: 'Fitness Brand' },
+      { src: 'https://sripadastudiosdigital.com/wp-content/uploads/2025/05/4.png', alt: 'Social Media 4' },
     ],
   ];
 
@@ -458,13 +437,13 @@ const Section4 = () => {
 };
 
 const igImages = [
-  'https://buzziwah.com/wp-content/uploads/2025/05/CRISPY-VADA-12.png',
-  'https://buzziwah.com/wp-content/uploads/2025/05/CRISPY-VADA-19.png',
-  'https://buzziwah.com/wp-content/uploads/2025/05/CRISPY-VADA-18.png',
-  'https://buzziwah.com/wp-content/uploads/2025/05/CRISPY-VADA-17.png',
-  'https://buzziwah.com/wp-content/uploads/2025/05/CRISPY-VADA-14.png',
-  'https://buzziwah.com/wp-content/uploads/2025/05/CRISPY-VADA-13.png',
-  'https://buzziwah.com/wp-content/uploads/2025/05/CRISPY-VADA-15.png',
+  'https://sripadastudiosdigital.com/wp-content/uploads/2025/05/CRISPY-VADA-12.png',
+  'https://sripadastudiosdigital.com/wp-content/uploads/2025/05/CRISPY-VADA-19.png',
+  'https://sripadastudiosdigital.com/wp-content/uploads/2025/05/CRISPY-VADA-18.png',
+  'https://sripadastudiosdigital.com/wp-content/uploads/2025/05/CRISPY-VADA-17.png',
+  'https://sripadastudiosdigital.com/wp-content/uploads/2025/05/CRISPY-VADA-14.png',
+  'https://sripadastudiosdigital.com/wp-content/uploads/2025/05/CRISPY-VADA-13.png',
+  'https://sripadastudiosdigital.com/wp-content/uploads/2025/05/CRISPY-VADA-15.png',
 ];
 
 const strategyCards = [
@@ -505,9 +484,8 @@ const IgPhone = () => {
             <span
               key={i}
               onClick={() => setCurrent(i)}
-              className={`h-2 w-2 cursor-pointer rounded-full ${
-                i === current ? 'bg-white' : 'bg-white/50'
-              }`}
+              className={`h-2 w-2 cursor-pointer rounded-full ${i === current ? 'bg-white' : 'bg-white/50'
+                }`}
             />
           ))}
         </div>
@@ -562,14 +540,14 @@ const Section5 = () => (
 );
 
 const sssImages = [
-  'https://buzziwah.com/wp-content/uploads/2025/05/Bodhiable_Story-1-1.png',
-  'https://buzziwah.com/wp-content/uploads/2025/05/01-2.png',
-  'https://buzziwah.com/wp-content/uploads/2025/05/Fitness-Factory-1.png',
-  'https://buzziwah.com/wp-content/uploads/2025/05/Story_01-1.png',
-  'https://buzziwah.com/wp-content/uploads/2025/05/End-Card-2.png',
-  'https://buzziwah.com/wp-content/uploads/2025/05/story-1.png',
-  'https://buzziwah.com/wp-content/uploads/2025/05/WMN_Story-1.png',
-  'https://buzziwah.com/wp-content/uploads/2025/05/FRY_S-STORIES.png',
+  'https://sripadastudiosdigital.com/wp-content/uploads/2025/05/Bodhiable_Story-1-1.png',
+  'https://sripadastudiosdigital.com/wp-content/uploads/2025/05/01-2.png',
+  'https://sripadastudiosdigital.com/wp-content/uploads/2025/05/Fitness-Factory-1.png',
+  'https://sripadastudiosdigital.com/wp-content/uploads/2025/05/Story_01-1.png',
+  'https://sripadastudiosdigital.com/wp-content/uploads/2025/05/End-Card-2.png',
+  'https://sripadastudiosdigital.com/wp-content/uploads/2025/05/story-1.png',
+  'https://sripadastudiosdigital.com/wp-content/uploads/2025/05/WMN_Story-1.png',
+  'https://sripadastudiosdigital.com/wp-content/uploads/2025/05/FRY_S-STORIES.png',
 ];
 
 const storiesCards = [
@@ -660,12 +638,12 @@ const Section6 = () => (
 );
 
 const reelVideos = [
-  'https://buzziwah.com/wp-content/uploads/2025/05/ﬁtness-fitnessmotivation-bangaloregyms-southbangalore-isrolayout.mp4',
-  'https://buzziwah.com/wp-content/uploads/2025/05/In-Frame-@diyapalakkal.official.mp4',
-  'https://buzziwah.com/wp-content/uploads/2025/05/Samrat-food.mp4.mp4',
-  'https://buzziwah.com/wp-content/uploads/2025/05/prasanth.mp4.mp4',
-  'https://buzziwah.com/wp-content/uploads/2025/05/Deepthi.mp4.mp4',
-  'https://buzziwah.com/wp-content/uploads/2025/05/Copper-Edge.mp4.mp4',
+  'https://sripadastudiosdigital.com/wp-content/uploads/2025/05/ﬁtness-fitnessmotivation-bangaloregyms-southbangalore-isrolayout.mp4',
+  'https://sripadastudiosdigital.com/wp-content/uploads/2025/05/In-Frame-@diyapalakkal.official.mp4',
+  'https://sripadastudiosdigital.com/wp-content/uploads/2025/05/Samrat-food.mp4.mp4',
+  'https://sripadastudiosdigital.com/wp-content/uploads/2025/05/prasanth.mp4.mp4',
+  'https://sripadastudiosdigital.com/wp-content/uploads/2025/05/Deepthi.mp4.mp4',
+  'https://sripadastudiosdigital.com/wp-content/uploads/2025/05/Copper-Edge.mp4.mp4',
 ];
 
 const reelsCards = [
@@ -755,21 +733,21 @@ const Section7 = () => (
 );
 
 const carouselImages = [
-  { src: 'https://buzziwah.com/wp-content/uploads/2025/05/ISITA_1-1.jpg', alt: 'Carousel 1' },
-  { src: 'https://buzziwah.com/wp-content/uploads/2025/05/01-2-scaled.jpg', alt: 'Carousel 2' },
-  { src: 'https://buzziwah.com/wp-content/uploads/2025/05/5-days-2.jpg', alt: 'Carousel 3' },
-  { src: 'https://buzziwah.com/wp-content/uploads/2025/05/24-04-2025-1.png', alt: 'Carousel 4' },
-  { src: 'https://buzziwah.com/wp-content/uploads/2025/05/45-TEASER-POSTERS-1.jpg', alt: 'Carousel 5' },
-  { src: 'https://buzziwah.com/wp-content/uploads/2025/05/Dear-Moments-Womens-Day-1.png', alt: 'Carousel 6' },
-  { src: 'https://buzziwah.com/wp-content/uploads/2025/05/SOMETI_1-1.jpg', alt: 'Carousel 7' },
-  { src: 'https://buzziwah.com/wp-content/uploads/2025/05/WhatsApp-Image-2025-05-19-at-1.05.43-PM-1-1.jpeg', alt: 'Carousel 8' },
-  { src: 'https://buzziwah.com/wp-content/uploads/2025/05/WhatsApp-Image-2025-05-19-at-1.05.43-PM-2.jpeg', alt: 'Carousel 9' },
-  { src: 'https://buzziwah.com/wp-content/uploads/2025/05/WhatsApp-Image-2025-05-19-at-1.05.43-PM-1.jpeg', alt: 'Carousel 10' },
-  { src: 'https://buzziwah.com/wp-content/uploads/2025/05/Ui-Posters-4-Days-to-Go-1.png', alt: 'Carousel 11' },
-  { src: 'https://buzziwah.com/wp-content/uploads/2025/05/G9-CME-POSTS.png', alt: 'Carousel 12' },
-  { src: 'https://buzziwah.com/wp-content/uploads/2025/05/Song_01.png', alt: 'Carousel 13' },
-  { src: 'https://buzziwah.com/wp-content/uploads/2025/05/Song_02.png', alt: 'Carousel 14' },
-  { src: 'https://buzziwah.com/wp-content/uploads/2025/05/Song_03.png', alt: 'Carousel 15' },
+  { src: 'https://sripadastudiosdigital.com/wp-content/uploads/2025/05/ISITA_1-1.jpg', alt: 'Carousel 1' },
+  { src: 'https://sripadastudiosdigital.com/wp-content/uploads/2025/05/01-2-scaled.jpg', alt: 'Carousel 2' },
+  { src: 'https://sripadastudiosdigital.com/wp-content/uploads/2025/05/5-days-2.jpg', alt: 'Carousel 3' },
+  { src: 'https://sripadastudiosdigital.com/wp-content/uploads/2025/05/24-04-2025-1.png', alt: 'Carousel 4' },
+  { src: 'https://sripadastudiosdigital.com/wp-content/uploads/2025/05/45-TEASER-POSTERS-1.jpg', alt: 'Carousel 5' },
+  { src: 'https://sripadastudiosdigital.com/wp-content/uploads/2025/05/Dear-Moments-Womens-Day-1.png', alt: 'Carousel 6' },
+  { src: 'https://sripadastudiosdigital.com/wp-content/uploads/2025/05/SOMETI_1-1.jpg', alt: 'Carousel 7' },
+  { src: 'https://sripadastudiosdigital.com/wp-content/uploads/2025/05/WhatsApp-Image-2025-05-19-at-1.05.43-PM-1-1.jpeg', alt: 'Carousel 8' },
+  { src: 'https://sripadastudiosdigital.com/wp-content/uploads/2025/05/WhatsApp-Image-2025-05-19-at-1.05.43-PM-2.jpeg', alt: 'Carousel 9' },
+  { src: 'https://sripadastudiosdigital.com/wp-content/uploads/2025/05/WhatsApp-Image-2025-05-19-at-1.05.43-PM-1.jpeg', alt: 'Carousel 10' },
+  { src: 'https://sripadastudiosdigital.com/wp-content/uploads/2025/05/Ui-Posters-4-Days-to-Go-1.png', alt: 'Carousel 11' },
+  { src: 'https://sripadastudiosdigital.com/wp-content/uploads/2025/05/G9-CME-POSTS.png', alt: 'Carousel 12' },
+  { src: 'https://sripadastudiosdigital.com/wp-content/uploads/2025/05/Song_01.png', alt: 'Carousel 13' },
+  { src: 'https://sripadastudiosdigital.com/wp-content/uploads/2025/05/Song_02.png', alt: 'Carousel 14' },
+  { src: 'https://sripadastudiosdigital.com/wp-content/uploads/2025/05/Song_03.png', alt: 'Carousel 15' },
 ];
 
 const Section8 = () => (
@@ -797,8 +775,8 @@ const Section8 = () => (
           href="#"
           className="inline-flex items-center gap-2 rounded-full px-7 py-3 font-['Montserrat'] text-xs font-bold uppercase tracking-[0.08em] text-black"
           style={{ background: '#c8f03d', transition: 'background 0.2s, color 0.2s, border-color 0.2s' }}
-          onMouseEnter={e => { e.currentTarget.style.background='#4a1a98'; e.currentTarget.style.color='#ffffff'; e.currentTarget.style.borderColor='#ffffff'; }}
-          onMouseLeave={e => { e.currentTarget.style.background='#c8f03d'; e.currentTarget.style.color='#000000'; e.currentTarget.style.borderColor='transparent'; }}
+          onMouseEnter={e => { e.currentTarget.style.background = '#4a1a98'; e.currentTarget.style.color = '#ffffff'; e.currentTarget.style.borderColor = '#ffffff'; }}
+          onMouseLeave={e => { e.currentTarget.style.background = '#c8f03d'; e.currentTarget.style.color = '#000000'; e.currentTarget.style.borderColor = 'transparent'; }}
         >
           EXPLORE MORE
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -824,9 +802,9 @@ const Section8 = () => (
 );
 
 const viralVideos = [
-  'https://buzziwah.com/wp-content/uploads/2025/10/ಚಂದ್ರ-ಗ್ರಹಣ-ದಿನ-ಗರ್ಭಿಣಿಯರು-ಏನು-ಮಾಡಬೇಕು-Doctors-AdviceFt.-Dr-ರಮ್ಯಾ-PriyaClarifying-the-doubts-re.mp4',
-  'https://buzziwah.com/wp-content/uploads/2025/10/Share-this-to-a-90s-kid-🤗Dear-90s-kids-you-know-you-are-at-your-fertile-reproductive-health-n.mp4',
-  'https://buzziwah.com/wp-content/uploads/2025/10/There-are-different-types-of-contraceptives-a-woman-can-take-here-we-are-speaking-about-type-1.mp4',
+  'https://sripadastudiosdigital.com/wp-content/uploads/2025/10/ಚಂದ್ರ-ಗ್ರಹಣ-ದಿನ-ಗರ್ಭಿಣಿಯರು-ಏನು-ಮಾಡಬೇಕು-Doctors-AdviceFt.-Dr-ರಮ್ಯಾ-PriyaClarifying-the-doubts-re.mp4',
+  'https://sripadastudiosdigital.com/wp-content/uploads/2025/10/Share-this-to-a-90s-kid-🤗Dear-90s-kids-you-know-you-are-at-your-fertile-reproductive-health-n.mp4',
+  'https://sripadastudiosdigital.com/wp-content/uploads/2025/10/There-are-different-types-of-contraceptives-a-woman-can-take-here-we-are-speaking-about-type-1.mp4',
 ];
 
 const VideoCarousel = () => {
@@ -841,7 +819,7 @@ const VideoCarousel = () => {
     }
     setIndex(next);
     setTimeout(() => {
-      if (videoRefs.current[next]) videoRefs.current[next].play().catch(() => {});
+      if (videoRefs.current[next]) videoRefs.current[next].play().catch(() => { });
     }, 50);
   };
 
@@ -903,8 +881,8 @@ const Section9 = () => (
             href="#"
             className="inline-flex items-center gap-2 rounded-full px-7 py-3 font-['Montserrat'] text-xs font-bold uppercase tracking-[0.08em] text-black"
             style={{ background: '#c8f03d', transition: 'background 0.2s, color 0.2s, border-color 0.2s' }}
-            onMouseEnter={e => { e.currentTarget.style.background='#350c79'; e.currentTarget.style.color='#ffffff'; e.currentTarget.style.borderColor='#ffffff'; }}
-            onMouseLeave={e => { e.currentTarget.style.background='#c8f03d'; e.currentTarget.style.color='#000000'; e.currentTarget.style.borderColor='transparent'; }}
+            onMouseEnter={e => { e.currentTarget.style.background = '#350c79'; e.currentTarget.style.color = '#ffffff'; e.currentTarget.style.borderColor = '#ffffff'; }}
+            onMouseLeave={e => { e.currentTarget.style.background = '#c8f03d'; e.currentTarget.style.color = '#000000'; e.currentTarget.style.borderColor = 'transparent'; }}
           >
             EXPLORE MORE
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
