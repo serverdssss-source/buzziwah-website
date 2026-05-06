@@ -3,13 +3,17 @@ import '../home/Home.css';
 
 const About = () => {
   const images = [
-    '/corsal/image.png',
-    '/corsal/2.png',
-    '/corsal/3.png',
-    '/corsal/4.png',
-    '/corsal/5.png',
-    '/corsal/6.png',
-    '/corsal/7.png',
+    'https://sripadastudiosdigital.com/wp-content/uploads/2025/04/1-6.png',
+    'https://sripadastudiosdigital.com/wp-content/uploads/2025/04/2-5.png',
+    'https://sripadastudiosdigital.com/wp-content/uploads/2025/04/3-5.png',
+    'https://sripadastudiosdigital.com/wp-content/uploads/2025/04/4-5.png',
+    'https://sripadastudiosdigital.com/wp-content/uploads/2025/04/5-3.png',
+    'https://sripadastudiosdigital.com/wp-content/uploads/2025/04/6-4.png',
+    'https://sripadastudiosdigital.com/wp-content/uploads/2025/04/7-1.png',
+    'https://sripadastudiosdigital.com/wp-content/uploads/2025/04/8-1.png',
+    'https://sripadastudiosdigital.com/wp-content/uploads/2025/04/9-1.png',
+    'https://sripadastudiosdigital.com/wp-content/uploads/2025/04/10-2.png',
+    'https://sripadastudiosdigital.com/wp-content/uploads/2025/04/11-2.png',
   ];
 
   const loopImages = images.concat(images);
