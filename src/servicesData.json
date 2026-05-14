@@ -1,0 +1,494 @@
+{
+  "social-media": {
+    "badge": "OVERVIEW // SOCIAL MEDIA",
+    "title": "Social Media",
+    "accentTitle": "Management",
+    "subtitle": "Injecting highly competitive creative assets and multi-channel publishing calendars that drive organic retention and direct brand sales.",
+    "campaigns": [
+      {
+        "clientName": "AURA JEWELRY",
+        "campaign": "Viral Reels Campaign",
+        "gainedNum": 48290,
+        "tickerLabel": "Followers Gained",
+        "rateLabel": "Engagement Rate",
+        "rateValue": "14.2% engagement",
+        "progressLabel": "Viral Optimization Yield",
+        "progressValue": 92,
+        "status": "OPTIMAL PERFORMANCE",
+        "badgeColor": "#adfa3b"
+      },
+      {
+        "clientName": "NEO AUDIO",
+        "campaign": "TikTok Scale-Up",
+        "gainedNum": 12450,
+        "tickerLabel": "Followers Gained",
+        "rateLabel": "Engagement Rate",
+        "rateValue": "8.4% engagement",
+        "progressValue": 76,
+        "progressLabel": "Viral Optimization Yield",
+        "status": "SCALING ACTIVE",
+        "badgeColor": "#a78bfa"
+      },
+      {
+        "clientName": "VORTEX WEARABLES",
+        "campaign": "Community Takeover",
+        "gainedNum": 31080,
+        "tickerLabel": "Followers Gained",
+        "rateLabel": "Engagement Rate",
+        "rateValue": "11.8% engagement",
+        "progressValue": 85,
+        "progressLabel": "Viral Optimization Yield",
+        "status": "VIRAL WAVE DETECTED",
+        "badgeColor": "#38bdf8"
+      },
+      {
+        "clientName": "LUMINA SKINCARE",
+        "campaign": "Creator Network Launch",
+        "gainedNum": 64150,
+        "tickerLabel": "Followers Gained",
+        "rateLabel": "Engagement Rate",
+        "rateValue": "18.9% engagement",
+        "progressValue": 96,
+        "progressLabel": "Viral Optimization Yield",
+        "status": "CONVERSIONS CRITICAL",
+        "badgeColor": "#f43f5e"
+      }
+    ]
+  },
+  "branding": {
+    "badge": "METRICS // BRAND IDENTITY",
+    "title": "Branding &",
+    "accentTitle": "Identity",
+    "subtitle": "Forging deep emotional connections through high-fidelity visual assets, absolute grid alignment, and unforgettable design guidelines.",
+    "campaigns": [
+      {
+        "clientName": "CHRONO TIMEPIECES",
+        "campaign": "Identity Overhaul Launch",
+        "gainedNum": 382400,
+        "tickerLabel": "Brand Impressions Gained",
+        "rateLabel": "Design Consistency Score",
+        "rateValue": "98% compliance",
+        "progressValue": 95,
+        "progressLabel": "Brand Value Yield",
+        "status": "LAUNCH OPTIMIZED",
+        "badgeColor": "#adfa3b"
+      },
+      {
+        "clientName": "KRAFT COFFEE",
+        "campaign": "Packaging Visual System",
+        "gainedNum": 140200,
+        "tickerLabel": "Shelf Eye-Catching Score",
+        "rateLabel": "Consumer Recall Score",
+        "rateValue": "88% recall rating",
+        "progressValue": 89,
+        "progressLabel": "Brand Value Yield",
+        "status": "SYSTEM ROLLOUT",
+        "badgeColor": "#38bdf8"
+      },
+      {
+        "clientName": "ELEVATE FITNESS",
+        "campaign": "Brand Guide Deployment",
+        "gainedNum": 65300,
+        "tickerLabel": "Active Franchise Downloads",
+        "rateLabel": "Approval Rating Score",
+        "rateValue": "92% brand rating",
+        "progressValue": 91,
+        "progressLabel": "Brand Value Yield",
+        "status": "DEEP INTEGRATION",
+        "badgeColor": "#a78bfa"
+      },
+      {
+        "clientName": "SOLIS POWER",
+        "campaign": "Global Green Rebranding",
+        "gainedNum": 1240000,
+        "tickerLabel": "Public Reach Impressions",
+        "rateLabel": "B2B Client Retention",
+        "rateValue": "96% retention rate",
+        "progressValue": 94,
+        "progressLabel": "Brand Value Yield",
+        "status": "REBRAND SUCCESS",
+        "badgeColor": "#f43f5e"
+      }
+    ]
+  },
+  "performance-marketing": {
+    "badge": "DASHBOARD // PAID SCALE",
+    "title": "Performance",
+    "accentTitle": "Marketing",
+    "subtitle": "Laser-targeted ad distribution, dynamic creative testing, and deep-funnel optimization to scale your ROAS with compounding returns.",
+    "campaigns": [
+      {
+        "clientName": "ATLAS HEALTH",
+        "campaign": "Paid Acquisition Funnel",
+        "gainedNum": 18540,
+        "tickerLabel": "Qualified Leads Gained",
+        "rateLabel": "Ad Spend Performance",
+        "rateValue": "4.2x Average ROAS",
+        "progressValue": 89,
+        "progressLabel": "ROAS Efficiency Index",
+        "status": "SCALING ACTIVE",
+        "badgeColor": "#adfa3b"
+      },
+      {
+        "clientName": "NOVA APPAREL",
+        "campaign": "Meta Catalog Scaler",
+        "gainedNum": 320900,
+        "tickerLabel": "Store Sales Gained ($)",
+        "rateLabel": "Ad Spend Performance",
+        "rateValue": "5.8x Average ROAS",
+        "progressValue": 95,
+        "progressLabel": "ROAS Efficiency Index",
+        "status": "SURGING TRAFFIC",
+        "badgeColor": "#f43f5e"
+      },
+      {
+        "clientName": "ZENITH SOFTWARE",
+        "campaign": "Google High-Intent Search",
+        "gainedNum": 12800,
+        "tickerLabel": "SaaS Platform Signups",
+        "rateLabel": "Ad Spend Performance",
+        "rateValue": "3.6x Average ROAS",
+        "progressValue": 81,
+        "progressLabel": "ROAS Efficiency Index",
+        "status": "BID CAP ACCURATE",
+        "badgeColor": "#38bdf8"
+      },
+      {
+        "clientName": "LUXE GLOW",
+        "campaign": "Omnichannel Social Funnel",
+        "gainedNum": 245000,
+        "tickerLabel": "Store Sales Gained ($)",
+        "rateLabel": "Ad Spend Performance",
+        "rateValue": "6.1x Average ROAS",
+        "progressValue": 97,
+        "progressLabel": "ROAS Efficiency Index",
+        "status": "PEAK EFFICIENCY",
+        "badgeColor": "#a78bfa"
+      }
+    ]
+  },
+  "website-development": {
+    "badge": "COMMAND // DEV PIPELINE",
+    "title": "Website",
+    "accentTitle": "Development",
+    "subtitle": "Forging high-speed, interactive React architectures designed for lightning-fast page loading and frictionless user conversions.",
+    "campaigns": [
+      {
+        "clientName": "METRO REAL ESTATE",
+        "campaign": "Dynamic Map Search Portal",
+        "gainedNum": 99,
+        "tickerLabel": "Lighthouse Performance Score",
+        "rateLabel": "Server Load Latency",
+        "rateValue": "0.4s fast response",
+        "progressValue": 98,
+        "progressLabel": "Core Web Vitals Index",
+        "status": "FLAWLESS SPEED",
+        "badgeColor": "#adfa3b"
+      },
+      {
+        "clientName": "CYBER LOGISTICS",
+        "campaign": "Enterprise Hub Integration",
+        "gainedNum": 18450,
+        "tickerLabel": "Leads Processed Auto-Log",
+        "rateLabel": "Central System Uptime",
+        "rateValue": "99.95% active uptime",
+        "progressValue": 91,
+        "progressLabel": "Core Web Vitals Index",
+        "status": "AUTOMATION PERFECT",
+        "badgeColor": "#38bdf8"
+      },
+      {
+        "clientName": "COCOA SWEETS",
+        "campaign": "Headless Shopify Storefront",
+        "gainedNum": 89200,
+        "tickerLabel": "Successful Store Checkouts",
+        "rateLabel": "Conversion Rating Increase",
+        "rateValue": "4.8% checkout rate",
+        "progressValue": 94,
+        "progressLabel": "Core Web Vitals Index",
+        "status": "REVENUE BOOSTER",
+        "badgeColor": "#f43f5e"
+      },
+      {
+        "clientName": "APEX SAAS",
+        "campaign": "Reactive Product Tour Page",
+        "gainedNum": 112,
+        "tickerLabel": "Demo Bookings Scale-Up (%)",
+        "rateLabel": "Time To Interactive",
+        "rateValue": "1.2s rapid load",
+        "progressValue": 95,
+        "progressLabel": "Core Web Vitals Index",
+        "status": "OPTIMAL INDEX",
+        "badgeColor": "#a78bfa"
+      }
+    ]
+  },
+  "video-production": {
+    "badge": "STUDIO // cinematic engine",
+    "title": "Video",
+    "accentTitle": "Production",
+    "subtitle": "Crafting cinematic masterpieces, high-converting social hooks, and scroll-stopping short form edits that force viewer retention.",
+    "campaigns": [
+      {
+        "clientName": "GALAXY SPORTS",
+        "campaign": "Cinematic Athlete Brand Film",
+        "gainedNum": 2400000,
+        "tickerLabel": "Social Video Views Gained",
+        "rateLabel": "Audience Retention Score",
+        "rateValue": "86% average viewtime",
+        "progressValue": 92,
+        "progressLabel": "Scroll-Stoppage Ratio",
+        "status": "VIRAL ATTENTION",
+        "badgeColor": "#adfa3b"
+      },
+      {
+        "clientName": "ORIGIN MEALS",
+        "campaign": "E-Commerce Social Hook Ad",
+        "gainedNum": 140000,
+        "tickerLabel": "Video Direct Clicks",
+        "rateLabel": "First-3-Seconds Hook",
+        "rateValue": "74% watch rate",
+        "progressValue": 85,
+        "progressLabel": "Scroll-Stoppage Ratio",
+        "status": "CONVERSION MAGNET",
+        "badgeColor": "#38bdf8"
+      },
+      {
+        "clientName": "BEAT DROP",
+        "campaign": "TikTok Reel & Short Edits",
+        "gainedNum": 5200000,
+        "tickerLabel": "Organic Video Clicks",
+        "rateLabel": "Sound Sync Share Ratio",
+        "rateValue": "90% virality metric",
+        "progressValue": 95,
+        "progressLabel": "Scroll-Stoppage Ratio",
+        "status": "ALGORITHM FAVORITE",
+        "badgeColor": "#a78bfa"
+      },
+      {
+        "clientName": "URBAN DRONE",
+        "campaign": "High-Contrast Drone Shoot",
+        "gainedNum": 1100000,
+        "tickerLabel": "Commercial Impressions",
+        "rateLabel": "Cinematography Score",
+        "rateValue": "78% visual score",
+        "progressValue": 88,
+        "progressLabel": "Scroll-Stoppage Ratio",
+        "status": "PREMIUM ASSET",
+        "badgeColor": "#f43f5e"
+      }
+    ]
+  },
+  "seo": {
+    "badge": "AUDIT // GOOGLE AUTHORITY",
+    "title": "Search Engine",
+    "accentTitle": "Optimization",
+    "subtitle": "Commanding Google SERPs with absolute authority through precision semantic keyword webs, tech-SEO audits, and premium backlink scaling.",
+    "campaigns": [
+      {
+        "clientName": "OMNI TRAVEL",
+        "campaign": "Semantic Core Directory Build",
+        "gainedNum": 145000,
+        "tickerLabel": "Organic Clicks Per Month",
+        "rateLabel": "Keywords Ranked In Top #3",
+        "rateValue": "42 primary keywords",
+        "progressValue": 92,
+        "progressLabel": "SERP Authority Index",
+        "status": "GOOGLE DOMINATION",
+        "badgeColor": "#adfa3b"
+      },
+      {
+        "clientName": "SHIELD SECURITY",
+        "campaign": "Technical Core Overhaul Audit",
+        "gainedNum": 310,
+        "tickerLabel": "Organic Traffic Increase (%)",
+        "rateLabel": "Keywords Ranked In Top #3",
+        "rateValue": "18 primary keywords",
+        "progressValue": 78,
+        "progressLabel": "SERP Authority Index",
+        "status": "BOT CRAWL ACCURATE",
+        "badgeColor": "#38bdf8"
+      },
+      {
+        "clientName": "VITAL DENTAL",
+        "campaign": "Local Map Pack Takeover",
+        "gainedNum": 8240,
+        "tickerLabel": "Direct Calls & Actions Booked",
+        "rateLabel": "Local Pack Top-3 Rank",
+        "rateValue": "29 localized targets",
+        "progressValue": 85,
+        "progressLabel": "SERP Authority Index",
+        "status": "LOCAL #1 AUTHORITY",
+        "badgeColor": "#a78bfa"
+      },
+      {
+        "clientName": "CLOUD STORAGE",
+        "campaign": "High-DR Backlink Network",
+        "gainedNum": 1200000,
+        "tickerLabel": "Enterprise Search Impressions",
+        "rateLabel": "Target Link Authority Gain",
+        "rateValue": "96% index score",
+        "progressValue": 96,
+        "progressLabel": "SERP Authority Index",
+        "status": "BACKLINK STRENGTH",
+        "badgeColor": "#f43f5e"
+      }
+    ]
+  },
+  "outdoor-marketing": {
+    "badge": "IMPACT // REAL WORLD VISIBILITY",
+    "title": "Outdoor",
+    "accentTitle": "Marketing",
+    "subtitle": "Planning and executing high-impact physical campaigns that dominate high-traffic zones, capture attention, and build immense real-world trust.",
+    "campaigns": [
+      {
+        "clientName": "NEW SAMRAT RESTAURANT",
+        "campaign": "High-Impact Highway Hoardings",
+        "gainedNum": 450000,
+        "tickerLabel": "Estimated Daily Eyeballs",
+        "rateLabel": "Brand Recall Lift",
+        "rateValue": "+38% recall rating",
+        "progressValue": 94,
+        "progressLabel": "Visual Exposure Index",
+        "status": "MAX DOMINANCE",
+        "badgeColor": "#adfa3b"
+      },
+      {
+        "clientName": "AANYA HOSPITAL",
+        "campaign": "Transit Advertising (Autos & Cabs)",
+        "gainedNum": 185000,
+        "tickerLabel": "Daily Active Reach",
+        "rateLabel": "Direct Consultation Lift",
+        "rateValue": "+22% phone inquiries",
+        "progressValue": 81,
+        "progressLabel": "Visual Exposure Index",
+        "status": "STREET DOMINANCE",
+        "badgeColor": "#38bdf8"
+      },
+      {
+        "clientName": "WMN WOMENS CLINIC",
+        "campaign": "Regional On-Ground Branding",
+        "gainedNum": 95000,
+        "tickerLabel": "Hyperlocal Footprint",
+        "rateLabel": "Walk-In Traffic Yield",
+        "rateValue": "+45% patient footfall",
+        "progressValue": 88,
+        "progressLabel": "Visual Exposure Index",
+        "status": "LOCAL RECOGNITION",
+        "badgeColor": "#a78bfa"
+      }
+    ]
+  },
+  "influencer": {
+    "badge": "CREATIVE // CREATOR TRUST",
+    "title": "Influencer",
+    "accentTitle": "Marketing",
+    "subtitle": "Orchestrating high-impact relationships with verified creators and hyper-targeted micro-influencers to ignite genuine user advocacy.",
+    "campaigns": [
+      {
+        "clientName": "GLAMOUR HAIR",
+        "campaign": "Micro-Influencer Reels Launch",
+        "gainedNum": 128,
+        "tickerLabel": "Direct Sales Gained (%)",
+        "rateLabel": "Campaign Reach Footprint",
+        "rateValue": "3.8M impressions",
+        "progressValue": 91,
+        "progressLabel": "Creator Efficiency Index",
+        "status": "RESONANCE CONFIRMED",
+        "badgeColor": "#adfa3b"
+      },
+      {
+        "clientName": "PLAY ZONE",
+        "campaign": "Gaming Streamer Sponsorships",
+        "gainedNum": 640000,
+        "tickerLabel": "Direct App Installations",
+        "rateLabel": "Campaign Reach Footprint",
+        "rateValue": "12.4M impressions",
+        "progressValue": 88,
+        "progressLabel": "Creator Efficiency Index",
+        "status": "VIRAL DOWNLOADS",
+        "badgeColor": "#a78bfa"
+      },
+      {
+        "clientName": "FUEL ENERGY",
+        "campaign": "Athlete Ambassador Tier",
+        "gainedNum": 34200,
+        "tickerLabel": "Promo Checkout Conversions",
+        "rateLabel": "Campaign Reach Footprint",
+        "rateValue": "5.2M impressions",
+        "progressValue": 94,
+        "progressLabel": "Creator Efficiency Index",
+        "status": "TIER-1 REACH",
+        "badgeColor": "#38bdf8"
+      },
+      {
+        "clientName": "SHINE BEAUTY",
+        "campaign": "TikTok Grid Creator Takeover",
+        "gainedNum": 112000,
+        "tickerLabel": "Organic Followers Gained",
+        "rateLabel": "Campaign Reach Footprint",
+        "rateValue": "18.5M impressions",
+        "progressValue": 96,
+        "progressLabel": "Creator Efficiency Index",
+        "status": "AUDIENCE BOOSTER",
+        "badgeColor": "#f43f5e"
+      }
+    ]
+  },
+  "content-solution": {
+    "badge": "FUNNEL // REVENUE COPY",
+    "title": "Content",
+    "accentTitle": "Solutions",
+    "subtitle": "Engineering high-impact copy, automated publishing pipelines, and viral copywriting formulas designed to convert readers into paying loyalists.",
+    "campaigns": [
+      {
+        "clientName": "HYBRID ENERGY",
+        "campaign": "Substack Newsletter Redesign",
+        "gainedNum": 42000,
+        "tickerLabel": "Subscribers Gained",
+        "rateLabel": "Campaign Click Rate",
+        "rateValue": "48% open rate",
+        "progressValue": 90,
+        "progressLabel": "Content Retention Score",
+        "status": "COPY OPTIMIZED",
+        "badgeColor": "#adfa3b"
+      },
+      {
+        "clientName": "SWIFT ACADEMY",
+        "campaign": "E-Learning Course Copy Sprint",
+        "gainedNum": 18400,
+        "tickerLabel": "Active Enrolled Students",
+        "rateLabel": "Campaign Click Rate",
+        "rateValue": "62% open rate",
+        "progressValue": 86,
+        "progressLabel": "Content Retention Score",
+        "status": "FUNNEL DOMINATED",
+        "badgeColor": "#38bdf8"
+      },
+      {
+        "clientName": "HORIZON SAAS",
+        "campaign": "Interactive Lead Magnet Paper",
+        "gainedNum": 12400,
+        "tickerLabel": "Whitepaper PDF Downloads",
+        "rateLabel": "Campaign Click Rate",
+        "rateValue": "54% open rate",
+        "progressValue": 88,
+        "progressLabel": "Content Retention Score",
+        "status": "LEAD CAPTURED",
+        "badgeColor": "#a78bfa"
+      },
+      {
+        "clientName": "DELTA COFFEE",
+        "campaign": "Storytelling Brand Copy Manual",
+        "gainedNum": 240,
+        "tickerLabel": "Retail Inquiries Boost (%)",
+        "rateLabel": "Campaign Click Rate",
+        "rateValue": "45% open rate",
+        "progressValue": 94,
+        "progressLabel": "Content Retention Score",
+        "status": "STORY ENGAGED",
+        "badgeColor": "#f43f5e"
+      }
+    ]
+  }
+}

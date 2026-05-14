@@ -1,4 +1,76 @@
-import { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
+import VariableProximity from '../components/VariableProximity';
+import servicesData from '../servicesData.json';
+
+const useCountUp = (end, duration = 2000) => {
+  const [count, setCount] = React.useState(0);
+  const [inView, setInView] = React.useState(false);
+  const ref = React.useRef(null);
+  React.useEffect(() => {
+    const el = ref.current; if (!el) return;
+    const obs = new IntersectionObserver(([entry]) => { if (entry.isIntersecting) { setInView(true); obs.disconnect(); } }, { threshold: 0.3 });
+    obs.observe(el); return () => obs.disconnect();
+  }, []);
+  React.useEffect(() => {
+    if (!inView) return;
+    let start; const step = (ts) => { if (!start) start = ts; const p = Math.min((ts-start)/duration,1); const e = 1-Math.pow(1-p,3); setCount(Math.floor(end*e)); if(p<1) requestAnimationFrame(step); };
+    requestAnimationFrame(step);
+  }, [inView, end, duration]);
+  return [ref, count];
+};
+
+const serviceConfig = servicesData['content-solution'];
+
+/* ── Content Stats Strip ── */
+const ContentStatsStrip = () => {
+  const stats = [
+    { end: 2400, suffix: '+', label: 'Content Pieces Delivered' },
+    { end: 18, suffix: 'M+', label: 'Total Content Views' },
+    { end: 320, suffix: '%', label: 'Avg Engagement Lift' },
+    { end: 96, suffix: '%', label: 'Client Satisfaction' },
+    { end: 4, suffix: 'x', label: 'Conversion Boost' },
+  ];
+  return (
+    <div style={{ background:'#060811', borderTop:'1px solid rgba(173,250,59,0.18)', borderBottom:'1px solid rgba(173,250,59,0.18)', padding:'22px 5%', overflow:'hidden', position:'relative' }}>
+      <div style={{ position:'absolute', inset:0, background:'linear-gradient(90deg, rgba(124,58,237,0.06) 0%, rgba(173,250,59,0.04) 50%, rgba(124,58,237,0.06) 100%)', pointerEvents:'none' }} />
+      <div style={{ display:'flex', gap:'clamp(24px,4vw,60px)', justifyContent:'center', flexWrap:'wrap', maxWidth:'1100px', margin:'0 auto', position:'relative', zIndex:1 }}>
+        {stats.map((s, i) => {
+          const [ref, count] = useCountUp(s.end, 1600 + i*200);
+          return (
+            <div key={i} ref={ref} style={{ textAlign:'center', minWidth:'90px' }}>
+              <div style={{ fontFamily:"'Bebas Neue',Impact,sans-serif", fontSize:'clamp(26px,3.5vw,44px)', color:'#adfa3b', letterSpacing:'0.03em', lineHeight:1, textShadow:'0 0 20px rgba(173,250,59,0.3)' }}>
+                {count}{s.suffix}
+              </div>
+              <div style={{ fontSize:'10px', color:'rgba(255,255,255,0.45)', textTransform:'uppercase', letterSpacing:'0.18em', marginTop:'4px', fontWeight:600 }}>
+                {s.label}
+              </div>
+            </div>
+          );
+        })}
+      </div>
+    </div>
+  );
+};
+
+/* ── Floating Content Badges ── */
+const FloatingContentBadges = () => {
+  const badges = [
+    { label:'✍️ VIRAL COPY', color:'#adfa3b', textColor:'#060811', x:'3%', y:'15%', rot:'-7deg', delay:'0s', dur:'7s' },
+    { label:'📝 CONTENT', color:'rgba(124,58,237,0.85)', textColor:'#fff', x:'88%', y:'22%', rot:'5deg', delay:'1.3s', dur:'9s' },
+    { label:'🚀 CONVERTS', color:'rgba(255,255,255,0.07)', textColor:'#adfa3b', x:'4%', y:'70%', rot:'4deg', delay:'0.7s', dur:'8s' },
+    { label:'📈 2400+ POSTS', color:'rgba(173,250,59,0.12)', textColor:'#adfa3b', x:'84%', y:'74%', rot:'-5deg', delay:'1.9s', dur:'10s' },
+  ];
+  return (
+    <>
+      <style>{`@keyframes contentFloat{0%,100%{transform:translateY(0)rotate(var(--rot));}50%{transform:translateY(-14px)rotate(var(--rot));}}`}</style>
+      {badges.map((b,i)=>(
+        <div key={i} style={{ position:'absolute', left:b.x, top:b.y, background:b.color, color:b.textColor, fontFamily:"'Bebas Neue',Impact,sans-serif", fontSize:'11px', letterSpacing:'0.18em', padding:'5px 12px', borderRadius:'6px', border:`1px solid ${b.textColor === '#060811' ? 'transparent' : 'rgba(173,250,59,0.25)'}`, '--rot':b.rot, animation:`contentFloat ${b.dur} ease-in-out infinite`, animationDelay:b.delay, pointerEvents:'none', zIndex:1, whiteSpace:'nowrap', backdropFilter:'blur(8px)' }}>
+          {b.label}
+        </div>
+      ))}
+    </>
+  );
+};
 
 
 /* ════════════════════════════════════════════
@@ -6,15 +78,15 @@ import { useState, useRef, useEffect } from 'react';
 ════════════════════════════════════════════ */
 
 const reviews = [
-  { name: 'Venkata Siddharth', handle: 'V', color: '#7c3aed', time: '2 months ago', stars: 5, text: 'Working with Fugensys was a seamless experience. They delivered a high-quality, professional website exactly on...' },
-  { name: 'Ananya Sharma', handle: 'A', color: '#ec4899', time: '1 month ago', stars: 5, text: 'Extremely satisfied with the results. Fugensys provided a sleek mobile-responsive design that boosted our site traffic by 40%.' },
+  { name: 'Venkata Siddharth', handle: 'V', color: '#7c3aed', time: '2 months ago', stars: 5, text: 'Working with Buzziwah was a seamless experience. They delivered a high-quality, professional website exactly on...' },
+  { name: 'Ananya Sharma', handle: 'A', color: '#ec4899', time: '1 month ago', stars: 5, text: 'Extremely satisfied with the results. Buzziwah provided a sleek mobile-responsive design that boosted our site traffic by 40%.' },
   { name: 'Karthik Nair', handle: 'K', color: '#10b981', time: '3 weeks ago', stars: 5, text: 'Technical expertise at its best. Their full-stack development team handled our backend complexities with ease.' },
   { name: 'hasan ahmed', handle: 'H', color: '#4caf50', time: '3 months ago', stars: 5, text: 'Best web design and app development company with in Bangalore, got home services booking app like urban company...' },
   { name: 'Sneha Kapoor', handle: 'S', color: '#f59e0b', time: '2 weeks ago', stars: 5, text: 'Great attention to detail. The UI/UX is intuitive and exactly what our users needed. Highly recommended!' },
   { name: 'Rahul Mehta', handle: 'R', color: '#3b82f6', time: '4 months ago', stars: 5, text: 'Fantastic communication throughout the process. They understood our brand vision and delivered beyond expectations.' },
   { name: 'Reddy Documents', handle: 'R', color: '#e53935', time: '3 months ago', stars: 5, text: 'Quality work with minimal Price and Time' },
   { name: 'Priya Das', handle: 'P', color: '#8b5cf6', time: '5 months ago', stars: 5, text: 'The SEO strategies they implemented have been a game-changer. Our rankings have never been better.' },
-  { name: 'Amit Verma', handle: 'A', color: '#f43f5e', time: '6 months ago', stars: 5, text: 'Professional, timely, and innovative. Fugensys is definitely our go-to for all digital development needs.' },
+  { name: 'Amit Verma', handle: 'A', color: '#f43f5e', time: '6 months ago', stars: 5, text: 'Professional, timely, and innovative. Buzziwah is definitely our go-to for all digital development needs.' },
 ];
 
 const StarRow = ({ count }) => (
@@ -158,158 +230,347 @@ const PillBtn = ({ children, filled = false, onClick }) => {
 /* ═══════════════════════════════════════════════════
    SECTION 8 — Why Content Marketing
 ═══════════════════════════════════════════════════ */
-const Section1 = () => (
-  <>
-    <style>{`
-      .cm-hero { padding: 108px 5% 28px; transition: padding 0.3s ease; }
-      .cm-banner { gap: 3rem; transition: gap 0.3s ease; }
-      .cm-banner-item { display: flex; alignItems: center; gap: 3rem; }
-      .cm-hero-copy { flex: 1 1 400px; max-width: 500px; margin-left: 20%; }
-      .cm-hero-title { font-size: clamp(28px, 3.4vw, 44px); }
-      .cm-hero-subtitle { font-size: clamp(16px, 1.7vw, 22px); }
-      .cm-hero-text { font-size: 14px; line-height: 1.7; }
-      .cm-hero-badge-text,
-      .cm-hero-title,
-      .cm-hero-subtitle,
-      .cm-hero-text,
-      .cm-hero-actions button { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important; }
-      .cm-hero-image { flex: 1 1 380px; display: flex; justify-content: center; align-items: center; min-height: 320px; margin-right: 20%; transform: translateY(40px); }
-      .cm-hero-image img { width: 100%; max-width: 460px; height: auto; display: block; }
-      .cm-hero-actions { display: flex; gap: 16px; flex-wrap: nowrap; align-items: center; margin-left: -10px; }
-      @media (max-width: 768px) {
-        .cm-hero { padding: 92px 5% 20px !important; gap: 28px !important; min-height: auto !important; }
-        .cm-banner { gap: 1.5rem !important; padding: 1.75rem 1.5rem !important; }
-        .cm-banner-item { gap: 1.5rem !important; }
-        .cm-banner-divider { height: 40px !important; }
-        .cm-badge { margin-bottom: 20px !important; }
-        .cm-hero-copy { max-width: 100% !important; margin-left: 0 !important; }
-        .cm-hero-title { font-size: 30px !important; margin-bottom: 20px !important; }
-        .cm-hero-subtitle { font-size: 17px !important; margin-bottom: 14px !important; }
-        .cm-hero-text { font-size: 12.5px !important; line-height: 1.65 !important; }
-        .cm-hero-image { min-height: 240px !important; margin-right: 0 !important; transform: translateY(18px) !important; }
-        .cm-hero-image img { max-width: 320px !important; }
-        .cm-hero-actions { gap: 12px !important; margin-left: 0 !important; }
-      }
-    `}</style>
-    {/* Hero */}
-    <section className="cm-hero" style={{
-      background: '#f5ffe8',
-      display: 'flex', alignItems: 'center',
-      gap: 24, flexWrap: 'wrap',
-      minHeight: '75vh', boxSizing: 'border-box',
-      position: 'relative', overflow: 'hidden',
-    }}>
-      {/* LEFT */}
-      <div className="cm-hero-copy">
-        {/* Badge */}
-        <div className="cm-badge" style={{
-          display: 'inline-flex', alignItems: 'center', gap: 10,
-          background: '#7c3aed', borderRadius: 50,
-          padding: '8px 20px 8px 8px', marginBottom: 32,
-          animation: 'badgeFloat 3s ease-in-out infinite',
-        }}>
-          <div style={{
-            width: 32, height: 32, borderRadius: '50%', background: '#1a0533',
-            display: 'flex', alignItems: 'center', justifyContent: 'center',
-          }}>
-            <div style={{ width: 10, height: 10, borderRadius: '50%', background: '#fff' }} />
-          </div>
-          <span className="cm-hero-badge-text" style={{
-            color: '#fff', fontSize: 11, fontWeight: 700,
-            letterSpacing: '0.13em', textTransform: 'uppercase',
-          }}>
-            A Few Quick Questions To Nail The Direction!
-          </span>
-        </div>
-
-        {/* Headline */}
-        <h1 className="cm-hero-title" style={{
-          fontWeight: 900, lineHeight: 1.12,
-          margin: '0 0 28px', textTransform: 'uppercase',
-          color: '#1a1a1a',
-        }}>
-          WE TELL YOUR{' '}
-          <span style={{ color: '#7c3aed' }}>BRAND'S STORY</span>
-        </h1>
-
-        <h3 className="cm-hero-subtitle" style={{
-          fontWeight: 800, color: '#1a1a1a',
-          margin: '0 0 18px',
-        }}>
-          Content is not just what is written.
-        </h3>
-
-        <p className="cm-hero-text" style={{
-          color: '#444',
-          margin: '0 0 14px', maxWidth: 460,
-        }}>
-          It's how a brand speaks, shows up and stays relevant. A content solution brings structure to:
-        </p>
-
-        <ul style={{
-          listStyle: 'none',
-          padding: 0,
-          margin: '0 0 36px',
-          display: 'flex',
-          flexDirection: 'column',
-          gap: '8px',
-        }}>
-          <li style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#7c3aed', fontWeight: 600, fontSize: '16px' }}>
-            <span style={{ width: '8px', height: '8px', borderRadius: '50%', background: '#7c3aed', flexShrink: 0 }} />
-            What to say?
-          </li>
-          <li style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#7c3aed', fontWeight: 600, fontSize: '16px' }}>
-            <span style={{ width: '8px', height: '8px', borderRadius: '50%', background: '#7c3aed', flexShrink: 0 }} />
-            How to say?
-          </li>
-          <li style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#7c3aed', fontWeight: 600, fontSize: '16px' }}>
-            <span style={{ width: '8px', height: '8px', borderRadius: '50%', background: '#7c3aed', flexShrink: 0 }} />
-            Where to say?
-          </li>
-        </ul>
-
-        <div className="cm-hero-actions">
-          <PillBtn>Start With A Free Content Brief</PillBtn>
-          <PillBtn filled>Request A Live Demo</PillBtn>
-        </div>
-      </div>
-
-      {/* RIGHT — image */}
-      <div className="cm-hero-image">
-        <img src="/content solutions.png" alt="Content Marketing" />
-      </div>
-
+const Section1 = () => {
+  const containerRef = useRef(null);
+  return (
+    <>
       <style>{`
-        @keyframes badgeFloat {
-          0%,100% { transform: translateY(0); }
-          50%      { transform: translateY(-5px); }
+        @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+        /* ── CODED PAGE BANNER STYLES ── */
+        .coded-page-banner {
+          position: relative;
+          width: 100%;
+          min-height: 360px;
+          background:
+            radial-gradient(circle at 30% 20%, rgba(139, 92, 246, 0.35), transparent 45%),
+            radial-gradient(circle at 75% 80%, rgba(173, 250, 59, 0.22), transparent 35%),
+            linear-gradient(180deg, #180d32 0%, #0d0a1b 100%);
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          text-align: center;
+          padding: 120px 20px 60px;
+          overflow: hidden;
+          border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .coded-page-banner-grid {
+          position: absolute;
+          bottom: -20%;
+          left: 0;
+          width: 100%;
+          height: 150%;
+          background-image:
+            linear-gradient(rgba(255, 255, 255, 0.024) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(255, 255, 255, 0.024) 1px, transparent 1px);
+          background-size: 80px 80px;
+          transform: perspective(1000px) rotateX(75deg);
+          transform-origin: bottom center;
+          pointer-events: none;
+          opacity: 0.85;
+          animation: gridDrift 40s linear infinite;
+        }
+
+        @keyframes gridDrift {
+          from { background-position: 0 0; }
+          to { background-position: 0 -160px; }
+        }
+
+        .coded-page-banner-purple-glow {
+          position: absolute;
+          top: -10%;
+          right: -10%;
+          width: 60%;
+          height: 80%;
+          background: radial-gradient(circle, rgba(139, 92, 246, 0.35) 0%, transparent 70%);
+          filter: blur(80px);
+          pointer-events: none;
+          animation: purpleGlowBreath 12s infinite ease-in-out alternate;
+        }
+
+        .coded-page-banner-green-glow {
+          position: absolute;
+          bottom: -10%;
+          left: -10%;
+          width: 50%;
+          height: 70%;
+          background: radial-gradient(circle, rgba(173, 250, 59, 0.22) 0%, transparent 70%);
+          filter: blur(80px);
+          pointer-events: none;
+          animation: greenGlowBreath 15s infinite ease-in-out alternate;
+        }
+
+        @keyframes purpleGlowBreath {
+          0% { transform: scale(1) translate(0, 0); opacity: 0.8; }
+          100% { transform: scale(1.15) translate(-20px, 10px); opacity: 1; }
+        }
+
+        @keyframes greenGlowBreath {
+          0% { transform: scale(1) translate(0, 0); opacity: 0.7; }
+          100% { transform: scale(1.2) translate(15px, -15px); opacity: 1; }
+        }
+
+        /* Particles container & particle animations */
+        .coded-page-banner-particles {
+          position: absolute;
+          inset: 0;
+          pointer-events: none;
+          z-index: 1;
+        }
+
+        .coded-banner-particle {
+          position: absolute;
+          background: rgba(255, 255, 255, 0.06);
+          border-radius: 50%;
+          pointer-events: none;
+          filter: blur(1.5px);
+          animation: floatParticle infinite linear;
+        }
+
+        @keyframes floatParticle {
+          0% {
+            transform: translateY(120vh) translateX(0);
+            opacity: 0;
+          }
+          10% { opacity: 1; }
+          90% { opacity: 1; }
+          100% {
+            transform: translateY(-20vh) translateX(20px);
+            opacity: 0;
+          }
+        }
+
+        .coded-page-banner-badge {
+          font-family: 'Montserrat', sans-serif !important;
+          font-size: 11px;
+          font-weight: 800;
+          text-transform: uppercase;
+          color: #adfa3b;
+          letter-spacing: 0.25em;
+          padding: 6px 16px;
+          border-radius: 999px;
+          background: rgba(173, 250, 59, 0.06);
+          border: 1px solid rgba(173, 250, 59, 0.16);
+          backdrop-filter: blur(10px);
+          margin-bottom: 16px;
+          position: relative;
+          z-index: 2;
+          display: inline-block;
+          animation: badgePulse 4s infinite ease-in-out;
+        }
+
+        @keyframes badgePulse {
+          0%, 100% {
+            box-shadow: 0 0 10px rgba(173, 250, 59, 0.05);
+            border-color: rgba(173, 250, 59, 0.16);
+          }
+          50% {
+            box-shadow: 0 0 20px rgba(173, 250, 59, 0.2);
+            border-color: rgba(173, 250, 59, 0.35);
+          }
+        }
+
+        .coded-page-banner-title {
+          font-family: 'Bebas Neue', 'Impact', 'Arial Black', sans-serif !important;
+          font-size: clamp(34px, 4.5vw, 58px);
+          font-weight: 400;
+          color: #adfa3b;
+          -webkit-text-stroke: 2.5px white;
+          text-shadow: 6px 6px 0 rgba(0,0,0,0.55), 0 0 40px rgba(173,250,59,0.15);
+          -webkit-text-fill-color: unset;
+          background: none;
+          margin: 0;
+          line-height: 0.92;
+          letter-spacing: 0.04em;
+          position: relative;
+          z-index: 2;
+          animation: titleFadeInUp 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+
+        .coded-page-banner-subtitle {
+          font-size: clamp(14px, 1.8vw, 18px);
+          font-weight: 500;
+          color: rgba(255, 255, 255, 0.65);
+          margin-top: 14px;
+          max-width: 600px;
+          line-height: 1.6;
+          position: relative;
+          z-index: 2;
+          animation: titleFadeInUp 1.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+
+        @keyframes titleFadeInUp {
+          from { opacity: 0; transform: translateY(20px); }
+          to { opacity: 1; transform: translateY(0); }
+        }
+
+        .cm-banner { gap: 3rem; transition: gap 0.3s ease; }
+        .cm-banner-item { display: flex; alignItems: center; gap: 3rem; }
+        @media (max-width: 768px) {
+          .cm-banner { gap: 1.5rem !important; padding: 1.75rem 1.5rem !important; }
+          .cm-banner-item { gap: 1.5rem !important; }
+          .cm-banner-divider { height: 40px !important; }
         }
       `}</style>
-    </section>
 
-    {/* Services Banner 2 */}
-    <section className="cm-banner" style={{
-      backgroundColor: '#0F0F14',
-      padding: '2rem 2rem',
-      display: 'flex',
-      justifyContent: 'center',
-      alignItems: 'center',
-      position: 'relative',
-      overflow: 'hidden',
-      flexWrap: 'wrap',
-    }}>
-      <div style={{ position:'absolute', bottom:-50, right:'10%', width:200, height:200, background:'radial-gradient(circle, rgba(76,29,149,0.3) 0%, transparent 70%)', borderRadius:'50%', pointerEvents:'none' }} />
-      {['WE STRATEGIZE', 'WE REACH', 'WE ENGAGE', 'WE SCALE'].map((item, i, arr) => (
-        <div key={item} className="cm-banner-item">
-          <div>
-            <h2 style={{ color: '#7c3aed', fontSize: 'clamp(22px, 2.5vw, 36px)', fontWeight: 700, letterSpacing: 1, fontFamily: "'Syne', sans-serif" }}>{item}</h2>
+      <section className="page-banner-section" ref={containerRef}>
+        <div className="coded-page-banner">
+          <div className="coded-page-banner-grid" />
+          <div className="coded-page-banner-purple-glow" />
+          <div className="coded-page-banner-green-glow" />
+
+          {/* Floating content badges */}
+          <FloatingContentBadges />
+
+          {/* Floating Particle Layer */}
+          <div className="coded-page-banner-particles">
+            {Array.from({ length: 15 }).map((_, i) => {
+              const left = `${Math.random() * 100}%`;
+              const top = `${Math.random() * 100}%`;
+              const size = `${Math.random() * 3 + 1.5}px`;
+              const delay = `${Math.random() * -20}s`;
+              const duration = `${Math.random() * 10 + 15}s`;
+              return (
+                <div
+                  key={i}
+                  className="coded-banner-particle"
+                  style={{
+                    left,
+                    top,
+                    width: size,
+                    height: size,
+                    animationDelay: delay,
+                    animationDuration: duration,
+                  }}
+                />
+              );
+            })}
           </div>
-          {i < arr.length - 1 && <div className="cm-banner-divider" style={{ width: 2, height: 60, backgroundColor: 'rgba(139,92,246,0.4)' }} />}
+
+          <div className="flex flex-col items-center justify-center w-full max-w-[900px] gap-6 px-6 z-10 text-center relative">
+            {/* Background Diagonal Laser Lines (Layout 5 Specific Aesthetic) */}
+            <div className="absolute left-[-100px] top-[-50px] w-[500px] h-[1px] bg-[#adfa3b]/20 rotate-[-12deg] pointer-events-none" />
+            <div className="absolute right-[-100px] bottom-[-50px] w-[500px] h-[1px] bg-purple-500/10 rotate-[-12deg] pointer-events-none" />
+
+            {/* Centered Column: Ultra-Modern Slanted Title & Subtitle */}
+            <div className="flex flex-col items-center text-center relative z-10">
+              <div className="coded-page-banner-badge">{serviceConfig.badge}</div>
+              <h1 className="coded-page-banner-title text-center skew-x-[-4deg] mb-4" style={{ letterSpacing: '-0.03em' }}>
+                <VariableProximity
+                  label={`${serviceConfig.title} ${serviceConfig.accentTitle}`}
+                  fromFontVariationSettings="'wght' 400, 'opsz' 9"
+                  toFontVariationSettings="'wght' 1000, 'opsz' 40"
+                  containerRef={containerRef}
+                  radius={100}
+                  falloff="linear"
+                />
+              </h1>
+              <div className="h-[2px] w-24 bg-[#adfa3b] my-4 rounded-full" />
+              <p className="coded-page-banner-subtitle text-center max-w-[650px] mx-auto">
+                {serviceConfig.subtitle}
+              </p>
+            </div>
+          </div>
         </div>
-      ))}
-    </section>
-  </>
-);
+      </section>
+
+      {/* ── Content Stats Strip ── */}
+      <ContentStatsStrip />
+
+      {/* 🔮 ULTRA-CLEAN BENTO BOX STRUCTURE */}
+      <section
+        className="relative z-[1] px-5 pb-24 pt-16 sm:px-10 overflow-hidden"
+        style={{
+          background: 'linear-gradient(145deg, #070312 0%, #120524 50%, #070312 100%)',
+          borderBottom: '1px solid rgba(255, 255, 255, 0.03)'
+        }}
+      >
+        {/* Cosmic Space Grid Overlay */}
+        <div className="absolute inset-0 pointer-events-none opacity-40" style={{
+          backgroundImage: 'radial-gradient(circle at 50% 50%, rgba(173, 250, 59, 0.05) 0%, transparent 50%), linear-gradient(to right, rgba(255, 255, 255, 0.015) 1px, transparent 1px), linear-gradient(to bottom, rgba(255, 255, 255, 0.015) 1px, transparent 1px)',
+          backgroundSize: '100%, 40px 40px, 40px 40px'
+        }} />
+
+        <div className="relative z-[1] mx-auto max-w-[1200px]">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full">
+            
+            {/* Box 1 (Strategic Growth) - Spans 2 Columns */}
+            <div className="lg:col-span-2 p-8 sm:p-10 rounded-[32px] bg-white/[0.015] border border-white/5 flex flex-col justify-between items-start min-h-[280px]">
+              <div>
+                <h2 style={{ fontFamily:"'Bebas Neue','Impact',sans-serif", fontSize:'clamp(22px,2.8vw,40px)', color:'#adfa3b', WebkitTextStroke:'2px white', textShadow:'5px 5px 0 rgba(0,0,0,0.5)', letterSpacing:'0.04em', lineHeight:0.92, marginBottom:'20px' }}>
+                  Writing Words That Convert
+                </h2>
+                <p className="text-[16px] text-white/75 leading-relaxed max-w-[640px]">
+                  Words are the ultimate sales asset. We design viral storytelling frameworks, high-engagement newsletters, and persuasive marketing copy that builds deep loyalty and converts traffic.
+                </p>
+              </div>
+              <div className="mt-8">
+                <a
+                  href="http://linkedin.com/in/satish-ms-b7842a8b"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex items-center gap-2 rounded-full px-7 py-3 font-['Montserrat'] text-xs font-bold uppercase tracking-[0.08em] text-white border-2 border-transparent transition-all duration-200 hover:text-[#07030f]"
+                  style={{ background: 'linear-gradient(135deg,#7c3aed,#9333ea)', transition: 'background 0.2s, color 0.2s, border-color 0.2s' }}
+                  onMouseEnter={e => { e.currentTarget.style.background = '#ffffff'; e.currentTarget.style.color = '#07030f'; }}
+                  onMouseLeave={e => { e.currentTarget.style.background = 'linear-gradient(135deg,#7c3aed,#9333ea)'; e.currentTarget.style.color = '#ffffff'; }}
+                >
+                  Know More
+                </a>
+              </div>
+            </div>
+
+            {/* Box 2 (Interactive Visual) - Spans 1 Column */}
+            <div className="p-8 rounded-[32px] bg-white/[0.015] border border-white/5 flex justify-center items-center relative overflow-hidden group min-h-[280px]">
+              <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(139,92,246,0.15)_0%,transparent_70%)] opacity-30 group-hover:opacity-60 transition-opacity duration-500" />
+              <img 
+                src="/SSD_Performance-Marketing-Webpage-12.png" 
+                alt="Content Copywriting Visual"
+                className="w-[85%] sm:w-[75%] md:w-[70%] lg:w-[80%] max-w-[340px] h-auto object-contain relative z-10 transition-all duration-500 group-hover:scale-105" 
+              />
+            </div>
+
+            {/* Four Symmetrical Key Point Boxes */}
+            {[
+              { num: '01', text: 'Over 65K+ active subscribers scaled across custom brand blogs, editorial substacks, and premium newsletters.' },
+              { num: '02', text: 'Securing an elite 48% average newsletter open rate and a 4x increase in high-intent commercial clicks.' },
+              { num: '03', text: 'Engineered compelling messaging frameworks and automated lead flows for Hybrid Energy, Delta Coffee, and Swift Academy.' },
+              { num: '04', text: 'Utilizing deep psychological triggers to drive high conversion rates across landing pages, blogs, and marketing assets.' }
+            ].map((box, i) => (
+              <div key={i} className="p-8 rounded-[24px] bg-white/[0.012] border border-white/5 hover:border-[#adfa3b]/20 hover:bg-white/[0.02] transition-all duration-300 flex flex-col justify-between min-h-[180px]">
+                <span className="text-2xl font-black text-white/10 font-mono">{box.num}</span>
+                <p className="text-[14px] text-white/70 font-medium leading-relaxed mt-4">{box.text}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Services Banner 2 */}
+      <section className="cm-banner" style={{
+        backgroundColor: '#0F0F14',
+        padding: '2rem 2rem',
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        position: 'relative',
+        overflow: 'hidden',
+        flexWrap: 'wrap',
+      }}>
+        <div style={{ position:'absolute', bottom:-50, right:'10%', width:200, height:200, background:'radial-gradient(circle, rgba(76,29,149,0.3) 0%, transparent 70%)', borderRadius:'50%', pointerEvents:'none' }} />
+        {['WE STRATEGIZE', 'WE REACH', 'WE ENGAGE', 'WE SCALE'].map((item, i, arr) => (
+          <div key={item} className="cm-banner-item">
+            <div>
+              <h2 style={{ fontFamily:"'Bebas Neue','Impact',sans-serif", fontSize:'clamp(32px,3.5vw,56px)', color:'#7c3aed', letterSpacing:'0.04em', lineHeight:0.92, margin:0 }}>{item}</h2>
+            </div>
+            {i < arr.length - 1 && <div className="cm-banner-divider" style={{ width: 2, height: 60, backgroundColor: 'rgba(139,92,246,0.4)' }} />}
+          </div>
+        ))}
+      </section>
+    </>
+  );
+};
 const Section2 = () => null;
 
 const Section2Cards = () => {
@@ -334,7 +595,7 @@ const Section2Cards = () => {
     <section style={{ position: 'relative', width: '100%', minHeight: '100vh', background: '#0d0914', overflow: 'hidden', padding: '80px 16px', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
       <div style={{ position: 'absolute', top: 0, left: '50%', transform: 'translateX(-50%)', width: 800, height: 600, background: 'rgba(88,28,135,0.2)', borderRadius: '50%', filter: 'blur(120px)', pointerEvents: 'none' }} />
       <div style={{ textAlign: 'center', zIndex: 10, marginBottom: 64 }}>
-        <h2 style={{ color: '#fff', fontSize: 'clamp(22px, 3vw, 36px)', fontWeight: 700, letterSpacing: '0.05em', marginBottom: 16, fontFamily: "'Syne', sans-serif" }}>What's in a Brand Kit?</h2>
+        <h2 style={{ fontFamily:"'Bebas Neue','Impact',sans-serif", fontSize:'clamp(22px,2.8vw,40px)', color:'#adfa3b', WebkitTextStroke:'2px white', textShadow:'5px 5px 0 rgba(0,0,0,0.5)', letterSpacing:'0.04em', lineHeight:0.92, marginBottom:'20px' }}>What's in a Brand Kit?</h2>
         <p style={{ color: '#d1d5db', fontSize: 14, maxWidth: 600, margin: '0 auto', lineHeight: 1.7 }}>Everything your brand needs to communicate clearly, consistently, and effectively across all platforms.</p>
       </div>
       <div style={{ position: 'relative', zIndex: 10, display: 'flex', flexWrap: 'wrap', justifyContent: 'center', alignItems: 'center', gap: 16, maxWidth: 1400 }}>
@@ -702,15 +963,7 @@ const WhyChooseUs = () => {
           }}
         >
           <h1
-            style={{
-              fontFamily: "'Space Grotesk', sans-serif",
-              fontWeight: 600,
-              fontSize: "clamp(2.2rem, 4.4vw, 3.4rem)",
-              color: "#ffffff",
-              letterSpacing: "-0.025em",
-              lineHeight: 1.1,
-              animation: "headReveal 0.75s cubic-bezier(0.22,1,0.36,1) 0.05s both",
-            }}
+            style={{ fontFamily:"'Bebas Neue','Impact',sans-serif", fontSize:'clamp(44px,6vw,90px)', color:'#adfa3b', WebkitTextStroke:'2px white', textShadow:'5px 5px 0 rgba(0,0,0,0.5)', letterSpacing:'0.04em', lineHeight:0.9, margin:'0 0 24px', animation: "headReveal 0.75s cubic-bezier(0.22,1,0.36,1) 0.05s both" }}
           >
             Why Choose Us
           </h1>
@@ -838,11 +1091,264 @@ const ContentMarketingPage = () => (
     `}</style>
     <div className="content-solution-page">
     <Section1 />
+    
+    {/* 🔮 PREMIUM CONTENT STORYTELLING, BLUEPRINTS & CASE CAMPAIGNS */}
+    <WeTellStoriesSection />
+    <ContentBucketsSection />
+    <NarratedStoriesSection />
+
     <Section3Cards />
     <WhyChooseUs />
     <Section10 />
     </div>
   </>
 );
+
+/* ═══════════════════════════════════════════════════════
+   🎭 WE TELL STORIES: CORE CONCEPTS SPLIT SECTION
+═══════════════════════════════════════════════════════ */
+const WeTellStoriesSection = () => {
+  return (
+    <section className="relative overflow-hidden px-6 py-20 sm:px-10 lg:py-28" style={{ background: 'linear-gradient(180deg, #0d091e 0%, #070412 100%)' }}>
+      <div className="absolute inset-0 opacity-[0.03] pointer-events-none" style={{
+        backgroundImage: 'radial-gradient(circle at 20% 30%, rgba(173,250,59,0.15) 0%, transparent 40%), radial-gradient(circle at 80% 70%, rgba(139,92,246,0.15) 0%, transparent 40%)'
+      }} />
+      <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-white/5 to-transparent" />
+
+      <div className="relative z-10 mx-auto max-w-[1200px]">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-stretch">
+          
+          {/* Left Card: We Tell Your Brand's Story */}
+          <div className="rounded-[32px] border border-white/5 bg-gradient-to-br from-[#130d2a]/75 to-[#080411]/75 p-8 sm:p-10 backdrop-blur-md relative overflow-hidden flex flex-col justify-between group">
+            <div className="absolute -right-20 -top-20 w-64 h-64 bg-[#adfa3b]/5 rounded-full blur-3xl pointer-events-none transition-all duration-500 group-hover:bg-[#adfa3b]/10" />
+            
+            <div>
+              <div className="flex items-center gap-3 mb-6">
+                <span className="text-[11px] font-mono font-bold px-3 py-1 bg-[#adfa3b]/10 text-[#adfa3b] rounded-full uppercase tracking-widest">Storytelling Framework</span>
+                <span className="w-1.5 h-1.5 rounded-full bg-[#adfa3b]" />
+              </div>
+              
+              <h2 className="font-['Montserrat'] text-[clamp(28px,3.5vw,42px)] font-black uppercase text-white leading-tight mb-6">
+                We tell your <span className="text-[#adfa3b]">brand’s story</span>
+              </h2>
+              
+              <p className="text-white/80 text-sm sm:text-base leading-relaxed mb-6 font-medium">
+                Content is not just what is written. It’s how a brand speaks, shows up, and stays relevant.
+              </p>
+              
+              <div className="space-y-4 mt-6">
+                {[
+                  { q: "What to say?", a: "Defining your core narrative and value proposition." },
+                  { q: "How to say?", a: "Crafting the unique voice, tone, and visual messaging." },
+                  { q: "Where to say?", a: "Deploying across high-impact platforms strategically." }
+                ].map((item, idx) => (
+                  <div key={idx} className="flex gap-4 p-4 rounded-2xl bg-white/[0.01] border border-white/[0.03] hover:border-white/10 transition-all duration-300">
+                    <span className="font-mono text-sm text-[#adfa3b] font-black">{item.q}</span>
+                    <p className="text-white/60 text-xs sm:text-sm font-medium">{item.a}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+            
+            <div className="border-t border-white/5 pt-6 mt-8 flex items-center justify-between text-[11px] font-mono text-white/40">
+              <span>Delivery Architecture</span>
+              <span>[BUZZIWAH V-02]</span>
+            </div>
+          </div>
+
+          {/* Right Card: Buzziwah Approach */}
+          <div className="rounded-[32px] border border-[#a855f7]/20 bg-gradient-to-br from-[#0e111a]/60 to-[#070910]/60 p-8 sm:p-10 backdrop-blur-md relative overflow-hidden flex flex-col justify-between group shadow-[0_20px_45px_rgba(0,0,0,0.4)]">
+            <div className="absolute -left-20 -bottom-20 w-64 h-64 bg-[#a855f7]/5 rounded-full blur-3xl pointer-events-none transition-all duration-500 group-hover:bg-[#a855f7]/10" />
+            
+            <div>
+              <div className="flex items-center gap-3 mb-6">
+                <span className="text-[11px] font-mono font-bold px-3 py-1 bg-[#a855f7]/15 text-[#a855f7] rounded-full uppercase tracking-widest">Cohesion System</span>
+                <span className="w-1.5 h-1.5 rounded-full bg-[#a855f7] animate-ping" />
+              </div>
+              
+              <h2 className="font-['Montserrat'] text-[clamp(28px,3.5vw,42px)] font-black uppercase text-white leading-tight mb-6">
+                The Buzziwah <span className="text-[#a855f7]">Approach</span>
+              </h2>
+              
+              <p className="text-white/80 text-sm sm:text-base leading-relaxed mb-6 font-semibold italic">
+                "We don’t treat content as isolated pieces."
+              </p>
+              
+              <p className="text-white/60 text-xs sm:text-sm leading-relaxed mb-6">
+                We build it as an interconnected system where premium production, beautiful design, persuasive copy, and clear distribution strategy work together perfectly to build real authority.
+              </p>
+            </div>
+
+            <div className="border-t border-white/5 pt-6 mt-8 flex items-center justify-between text-[11px] font-mono text-white/40">
+              <span>Synergistic Engine</span>
+              <span className="text-[#a855f7] font-bold">INTEGRATED_CONTENT</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  );
+};
+
+/* ═══════════════════════════════════════════════════════
+   ⚡ CONTENT BUCKETS SYSTEM SECTION
+═══════════════════════════════════════════════════════ */
+const ContentBucketsSection = () => {
+  return (
+    <section className="relative overflow-hidden px-6 py-20 sm:px-10 lg:py-24" style={{ background: '#060410' }}>
+      {/* Structural drafting grid lines */}
+      <div className="absolute inset-0 pointer-events-none opacity-[0.035]" style={{
+        backgroundImage: 'linear-gradient(rgba(173,250,59,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(168,85,247,0.1) 1px, transparent 1px)',
+        backgroundSize: '40px 40px'
+      }} />
+      <div className="absolute bottom-0 left-0 w-[450px] h-[450px] bg-gradient-to-tr from-[#adfa3b]/5 to-transparent blur-3xl rounded-full pointer-events-none" />
+
+      <div className="relative z-10 mx-auto max-w-[1200px]">
+        
+        {/* Title block */}
+        <div className="mb-14 text-center">
+          <p className="text-[11px] font-bold uppercase tracking-[0.25em] text-[#adfa3b] mb-3">Narrative Buckets</p>
+          <h2 className="font-['Montserrat'] text-[clamp(28px,4vw,52px)] font-black uppercase text-white leading-tight">
+            What's in a <span className="text-[#a855f7] italic">Content Bucket?</span>
+          </h2>
+          <p className="mt-4 max-w-2xl text-white/50 text-sm sm:text-base leading-relaxed mx-auto">
+            A content bucket is not just a list of items. It’s the visual taxonomy and modular framework behind how your brand messaging is structured and scaled.
+          </p>
+          <div className="h-[2px] w-24 bg-[#adfa3b] mx-auto mt-6 rounded-full" />
+        </div>
+
+        {/* Content Buckets Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          {[
+            { num: "CB-01", title: "Content Strategy", details: "Core positioning, content pillars, calendar structures, and brand narrative blueprints.", icon: "🎯" },
+            { num: "CB-02", title: "Website Content", details: "High-conversion landing pages, structured layout copy, and micro-copy systems.", icon: "🖥️" },
+            { num: "CB-03", title: "Social Media Content", details: "Highly shareable reels, multi-slide carousels, and high-impact static creatives.", icon: "📱" },
+            { num: "CB-04", title: "Video Content", details: "Dynamic performance ads, high-production brand films, and visual explainers.", icon: "🎥" },
+            { num: "CB-05", title: "Performance Ad Copy", details: "Direct-response copy, hook variations, and conversion-focused creative assets.", icon: "📈" },
+            { num: "CB-06", title: "Campaign Copywriting", details: "Promotional strategies, product launch text, and narrative copywriting frameworks.", icon: "✍️" },
+            { num: "CB-07", title: "SEO & Search Content", details: "Search-driven content strategy, key-phrase-optimized articles, and informational resources.", icon: "🔍" },
+            { num: "CB-08", title: "Platform-Specific Layouts", details: "Tailored content for Instagram, YouTube, Google, and emerging digital channels.", icon: "🛡️" }
+          ].map((item, idx) => (
+            <div 
+              key={idx} 
+              className="rounded-3xl border border-white/5 bg-gradient-to-b from-[#13112a]/40 to-[#080718]/40 p-6 flex flex-col justify-between hover:border-[#a855f7]/30 hover:scale-[1.02] transition-all duration-300 group min-h-[220px]"
+            >
+              <div>
+                <div className="flex justify-between items-center mb-5">
+                  <span className="font-mono text-[10px] tracking-widest text-[#adfa3b] font-black">{item.num}</span>
+                  <span className="text-xl">{item.icon}</span>
+                </div>
+                <h3 className="font-['Montserrat'] text-sm font-extrabold text-white uppercase tracking-wider mb-2 group-hover:text-[#a855f7] transition-colors duration-200">
+                  {item.title}
+                </h3>
+                <p className="text-white/50 text-[11px] leading-relaxed">
+                  {item.details}
+                </p>
+              </div>
+              <div className="mt-5 pt-3 border-t border-white/[0.03] text-[9px] font-mono text-white/30 tracking-widest">
+                VERIFIED BUCKET
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+/* ═══════════════════════════════════════════════════════
+   🌟 NARRATED BRAND STORIES GRID & CTA BANNER
+═══════════════════════════════════════════════════════ */
+const NarratedStoriesSection = () => {
+  return (
+    <section className="relative overflow-hidden px-6 py-20 sm:px-10 lg:py-28" style={{ background: '#070312' }}>
+      <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-white/5 to-transparent" />
+      <div className="absolute inset-0 opacity-[0.03] pointer-events-none" style={{
+        backgroundImage: 'radial-gradient(circle at 50% 50%, rgba(173,250,59,0.1) 0%, transparent 50%)'
+      }} />
+
+      <div className="relative z-10 mx-auto max-w-[1200px]">
+        
+        {/* Section Header */}
+        <div className="mb-14 text-center">
+          <p className="text-[11px] font-bold uppercase tracking-[0.25em] text-[#a855f7] mb-3">Narrative Archive</p>
+          <h2 className="font-['Montserrat'] text-[clamp(28px,4vw,52px)] font-black uppercase text-white leading-tight">
+            Brand Stories We Have <span className="text-[#adfa3b] italic">Narrated</span>
+          </h2>
+          <p className="mt-4 max-w-xl text-white/50 text-sm sm:text-base leading-relaxed mx-auto">
+            A curated showcase of showreels, high-production campaign videos, custom web copy, and platform-specific storytelling campaigns.
+          </p>
+          <div className="h-[2px] w-24 bg-[#a855f7] mx-auto mt-6 rounded-full" />
+        </div>
+
+        {/* 8 Stories Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mb-16">
+          {[
+            { name: "Deepthi Prashanth Showreel", cat: "Banner Showreel", icon: "🎬" },
+            { name: "WMN Women’s Day Video", cat: "Brand Film", icon: "👩" },
+            { name: "BodhiAble YouTube Video", cat: "Social Content", icon: "🎥" },
+            { name: "Samrat Restaurant Web Content", cat: "Copywriting", icon: "✍️" },
+            { name: "Aanya Hospital Content Calendar", cat: "Strategy", icon: "🗓️" },
+            { name: "Fitness Factory Script", cat: "Influencer Collab", icon: "💪" },
+            { name: "Blogs for LilBeez", cat: "SEO Articles", icon: "📝" },
+            { name: "Tent Cinema Campaign Article", cat: "PR Copy", icon: "📰" }
+          ].map((story, idx) => (
+            <div 
+              key={idx} 
+              className="rounded-2xl border border-white/5 bg-white/[0.01] p-5 hover:bg-gradient-to-b hover:from-[#110e2b]/50 hover:to-[#070312]/50 hover:border-[#adfa3b]/30 hover:shadow-[0_10px_25px_rgba(0,0,0,0.3)] transition-all duration-300 flex flex-col justify-between min-h-[120px] group"
+            >
+              <div className="flex justify-between items-start">
+                <span className="text-[9px] font-mono text-white/30 tracking-widest block mb-2 font-black uppercase">
+                  ST-0{idx + 1}
+                </span>
+                <span className="text-sm opacity-60 group-hover:scale-110 transition-transform duration-200">{story.icon}</span>
+              </div>
+              <div>
+                <h4 className="font-['Montserrat'] text-xs sm:text-sm font-extrabold text-white uppercase tracking-wide group-hover:text-[#adfa3b] transition-colors duration-200">
+                  {story.name}
+                </h4>
+                <span className="text-[8px] font-mono font-black uppercase tracking-widest text-[#a855f7] bg-[#a855f7]/10 px-2 py-0.5 rounded-md inline-block mt-3">
+                  {story.cat}
+                </span>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Let's get your brand right Banner */}
+        <div className="rounded-[32px] border border-white/5 bg-gradient-to-r from-[#110d29]/75 to-[#080411]/75 p-8 sm:p-12 backdrop-blur-md relative overflow-hidden flex flex-col md:flex-row items-center justify-between gap-8">
+          <div className="absolute inset-y-0 right-0 w-1/2 bg-[radial-gradient(circle_at_center,rgba(173,250,59,0.06)_0%,transparent_70%)] pointer-events-none" />
+          <div className="text-center md:text-left">
+            <h3 className="font-['Montserrat'] text-[24px] sm:text-[32px] font-black text-white uppercase tracking-wide mb-3">
+              Let’s get your brand right.
+            </h3>
+            <p className="text-white/60 text-sm max-w-lg leading-relaxed">
+              Ready to craft a coherent system that positions your business, scaling your trust, and maximizing your market choice metrics?
+            </p>
+          </div>
+          <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
+            <a 
+              href="/case-studies"
+              className="rounded-full px-8 py-3.5 font-['Montserrat'] text-xs font-bold uppercase tracking-[0.08em] text-center text-white border-2 border-white/10 hover:border-white/30 hover:bg-white/5 transition-all duration-200"
+            >
+              Know More
+            </a>
+            <a 
+              href="/contact"
+              className="rounded-full px-8 py-3.5 font-['Montserrat'] text-xs font-bold uppercase tracking-[0.08em] text-center text-black transition-all duration-200"
+              style={{ background: '#adfa3b' }}
+              onMouseEnter={e => { e.currentTarget.style.background = '#a855f7'; e.currentTarget.style.color = '#ffffff'; }}
+              onMouseLeave={e => { e.currentTarget.style.background = '#adfa3b'; e.currentTarget.style.color = '#000000'; }}
+            >
+              Get In Touch
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  );
+};
 
 export default ContentMarketingPage;

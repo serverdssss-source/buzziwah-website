@@ -1,7 +1,7 @@
 import React, { useEffect, useMemo, useState } from 'react';
 
 const images = [
-  '/SSD_Performance-Marketing-Webpage-3.png',
+  '/expirtise.png',
   '/SSD_Performance-Marketing-Webpage-4.png',
   '/SSD_Performance-Marketing-Webpage-5.png',
 ];
@@ -32,7 +32,23 @@ const CoverflowSection = () => {
         padding: '60px 0',
       }}
     >
-      <h2 className="coverflow-heading">WHY CHOOSE US</h2>
+      {/* High-fidelity background decorations */}
+      <div className="bbbbb-bg-decorations">
+        {/* Floating high-fidelity green navbar logo shapes */}
+        <img src="/logo.png" className="bbbbb-bg-logo bbbbb-bg-logo-1" alt="Buzziwah Decorative Logo Left" style={{ opacity: 0.12 }} />
+        <img src="/logo.png" className="bbbbb-bg-logo bbbbb-bg-logo-2" alt="Buzziwah Decorative Logo Right" style={{ opacity: 0.12 }} />
+
+        {/* Giant middle 3D watermark brand logo */}
+        <img src="/logo.png" className="bbbbb-bg-logo-3d" alt="Buzziwah Giant 3D Watermark Center" style={{ opacity: 0.04 }} />
+
+        {/* Floating technical plus particles (+) */}
+        <div className="bbbbb-tech-plus bbbbb-tp-1">+</div>
+        <div className="bbbbb-tech-plus bbbbb-tp-2">+</div>
+        <div className="bbbbb-tech-plus bbbbb-tp-3">+</div>
+        <div className="bbbbb-tech-plus bbbbb-tp-4">+</div>
+      </div>
+
+      <h2 className="coverflow-heading retro-6">WHY CHOOSE US</h2>
 
       <div className="oooocoverflow">
         <button className="oooo-arrow oooo-arrow-left" type="button" onClick={goPrev} aria-label="Previous">

@@ -17,13 +17,6 @@ const MobileServicesGrid = () => {
     <div className="mobile-only">
       <div className="ssd-wrap ssd-grid-wrap">
         <div className="ssd-grid">
-          <div className="ssd-card c1" onClick={() => window.location.href = links.branding}>
-            <div className="ssd-card__img-wrap">
-              <img className="ssd-card__img" src={encodeURI('/grid/branding.png')} alt="Branding" />
-            </div>
-            <div className="ssd-card__shimmer"></div>
-          </div>
-
           <div className="ssd-card c2" onClick={() => window.location.href = links.photography}>
             <div className="ssd-card__img-wrap">
               <img className="ssd-card__img" src={encodeURI('/grid/photograpohy.png')} alt="Photography" />
@@ -48,13 +41,6 @@ const MobileServicesGrid = () => {
           <div className="ssd-card c5" onClick={() => window.location.href = links.video}>
             <div className="ssd-card__img-wrap">
               <img className="ssd-card__img" src={encodeURI('/grid/video.png')} alt="Video Production" />
-            </div>
-            <div className="ssd-card__shimmer"></div>
-          </div>
-
-          <div className="ssd-card c6" onClick={() => window.location.href = links.web}>
-            <div className="ssd-card__img-wrap">
-              <img className="ssd-card__img" src={encodeURI('/grid/web devlopmnnt.png')} alt="Website Development" />
             </div>
             <div className="ssd-card__shimmer"></div>
           </div>

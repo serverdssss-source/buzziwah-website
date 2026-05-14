@@ -1,7 +1,10 @@
 import Section1 from './Section1';
+import BentoSection from './BentoSection';
 import Section2 from './Section2';
+import WhatIsAWebsiteToday from './WhatIsAWebsiteToday';
 import Section3 from './Section3';
 import Section4 from './Section4';
+import DeployedWebsitesGrid from './DeployedWebsitesGrid';
 import Section5 from './Section5';
 import Section6 from './Section6';
 import Section7 from './Section7';
@@ -19,9 +22,12 @@ const WebDevPage = () => (
       }
     `}</style>
     <Section1 />
+    <BentoSection />
     <Section2 />
+    <WhatIsAWebsiteToday />
     <Section3 />
     <Section4 />
+    <DeployedWebsitesGrid />
     <Section5 />
     <Section6 />
     <Section7 />

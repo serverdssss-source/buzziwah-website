@@ -1,290 +1,237 @@
-import React from 'react';
-import './Services.css';
+import React, { useRef } from 'react';
+import VariableProximity from '../components/VariableProximity';
+import './ServicesNew.css';
 
 const services = [
   {
+    num: '01',
     title: 'Social Media Management',
     text: 'Content, community, and growth strategies to keep your brand active and loved.',
     href: '/social-media',
-    image: encodeURI('/shared-purple-grid-bg.png'),
-    icon: (
-      <svg viewBox="0 0 24 24" fill="none" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-        <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
-        <path d="M16 11.37A4 4 0 1 1 12.63 8" />
-        <path d="M17.5 6.5h.01" />
-      </svg>
-    ),
+    gradient: 'from-pink-500 to-purple-600',
+    accentColor: 'text-pink-400',
+    icon: '📱',
   },
   {
+    num: '02',
     title: 'Performance Marketing',
     text: 'ROI-first paid campaigns across search, social, and display with transparent reporting.',
     href: '/performance-marketing',
-    image: encodeURI('/shared-purple-grid-bg.png'),
-    icon: (
-      <svg viewBox="0 0 24 24" fill="none" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M22 12h-4l-3 9-4-18-3 9H2" />
-      </svg>
-    ),
+    gradient: 'from-purple-500 to-indigo-600',
+    accentColor: 'text-purple-400',
+    icon: '📊',
   },
   {
+    num: '03',
     title: 'Branding & Identity',
     text: 'Build memorable brands with naming, visual systems, and clear messaging.',
     href: '/branding',
-    image: encodeURI('/shared-purple-grid-bg.png'),
-    icon: (
-      <svg viewBox="0 0 24 24" fill="none" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M12 22 9 20.8l-3 .9-.9-3L2 16l1.9-2.8L2 10l3-.9.9-3L9 7l3-1 3 1 2.1-1.9.9 3L22 10l-1.9 3L22 16l-3 .9-.9 3L16 20.8 12 22Z" />
-        <path d="m9 12 2 2 4-4" />
-      </svg>
-    ),
+    gradient: 'from-lime-400 to-green-500',
+    accentColor: 'text-lime-400',
+    icon: '✨',
   },
   {
+    num: '04',
     title: 'Website Development',
     text: 'Fast, beautiful, conversion-focused websites engineered for growth.',
     href: '/website-development',
-    image: encodeURI('/shared-purple-grid-bg.png'),
-    icon: (
-      <svg viewBox="0 0 24 24" fill="none" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-        <polyline points="16 18 22 12 16 6" />
-        <polyline points="8 6 2 12 8 18" />
-      </svg>
-    ),
+    gradient: 'from-cyan-400 to-blue-500',
+    accentColor: 'text-cyan-400',
+    icon: '💻',
   },
   {
+    num: '05',
     title: 'Video Production',
     text: 'Cinematic storytelling, ads, and product films that stop the scroll.',
     href: '/video-production',
-    image: encodeURI('/shared-purple-grid-bg.png'),
-    icon: (
-      <svg viewBox="0 0 24 24" fill="none" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M2 7a2 2 0 0 1 2-2h11a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2Z" />
-        <path d="m22 7-6 4 6 4V7Z" />
-      </svg>
-    ),
+    gradient: 'from-red-500 to-orange-500',
+    accentColor: 'text-red-400',
+    icon: '🎬',
   },
   {
+    num: '06',
     title: 'Search Engine Optimization',
     text: 'Technical and on-page optimization to keep your brand discoverable.',
     href: '/seo',
-    image: encodeURI('/shared-purple-grid-bg.png'),
-    icon: (
-      <svg viewBox="0 0 24 24" fill="none" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-        <circle cx="11" cy="11" r="7" />
-        <line x1="21" y1="21" x2="16.65" y2="16.65" />
-        <path d="m8 11 2 2 4-4" />
-      </svg>
-    ),
+    gradient: 'from-green-400 to-emerald-500',
+    accentColor: 'text-green-400',
+    icon: '🔍',
   },
   {
+    num: '07',
     title: 'Influencer Marketing',
     text: 'Creator partnerships that build trust and amplify reach.',
     href: '/influencer-marketing',
-    image: encodeURI('/shared-purple-grid-bg.png'),
-    icon: (
-      <svg viewBox="0 0 24 24" fill="none" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
-        <circle cx="9" cy="7" r="4" />
-        <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
-        <path d="M16 3.13a4 4 0 0 1 0 7.75" />
-      </svg>
-    ),
+    gradient: 'from-yellow-400 to-orange-500',
+    accentColor: 'text-yellow-400',
+    icon: '👥',
   },
   {
+    num: '08',
     title: 'Content Solutions',
     text: 'Strategy, copy, and creative assets tailored to your brand voice.',
     href: '/content-solution',
-    image: encodeURI('/shared-purple-grid-bg.png'),
-    icon: (
-      <svg viewBox="0 0 24 24" fill="none" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
-        <polyline points="14 2 14 8 20 8" />
-        <line x1="16" y1="13" x2="8" y2="13" />
-        <line x1="16" y1="17" x2="8" y2="17" />
-      </svg>
-    ),
+    gradient: 'from-indigo-400 to-purple-500',
+    accentColor: 'text-indigo-400',
+    icon: '📝',
+  },
+  {
+    num: '09',
+    title: 'Outdoor Marketing',
+    text: 'Command attention and build immense brand trust in high-traffic real-world zones.',
+    href: '/outdoor-marketing',
+    gradient: 'from-teal-400 to-cyan-500',
+    accentColor: 'text-teal-400',
+    icon: '🏙️',
   },
 ];
 
-const Services = () => (
-  <div className="services-page">
-    <section className="services-hero">
-      <img
-        className="services-hero-image"
-        src={encodeURI('/banners/services-page-banner.png')}
-        alt="Services banner"
-      />
-    </section>
 
-    <section className="services-intro">
-      <h2>Everything you need to grow online</h2>
-      <p>
-        We design integrated service stacks that connect your brand story with measurable outcomes.
-        Choose a single service or combine them into a tailored growth plan.
-      </p>
-      <p>
-        Each engagement starts with discovery, then moves into creative development, execution, and optimization.
-        That means you get strategy, production, and performance in one place.
-      </p>
-    </section>
 
-    <section className="services-grid" id="services-grid">
-      {services.map((service, index) => (
-        <a className="service-card" href={service.href} key={service.title}>
-          <div className="service-card-media">
-            <div className="service-card-icon" aria-hidden="true">{service.icon}</div>
-            <img src={service.image} alt={service.title} />
-            <span className="service-card-tag">{String(index + 1).padStart(2, '0')}</span>
+const ServiceCard3D = ({ service }) => {
+  const cardRef = useRef(null);
+  const [rotate, setRotate] = React.useState({ x: 0, y: 0 });
+  const [isHovered, setIsHovered] = React.useState(false);
+
+  const handleMouseMove = (e) => {
+    if (!cardRef.current) return;
+    const rect = cardRef.current.getBoundingClientRect();
+    const width = rect.width;
+    const height = rect.height;
+    const mouseX = e.clientX - rect.left - width / 2;
+    const mouseY = e.clientY - rect.top - height / 2;
+
+    const rX = -(mouseY / height) * 15;
+    const rY = (mouseX / width) * 15;
+
+    setRotate({ x: rX, y: rY });
+  };
+
+  const handleMouseLeave = () => {
+    setIsHovered(false);
+    setRotate({ x: 0, y: 0 });
+  };
+
+  return (
+    <a
+      href={service.href}
+      ref={cardRef}
+      onMouseMove={handleMouseMove}
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={handleMouseLeave}
+      className="service-card-3d"
+      style={{
+        transform: `perspective(1000px) rotateX(${rotate.x}deg) rotateY(${rotate.y}deg) scale(${isHovered ? 1.03 : 1})`,
+        transition: isHovered ? 'none' : 'transform 0.5s ease-out'
+      }}
+    >
+      <div className={`service-card-bg bg-gradient-to-br ${service.gradient}`} />
+      <div className="service-card-grid" />
+      <div className="service-card-corners">
+        <div className="corner-tl" />
+        <div className="corner-tr" />
+        <div className="corner-bl" />
+        <div className="corner-br" />
+      </div>
+
+      <div className="service-card-content">
+        <div className="service-card-header">
+          <div className="service-card-icon-box">
+            <span className="service-icon-emoji">{service.icon}</span>
           </div>
-          <div className="service-card-body">
-            <h3 className="service-card-title">{service.title}</h3>
-            <p className="service-card-text">{service.text}</p>
-            <span className="service-card-cta">
-              View service {'->'}
-            </span>
+          <span className="service-card-num">{service.num}</span>
+        </div>
+
+        <div className="service-card-body">
+          <h3 className={`service-card-title ${service.accentColor}`}>
+            {service.title}
+          </h3>
+          <div className={`service-card-line bg-gradient-to-r ${service.gradient}`} />
+          <p className="service-card-text">{service.text}</p>
+        </div>
+
+        <div className="service-card-footer">
+          <span className="service-card-cta">
+            View service <span className="service-arrow">→</span>
+          </span>
+        </div>
+      </div>
+    </a>
+  );
+};
+
+const Services = () => {
+  const containerRef = useRef(null);
+  
+  return (
+    <div className="services-page-new">
+      <section className="services-hero-new" ref={containerRef}>
+        <div className="services-hero-bg">
+          <div className="hero-orb hero-orb-purple" />
+          <div className="hero-orb hero-orb-lime" />
+          <div className="hero-grid" />
+        </div>
+
+        <div className="services-hero-content">
+          <div className="services-badge">
+            <span className="badge-dot" />
+            OVERVIEW // BUZZIWAH
           </div>
-        </a>
-      ))}
-    </section>
 
-    <section className="contact-form-section" id="contact">
-      <div className="contact-form-header">
-        <h2>Contact Us</h2>
-        <p>Tell us about your project and we will get back to you quickly.</p>
-      </div>
-      <div className="contact-form-inner">
-        <div className="contact-form-image">
-          <img src="/shared-contact-section-illustration.png" alt="Contact" />
-        </div>
-
-        <div>
-          <form className="contact-form">
-            <div className="form-row two">
-              <label className="form-field">
-                <span>Name *</span>
-                <input type="text" placeholder="First" required />
-              </label>
-              <label className="form-field">
-                <span>&nbsp;</span>
-                <input type="text" placeholder="Last" required />
-              </label>
+          <h1 className="services-hero-title">
+            <div style={{ marginBottom: '8px' }}>
+              <VariableProximity
+                label="Everything you need"
+                fromFontVariationSettings="'wght' 400, 'opsz' 9"
+                toFontVariationSettings="'wght' 1000, 'opsz' 40"
+                containerRef={containerRef}
+                mode="sequential"
+                autoSpeed={1.2}
+                autoIntensity={1}
+              />
             </div>
-
-            <div className="form-row two">
-              <label className="form-field">
-                <span>Email *</span>
-                <input type="email" placeholder="Email" required />
-              </label>
-              <label className="form-field">
-                <span>Numbers</span>
-                <input type="tel" placeholder="Phone" />
-              </label>
+            <div style={{ color: '#adfa3b' }}>
+              <VariableProximity
+                label="to grow online"
+                fromFontVariationSettings="'wght' 400, 'opsz' 9"
+                toFontVariationSettings="'wght' 1000, 'opsz' 40"
+                containerRef={containerRef}
+                mode="sequential"
+                autoSpeed={1.2}
+                autoIntensity={1}
+              />
             </div>
+          </h1>
 
-            <div className="form-row">
-              <label className="form-field">
-                <span>Select your Services *</span>
-                <select required>
-                  <option value="">Select your Services</option>
-                  <option>Branding</option>
-                  <option>Digital Marketing</option>
-                  <option>Performance Marketing</option>
-                  <option>Film Promotion</option>
-                  <option>Web Design</option>
-                </select>
-              </label>
+          <p className="services-hero-subtitle">
+            We design integrated service stacks that connect your brand story with measurable outcomes.
+            Choose a single service or combine them into a tailored growth plan.
+          </p>
+
+          <div className="services-hero-features">
+            <div className="hero-feature">
+              <span className="feature-icon">✦</span>
+              <span>Strategy</span>
             </div>
-
-            <div className="form-row">
-              <label className="form-field">
-                <span>Message *</span>
-                <textarea rows="5" placeholder="Comment or Message" required />
-              </label>
+            <div className="hero-feature">
+              <span className="feature-icon">✦</span>
+              <span>Production</span>
             </div>
-
-            <div className="form-actions">
-              <button type="submit">Submit</button>
+            <div className="hero-feature">
+              <span className="feature-icon">✦</span>
+              <span>Performance</span>
             </div>
-          </form>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <footer className="site-footer">
-      <div className="footer-cta">
-        <img
-          className="footer-logo"
-          src="https://sripadastudiosdigital.com/wp-content/uploads/2024/01/Copy-of-About-Us-Page-SSD-WEBSITE-DESIGN-1366-x-768-px-3.png"
-          alt="Buzziwah"
-        />
-        <div className="footer-cta-text">Ready To Get Started</div>
-        <button className="footer-cta-button" type="button">
-          Get Started {'->'}
-        </button>
-      </div>
-
-      <div className="footer-divider" />
-
-      <div className="footer-grid">
-        <div className="footer-col">
-          <h4>SUBSCRIBE TO OUR NEWSLETTER</h4>
-          <input className="footer-input" type="text" placeholder="Name" />
-          <input className="footer-input" type="email" placeholder="Email Address" />
-          <button className="footer-subscribe" type="button">
-            Subscribe
-          </button>
-        </div>
-
-        <div className="footer-col">
-          <h4>SERVICES</h4>
-          <ul>
-            <li>Performance Marketing</li>
-            <li>Social Media Management</li>
-            <li>Website Development</li>
-            <li>Branding and Re-branding</li>
-          </ul>
-        </div>
-
-        <div className="footer-col">
-          <h4>ABOUT</h4>
-          <ul>
-            <li>Our Story</li>
-            <li>Benefits</li>
-            <li>Team</li>
-            <li>Careers</li>
-          </ul>
-        </div>
-
-        <div className="footer-col">
-          <h4>NAVIGATION</h4>
-          <ul>
-            <li>Content Solution</li>
-            <li>Video Production</li>
-            <li>Search Engine Optimization</li>
-            <li>Influencer Marketing</li>
-          </ul>
-        </div>
-
-        <div className="footer-col">
-          <h4>HELP</h4>
-          <ul>
-            <li>FAQs</li>
-            <li>Contact Us</li>
-          </ul>
-        </div>
-      </div>
-
-      <div className="footer-divider" />
-
-      <div className="footer-bottom">
-        <div className="footer-socials">
-          <span className="footer-social">f</span>
-          <span className="footer-social">ig</span>
-          <span className="footer-social">yt</span>
-        </div>
-        <div className="footer-copy">2026 Buzziwah.com | All Rights Reserved</div>
-      </div>
-    </footer>
-  </div>
-);
+      <section className="services-grid-new">
+        {services.map((service) => (
+          <ServiceCard3D key={service.num} service={service} />
+        ))}
+      </section>
+    </div>
+  );
+};
 
 export default Services;

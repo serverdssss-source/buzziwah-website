@@ -38,7 +38,7 @@ const Section5 = () => (
       }}>
         Types of Websites We Do
       </p>
-      <p style={{
+      <p className="section5-subtitle" style={{
         fontSize: 'clamp(22px, 2.8vw, 34px)',
         color: '#161616', lineHeight: 1.42,
         maxWidth: 930, margin: '0 auto',
@@ -74,6 +74,10 @@ const Section5 = () => (
         .section5-grid {
           grid-template-columns: repeat(1, 1fr) !important;
           gap: 20px !important;
+        }
+        .section5-subtitle {
+          color: #2a2a2a !important;
+          font-weight: 600 !important;
         }
       }
     `}</style>

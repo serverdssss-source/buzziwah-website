@@ -40,13 +40,13 @@ export const IMProcess = () => {
   const step = processSteps[active];
 
   return (
-    <section ref={sectionRef} style={{ background: '#080808', padding: '96px 40px', position: 'relative', overflow: 'hidden', fontFamily: "'Montserrat', sans-serif" }}>
+    <section ref={sectionRef} className="im-process-section" style={{ background: '#080808', padding: '96px 40px', position: 'relative', overflow: 'hidden', fontFamily: "'Montserrat', sans-serif" }}>
       <div style={{ position: 'absolute', inset: 0, opacity: 0.04, backgroundImage: 'linear-gradient(rgba(131,205,21,0.8) 1px, transparent 1px), linear-gradient(90deg, rgba(131,205,21,0.8) 1px, transparent 1px)', backgroundSize: '60px 60px', pointerEvents: 'none' }} />
       <div style={{ position: 'absolute', top: '-200px', left: '10%', width: '600px', height: '600px', borderRadius: '50%', background: 'radial-gradient(circle, rgba(91,33,182,0.18) 0%, transparent 70%)', pointerEvents: 'none' }} />
       <div style={{ position: 'absolute', bottom: '-100px', right: '5%', width: '400px', height: '400px', borderRadius: '50%', background: 'radial-gradient(circle, rgba(131,205,21,0.10) 0%, transparent 70%)', pointerEvents: 'none' }} />
 
       <div style={{ maxWidth: '1300px', margin: '0 auto', position: 'relative', zIndex: 1 }}>
-        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', marginBottom: '64px', flexWrap: 'wrap', gap: '24px', opacity: sectionInView ? 1 : 0, transform: sectionInView ? 'translateY(0)' : 'translateY(30px)', transition: 'opacity 0.7s ease, transform 0.7s ease' }}>
+        <div className="im-process-header" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', marginBottom: '64px', flexWrap: 'wrap', gap: '24px', opacity: sectionInView ? 1 : 0, transform: sectionInView ? 'translateY(0)' : 'translateY(30px)', transition: 'opacity 0.7s ease, transform 0.7s ease' }}>
           <div>
             <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', marginBottom: '16px', padding: '5px 14px', borderRadius: '100px', border: '1px solid rgba(131,205,21,0.3)', background: 'rgba(131,205,21,0.06)' }}>
               <div style={{ width: '6px', height: '6px', borderRadius: '50%', background: '#83cd15', boxShadow: '0 0 8px #83cd15' }} />
@@ -61,7 +61,7 @@ export const IMProcess = () => {
           </p>
         </div>
 
-        <div style={{ display: 'flex', gap: '8px', marginBottom: '40px', flexWrap: 'wrap', opacity: sectionInView ? 1 : 0, transform: sectionInView ? 'translateY(0)' : 'translateY(20px)', transition: 'opacity 0.7s ease 0.15s, transform 0.7s ease 0.15s' }}>
+        <div className="im-process-buttons" style={{ display: 'flex', gap: '8px', marginBottom: '40px', flexWrap: 'wrap', opacity: sectionInView ? 1 : 0, transform: sectionInView ? 'translateY(0)' : 'translateY(20px)', transition: 'opacity 0.7s ease 0.15s, transform 0.7s ease 0.15s' }}>
           {processSteps.map((s, i) => (
             <button key={s.num} onClick={() => setActive(i)} style={{ display: 'flex', alignItems: 'center', gap: '10px', padding: '10px 20px', borderRadius: '100px', border: 'none', cursor: 'pointer', background: active === i ? s.color : 'rgba(255,255,255,0.05)', color: active === i ? '#000' : 'rgba(255,255,255,0.55)', fontFamily: "'Montserrat', sans-serif", fontSize: '13px', fontWeight: 700, letterSpacing: '0.05em', transition: 'all 0.25s ease', transform: active === i ? 'scale(1.04)' : 'scale(1)' }}>
               <span style={{ width: '22px', height: '22px', borderRadius: '50%', background: active === i ? 'rgba(0,0,0,0.2)' : 'rgba(255,255,255,0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '10px', fontWeight: 800 }}>{s.num}</span>
@@ -70,8 +70,8 @@ export const IMProcess = () => {
           ))}
         </div>
 
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '24px', opacity: sectionInView ? 1 : 0, transform: sectionInView ? 'translateY(0)' : 'translateY(30px)', transition: 'opacity 0.5s ease, transform 0.5s ease' }}>
-          <div style={{ background: 'rgba(255,255,255,0.03)', border: `1px solid ${step.color}30`, borderRadius: '24px', padding: '44px', position: 'relative', overflow: 'hidden' }}>
+        <div className="im-process-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '24px', opacity: sectionInView ? 1 : 0, transform: sectionInView ? 'translateY(0)' : 'translateY(30px)', transition: 'opacity 0.5s ease, transform 0.5s ease' }}>
+          <div className="im-process-card" style={{ background: 'rgba(255,255,255,0.03)', border: `1px solid ${step.color}30`, borderRadius: '24px', padding: '44px', position: 'relative', overflow: 'hidden' }}>
             <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: '3px', background: `linear-gradient(90deg, transparent, ${step.color}, transparent)` }} />
             <div style={{ width: '56px', height: '56px', borderRadius: '16px', background: `${step.color}18`, border: `1px solid ${step.color}40`, display: 'flex', alignItems: 'center', justifyContent: 'center', color: step.color, marginBottom: '24px' }}>{step.icon}</div>
             <div style={{ fontSize: '11px', fontWeight: 700, letterSpacing: '0.18em', textTransform: 'uppercase', color: step.color, marginBottom: '8px' }}>Step {step.num}</div>
@@ -119,12 +119,12 @@ export const IMProcess = () => {
           </div>
         </div>
 
-        <div style={{ marginTop: '24px', background: 'linear-gradient(135deg, rgba(91,33,182,0.4) 0%, rgba(131,205,21,0.15) 100%)', border: '1px solid rgba(131,205,21,0.2)', borderRadius: '20px', padding: '28px 36px', display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '20px', opacity: sectionInView ? 1 : 0, transform: sectionInView ? 'translateY(0)' : 'translateY(20px)', transition: 'opacity 0.7s ease 0.3s, transform 0.7s ease 0.3s' }}>
+        <div className="im-process-footer" style={{ marginTop: '24px', background: 'linear-gradient(135deg, rgba(91,33,182,0.4) 0%, rgba(131,205,21,0.15) 100%)', border: '1px solid rgba(131,205,21,0.2)', borderRadius: '20px', padding: '28px 36px', display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '20px', opacity: sectionInView ? 1 : 0, transform: sectionInView ? 'translateY(0)' : 'translateY(20px)', transition: 'opacity 0.7s ease 0.3s, transform 0.7s ease 0.3s' }}>
           <div>
             <div style={{ fontSize: '12px', fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: '#83cd15', marginBottom: '6px' }}>End-to-End. Always.</div>
             <div style={{ fontSize: '22px', fontWeight: 800, color: '#fff', fontFamily: "'Montserrat', sans-serif" }}>From first search to final report — we own every step.</div>
           </div>
-          <div style={{ display: 'flex', gap: '40px' }}>
+          <div className="im-process-footer-stats" style={{ display: 'flex', gap: '40px' }}>
             {[['Discovery', '01'], ['Strategy', '02'], ['Content', '03'], ['Tracking', '04']].map(([l, n]) => (
               <div key={n} style={{ textAlign: 'center' }}>
                 <div style={{ fontSize: '22px', fontWeight: 900, color: '#83cd15', fontFamily: "'Montserrat', sans-serif" }}>{n}</div>
@@ -134,7 +134,115 @@ export const IMProcess = () => {
           </div>
         </div>
       </div>
-      <style>{`@keyframes fadeSlideIn { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }`}</style>
+      <style>{`
+        @keyframes fadeSlideIn { 
+          from { opacity: 0; transform: translateY(16px); } 
+          to { opacity: 1; transform: translateY(0); } 
+        }
+        
+        @media (max-width: 1024px) {
+          .im-process-section {
+            padding: 72px 20px !important;
+          }
+          
+          .im-process-grid {
+            grid-template-columns: 1fr !important;
+            gap: 20px !important;
+          }
+          
+          .im-process-buttons {
+            gap: 6px !important;
+          }
+          
+          .im-process-buttons button {
+            font-size: 11px !important;
+            padding: 8px 14px !important;
+          }
+          
+          .im-process-buttons button span {
+            width: 18px !important;
+            height: 18px !important;
+            font-size: 9px !important;
+          }
+          
+          .im-process-card {
+            padding: 32px 24px !important;
+          }
+          
+          .im-process-card h3 {
+            font-size: 26px !important;
+          }
+          
+          .im-process-footer {
+            flex-direction: column !important;
+            text-align: center !important;
+            gap: 24px !important;
+          }
+          
+          .im-process-footer-stats {
+            justify-content: center !important;
+          }
+        }
+        
+        @media (max-width: 640px) {
+          .im-process-section {
+            padding: 56px 16px !important;
+          }
+          
+          .im-process-header {
+            margin-bottom: 40px !important;
+          }
+          
+          .im-process-header h2 {
+            font-size: clamp(32px, 9vw, 48px) !important;
+          }
+          
+          .im-process-header p {
+            max-width: 100% !important;
+            border-left: none !important;
+            padding-left: 0 !important;
+            text-align: center !important;
+          }
+          
+          .im-process-buttons {
+            flex-direction: column !important;
+            align-items: stretch !important;
+          }
+          
+          .im-process-buttons button {
+            width: 100% !important;
+            justify-content: flex-start !important;
+          }
+          
+          .im-process-card {
+            padding: 28px 20px !important;
+          }
+          
+          .im-process-card h3 {
+            font-size: 22px !important;
+            padding-right: 0 !important;
+          }
+          
+          .im-process-card ul li {
+            font-size: 14px !important;
+          }
+          
+          .im-process-footer-stats {
+            flex-direction: column !important;
+            gap: 16px !important;
+          }
+          
+          .im-process-footer-stats > div {
+            border-right: none !important;
+            border-bottom: 1px solid rgba(255,255,255,0.07) !important;
+            padding: 16px 0 !important;
+          }
+          
+          .im-process-footer-stats > div:last-child {
+            border-bottom: none !important;
+          }
+        }
+      `}</style>
     </section>
   );
 };

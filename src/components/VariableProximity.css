@@ -1,0 +1,13 @@
+.variable-proximity {
+  cursor: default;
+  display: inline-block;
+}
+
+.variable-proximity .word {
+  display: inline-block;
+}
+
+.variable-proximity .char {
+  display: inline-block;
+  font-variation-settings: inherit;
+}

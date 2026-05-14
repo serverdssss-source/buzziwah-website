@@ -3,7 +3,7 @@ const Section2 = () => {
 
   return (
     <section style={{
-      background: "url('/performance-marketing-process-bg.png') center/cover no-repeat",
+      background: 'linear-gradient(135deg, #070312 0%, #150930 50%, #070312 100%)',
       padding: '0',
       overflow: 'hidden',
       position: 'relative',

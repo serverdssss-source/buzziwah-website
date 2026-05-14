@@ -1,0 +1,94 @@
+/* Global Water, Click Ripple, and Cursor Trail Effects styling */
+
+.global-water-effect-overlay {
+  position: fixed !important;
+  inset: 0 !important;
+  width: 100vw !important;
+  height: 100vh !important;
+  pointer-events: none !important;
+  z-index: 999999 !important; /* Overlays the entire website seamlessly */
+  overflow: hidden !important;
+}
+
+/* 🌧️ Falling Rain Drops */
+.global-water-drop {
+  position: absolute;
+  top: -30px;
+  width: 3.5px;
+  height: 38px;
+  background: linear-gradient(to bottom, rgba(173, 250, 59, 0), rgba(173, 250, 59, 0.45));
+  border-radius: 99px;
+  pointer-events: none;
+  filter: blur(0.4px);
+  animation: global-water-fall linear forwards;
+}
+
+@keyframes global-water-fall {
+  0% {
+    top: -30px;
+    opacity: 0;
+    transform: scaleY(0.6);
+  }
+  15% {
+    opacity: 1;
+    transform: scaleY(1.1);
+  }
+  85% {
+    opacity: 1;
+    transform: scaleY(1.1);
+  }
+  100% {
+    top: 100%;
+    opacity: 0;
+    transform: scaleY(0.5);
+  }
+}
+
+/* 🌊 Ripple Splashdowns and User Clicks */
+.global-water-ripple {
+  position: absolute;
+  border: 3px solid rgba(173, 250, 59, 0.95);
+  border-radius: 50%;
+  pointer-events: none;
+  transform: translate(-50%, -50%) scale(0);
+  opacity: 1;
+  box-shadow: 
+    0 0 25px rgba(173, 250, 59, 0.65),
+    0 0 45px rgba(168, 85, 247, 0.45),
+    inset 0 0 20px rgba(173, 250, 59, 0.35);
+  animation: global-water-ripple-expand 1.2s cubic-bezier(0.12, 0.78, 0.28, 1) forwards;
+}
+
+@keyframes global-water-ripple-expand {
+  0% {
+    transform: translate(-50%, -50%) scale(0);
+    opacity: 0.95;
+  }
+  50% {
+    border-color: rgba(168, 85, 247, 0.85);
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1.15);
+    opacity: 0;
+  }
+}
+
+/* ✨ Dynamic Cursor Trail Particles */
+.global-cursor-trail-particle {
+  position: absolute !important;
+  border-radius: 50%;
+  pointer-events: none !important;
+  transform: translate(-50%, -50%);
+  animation: global-trail-fade 0.65s cubic-bezier(0.1, 0.8, 0.3, 1) forwards;
+}
+
+@keyframes global-trail-fade {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0.95;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(0.12);
+    opacity: 0;
+  }
+}

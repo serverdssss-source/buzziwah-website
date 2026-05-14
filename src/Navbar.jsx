@@ -94,6 +94,19 @@ const serviceLinks = [
       </svg>
     ),
   },
+  {
+    title: 'Outdoor Marketing',
+    desc: 'End-to-end real-world visibility',
+    href: '/outdoor-marketing',
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+        <rect x="2" y="3" width="20" height="12" rx="2" />
+        <line x1="5" y1="15" x2="5" y2="21" />
+        <line x1="19" y1="15" x2="19" y2="21" />
+        <line x1="2" y1="15" x2="22" y2="15" />
+      </svg>
+    ),
+  },
 ];
 
 const Navbar = () => {
@@ -147,7 +160,7 @@ const Navbar = () => {
         <div className="nav-inner">
           <a href="/" className="logo">
             <img
-              src="https://sripadastudiosdigital.com/wp-content/uploads/2024/01/Copy-of-About-Us-Page-SSD-WEBSITE-DESIGN-1366-x-768-px-3.png"
+              src="/Buzziwah_FInal_Logo_White.png"
               alt="Buzziwah"
             />
           </a>
@@ -185,6 +198,7 @@ const Navbar = () => {
                 </div>
               </div>
             </li>
+            <li><a href="/careers">Careers</a></li>
             <li><a href="/contact">Contact</a></li>
           </ul>
 
@@ -195,7 +209,7 @@ const Navbar = () => {
               </svg>
               <span>+91 99806 87439</span>
             </a>
-            <a href="https://sripadastudiosdigital.com/contact/" className="btn-cta">
+            <a href="/contact" className="btn-cta">
               Get Started
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
                 <line x1="5" y1="12" x2="19" y2="12" />
@@ -220,7 +234,7 @@ const Navbar = () => {
         <ul className="mobile-links" id="mobileLinks">
           <li><a href="/">Home</a></li>
           <li><a href="/about">About Us</a></li>
-          <li>
+          <li className={openMobileSub ? 'open' : ''}>
             <button type="button" onClick={toggleMobileSub}>
               Services
               <svg className="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -240,10 +254,11 @@ const Navbar = () => {
               </a>
             </div>
           </li>
+          <li><a href="/careers">Careers</a></li>
           <li><a href="/contact">Contact</a></li>
         </ul>
         <div className="mobile-footer">
-          <a href="https://sripadastudiosdigital.com/contact/" className="btn-cta">
+          <a href="/contact" className="btn-cta">
             Get Started {'->'}
           </a>
           <a href="tel:+919980687439" className="phone-btn">

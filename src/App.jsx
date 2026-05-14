@@ -10,18 +10,27 @@ import VideoProductionPage from './video-production';
 import WebsiteDevelopment from './website-development';
 import PerformanceMarketing from './performance-marketing';
 import SEO from './seo';
+import OutdoorMarketingPage from './outdoor-marketing';
 import Services from './services';
+import CaseStudyPage from './case-studies';
 import PageEnding from './components/PageEnding';
+import Careers from './carrer/carrer';
 import './App.css'
 
 function App() {
   const path = window.location.pathname.replace(/\/$/, '');
+  const isCaseStudy = path.startsWith('/case-study/');
 
   return (
     <>
       <>
         <Navbar />
         {(() => {
+          if (isCaseStudy) {
+            const caseId = path.substring('/case-study/'.length);
+            return <CaseStudyPage id={caseId} />;
+          }
+
           switch (path) {
             case '/about':
               return <About />;
@@ -43,13 +52,18 @@ function App() {
               return <PerformanceMarketing />;
             case '/seo':
               return <SEO />;
+            case '/outdoor-marketing':
+              return <OutdoorMarketingPage />;
             case '/services':
               return <Services />;
+            case '/careers':
+            case '/carrer':
+              return <Careers />;
             default:
               return <Home />;
           }
         })()}
-        {path !== '/about' && <PageEnding showContactForm={path !== '/contact'} />}
+        {path !== '/about' && !isCaseStudy && <PageEnding showContactForm={path !== '/contact'} />}
       </>
     </>
   )

@@ -1,15 +1,25 @@
 .von-hero {
-  min-height: 100vh;
+  min-height: 850px;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 120px 10% 80px;
+  padding: 140px 5% 120px;
   position: relative;
   overflow: hidden;
   gap: 60px;
-  background: #060612;
+  background: radial-gradient(circle at center, rgba(139, 92, 246, 0.25), transparent 40%), #12051f;
   color: #ffffff;
   font-family: 'Outfit', sans-serif;
+}
+
+.von-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.68' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.08'/%3E%3C/svg%3E");
+  mix-blend-mode: overlay;
+  z-index: 1;
 }
 
 .von-inner {
@@ -69,7 +79,7 @@
 
 /* ── LEFT ── */
 .von-left {
-  max-width: 580px;
+  max-width: 800px;
   flex-shrink: 0;
   z-index: 2;
 }
@@ -78,24 +88,24 @@
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background: rgba(123,92,255,0.12);
-  border: 1px solid rgba(123,92,255,0.35);
+  background: rgba(118, 184, 18, 0.15);
+  border: 1px solid rgba(118, 184, 18, 0.4);
   padding: 7px 16px;
   border-radius: 40px;
   font-size: 11px;
-  font-weight: 500;
+  font-weight: 600;
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: #a78bfa;
-  margin-bottom: 28px;
-  opacity: 0;
+  color: #adfa3b;
+  margin-bottom: 18px;
+  opacity: 1;
   animation: von-up 0.7s 0.1s forwards;
 }
 .von-badge-dot {
   width: 6px; height: 6px;
   border-radius: 50%;
-  background: #a78bfa;
-  box-shadow: 0 0 8px #a78bfa;
+  background: #adfa3b;
+  box-shadow: 0 0 10px #adfa3b;
   animation: von-pulse 2s infinite;
 }
 @keyframes von-pulse {
@@ -105,22 +115,22 @@
 
 .von-h1 {
   font-family: 'Geom', sans-serif;
-  font-size: clamp(24px, 3vw, 40px);
+  font-size: clamp(24px, 3.5vw, 48px);
   font-weight: 800;
   line-height: 1.15;
   letter-spacing: -0.02em;
-  margin-bottom: 22px;
+  margin-bottom: 16px;
   color: #ffffff;
-  opacity: 0;
+  opacity: 1;
   animation: von-up 0.8s 0.22s forwards;
 }
 .von-h1-main {
   display: block;
-  white-space: nowrap;
+  white-space: normal;
 }
 .von-grad {
   display: block;
-  white-space: nowrap;
+  white-space: normal;
   background: linear-gradient(110deg, #76b812, #76b812 80%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -128,21 +138,21 @@
 }
 
 .von-desc {
-  font-size: 16px;
+  font-size: 17px;
   line-height: 1.75;
-  color: rgba(255,255,255,0.5);
-  max-width: 460px;
-  margin-bottom: 40px;
-  opacity: 0;
+  color: rgba(255,255,255,0.65);
+  max-width: 720px;
+  margin-bottom: 24px;
+  opacity: 1;
   animation: von-up 0.8s 0.34s forwards;
 }
 
 .von-features {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 12px 24px;
-  margin-bottom: 44px;
-  opacity: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 28px;
+  opacity: 1;
   animation: von-up 0.8s 0.46s forwards;
 }
 .von-feature {
@@ -167,7 +177,7 @@
   display: flex;
   align-items: center;
   gap: 20px;
-  opacity: 0;
+  opacity: 1;
   animation: von-up 0.8s 0.58s forwards;
 }
 .von-cta-primary {
@@ -234,7 +244,7 @@
   margin-top: 44px;
   padding-top: 32px;
   border-top: 1px solid rgba(255,255,255,0.08);
-  opacity: 0;
+  opacity: 1;
   animation: von-up 0.8s 0.7s forwards;
 }
 .von-avatars { display: flex; }
@@ -253,39 +263,121 @@
 
 /* ── RIGHT ── */
 .von-right {
-  flex: 0 0 auto;
-  width: 480px;
+  flex: 1.2;
+  max-width: 620px;
+  width: 100%;
   position: relative;
   z-index: 2;
-  opacity: 0;
+  opacity: 1;
   animation: von-fadeIn 1s 0.3s forwards;
 }
 
-.von-img-wrap {
+/* ── FUTURISTIC OS-WINDOW GIF CONTAINER ── */
+.von-gif-container-wrapper {
   position: relative;
+  width: 100%;
+}
+
+.von-gif-frame {
+  background: rgba(11, 11, 31, 0.45);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(167, 139, 250, 0.25);
   border-radius: 24px;
   overflow: hidden;
-  box-shadow: 0 40px 100px rgba(0,0,0,0.7), 0 0 0 1px rgba(255,255,255,0.08);
-  animation: von-float 7s ease-in-out infinite;
+  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.6), 
+              0 0 40px rgba(167, 139, 250, 0.15);
+  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
 }
-@keyframes von-float {
-  0%,100% { transform: translateY(0); }
-  50%      { transform: translateY(-14px); }
+
+.von-gif-container-wrapper:hover .von-gif-frame {
+  transform: translateY(-8px) scale(1.02);
+  border-color: rgba(118, 184, 18, 0.45);
+  box-shadow: 0 40px 90px rgba(0, 0, 0, 0.8), 
+              0 0 50px rgba(118, 184, 18, 0.25);
 }
-.von-img-wrap img {
-  width: 100%;
+
+.von-gif-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 20px;
+  background: rgba(255, 255, 255, 0.03);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.von-gif-dots {
+  display: flex;
+  gap: 8px;
+}
+
+.von-gif-dots span {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
   display: block;
-  border-radius: 24px;
-  filter: brightness(0.88) saturate(0.95);
-  transition: filter 0.4s;
 }
-.von-img-wrap:hover img { filter: brightness(0.95) saturate(1.05); }
-.von-img-wrap::after {
-  content: "";
-  position: absolute; inset: 0;
-  background: linear-gradient(160deg, rgba(123,92,255,0.15) 0%, transparent 60%, rgba(0,210,255,0.12) 100%);
-  border-radius: 24px;
-  pointer-events: none;
+
+.von-gif-dot-r { background: #ff5f56; }
+.von-gif-dot-y { background: #ffbd2e; }
+.von-gif-dot-g { background: #27c93f; }
+
+.von-gif-title {
+  font-family: monospace;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: rgba(255, 255, 255, 0.5);
+  text-transform: uppercase;
+}
+
+.von-gif-body {
+  position: relative;
+  padding: 12px;
+  background: #000000;
+  border-radius: 0 0 24px 24px;
+  overflow: hidden;
+}
+
+.von-gif-body iframe {
+  border-radius: 12px !important;
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
+}
+
+/* ── BLOCK ALL HOVER/CLICK EVENTS ON THE IFRAME TO HIDE WATERMARKS ── */
+.von-gif-blocker {
+  position: absolute;
+  inset: 12px;
+  background: transparent;
+  z-index: 10;
+  border-radius: 12px;
+  cursor: default;
+}
+
+.von-gif-badge {
+  position: absolute;
+  bottom: -12px;
+  right: 18px;
+  background: #76b812;
+  color: #ffffff;
+  font-family: 'Syne', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 900;
+  letter-spacing: 0.15em;
+  padding: 6px 14px;
+  border-radius: 999px;
+  box-shadow: 0 10px 20px rgba(118, 184, 18, 0.35);
+  z-index: 5;
+  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.von-gif-container-wrapper:hover .von-gif-badge {
+  transform: translateY(-12px) scale(1.08);
+  background: #ffffff;
+  color: #76b812;
 }
 
 /* ── CARDS ── */

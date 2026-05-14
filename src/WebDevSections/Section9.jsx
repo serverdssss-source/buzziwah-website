@@ -136,7 +136,7 @@ const reviews = [
     color: '#7c3aed',
     time: '2 months ago',
     stars: 5,
-    text: 'Working with Fugensys was a seamless experience. They delivered a high-quality, professional website exactly on...',
+    text: 'Working with BUZZIWAH was a seamless experience. They delivered a high-quality, professional website exactly on...',
   },
   {
     name: 'Ananya Sharma',
@@ -144,7 +144,7 @@ const reviews = [
     color: '#ec4899',
     time: '1 month ago',
     stars: 5,
-    text: 'Extremely satisfied with the results. Fugensys provided a sleek mobile-responsive design that boosted our site traffic by 40%.',
+    text: 'Extremely satisfied with the results. BUZZIWAH provided a sleek mobile-responsive design that boosted our site traffic by 40%.',
   },
   {
     name: 'Karthik Nair',
@@ -200,7 +200,7 @@ const reviews = [
     color: '#f43f5e',
     time: '6 months ago',
     stars: 5,
-    text: 'Professional, timely, and innovative. Fugensys is definitely our go-to for all digital development needs.',
+    text: 'Professional, timely, and innovative. BUZZIWAH is definitely our go-to for all digital development needs.',
   },
 ];
 

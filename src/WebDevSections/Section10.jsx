@@ -26,12 +26,12 @@ const Section10 = () => {
 
   return (
     <section className="section10-container" style={{
-      background: '#0d0d1a',
-      padding: '108px 6% 126px',
+      background: 'transparent',
+      padding: '80px 6% 100px',
       boxSizing: 'border-box',
       position: 'relative',
       overflow: 'hidden',
-      minHeight: '600px',
+      minHeight: '500px',
       display: 'flex',
       alignItems: 'center'
     }}>

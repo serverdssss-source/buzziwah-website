@@ -21,7 +21,7 @@ const Section3 = () => {
   ];
 
   return (
-    <section style={{
+    <section className="webdev-section3" style={{
       background: '#ffffff',
       padding: '90px 6% 32px',
       height: '100vh',
@@ -50,7 +50,7 @@ const Section3 = () => {
       }} />
 
       {/* Category label */}
-      <p style={{
+      <p className="section3-category-label" style={{
         textAlign: 'center',
         fontFamily: "'Nunito Sans', sans-serif",
         fontSize: 22, fontWeight: 800,
@@ -209,24 +209,50 @@ const Section3 = () => {
           }
         }
         @media (max-width: 1024px) {
+          .webdev-section3 {
+            height: auto !important;
+            overflow: visible !important;
+            padding: 48px 6% 32px !important;
+          }
+          .section3-category-label {
+            margin-bottom: 24px !important;
+          }
           .section3-main-row {
             flex-direction: column !important;
-            gap: 40px !important;
+            gap: 24px !important;
             flex-wrap: wrap !important;
+          }
+          .section3-video-col {
+            transform: none !important;
+            margin-bottom: 12px !important;
           }
           .section3-video-col, .section3-content-col {
             flex: 1 1 100% !important;
             max-width: 100% !important;
           }
+          .section3-content-col {
+            display: flex !important;
+            flex-direction: column !important;
+            align-items: center !important;
+            text-align: center !important;
+          }
           .section3-lists {
             display: flex !important;
             flex-wrap: wrap !important;
+            gap: 24px !important;
+            width: 100% !important;
+            justify-content: center !important;
+            text-align: left !important;
           }
           .section3-headline {
             font-size: 24px !important;
+            white-space: normal !important;
+            text-align: center !important;
           }
           .section3-para {
             font-size: 18px !important;
+            margin-bottom: 24px !important;
+            text-align: center !important;
           }
         }
       `}</style>
@@ -272,10 +298,13 @@ const CaseBadge = ({ dark = false, scale = 1 }) => (
 const KnowMoreBtn = ({ dark = false, scale = 1 }) => {
   const [h, setH] = useState(false);
   return (
-    <button
+    <a
+      href="/case-studies"
       onMouseEnter={() => setH(true)}
       onMouseLeave={() => setH(false)}
       style={{
+        display: 'inline-block',
+        textDecoration: 'none',
         position: 'relative', overflow: 'hidden',
         background: h ? '#5b21b6' : '#7c3aed',
         color: '#fff',
@@ -290,10 +319,11 @@ const KnowMoreBtn = ({ dark = false, scale = 1 }) => {
         boxShadow: h ? `0 ${10 * scale}px ${25 * scale}px rgba(124,58,237,0.5)` : `0 ${4 * scale}px ${15 * scale}px rgba(124,58,237,0.3)`,
         fontFamily: "'Nunito Sans', sans-serif",
         marginTop: 32 * scale,
+        textAlign: 'center'
       }}
     >
       Know More
-    </button>
+    </a>
   );
 };
 

@@ -1,172 +1,307 @@
 import React from 'react';
-import ServicesGrid from './ServicesGrid';
-import MobileServicesGrid from './MobileServicesGrid';
-import CoverflowSection from './CoverflowSection';
+import './Home.css';
+import UpscaleGrid from './UpscaleGrid';
 import ContentSalesSection from './ContentSalesSection';
 import DigitalMarketingSection from './DigitalMarketingSection';
 import ClienteleSection from './ClienteleSection';
 import VisibleOnlineSection from './VisibleOnlineSection';
 import Section10 from '../WebDevSections/Section10';
+import NearbyStudioSection from './NearbyStudioSection';
+import StatsSection from './StatsSection';
+import ShuffleCards from './projects';
+
+const caseStudies = [
+  {
+    img: 'branding_case.png',
+    pill: 'Branding Project',
+    title: 'Cohesive Brand Identity',
+    tag: 'Complete corporate identity, style guides, logo design, stationery, and premium brand system.',
+    url: '/branding'
+  },
+  {
+    img: 'hearfon_case.png',
+    pill: 'Ad Production',
+    title: 'HearFon Clinic',
+    tag: 'Professional medical healthcare ad campaigns, corporate identity, and audience media engagement.',
+    url: 'https://hearfon.com/'
+  },
+  {
+    img: 'wmn_case.png',
+    pill: 'Content Marketing',
+    title: 'WMN Healthcare',
+    tag: 'Premium women and maternal wellness portals, targeted content strategies and digital performance.',
+    url: 'https://wmnhealthcare.com/'
+  },
+  {
+    img: 'tentcinema_case.png',
+    pill: 'Social Campaigns',
+    title: 'Tent Cinema',
+    tag: 'Vibrant filmmaking school ad positioning, lead capture funnels and local community growth.',
+    url: 'https://tentcinema.com/'
+  },
+  {
+    img: 'kovedaa_case.png',
+    pill: 'E-Commerce Website',
+    title: 'Kovedaa Ayurveda',
+    tag: 'Luxury organic ayurvedic skincare online storefront, modern brand collateral and product shoots.',
+    url: 'https://kovedaa.com/'
+  },
+  {
+    img: 'srichakra_case.png',
+    pill: 'Branding & Web',
+    title: 'Sindoor Collection',
+    tag: 'Because her beauty deserves to shine a little brighter. Refined brand identities, custom websites, and creative product shoots.',
+    url: '/case-study/sindoor-collection'
+  }
+];
+
+const WaterDropletEffect = () => {
+  const [drops, setDrops] = React.useState([]);
+  const [ripples, setRipples] = React.useState([]);
+  const containerRef = React.useRef(null);
+
+  React.useEffect(() => {
+    // 1. Auto spawn falling water drops
+    const dropInterval = setInterval(() => {
+      const id = Math.random().toString(36).substring(2, 9);
+      const left = Math.random() * 100;
+      const scale = 0.3 + Math.random() * 0.7; // size variance
+      const speed = 1.8 + Math.random() * 2.2; // 1.8s to 4s speed
+
+      setDrops((prev) => [...prev, { id, left, scale, speed }]);
+
+      // When the drop reaches the bottom, spawn a beautiful ripple!
+      setTimeout(() => {
+        // Remove the drop
+        setDrops((prev) => prev.filter((d) => d.id !== id));
+
+        // Create a concentric ripple at the bottom where it fell
+        const rippleId = Math.random().toString(36).substring(2, 9);
+        const size = 30 + Math.random() * 50; // ripple size variance
+        setRipples((prev) => [
+          ...prev,
+          { id: rippleId, x: left, y: 90 + Math.random() * 8, size }
+        ]);
+
+        // Remove the ripple after its animation is complete
+        setTimeout(() => {
+          setRipples((prev) => prev.filter((r) => r.id !== rippleId));
+        }, 1200);
+
+      }, speed * 1000);
+    }, 400); // spawn a droplet every 400ms
+
+    return () => clearInterval(dropInterval);
+  }, []);
+
+  React.useEffect(() => {
+    const handleGlobalClick = (e) => {
+      if (!containerRef.current) return;
+      const parentSection = containerRef.current.closest('.case-studies-section');
+      if (!parentSection) return;
+
+      // Check if click was on or inside the interactive tabs/cards to avoid disturbing focused action clicks
+      if (e.target.closest('.case-tab-item') || e.target.closest('.case-showcase-card')) {
+        return;
+      }
+
+      const rect = parentSection.getBoundingClientRect();
+      // Only trigger if click is inside the Case Studies section bounds
+      if (
+        e.clientX >= rect.left &&
+        e.clientX <= rect.right &&
+        e.clientY >= rect.top &&
+        e.clientY <= rect.bottom
+      ) {
+        const x = ((e.clientX - rect.left) / rect.width) * 100;
+        const y = ((e.clientY - rect.top) / rect.height) * 100;
+        const rippleId = Math.random().toString(36).substring(2, 9);
+        const size = 120 + Math.random() * 60; // larger ripple for clicks!
+
+        setRipples((prev) => [
+          ...prev,
+          { id: rippleId, x, y, size }
+        ]);
+
+        setTimeout(() => {
+          setRipples((prev) => prev.filter((r) => r.id !== rippleId));
+        }, 1200);
+      }
+    };
+
+    window.addEventListener('click', handleGlobalClick);
+    return () => window.removeEventListener('click', handleGlobalClick);
+  }, []);
+
+  return (
+    <div ref={containerRef} className="water-droplet-container">
+      {/* Falling droplet visual tracks */}
+      {drops.map((drop) => (
+        <div
+          key={drop.id}
+          className="water-drop"
+          style={{
+            left: `${drop.left}%`,
+            animationDuration: `${drop.speed}s`,
+            transform: `scale(${drop.scale})`
+          }}
+        />
+      ))}
+
+      {/* Dynamic concentric expanding ripples */}
+      {ripples.map((ripple) => (
+        <div
+          key={ripple.id}
+          className="water-ripple"
+          style={{
+            left: `${ripple.x}%`,
+            top: `${ripple.y}%`,
+            width: `${ripple.size}px`,
+            height: `${ripple.size}px`
+          }}
+        />
+      ))}
+    </div>
+  );
+};
 
 const Home = () => {
   const [openFaqIndex, setOpenFaqIndex] = React.useState(0);
+  const [activeCaseIndex, setActiveCaseIndex] = React.useState(0);
+  
+  const activeCase = caseStudies[activeCaseIndex];
+  
+  // High-fidelity Scroll Reveal Engine
+  React.useEffect(() => {
+    const observerOptions = {
+      threshold: 0.12,
+      rootMargin: "0px 0px -50px 0px"
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("is-visible");
+        }
+      });
+    }, observerOptions);
+
+    const revealElements = document.querySelectorAll(".scroll-reveal");
+    revealElements.forEach((el) => observer.observe(el));
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <div className="bg-black">
-      <DigitalMarketingSection />
-
-      <div className="desktop-only">
-        <section className="ssd-wrap ssd-center ssd-hero" style={{ paddingTop: '40px', paddingBottom: '20px' }}>
-          <div style={{ width: '100%', maxWidth: '1200px' }}>
-            <h2 className="ssd-heading mb-2">WELCOME TO THE WORLD OF UPSCALE</h2>
-            <h3 className="ssd-subheading mb-6">PICK YOUR SERVICES</h3>
-          </div>
-        </section>
-        <ServicesGrid />
+      <div className="scroll-reveal reveal-fade-in">
+        <DigitalMarketingSection />
       </div>
 
-      <div className="mobile-only">
-        <section className="ssd-wrap ssd-center ssd-hero" style={{ paddingTop: '40px', paddingBottom: '20px' }}>
-          <div style={{ width: '100%', maxWidth: '1200px' }}>
-            <h2 className="ssd-heading mb-2">WELCOME TO THE WORLD OF UPSCALE</h2>
-            <h3 className="ssd-subheading mb-6">PICK YOUR SERVICES</h3>
-          </div>
-        </section>
-        <MobileServicesGrid />
+      <div className="scroll-reveal reveal-slide-up">
+        <UpscaleGrid />
       </div>
 
-      <CoverflowSection />
+      <div className="scroll-reveal reveal-zoom-in">
+        <NearbyStudioSection />
+      </div>
 
-      <ContentSalesSection />
+      <div className="scroll-reveal reveal-slide-right">
+        <ContentSalesSection />
+      </div>
 
-      <ClienteleSection />
-
-      <section className="case-studies-section">
-        <div className="case-studies-inner">
-          <p className="case-studies-kicker">OUR PROJECTS</p>
-          <h2 className="case-studies-title">OUR BEST CASE STUDIES</h2>
-        </div>
-
-        <div className="case-studies-scroll">
-          <div className="case-studies-track">
-            {[
-              { img: 'ChatGPT-Image-Mar-18_-2026_-12_23_51-PM.png', pill: 'Cohesive Brand Identity', tag: 'Branding' },
-              { img: 'hearfon.png', pill: 'HearFon', tag: 'Ad Production' },
-              { img: 'wmn.png', pill: 'WMN', tag: 'Website, Content Marketing, Performance Marketing' },
-              { img: 'tc.png', pill: 'Tent Cinema', tag: 'Social Media Marketing, Campaign & Lead Generation' },
-              { img: 'kovedaa.png', pill: 'Kovedaa', tag: 'Branding, E-Commerce Website, Product shoot, Content Marketing' },
-              { img: 'sc.png', pill: 'Sri Chakra Jewellery', tag: 'Branding, Website, Product Creative Shoot' },
-            ].map((item, idx) => (
-              <div className="case-card" key={`case-${idx}`}>
-                <div
-                  className="case-media"
-                  style={{ backgroundImage: `url(${encodeURI(`/best works/${item.img}`)})` }}
-                />
-                <div className="case-overlay">
-                  <div className="case-icon" aria-hidden="true">
-                    <span>↗</span>
-                  </div>
-                </div>
-                <div className="case-tags">
-                  <span className="case-pill">{item.pill}</span>
-                  <div className="case-bottom-bar">
-                    <span>{item.tag}</span>
-                  </div>
-                </div>
-              </div>
-            ))}
-            {[
-              { img: 'ChatGPT-Image-Mar-18_-2026_-12_23_51-PM.png', pill: 'Cohesive Brand Identity', tag: 'Branding' },
-              { img: 'hearfon.png', pill: 'HearFon', tag: 'Ad Production' },
-              { img: 'wmn.png', pill: 'WMN', tag: 'Website, Content Marketing, Performance Marketing' },
-              { img: 'tc.png', pill: 'Tent Cinema', tag: 'Social Media Marketing, Campaign & Lead Generation' },
-              { img: 'kovedaa.png', pill: 'Kovedaa', tag: 'Branding, E-Commerce Website, Product shoot, Content Marketing' },
-              { img: 'sc.png', pill: 'Sri Chakra Jewellery', tag: 'Branding, Website, Product Creative Shoot' },
-            ].map((item, idx) => (
-              <div className="case-card" key={`case-${idx}-dup`}>
-                <div
-                  className="case-media"
-                  style={{ backgroundImage: `url(${encodeURI(`/best works/${item.img}`)})` }}
-                />
-                <div className="case-overlay">
-                  <div className="case-icon" aria-hidden="true">
-                    <span>↗</span>
-                  </div>
-                </div>
-                <div className="case-tags">
-                  <span className="case-pill">{item.pill}</span>
-                  <div className="case-bottom-bar">
-                    <span>{item.tag}</span>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <ShuffleCards />
 
       <section className="growth-section">
         <div className="growth-inner">
           <div className="growth-content">
-            <div className="growth-kicker bbbbb-fiu" style={{ '--fiu-delay': '0.05s' }}>
+            <div className="growth-kicker">
               <span className="growth-kicker-dot" aria-hidden="true" />
               <span>Driven by Passion. Quality. Dedication.</span>
             </div>
-            <h2 className="growth-title bbbbb-fiu" style={{ '--fiu-delay': '0.18s' }}>
-              <span className="growth-title-main">Grow with</span>
+            <h2 className="growth-title retro-9">
+              Grow with
               <span className="growth-title-accent">Buzziwah</span>
             </h2>
-            <p className="growth-lead bbbbb-fiu" style={{ '--fiu-delay': '0.36s' }}>
+            <p className="growth-lead">
               Because “trying” isn’t a growth strategy.
             </p>
 
-            <ul className="growth-list bbbbb-fiu" style={{ '--fiu-delay': '0.46s' }}>
-              <li>
-                <span className="growth-list-icon" aria-hidden="true">✦</span>
-                <span>A presence that stays visible—consistently, confidently</span>
-              </li>
-              <li>
-                <span className="growth-list-icon" aria-hidden="true">✦</span>
-                <span>A brand that builds trust, not just attention</span>
-              </li>
-              <li>
-                <span className="growth-list-icon" aria-hidden="true">✦</span>
-                <span>Smarter investments that deliver real returns</span>
-              </li>
-              <li>
-                <span className="growth-list-icon" aria-hidden="true">✦</span>
-                <span>Reach that’s precise, not wasted</span>
-              </li>
-              <li>
-                <span className="growth-list-icon" aria-hidden="true">✦</span>
-                <span>Decisions driven by data, not assumptions</span>
-              </li>
-            </ul>
-
-            <div className="growth-cta bbbbb-fiu" style={{ '--fiu-delay': '0.58s' }}>
-              <button className="growth-button" type="button">
-                Start a Project <span aria-hidden="true">→</span>
-              </button>
+            <div className="growth-cta">
+              <a href="/contact" className="growth-button">
+                Start a Project <span>→</span>
+              </a>
             </div>
           </div>
 
-          <div className="growth-visual bbbbb-fiu" style={{ '--fiu-delay': '0.24s' }}>
-            <div className="growth-visual-shell">
-              <div className="growth-badge growth-badge-top">Brand-Led Growth</div>
-              <img className="growth-image" src="/home-growth-section-visual.png" alt="Growth showcase" />
-              <div className="growth-badge growth-badge-bottom">Digital visibility that converts</div>
+          <div className="growth-cards-grid">
+            <div className="growth-card growth-card-1">
+              <div className="growth-card-icon-box">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg>
+              </div>
+              <div className="growth-card-content">
+                <span className="growth-card-num">01</span>
+                <h3 className="growth-card-title retro-sm">Brand Visibility</h3>
+                <p className="growth-card-desc">Build a presence that stays visible across every digital platform your audience uses.</p>
+              </div>
+            </div>
+
+            <div className="growth-card growth-card-2">
+              <div className="growth-card-icon-box">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              </div>
+              <div className="growth-card-content">
+                <span className="growth-card-num">02</span>
+                <h3 className="growth-card-title retro-sm">Customer Trust</h3>
+                <p className="growth-card-desc">Create authentic connections that turn first-time visitors into loyal customers.</p>
+              </div>
+            </div>
+
+            <div className="growth-card growth-card-3">
+              <div className="growth-card-icon-box">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+              </div>
+              <div className="growth-card-content">
+                <span className="growth-card-num">03</span>
+                <h3 className="growth-card-title retro-sm">Smart Growth</h3>
+                <p className="growth-card-desc">Marketing strategies that deliver measurable results and real business growth.</p>
+              </div>
+            </div>
+
+            <div className="growth-card growth-card-4">
+              <div className="growth-card-icon-box">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
+              </div>
+              <div className="growth-card-content">
+                <span className="growth-card-num">04</span>
+                <h3 className="growth-card-title font-bold retro-sm">Target Precision</h3>
+                <p className="growth-card-desc">Reach the right people at the right time with data-driven targeting.</p>
+              </div>
+            </div>
+
+            <div className="growth-card growth-card-5">
+              <div className="growth-card-icon-box">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+              </div>
+              <div className="growth-card-content">
+                <span className="growth-card-num">05</span>
+                <h3 className="growth-card-title retro-sm">Data Insights</h3>
+                <p className="growth-card-desc">Make informed decisions backed by analytics, metrics, and proven performance data.</p>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      <VisibleOnlineSection />
+      <div className="scroll-reveal reveal-fade-in">
+        <VisibleOnlineSection />
+      </div>
 
       <section className="faq-showcase" id="faq">
         <div className="faq-inner">
           <div className="faq-header">
             <div className="faq-title-block">
-              <h2>Any questions?</h2>
-              <h3>We got you.</h3>
+              <h2 className="retro-1">Any questions?</h2>
             </div>
             <p className="faq-intro">
               Have something on your mind? Whether it’s about our services, process, timelines, or
@@ -242,7 +377,34 @@ const Home = () => {
         </div>
       </section>
 
-      <Section10 />
+      <ClienteleSection />
+
+      <section className="home-bottom-megablock relative overflow-hidden">
+        {/* High-fidelity background decorations inherited from 'Look what we did' */}
+        <div className="bbbbb-bg-decorations pointer-events-none select-none">
+            <div className="bbbbb-orb bbbbb-orb-purple" style={{ top: '10%', left: '5%' }} />
+            <div className="bbbbb-orb bbbbb-orb-lime" style={{ bottom: '15%', right: '5%' }} />
+            <div className="bbbbb-grid-perspective" style={{ opacity: 0.4 }} />
+            
+            <svg className="bbbbb-decor-waves opacity-10" viewBox="0 0 1440 800" fill="none">
+              <path d="M-200,400 Q720,-100 1640,400" stroke="rgba(168, 85, 247, 0.3)" strokeWidth="1" strokeDasharray="10 10" />
+              <circle cx="1200" cy="200" r="150" stroke="rgba(173, 250, 59, 0.2)" strokeWidth="1" />
+            </svg>
+
+            {/* Technical plus particles */}
+            <div className="bbbbb-tech-plus" style={{ top: '20%', left: '10%', color: '#adfa3b' }}>+</div>
+            <div className="bbbbb-tech-plus" style={{ bottom: '30%', right: '15%', color: '#8b5cf6' }}>+</div>
+        </div>
+
+        <div className="relative z-10">
+          <div className="scroll-reveal reveal-slide-up">
+            <StatsSection />
+          </div>
+          <div className="scroll-reveal reveal-slide-up">
+            <Section10 />
+          </div>
+        </div>
+      </section>
     </div>
   );
 };
