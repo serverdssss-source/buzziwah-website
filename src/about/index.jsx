@@ -1211,18 +1211,18 @@ const About = () => {
               const teamMembers = [
                 {
                   name: 'PHANI SRIVATSA PV',
-                  role: 'CEO',
-                  desc: 'Leads the vision and strategy, driving innovation and growth across all creative and business operations.'
+                  role: 'EDITOR | DEVELOPER',
+                  desc: 'Crafts seamless digital platforms, cuts high-impact cinematic edits, and codes with relentless energy.'
                 },
                 {
                   name: 'SATISH MS',
-                  role: 'PRODUCTION HEAD',
-                  desc: 'Oversees all production workflows, ensuring seamless execution from concept to final delivery.'
+                  role: 'UX DESIGNER | EDITOR',
+                  desc: 'Fuses user psychology with clean aesthetics, shaping intuitive digital flows and master cuts.'
                 },
                 {
                   name: 'RAKSHA S',
-                  role: 'CONTENT STRATEGIST',
-                  desc: 'Develops data-driven content strategies that amplify brand voice and drive meaningful engagement.'
+                  role: 'CONTENT WRITER',
+                  desc: 'Weaves viral hooks and immersive storytelling narratives that keep audiences hooked.'
                 },
                 {
                   name: 'SATHWIK NJ',
@@ -1236,8 +1236,8 @@ const About = () => {
                 },
                 {
                   name: 'MANISH N',
-                  role: 'DIGITAL BRAND PHOTOGRAPHER',
-                  desc: 'Captures compelling brand stories through photography, creating visual narratives that resonate and convert.'
+                  role: 'PHOTOGRAPHER',
+                  desc: 'Frames high-delivery moments, capturing chaotic creative energy with cinematic precision.'
                 },
                 {
                   name: 'VYSHNAVI AM',
@@ -1276,13 +1276,8 @@ const About = () => {
                 },
                 {
                   name: 'AMITHA SHETTY',
-                  role: 'GRAPHIC DESIGNER',
-                  desc: 'Creates stunning visual designs and brand identities that communicate powerfully and leave lasting impressions.'
-                },
-                {
-                  name: 'GAUTHAM',
-                  role: 'FINANCE HEAD',
-                  desc: 'Manages financial operations, budgeting, and strategic planning to ensure sustainable business growth.'
+                  role: 'DESIGNER',
+                  desc: 'Engineers gorgeous branding elements, layout iconography, and brand identity toolkits.'
                 },
                 {
                   name: 'HARIPRASAD',
