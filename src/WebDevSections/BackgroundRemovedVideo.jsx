@@ -12,6 +12,7 @@ const BackgroundRemovedVideo = ({
   const videoRef = useRef(null);
   const canvasRef = useRef(null);
   const frameRef = useRef(0);
+  const isVisibleRef = useRef(false);
 
   useEffect(() => {
     const video = videoRef.current;
@@ -22,6 +23,16 @@ const BackgroundRemovedVideo = ({
     if (!ctx) return undefined;
 
     let isMounted = true;
+    let lastFrameTime = 0;
+    const TARGET_FPS = 15; // 15fps is plenty for background removal effect
+    const FRAME_INTERVAL = 1000 / TARGET_FPS;
+
+    // Only process when visible in viewport
+    const observer = new IntersectionObserver(
+      ([entry]) => { isVisibleRef.current = entry.isIntersecting; },
+      { rootMargin: '100px' }
+    );
+    observer.observe(canvas);
 
     const resizeCanvas = () => {
       const width = video.videoWidth || 1280;
@@ -30,11 +41,16 @@ const BackgroundRemovedVideo = ({
       canvas.height = height;
     };
 
-    const processFrame = () => {
-      if (!isMounted || video.paused || video.ended) {
-        frameRef.current = requestAnimationFrame(processFrame);
-        return;
-      }
+    const processFrame = (timestamp) => {
+      frameRef.current = requestAnimationFrame(processFrame);
+
+      if (!isMounted || video.paused || video.ended) return;
+      if (!isVisibleRef.current) return; // skip when off-screen
+
+      // Throttle to 15fps
+      const delta = timestamp - lastFrameTime;
+      if (delta < FRAME_INTERVAL) return;
+      lastFrameTime = timestamp - (delta % FRAME_INTERVAL);
 
       if (canvas.width !== video.videoWidth || canvas.height !== video.videoHeight) {
         resizeCanvas();
@@ -60,19 +76,16 @@ const BackgroundRemovedVideo = ({
 
         if (nearWhite || nearBlack) {
           let alpha = 255;
-
           if (nearWhite) {
             alpha = clamp(((highThreshold + 12 - luminance) / 12) * 255, 0, 255);
           } else if (nearBlack) {
             alpha = clamp(((luminance - Math.max(lowThreshold - 10, 0)) / 10) * 255, 0, 255);
           }
-
           data[i + 3] = alpha;
         }
       }
 
       ctx.putImageData(frame, 0, 0);
-      frameRef.current = requestAnimationFrame(processFrame);
     };
 
     const start = () => {
@@ -92,6 +105,7 @@ const BackgroundRemovedVideo = ({
 
     return () => {
       isMounted = false;
+      observer.disconnect();
       video.removeEventListener('loadedmetadata', resizeCanvas);
       video.removeEventListener('play', start);
       if (frameRef.current) cancelAnimationFrame(frameRef.current);
@@ -116,7 +130,7 @@ const BackgroundRemovedVideo = ({
         loop
         muted
         playsInline
-        preload="auto"
+        preload="none"
         style={{ display: 'none' }}
       />
       <canvas

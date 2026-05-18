@@ -1,12 +1,20 @@
 import { forwardRef, useRef, useEffect } from 'react';
 import './VariableProximity.css';
 
+// Throttled animation frame hook — runs at ~30fps instead of 60fps
 function useAnimationFrame(callback) {
   useEffect(() => {
     let frameId;
-    const loop = () => {
-      callback();
+    let lastTime = 0;
+    const TARGET_FPS = 30;
+    const FRAME_INTERVAL = 1000 / TARGET_FPS;
+
+    const loop = (timestamp) => {
       frameId = requestAnimationFrame(loop);
+      const delta = timestamp - lastTime;
+      if (delta < FRAME_INTERVAL) return; // skip frame
+      lastTime = timestamp - (delta % FRAME_INTERVAL);
+      callback();
     };
     frameId = requestAnimationFrame(loop);
     return () => cancelAnimationFrame(frameId);
@@ -35,61 +43,85 @@ const VariableProximity = forwardRef((props, ref) => {
   const mousePos = useRef({ x: 0, y: 0 });
   const activeLetters = useRef(new Set());
   const lastChangeTime = useRef(0);
+  const isVisible = useRef(false);
+  const wrapperRef = useRef(null);
 
+  // Only track mouse — no need to do anything expensive here
   useEffect(() => {
     const handleMouseMove = (e) => {
       mousePos.current = { x: e.clientX, y: e.clientY };
     };
-    window.addEventListener('mousemove', handleMouseMove);
+    window.addEventListener('mousemove', handleMouseMove, { passive: true });
     return () => window.removeEventListener('mousemove', handleMouseMove);
   }, []);
 
+  // Pause the rAF loop when component is off-screen
+  useEffect(() => {
+    const el = wrapperRef.current;
+    if (!el) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => { isVisible.current = entry.isIntersecting; },
+      { rootMargin: '200px' }
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
+
   const letterRects = useRef([]);
+  // Only update rects every 200ms — not every frame
+  const lastRectUpdate = useRef(0);
 
   useAnimationFrame(() => {
+    if (!isVisible.current) return; // skip if off-screen
     if (!containerRef.current) return;
 
     const now = performance.now() / 1000;
-    
+
+    // Refresh bounding rects only every 200ms
+    const shouldUpdateRects = (performance.now() - lastRectUpdate.current) > 200;
+    if (shouldUpdateRects) {
+      letterRefs.current.forEach((letter, index) => {
+        if (!letter) return;
+        letterRects.current[index] = letter.getBoundingClientRect();
+      });
+      lastRectUpdate.current = performance.now();
+    }
+
     // For sequential mode: pick 2-3 letters at a time
     if (mode === 'sequential') {
-      const cycleDuration = 1.2 / autoSpeed; // How long each group stays active
+      const cycleDuration = 1.2 / autoSpeed;
       const totalLetters = letterRefs.current.filter(l => l).length;
-      
+
       if (now - lastChangeTime.current > cycleDuration) {
         activeLetters.current.clear();
-        const numActive = Math.floor(Math.random() * 2) + 2; // 2 or 3 letters
+        const numActive = Math.floor(Math.random() * 2) + 2;
         const availableIndices = Array.from({ length: totalLetters }, (_, i) => i);
-        
+
         for (let i = 0; i < numActive && availableIndices.length > 0; i++) {
           const randomIdx = Math.floor(Math.random() * availableIndices.length);
           activeLetters.current.add(availableIndices[randomIdx]);
           availableIndices.splice(randomIdx, 1);
         }
-        
         lastChangeTime.current = now;
       }
     }
-    
-    // First pass: update base proximity and cache rects
+
     letterRefs.current.forEach((letter, index) => {
       if (!letter) return;
-      letterRects.current[index] = letter.getBoundingClientRect();
-      
+
       let proximity = 0;
+
       if (mode === 'sequential') {
-        // Only active letters get proximity
         if (activeLetters.current.has(index)) {
           const timeSinceChange = now - lastChangeTime.current;
           const cycleDuration = 1.2 / autoSpeed;
-          // Smooth in and out
           const progress = timeSinceChange / cycleDuration;
           if (progress < 0.3) {
-            proximity = (progress / 0.3) * autoIntensity; // Fade in
+            proximity = (progress / 0.3) * autoIntensity;
           } else if (progress > 0.7) {
-            proximity = ((1 - progress) / 0.3) * autoIntensity; // Fade out
+            proximity = ((1 - progress) / 0.3) * autoIntensity;
           } else {
-            proximity = autoIntensity; // Full intensity
+            proximity = autoIntensity;
           }
         }
       } else if (mode === 'auto') {
@@ -99,7 +131,9 @@ const VariableProximity = forwardRef((props, ref) => {
         const oscillation = (Math.sin(now * autoSpeed + randomPhase) + 1) / 2;
         proximity = Math.pow(oscillation, 14) * autoIntensity;
       } else {
+        // mouse mode — use cached rects
         const letterRect = letterRects.current[index];
+        if (!letterRect) return;
         const letterX = letterRect.left + letterRect.width / 2;
         const letterY = letterRect.top + letterRect.height / 2;
 
@@ -114,48 +148,21 @@ const VariableProximity = forwardRef((props, ref) => {
           proximity = Math.exp(-distance / radius);
         }
       }
-      
-      // Store current proximity on the element for the second pass
-      letter._baseProximity = Math.max(0, Math.min(1, proximity));
-    });
 
-    // Second pass: Collision & Vertical Jump
-    letterRefs.current.forEach((letter, index) => {
-      if (!letter) return;
-      
-      let finalProximity = letter._baseProximity;
+      proximity = Math.max(0, Math.min(1, proximity));
+
+      // Jump effect when weight is high (removed O(n²) collision — wasn't visible anyway)
       let translateY = 0;
-
-      // "Jump" effect when weight is high
-      if (finalProximity > 0.8) {
-        translateY = -12 * Math.pow(finalProximity, 2);
+      if (proximity > 0.8) {
+        translateY = -12 * Math.pow(proximity, 2);
       }
 
-      // "Moment" reaction for letters above
-      // Check for letters physically above this one
-      const currentRect = letterRects.current[index];
-      letterRefs.current.forEach((otherLetter, otherIndex) => {
-        if (!otherLetter || index === otherIndex) return;
-        const otherRect = letterRects.current[otherIndex];
-        
-        // If otherLetter is above current letter and horizontally aligned
-        const isAbove = otherRect.bottom < currentRect.top + 5;
-        const isAligned = Math.abs((otherRect.left + otherRect.width/2) - (currentRect.left + currentRect.width/2)) < 15;
-        
-        if (isAbove && isAligned && translateY < -5) {
-          // Trigger a reaction "moment"
-          finalProximity = Math.max(finalProximity, 0.4); 
-          translateY -= 4; // Extra lift from below
-        }
-      });
-
-      finalProximity = Math.max(0, Math.min(1, finalProximity));
       const settings = interpolateSettings(
         fromFontVariationSettings,
         toFontVariationSettings,
-        finalProximity
+        proximity
       );
-      
+
       letter.style.fontVariationSettings = settings;
       letter.style.transform = `translateY(${translateY}px)`;
       letter.style.transition = 'transform 0.1s cubic-bezier(0.2, 0.8, 0.2, 1)';
@@ -168,7 +175,11 @@ const VariableProximity = forwardRef((props, ref) => {
 
   return (
     <span
-      ref={ref}
+      ref={(el) => {
+        wrapperRef.current = el;
+        if (typeof ref === 'function') ref(el);
+        else if (ref) ref.current = el;
+      }}
       className={`variable-proximity ${className}`}
       onClick={onClick}
       style={{ display: 'block', textAlign: 'left' }}
@@ -179,15 +190,15 @@ const VariableProximity = forwardRef((props, ref) => {
           {line.split(' ').map((word, wordIdx, wordArr) => {
             const currentWordGlobalIndex = globalWordIndex++;
             const currentWordStyle = wordStyles[currentWordGlobalIndex] || {};
-            
+
             return (
-              <span 
-                key={wordIdx} 
-                style={{ 
-                  display: 'inline-block', 
+              <span
+                key={wordIdx}
+                style={{
+                  display: 'inline-block',
                   whiteSpace: 'nowrap',
                   ...currentWordStyle
-                }} 
+                }}
                 className="word"
               >
                 {word.split('').map((char, charIdx) => {

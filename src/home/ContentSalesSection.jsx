@@ -54,7 +54,10 @@ const ContentSalesSection = ({ image = '/BEGIDN THE BUZZ.png' }) => {
         </div>
 
         <a href="/content-solution" className="content-sales-image">
-          <img src={image} alt="Content Solutions Portfolio" />
+          <picture>
+            <source srcSet="/BEGIDN THE BUZZ.webp" type="image/webp" />
+            <img src={image} alt="Content Solutions Portfolio" width="760" height="428" loading="lazy" />
+          </picture>
         </a>
       </div>
     </section>

@@ -995,40 +995,51 @@ const ProductionShowcaseSection = () => {
         </div>
 
         {/* Reorganized Deliverables portfolio grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mb-16">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6 mb-16">
           {[
-            { name: "Landscape Showcase Videos", partner: "Aanya Hospital", cat: "Cinematic Showcase", icon: "🏥", type: "video" },
-            { name: "Reels & Short-form Content", partner: "HearFon", cat: "High-Engagement Short", icon: "👂", type: "reel" },
-            { name: "Podcast Shoots", partner: "LilBeez", cat: "Sound Production", icon: "🎙️", type: "podcast" },
-            { name: "AI-powered Content Production", partner: "Buzziwah Lab", cat: "Creative AI", icon: "🧠", type: "ai" },
-            { name: "Photoshoots (Model / Product / Lifestyle)", partner: "Fitness Factory, Kovedaa", cat: "Studio Production", icon: "📸", type: "photo" },
-            { name: "YouTube Videos", partner: "Buzziwah Narratives", cat: "Long-form Editing", icon: "📺", type: "youtube" },
-            { name: "Explainer Videos", partner: "WMN", cat: "Motion Design", icon: "💡", type: "explainer" },
-            { name: "Ad Films & Performance Creatives", partner: "HearFon, Lilbeez", cat: "Direct Response Ads", icon: "🎯", type: "ad" },
-            { name: "Social Media Content Shoots", partner: "BTS of multiple shoots", cat: "Raw BTS content", icon: "🎬", type: "social" },
-            { name: "Green Screen Productions", partner: "Chroma Solutions", cat: "VFX Production", icon: "🟢", type: "greenscreen" }
+            { name: "Landscape Showcase Videos", partner: "Aanya Hospital", cat: "Cinematic Showcase", type: "video" },
+            { name: "Reels & Short-form Content", partner: "HearFon", cat: "High-Engagement Short", type: "reel" },
+            { name: "Podcast Shoots", partner: "LilBeez", cat: "Sound Production", type: "podcast" },
+            { name: "AI-powered Content Production", partner: "Buzziwah Lab", cat: "Creative AI", type: "ai" },
+            { name: "Photoshoots (Model / Product / Lifestyle)", partner: "Fitness Factory, Kovedaa", cat: "Studio Production", type: "photo" },
+            { name: "YouTube Videos", partner: "Buzziwah Narratives", cat: "Long-form Editing", type: "youtube" },
+            { name: "Explainer Videos", partner: "WMN", cat: "Motion Design", type: "explainer" },
+            { name: "Ad Films & Performance Creatives", partner: "HearFon, Lilbeez", cat: "Direct Response Ads", type: "ad" },
+            { name: "Social Media Content Shoots", partner: "BTS of multiple shoots", cat: "Raw BTS content", type: "social" },
+            { name: "Green Screen Productions", partner: "Chroma Solutions", cat: "VFX Production", type: "greenscreen" }
           ].map((item, idx) => (
             <div 
               key={idx} 
-              className="rounded-2xl border border-white/5 bg-white/[0.01] p-6 hover:bg-gradient-to-b hover:from-[#151138]/50 hover:to-[#070312]/50 hover:border-[#adfa3b]/30 hover:shadow-[0_12px_30px_rgba(0,0,0,0.3)] transition-all duration-300 flex flex-col justify-between min-h-[160px] group cursor-pointer"
+              className="rounded-[32px] border border-white/5 bg-gradient-to-br from-white/[0.03] to-transparent p-8 hover:bg-white/[0.06] hover:border-[#adfa3b]/40 hover:shadow-[0_20px_50px_rgba(0,0,0,0.5)] transition-all duration-500 flex flex-col justify-between min-h-[220px] group cursor-pointer relative overflow-hidden"
             >
-              <div className="flex justify-between items-start mb-3">
-                <span className="text-[9px] font-mono text-white/30 tracking-widest block font-black uppercase">
+              {/* Subtle hover glow */}
+              <div className="absolute -right-10 -top-10 w-32 h-32 bg-[#adfa3b]/5 rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              
+              <div className="flex justify-between items-center mb-6">
+                <span className="text-[11px] font-mono text-[#adfa3b] tracking-[0.3em] font-black uppercase bg-[#adfa3b]/10 px-3 py-1 rounded-full border border-[#adfa3b]/20">
                   PROD-{String(idx + 1).padStart(2, '0')}
                 </span>
-                <span className="text-2xl opacity-60 group-hover:scale-110 transition-transform duration-200">{item.icon}</span>
+                <div className="w-1.5 h-1.5 rounded-full bg-white/20 group-hover:bg-[#adfa3b] group-hover:animate-pulse transition-colors" />
               </div>
+
               <div>
-                <h4 className="font-['Montserrat'] text-sm font-extrabold text-white uppercase tracking-wide group-hover:text-[#adfa3b] transition-colors duration-200 mb-2">
+                <h4 className="font-['Bebas_Neue','Impact',sans-serif] text-[clamp(28px,3.5vw,48px)] font-black text-white uppercase tracking-wider leading-[0.9] group-hover:text-[#adfa3b] transition-colors duration-300 mb-6">
                   {item.name}
                 </h4>
-                <div className="flex items-center justify-between mt-3">
-                  <span className="text-[10px] font-semibold text-white/40">
-                    {item.partner}
-                  </span>
-                  <span className="text-[8px] font-mono font-black uppercase tracking-widest text-[#a855f7] bg-[#a855f7]/10 px-2 py-0.5 rounded-md">
-                    {item.cat}
-                  </span>
+                
+                <div className="flex flex-wrap items-center justify-between gap-4 pt-6 border-t border-white/5">
+                  <div className="flex flex-col">
+                    <span className="text-[10px] font-mono text-white/30 uppercase tracking-widest mb-1">Partner</span>
+                    <span className="text-sm font-bold text-white/70 uppercase tracking-wide">
+                      {item.partner}
+                    </span>
+                  </div>
+                  <div className="flex flex-col items-end">
+                    <span className="text-[10px] font-mono text-white/30 uppercase tracking-widest mb-1">Format</span>
+                    <span className="text-[11px] font-mono font-black uppercase tracking-widest text-[#a855f7] bg-[#a855f7]/5 border border-[#a855f7]/20 px-3 py-1 rounded-lg">
+                      {item.cat}
+                    </span>
+                  </div>
                 </div>
               </div>
             </div>

@@ -892,25 +892,27 @@ const About = () => {
 
         {/* ── FUNKY ABOUT HERO HEADING ── */}
         <div ref={containerRef} style={{ textAlign: 'center', position: 'relative', zIndex: 10, paddingBottom: '36px', paddingLeft: '16px', paddingRight: '16px' }}>
-          <div style={{ fontFamily: "'Bebas Neue','Impact','Arial Black',sans-serif", fontSize: 'clamp(58px,11vw,130px)', color: '#adfa3b', WebkitTextStroke: '3px white', textShadow: '8px 8px 0 rgba(0,0,0,0.65)', letterSpacing: '0.04em', lineHeight: 0.85, animation: 'aboutBebasIn 0.8s ease-out both' }}>
-            <VariableProximity
-              label="WHO WE ARE"
-              fromFontVariationSettings="'wght' 400, 'opsz' 9"
-              toFontVariationSettings="'wght' 1000, 'opsz' 40"
-              containerRef={containerRef}
-              radius={100}
-              falloff="linear"
-            />
-          </div>
-          <div style={{ fontFamily: "'Bebas Neue','Impact','Arial Black',sans-serif", fontSize: 'clamp(58px,11vw,130px)', color: 'transparent', WebkitTextStroke: '3px #adfa3b', letterSpacing: '0.04em', lineHeight: 0.85, marginBottom: '18px', animation: 'aboutBebasIn 0.8s 0.15s ease-out both' }}>
-            <VariableProximity
-              label="THE MAD ONES"
-              fromFontVariationSettings="'wght' 400, 'opsz' 9"
-              toFontVariationSettings="'wght' 1000, 'opsz' 40"
-              containerRef={containerRef}
-              radius={100}
-              falloff="linear"
-            />
+          <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', alignItems: 'center', gap: 'clamp(12px, 2vw, 24px)', marginBottom: '18px' }}>
+            <div style={{ fontFamily: "'Bebas Neue','Impact','Arial Black',sans-serif", fontSize: 'clamp(58px,11vw,130px)', color: '#adfa3b', WebkitTextStroke: '3px white', textShadow: '8px 8px 0 rgba(0,0,0,0.65)', letterSpacing: '0.04em', lineHeight: 0.85, animation: 'aboutBebasIn 0.8s ease-out both' }}>
+              <VariableProximity
+                label="WHO WE ARE"
+                fromFontVariationSettings="'wght' 400, 'opsz' 9"
+                toFontVariationSettings="'wght' 1000, 'opsz' 40"
+                containerRef={containerRef}
+                radius={100}
+                falloff="linear"
+              />
+            </div>
+            <div style={{ fontFamily: "'Bebas Neue','Impact','Arial Black',sans-serif", fontSize: 'clamp(58px,11vw,130px)', color: 'transparent', WebkitTextStroke: '3px #adfa3b', letterSpacing: '0.04em', lineHeight: 0.85, animation: 'aboutBebasIn 0.8s 0.15s ease-out both' }}>
+              <VariableProximity
+                label="THE MAD ONES"
+                fromFontVariationSettings="'wght' 400, 'opsz' 9"
+                toFontVariationSettings="'wght' 1000, 'opsz' 40"
+                containerRef={containerRef}
+                radius={100}
+                falloff="linear"
+              />
+            </div>
           </div>
           <p style={{ fontFamily: "'DM Sans',sans-serif", fontSize: 'clamp(12px,1.4vw,16px)', color: 'rgba(255,255,255,0.45)', letterSpacing: '0.32em', textTransform: 'uppercase', fontWeight: 700 }}>
             Bengaluru's Most Chaotic Creative Agency ✨
@@ -973,11 +975,17 @@ const About = () => {
               <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent z-10" />
 
               {/* Group Photo frame */}
-              <img
-                src="/BEGIDN THE BUZZ.png"
-                alt="Buzziwah Team Group"
-                className="w-full h-full object-cover opacity-90 group-hover:scale-105 transition-transform duration-700"
-              />
+              <picture>
+                <source srcSet="/BEGIDN THE BUZZ.webp" type="image/webp" />
+                <img
+                  src="/BEGIDN THE BUZZ.png"
+                  alt="Buzziwah Team Group"
+                  width="760"
+                  height="428"
+                  className="w-full h-full object-cover opacity-90 group-hover:scale-105 transition-transform duration-700"
+                  loading="lazy"
+                />
+              </picture>
 
               {/* Floating technical ornaments */}
               <div className="absolute top-6 right-6 z-20 w-8 h-8 rounded-full border border-white/20 flex items-center justify-center text-white/60 text-xs backdrop-blur-sm">
@@ -1008,7 +1016,7 @@ const About = () => {
           </div>
 
           <div className="boys-card font-google-sans fade-up" style={{ '--delay': '0.1s', marginTop: '140px' }}>
-            <h2 style={{ fontFamily: "'Bebas Neue','Impact','Arial Black',sans-serif", fontSize: 'clamp(40px,6vw,80px)', color: '#adfa3b', WebkitTextStroke: '2px white', textShadow: '5px 5px 0 rgba(0,0,0,0.5)', letterSpacing: '0.04em', lineHeight: 0.9, marginBottom: '20px' }}>
+            <h2 style={{ fontFamily: "'Bebas Neue','Impact','Arial Black',sans-serif", fontSize: 'clamp(40px,6vw,80px)', color: '#24bf89ff', WebkitTextStroke: '2px white', textShadow: '5px 5px 0 rgba(0,0,0,0.5)', letterSpacing: '0.04em', lineHeight: 0.9, marginBottom: '20px' }}>
               THE BOYS STORY!
             </h2>
             <p className="boys-body" style={{ color: 'rgba(10, 11, 10, 0.75)', lineHeight: '1.8' }}>
@@ -1203,18 +1211,18 @@ const About = () => {
               const teamMembers = [
                 {
                   name: 'PHANI SRIVATSA PV',
-                  role: 'EDITOR | DEVELOPER',
-                  desc: 'Crafts seamless digital platforms, cuts high-impact cinematic edits, and codes with relentless energy.'
+                  role: 'CEO',
+                  desc: 'Leads the vision and strategy, driving innovation and growth across all creative and business operations.'
                 },
                 {
                   name: 'SATISH MS',
-                  role: 'UX DESIGNER | EDITOR',
-                  desc: 'Fuses user psychology with clean aesthetics, shaping intuitive digital flows and master cuts.'
+                  role: 'PRODUCTION HEAD',
+                  desc: 'Oversees all production workflows, ensuring seamless execution from concept to final delivery.'
                 },
                 {
                   name: 'RAKSHA S',
-                  role: 'CONTENT WRITER',
-                  desc: 'Weaves viral hooks and immersive storytelling narratives that keep audiences hooked.'
+                  role: 'CONTENT STRATEGIST',
+                  desc: 'Develops data-driven content strategies that amplify brand voice and drive meaningful engagement.'
                 },
                 {
                   name: 'SATHWIK NJ',
@@ -1228,8 +1236,8 @@ const About = () => {
                 },
                 {
                   name: 'MANISH N',
-                  role: 'PHOTOGRAPHER',
-                  desc: 'Frames high-delivery moments, capturing chaotic creative energy with cinematic precision.'
+                  role: 'DIGITAL BRAND PHOTOGRAPHER',
+                  desc: 'Captures compelling brand stories through photography, creating visual narratives that resonate and convert.'
                 },
                 {
                   name: 'VYSHNAVI AM',
@@ -1268,8 +1276,13 @@ const About = () => {
                 },
                 {
                   name: 'AMITHA SHETTY',
-                  role: 'DESIGNER',
-                  desc: 'Engineers gorgeous branding elements, layout iconography, and brand identity toolkits.'
+                  role: 'GRAPHIC DESIGNER',
+                  desc: 'Creates stunning visual designs and brand identities that communicate powerfully and leave lasting impressions.'
+                },
+                {
+                  name: 'GAUTHAM',
+                  role: 'FINANCE HEAD',
+                  desc: 'Manages financial operations, budgeting, and strategic planning to ensure sustainable business growth.'
                 },
                 {
                   name: 'HARIPRASAD',
@@ -1294,7 +1307,7 @@ const About = () => {
               ];
 
               const onSelectMember = (member, image) => {
-                setSelectedMember({ ...member, image });
+                // No popup - just hover effects
               };
 
               return (
@@ -1304,60 +1317,6 @@ const About = () => {
                     blackImages={blackImages}
                     onSelectMember={onSelectMember}
                   />
-
-                  {/* 🔮 TEAM MEMBER POPUP DIALOG */}
-                  {selectedMember && (
-                    <div
-                      className="fixed inset-0 z-[9999] flex items-center justify-center p-6 bg-black/80 backdrop-blur-md animate-fade-in"
-                      onClick={() => setSelectedMember(null)}
-                    >
-                      <div
-                        className="relative w-full max-w-lg rounded-3xl border border-[#adfa3b]/40 bg-[#0d0b21] p-6 md:p-8 overflow-hidden shadow-[0_0_50px_rgba(173,250,59,0.15)] animate-scale-up text-left"
-                        onClick={(e) => e.stopPropagation()}
-                      >
-                        <div className="absolute top-0 right-0 w-32 h-32 rounded-full bg-[#adfa3b]/5 blur-2xl pointer-events-none" />
-                        <div className="absolute bottom-0 left-0 w-32 h-32 rounded-full bg-purple-500/5 blur-2xl pointer-events-none" />
-
-                        <button
-                          onClick={() => setSelectedMember(null)}
-                          className="absolute top-4 right-4 w-8 h-8 rounded-full border border-white/10 bg-white/5 text-white/60 hover:text-white flex items-center justify-center text-sm font-bold transition-all hover:scale-105 z-50"
-                          type="button"
-                        >
-                          ✕
-                        </button>
-
-                        <div className="flex flex-col md:flex-row gap-6 items-center">
-                          <div className="w-32 h-32 md:w-36 md:h-36 rounded-2xl overflow-hidden border border-[#adfa3b]/20 p-1 shrink-0 bg-gradient-to-br from-[#adfa3b]/20 to-transparent">
-                            <img
-                              src={selectedMember.image}
-                              alt={selectedMember.name}
-                              className="w-full h-full object-cover rounded-xl"
-                            />
-                          </div>
-
-                          <div className="flex-1 text-center md:text-left">
-                            <span className="text-[10px] font-mono text-[#adfa3b] uppercase tracking-[0.25em] font-bold">
-                              {selectedMember.role}
-                            </span>
-                            <h4 className="font-geom text-2xl font-black text-white uppercase mt-1 leading-none">
-                              {selectedMember.name}
-                            </h4>
-
-                            <div className="h-[1px] w-12 bg-[#adfa3b] my-4 mx-auto md:mx-0" />
-
-                            <p className="text-sm text-white/80 leading-relaxed font-google-sans">
-                              {selectedMember.desc}
-                            </p>
-
-                            <div className="mt-5 pt-4 border-t border-white/5 flex justify-between items-center text-[9px] font-mono text-white/30">
-                              <span>BUZZIWAH CREATIVE // SEC_0{teamMembers.findIndex(t => t.name === selectedMember.name) + 1}</span>
-                              <span className="text-[#adfa3b] font-bold">● ACTIVE</span>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  )}
                 </div>
               );
             })()}

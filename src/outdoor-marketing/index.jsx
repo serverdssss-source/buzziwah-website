@@ -296,7 +296,7 @@ const CSS2 = `
   .svc-card:hover { border-color:rgba(124,58,237,0.65);transform:translateY(-6px);background:rgba(124,58,237,0.10);backdrop-filter:blur(22px);-webkit-backdrop-filter:blur(22px); }
   .svc-card:nth-child(1){animation-delay:0s}.svc-card:nth-child(2){animation-delay:1s}.svc-card:nth-child(3){animation-delay:2s}.svc-card:nth-child(4){animation-delay:3s}
   .svc-card-title { font-size:22px;font-weight:700;color:#fff;margin:0;line-height:1.35;font-family:'Syne','Segoe UI',sans-serif; }
-  .svc-card-body { font-size:18px;color:rgba(255,255,255,0.58);line-height:1.65;margin:0; }
+  .svc-card-body { font-size: 19px; color: rgba(255,255,255,0.65); line-height: 1.65; margin: 0; }
   .svc-right { flex:1 1 0;min-width:0;max-width:570px;height:680px;display:flex;align-items:center;justify-content:center; }
   
   /* City billboard dynamic illustration columns */
@@ -369,7 +369,7 @@ const CSS4 = `
   .seo-row.row-visible { opacity: 1; transform: translateX(0); }
   .seo-num { font-family: 'Barlow', sans-serif; font-weight: 300; font-size: 14px; color: #414d5c; letter-spacing: 0.04em; padding-top: 3px; }
   .seo-name { font-family: 'Barlow', sans-serif; font-weight: 700; font-size: clamp(15px, 1.8vw, 21px); color: #b06aff; line-height: 1.3; letter-spacing: 0.01em; padding-top: 2px; }
-  .seo-desc-v2 { font-family: 'Barlow', sans-serif; font-weight: 500; font-size: clamp(11px, 1vw, 13px); color: #a8b4c7; line-height: 1.95; letter-spacing: 0.09em; text-transform: uppercase; padding-top: 4px; }
+  .seo-desc-v2 { font-family: 'Barlow', sans-serif; font-weight: 500; font-size: clamp(14px, 1.2vw, 16px); color: #a8b4c7; line-height: 1.8; letter-spacing: 0.06em; text-transform: uppercase; padding-top: 4px; }
   @media (max-width: 700px) { .seo-wrap { padding: 44px 24px 68px; } .seo-head { margin-bottom: 28px; } .seo-row { grid-template-columns: 44px 1fr; grid-template-rows: auto auto; gap: 6px 14px; padding: 24px 0; } .seo-num { grid-column:1; grid-row:1; } .seo-name { grid-column:2; grid-row:1; } .seo-desc-v2 { grid-column:1/-1; grid-row:2; } }
 `;
 
@@ -485,7 +485,7 @@ const WhyOutdoorMattersSection = () => {
                 <h3 style={{ fontFamily:"'Bebas Neue','Impact',sans-serif", fontSize:'clamp(24px,2.8vw,40px)', color:'#adfa3b', WebkitTextStroke:'1.5px white', letterSpacing:'0.04em', lineHeight:0.95, margin:'0 0 12px' }} className="group-hover:text-[#adfa3b] transition-colors">
                   {point.title}
                 </h3>
-                <p className="text-white/60 text-sm leading-relaxed mb-6 font-normal">
+                <p className="text-white/70 text-base sm:text-lg leading-relaxed mb-6 font-normal">
                   {point.desc}
                 </p>
               </div>

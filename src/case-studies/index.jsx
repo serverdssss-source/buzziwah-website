@@ -9,6 +9,7 @@ const CASE_STUDIES_DATA = {
     subCategory: "Healthcare Clinic",
     tagline: "Care with compassion",
     image: "/PROJECTS HOME PAGE /AH-CC-02.png",
+    video: "/PROJECTS HOME PAGE /aanya.mp4",
     problem: "Aanya Hospital, a new healthcare center in Vijayanagar, entered a space where trust and visibility are critical. Despite advanced medical care, the brand lacked identity, digital presence, and clear communication — making it harder to be seen and trusted from day one.",
     assessment: "The need wasn’t just visibility, but trust at scale. Gaps in identity, communication, and consistency were identified to align brand perception with the quality of care offered.",
     actionTitle: "Solution: A healthcare startup positioned right",
@@ -51,6 +52,7 @@ const CASE_STUDIES_DATA = {
     subCategory: "Cinema & Personal Branding",
     tagline: "Actor & Motivational Speaker",
     image: "/PROJECTS HOME PAGE /RAMESH ARVIND.png",
+    video: "/PROJECTS HOME PAGE /ramesh arvind.mp4",
     problem: "Despite strong recognition in cinema, the personal brand lacked a structured digital presence to reflect his full influence as an actor, storyteller, and speaker. The credibility existed, but it wasn’t consistently translated online.",
     assessment: "The goal wasn’t to rebuild, but to refine with intent. Existing credibility and audience perception were evaluated, revealing a clear gap — the narrative lacked direction, amplification, and authoritative positioning.",
     actionTitle: "Solution: Positioned Beyond Recognition",
@@ -87,6 +89,7 @@ const CASE_STUDIES_DATA = {
     subCategory: "Maternal Wellness System",
     tagline: "Mathruswasthyam | Lokaswasthyam",
     image: "/PROJECTS HOME PAGE /WMN Doctors.png",
+    video: "/PROJECTS HOME PAGE /wmn.mp4",
     problem: "The brand lacked a connected digital ecosystem — with gaps in website, content, social media, and performance marketing, leading to low visibility and weak conversions.",
     assessment: "All services existed in silos. There was no structured flow from brand discovery to conversion, resulting in an inconsistent user journey and missed growth potential.",
     actionTitle: "Solution: A Cohesive Full-Funnel Ecosystem",
@@ -136,6 +139,7 @@ const CASE_STUDIES_DATA = {
     subCategory: "Audiology Centers",
     tagline: "Centre of excellence in hearing Health",
     image: "/PROJECTS HOME PAGE /HEARPHON.png",
+    video: "/PROJECTS HOME PAGE /hearphon.mp4",
     problem: "HearFon needed stronger visibility and engagement in a competitive market. While the product had potential, the brand lacked impactful ad creatives, consistent content, and a strong social media presence to capture attention and drive recall.",
     assessment: "The gap was clear — there was no structured system connecting content, ad creatives, and social media. Messaging lacked consistency, and the brand needed a more defined voice and direction to stand out.",
     actionTitle: "Solution: A content-led growth system",
@@ -172,6 +176,7 @@ const CASE_STUDIES_DATA = {
     subCategory: "School of Cinema",
     tagline: "Nagathihalli school of cinema",
     image: "/PROJECTS HOME PAGE /TENT .webp",
+    video: "/PROJECTS HOME PAGE /tent cenima.mp4",
     problem: "Tent Cinema needed a stronger digital push to attract aspiring actors and increase enrollments. While the offering was compelling, the brand lacked consistent social media presence, structured campaigns, and a clear lead generation system.",
     assessment: "The gap was evident — content lacked direction, campaigns weren’t optimized for conversions, and there was no seamless journey from discovery to inquiry. Visibility existed, but it wasn’t translating into leads.",
     actionTitle: "Solution: A performance-driven growth system",
@@ -208,6 +213,7 @@ const CASE_STUDIES_DATA = {
     subCategory: "Luxury Ayurveda",
     tagline: "Ayurveda got hot",
     image: "/PROJECTS HOME PAGE /Kovedaa.png",
+    video: "/PROJECTS HOME PAGE /kovedaa.mp4",
     problem: "Kovedaa needed a strong brand identity and digital presence to stand out in a competitive market. While the products had quality, there was no cohesive branding, no e-commerce platform, and limited visual and content direction to attract and convert customers.",
     assessment: "The gap was clear — the brand lacked a unified identity and a structured system to showcase, communicate, and sell effectively. From visuals to platform to messaging, everything needed alignment.",
     actionTitle: "Solution: A brand-to-commerce ecosystem",
@@ -254,7 +260,7 @@ const CASE_STUDIES_DATA = {
     category: "ornament",
     subCategory: "Premium Jewelry",
     tagline: "Because her beauty deserves to shine a little brighter",
-    image: "/best works/srichakra_case.png",
+    image: "/best works/srichakra_case.webp",
     problem: "Sindoor Collection needed a distinct brand identity and digital presence to reflect its aesthetic and appeal to modern consumers. While the products had strong visual potential, the brand lacked cohesive branding, a dedicated website, and high-quality visuals to position itself effectively.",
     assessment: "The gap was clear — there was no unified system to present the brand with consistency and elegance. From identity to platform to visuals, everything needed alignment to elevate perception and build trust.",
     actionTitle: "Solution: A design-led brand ecosystem",
@@ -340,13 +346,25 @@ export default function CaseStudyPage({ id }) {
           <div className="cs-title-accent" />
         </header>
 
-        {/* Visual Columns Section: Image & Story Cards */}
+        {/* Visual Columns Section: Image/Video & Story Cards */}
         <div className="cs-split-layout">
           {/* Left: Glass visual frame with gradient outline */}
           <div className="cs-visual-column">
             <div className="cs-visual-frame">
               <div className="cs-visual-glow" />
-              <img src={data.image} alt={`${data.client} Showcase`} className="cs-visual-img" />
+              {data.video ? (
+                  <video 
+                      src={data.video} 
+                      autoPlay 
+                      loop 
+                      muted 
+                      playsInline 
+                      className="cs-visual-img" 
+                      style={{ objectFit: 'cover' }}
+                  />
+              ) : (
+                  <img src={data.image} alt={`${data.client} Showcase`} className="cs-visual-img" />
+              )}
               <div className="cs-visual-overlay" />
             </div>
           </div>

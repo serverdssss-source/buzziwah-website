@@ -130,34 +130,34 @@ const SocialAlphabetRow = () => {
       marginBottom: '8px',
       flexWrap: 'wrap',
     }}>
-      <AlphabetIcon 
-        letter="S" 
-        color="#fff" 
+      <AlphabetIcon
+        letter="S"
+        color="#fff"
         bgGradient="linear-gradient(135deg, #E1306C, #C13584)"
       />
-      <AlphabetIcon 
-        letter="O" 
-        color="#fff" 
+      <AlphabetIcon
+        letter="O"
+        color="#fff"
         bgGradient="linear-gradient(135deg, #1877F2, #0C63D4)"
       />
-      <AlphabetIcon 
-        letter="C" 
-        color="#fff" 
+      <AlphabetIcon
+        letter="C"
+        color="#fff"
         bgGradient="linear-gradient(135deg, #FF0000, #CC0000)"
       />
-      <AlphabetIcon 
-        letter="I" 
-        color="#fff" 
+      <AlphabetIcon
+        letter="I"
+        color="#fff"
         bgGradient="linear-gradient(135deg, #0A66C2, #004182)"
       />
-      <AlphabetIcon 
-        letter="A" 
-        color="#fff" 
+      <AlphabetIcon
+        letter="A"
+        color="#fff"
         bgGradient="linear-gradient(135deg, #adfa3b, #83cd15)"
       />
-      <AlphabetIcon 
-        letter="L" 
-        color="#fff" 
+      <AlphabetIcon
+        letter="L"
+        color="#fff"
         bgGradient="linear-gradient(135deg, #7c3aed, #5b21b6)"
       />
     </div>
@@ -276,89 +276,87 @@ const HeroSection = () => {
           flexWrap: 'wrap',
           justifyContent: 'center',
         }}>
-          <InstaIcon size={60} />
+
           <span>Social Media Marketing</span>
-          <FbIcon size={60} />
+
         </div>
 
-      {/* Subtitle */}
-      <p style={{
-        fontFamily: "'Nunito Sans', sans-serif",
-        fontSize: 'clamp(14px, 1.8vw, 18px)',
-        color: 'rgba(255,255,255,0.65)',
-        maxWidth: '580px',
-        margin: '20px auto 32px',
-        lineHeight: 1.65,
-        fontWeight: 500,
-      }}>
-        {serviceConfig.subtitle}
-      </p>
+        {/* Subtitle */}
+        <p style={{
+          fontFamily: "'Nunito Sans', sans-serif",
+          fontSize: 'clamp(14px, 1.8vw, 18px)',
+          color: 'rgba(255,255,255,0.65)',
+          maxWidth: '580px',
+          margin: '20px auto 32px',
+          lineHeight: 1.65,
+          fontWeight: 500,
+        }}>
+          {serviceConfig.subtitle}
+        </p>
 
-      {/* Platform pills */}
+        {/* Platform pills */}
+        <div style={{
+          display: 'flex',
+          flexWrap: 'wrap',
+          gap: '10px',
+          justifyContent: 'center',
+          marginBottom: '36px',
+        }}>
+          {[
+            { label: 'YouTube', color: '#FF0000', bg: 'rgba(255,0,0,0.1)' },
+            { label: 'LinkedIn', color: '#0A66C2', bg: 'rgba(10,102,194,0.1)' },
+            { label: 'X / Twitter', color: '#aaa', bg: 'rgba(170,170,170,0.1)' },
+          ].map(p => (
+            <div key={p.label} className="smm-platform-pill" style={{ background: p.bg, color: p.color, borderColor: `${p.color}30` }}>
+              <span style={{ width: 8, height: 8, borderRadius: '50%', background: p.color, display: 'inline-block', flexShrink: 0 }} />
+              {p.label}
+            </div>
+          ))}
+        </div>
+
+        {/* CTA Buttons */}
+        <div style={{ display: 'flex', gap: '14px', justifyContent: 'center', flexWrap: 'wrap', marginTop: '28px' }}>
+          <a href="/contact" style={{
+            display: 'inline-flex', alignItems: 'center', gap: '8px',
+            padding: '14px 32px', borderRadius: '999px',
+            background: '#adfa3b', color: '#060811',
+            fontFamily: "'Montserrat', sans-serif", fontSize: '12px', fontWeight: 900,
+            textTransform: 'uppercase', letterSpacing: '0.08em',
+            textDecoration: 'none', transition: 'all 0.25s ease',
+            boxShadow: '0 8px 30px rgba(173,250,59,0.3)',
+          }}
+            onMouseEnter={e => { e.currentTarget.style.background = '#7c3aed'; e.currentTarget.style.color = 'white'; }}
+            onMouseLeave={e => { e.currentTarget.style.background = '#adfa3b'; e.currentTarget.style.color = '#060811'; }}
+          >
+            GET STARTED ✦
+          </a>
+          <a href="/case-studies" style={{
+            display: 'inline-flex', alignItems: 'center', gap: '8px',
+            padding: '13px 28px', borderRadius: '999px',
+            background: 'transparent', color: 'white',
+            border: '2px solid rgba(255,255,255,0.2)',
+            fontFamily: "'Montserrat', sans-serif", fontSize: '12px', fontWeight: 800,
+            textTransform: 'uppercase', letterSpacing: '0.08em',
+            textDecoration: 'none', transition: 'all 0.25s ease',
+          }}
+            onMouseEnter={e => { e.currentTarget.style.borderColor = '#adfa3b'; e.currentTarget.style.color = '#adfa3b'; }}
+            onMouseLeave={e => { e.currentTarget.style.borderColor = 'rgba(255,255,255,0.2)'; e.currentTarget.style.color = 'white'; }}
+          >
+            SEE OUR WORK →
+          </a>
+        </div>
+      </div>
+
+      {/* Scroll indicator */}
       <div style={{
-        display: 'flex',
-        flexWrap: 'wrap',
-        gap: '10px',
-        justifyContent: 'center',
-        marginBottom: '36px',
+        position: 'absolute', bottom: '24px', left: '50%', transform: 'translateX(-50%)',
+        display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '6px',
+        opacity: 0.4, zIndex: 3, animation: 'scrollBounce 2s ease-in-out infinite',
       }}>
-        {[
-          { label: 'Instagram', color: '#E1306C', bg: 'rgba(225,48,108,0.1)' },
-          { label: 'Facebook', color: '#1877F2', bg: 'rgba(24,119,242,0.1)' },
-          { label: 'YouTube', color: '#FF0000', bg: 'rgba(255,0,0,0.1)' },
-          { label: 'LinkedIn', color: '#0A66C2', bg: 'rgba(10,102,194,0.1)' },
-          { label: 'X / Twitter', color: '#aaa', bg: 'rgba(170,170,170,0.1)' },
-        ].map(p => (
-          <div key={p.label} className="smm-platform-pill" style={{ background: p.bg, color: p.color, borderColor: `${p.color}30` }}>
-            <span style={{ width: 8, height: 8, borderRadius: '50%', background: p.color, display: 'inline-block', flexShrink: 0 }} />
-            {p.label}
-          </div>
-        ))}
+        <span style={{ fontFamily: "'Montserrat', sans-serif", fontSize: '9px', letterSpacing: '0.15em', color: 'white', textTransform: 'uppercase' }}>Scroll</span>
+        <div style={{ width: '1px', height: '32px', background: 'linear-gradient(to bottom, rgba(255,255,255,0.6), transparent)' }} />
       </div>
-
-      {/* CTA Buttons */}
-      <div style={{ display: 'flex', gap: '14px', justifyContent: 'center', flexWrap: 'wrap', marginTop: '28px' }}>
-        <a href="/contact" style={{
-          display: 'inline-flex', alignItems: 'center', gap: '8px',
-          padding: '14px 32px', borderRadius: '999px',
-          background: '#adfa3b', color: '#060811',
-          fontFamily: "'Montserrat', sans-serif", fontSize: '12px', fontWeight: 900,
-          textTransform: 'uppercase', letterSpacing: '0.08em',
-          textDecoration: 'none', transition: 'all 0.25s ease',
-          boxShadow: '0 8px 30px rgba(173,250,59,0.3)',
-        }}
-          onMouseEnter={e => { e.currentTarget.style.background = '#7c3aed'; e.currentTarget.style.color = 'white'; }}
-          onMouseLeave={e => { e.currentTarget.style.background = '#adfa3b'; e.currentTarget.style.color = '#060811'; }}
-        >
-          GET STARTED ✦
-        </a>
-        <a href="/case-studies" style={{
-          display: 'inline-flex', alignItems: 'center', gap: '8px',
-          padding: '13px 28px', borderRadius: '999px',
-          background: 'transparent', color: 'white',
-          border: '2px solid rgba(255,255,255,0.2)',
-          fontFamily: "'Montserrat', sans-serif", fontSize: '12px', fontWeight: 800,
-          textTransform: 'uppercase', letterSpacing: '0.08em',
-          textDecoration: 'none', transition: 'all 0.25s ease',
-        }}
-          onMouseEnter={e => { e.currentTarget.style.borderColor = '#adfa3b'; e.currentTarget.style.color = '#adfa3b'; }}
-          onMouseLeave={e => { e.currentTarget.style.borderColor = 'rgba(255,255,255,0.2)'; e.currentTarget.style.color = 'white'; }}
-        >
-          SEE OUR WORK →
-        </a>
-      </div>
-    </div>
-
-    {/* Scroll indicator */}
-    <div style={{
-      position: 'absolute', bottom: '24px', left: '50%', transform: 'translateX(-50%)',
-      display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '6px',
-      opacity: 0.4, zIndex: 3, animation: 'scrollBounce 2s ease-in-out infinite',
-    }}>
-      <span style={{ fontFamily: "'Montserrat', sans-serif", fontSize: '9px', letterSpacing: '0.15em', color: 'white', textTransform: 'uppercase' }}>Scroll</span>
-      <div style={{ width: '1px', height: '32px', background: 'linear-gradient(to bottom, rgba(255,255,255,0.6), transparent)' }} />
-    </div>
-  </section>
+    </section>
   );
 };
 
@@ -1153,7 +1151,7 @@ const PopularSocialsSection = () => (
               </div>
               <h3 className="font-['Montserrat'] text-md font-bold text-white uppercase tracking-wide group-hover:text-[#adfa3b] transition-colors duration-300">{item.label}</h3>
               <p className="text-[11px] font-mono text-[#a855f7] mb-3 font-semibold uppercase tracking-widest">Brand: {item.brand}</p>
-              <p className="text-white/60 text-xs leading-relaxed font-medium">{item.desc}</p>
+              <p className="text-white/75 text-base leading-relaxed font-medium">{item.desc}</p>
             </div>
           </div>
         ))}

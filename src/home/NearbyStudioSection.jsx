@@ -111,7 +111,7 @@ const NearbyStudioSection = () => {
       }
     }
 
-    const particleCount = 24;
+    const particleCount = 10; // Reduced from 24 for performance
     const particles = Array.from({ length: particleCount }, () => new SmokeParticle());
 
     const render = () => {
@@ -171,8 +171,8 @@ const NearbyStudioSection = () => {
       <canvas ref={canvasRef} className="absolute inset-0 w-full h-full pointer-events-none z-0" />
 
       {/* Shifting background brand auras */}
-      <div className="ambient-aurora-glow-1 absolute top-1/4 left-1/4 w-[350px] sm:w-[650px] h-[350px] sm:h-[650px] bg-purple-700/20 blur-[130px] rounded-full pointer-events-none z-0" />
-      <div className="ambient-aurora-glow-2 absolute bottom-1/4 right-1/4 w-[350px] sm:w-[650px] h-[350px] sm:h-[650px] bg-[#adfa3b]/12 blur-[130px] rounded-full pointer-events-none z-0" />
+      <div className="ambient-aurora-glow-1 absolute top-1/4 left-1/4 w-[350px] sm:w-[650px] h-[350px] sm:h-[650px] bg-purple-700/20 blur-[130px] rounded-full pointer-events-none z-0" style={{ willChange: 'transform' }} />
+      <div className="ambient-aurora-glow-2 absolute bottom-1/4 right-1/4 w-[350px] sm:w-[650px] h-[350px] sm:h-[650px] bg-[#adfa3b]/12 blur-[130px] rounded-full pointer-events-none z-0" style={{ willChange: 'transform' }} />
 
       {/* Header Text */}
       <div className="relative z-10 max-w-3xl mx-auto mb-10 sm:mb-16">
@@ -184,9 +184,9 @@ const NearbyStudioSection = () => {
         </h2>
         <div className="text-sm sm:text-xl text-white/70 leading-relaxed max-w-xl mx-auto px-4">
           <p className="font-semibold text-white text-base sm:text-xl mb-2 sm:mb-3">
-            Because it’s not outsourced. It’s built in-house.
+            Because it’s not outsourced. <span className="text-[#adfa3b]">It’s built in-house.</span>
           </p>
-          <p className="text-xs sm:text-base text-white/60">
+          <p className="text-xs sm:text-base text-white/60 font-bold">
             With our own studio and production team, we create everything—from podcasts and reels to ads that actually perform.
           </p>
         </div>
@@ -200,11 +200,19 @@ const NearbyStudioSection = () => {
         
         <video 
           className="w-full h-auto object-cover transition-transform duration-1000 group-hover:scale-105"
-          src="/clientlogos/Nearby studio_Studio tour 1.mp4"
-          autoPlay
+          src="/clientlogos/nearby-studio-tour.mp4"
+          ref={(el) => {
+            if (!el) return;
+            const io = new IntersectionObserver(([entry]) => {
+              if (entry.isIntersecting) { el.play().catch(() => {}); }
+              else { el.pause(); }
+            }, { threshold: 0.25 });
+            io.observe(el);
+          }}
           loop
           muted
           playsInline
+          preload="none"
         />
         
         {/* Dark gradient overlay so the logo and button pop */}

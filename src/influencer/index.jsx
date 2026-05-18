@@ -594,46 +594,39 @@ const IMCollaborationsSection = () => {
           {collabs.map((collab, idx) => (
             <div 
               key={idx}
-              className="rounded-3xl border border-white/5 bg-gradient-to-b from-white/[0.01] to-white/[0.002] hover:border-[#a78bfa]/30 hover:bg-white/[0.02] transition-all duration-300 relative overflow-hidden group flex flex-col justify-between"
+              className="rounded-3xl border border-white/5 bg-gradient-to-b from-white/[0.03] to-white/[0.01] hover:border-[#a78bfa]/40 hover:bg-white/[0.04] transition-all duration-500 relative overflow-hidden group flex flex-col justify-between min-h-[280px]"
             >
-              {/* Image Header with dynamic hover zoom */}
-              <div className="relative h-48 overflow-hidden rounded-t-[22px]">
-                <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-[#0a0a0a]/20 to-transparent z-10" />
-                <img 
-                  src={collab.img} 
-                  alt={collab.name}
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" 
-                />
-                <span className="absolute top-3 left-3 z-20 text-[8px] font-mono font-black uppercase tracking-widest text-black bg-[#adfa3b] px-2.5 py-1 rounded-full">
-                  {collab.tag}
-                </span>
-              </div>
+              {/* Profile Header without image */}
+              <div className="p-6 pt-10 flex-1 flex flex-col justify-between relative z-10 bg-transparent rounded-3xl">
+                <div className="absolute top-4 right-4">
+                  <span className="text-[9px] font-mono font-black uppercase tracking-widest text-black bg-[#adfa3b] px-3 py-1 rounded-full">
+                    {collab.tag}
+                  </span>
+                </div>
 
-              {/* Influencer Profile Details */}
-              <div className="p-5 flex-1 flex flex-col justify-between relative z-10 -mt-4 bg-[#0a0a0a] rounded-b-3xl">
                 <div>
-                  <h3 className="font-['Montserrat'] text-sm font-black text-white uppercase tracking-wide group-hover:text-[#a78bfa] transition-colors duration-200">
+                  <h3 className="font-['Bebas_Neue','Impact',sans-serif] text-3xl font-black text-white uppercase tracking-wider group-hover:text-[#a78bfa] transition-colors duration-300 leading-none">
                     {collab.name}
                   </h3>
-                  <p className="text-white/40 text-[10px] font-bold uppercase tracking-wider mt-1">
+                  <p className="text-white/40 text-xs font-bold uppercase tracking-widest mt-2">
                     {collab.role}
                   </p>
                   
-                  <div className="p-2.5 rounded-xl bg-white/[0.01] border border-white/[0.03] mt-4 flex items-center justify-between text-[11px]">
-                    <span className="text-white/40 font-medium">For Brand</span>
-                    <span className="text-[#adfa3b] font-extrabold uppercase">{collab.brand}</span>
+                  <div className="p-3 rounded-2xl bg-white/[0.02] border border-white/[0.05] mt-6 flex items-center justify-between text-xs">
+                    <span className="text-white/30 font-medium font-mono uppercase tracking-tighter">For Brand</span>
+                    <span className="text-[#adfa3b] font-black uppercase tracking-wide">{collab.brand}</span>
                   </div>
                 </div>
 
                 {/* Micro Stats */}
-                <div className="mt-5 pt-4 border-t border-white/5 grid grid-cols-2 gap-2 text-center">
+                <div className="mt-8 pt-6 border-t border-white/10 grid grid-cols-2 gap-4 text-center">
                   <div>
-                    <span className="text-[10px] font-mono text-white/30 uppercase block">REACH</span>
-                    <span className="text-white text-xs font-mono font-black">{collab.reach}</span>
+                    <span className="text-[10px] font-mono text-white/30 uppercase tracking-widest block mb-1">REACH</span>
+                    <span className="text-white text-sm font-mono font-black">{collab.reach}</span>
                   </div>
-                  <div className="border-l border-white/5">
-                    <span className="text-[10px] font-mono text-white/30 uppercase block">ENG. RATE</span>
-                    <span className="text-[#a78bfa] text-xs font-mono font-black">{collab.engagement}</span>
+                  <div className="border-l border-white/10">
+                    <span className="text-[10px] font-mono text-white/30 uppercase tracking-widest block mb-1">ENG. RATE</span>
+                    <span className="text-[#a78bfa] text-sm font-mono font-black">{collab.engagement}</span>
                   </div>
                 </div>
               </div>

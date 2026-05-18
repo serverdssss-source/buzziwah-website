@@ -3,27 +3,7 @@ import './Navbar.css';
 
 const serviceLinks = [
   {
-    title: 'Social Media Management',
-    desc: 'Grow & engage your audience',
-    href: '/social-media',
-    icon: (
-      <svg viewBox="0 0 24 24" fill="none" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z" />
-      </svg>
-    ),
-  },
-  {
-    title: 'Performance Marketing',
-    desc: 'ROI-driven paid campaigns',
-    href: '/performance-marketing',
-    icon: (
-      <svg viewBox="0 0 24 24" fill="none" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-        <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />
-      </svg>
-    ),
-  },
-  {
-    title: 'Branding & Re-Branding',
+    title: 'Branding Solutions',
     desc: 'Identity & visual systems',
     href: '/branding',
     icon: (
@@ -36,18 +16,20 @@ const serviceLinks = [
     ),
   },
   {
-    title: 'Website Development',
-    desc: 'Fast, conversion-focused sites',
-    href: '/website-development',
+    title: 'Content Solution',
+    desc: 'Strategy, copy & creative assets',
+    href: '/content-solution',
     icon: (
       <svg viewBox="0 0 24 24" fill="none" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-        <polyline points="16 18 22 12 16 6" />
-        <polyline points="8 6 2 12 8 18" />
+        <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" />
+        <polyline points="14 2 14 8 20 8" />
+        <line x1="16" y1="13" x2="8" y2="13" />
+        <line x1="16" y1="17" x2="8" y2="17" />
       </svg>
     ),
   },
   {
-    title: 'Video Production',
+    title: 'Production Solutions',
     desc: 'Cinematic brand storytelling',
     href: '/video-production',
     icon: (
@@ -58,13 +40,12 @@ const serviceLinks = [
     ),
   },
   {
-    title: 'Search Engine Optimization',
-    desc: 'Rank higher, get found faster',
-    href: '/seo',
+    title: 'Social Media Marketing',
+    desc: 'Grow & engage your audience',
+    href: '/social-media',
     icon: (
       <svg viewBox="0 0 24 24" fill="none" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-        <circle cx="11" cy="11" r="8" />
-        <line x1="21" y1="21" x2="16.65" y2="16.65" />
+        <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z" />
       </svg>
     ),
   },
@@ -82,15 +63,34 @@ const serviceLinks = [
     ),
   },
   {
-    title: 'Content Solutions',
-    desc: 'Strategy, copy & creative assets',
-    href: '/content-solution',
+    title: 'Performance Marketing',
+    desc: 'ROI-driven paid campaigns',
+    href: '/performance-marketing',
     icon: (
       <svg viewBox="0 0 24 24" fill="none" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" />
-        <polyline points="14 2 14 8 20 8" />
-        <line x1="16" y1="13" x2="8" y2="13" />
-        <line x1="16" y1="17" x2="8" y2="17" />
+        <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />
+      </svg>
+    ),
+  },
+  {
+    title: 'Website Development',
+    desc: 'Fast, conversion-focused sites',
+    href: '/website-development',
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+        <polyline points="16 18 22 12 16 6" />
+        <polyline points="8 6 2 12 8 18" />
+      </svg>
+    ),
+  },
+  {
+    title: 'SEO',
+    desc: 'Rank higher, get found faster',
+    href: '/seo',
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+        <circle cx="11" cy="11" r="8" />
+        <line x1="21" y1="21" x2="16.65" y2="16.65" />
       </svg>
     ),
   },

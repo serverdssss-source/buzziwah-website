@@ -1,8 +1,21 @@
-import React, { useRef } from 'react';
+import { useRef, useState } from 'react';
 import VariableProximity from '../components/VariableProximity';
 
 const DigitalMarketingSection = () => {
   const containerRef = useRef(null);
+  const audioRef = useRef(null);
+  const [isPlaying, setIsPlaying] = useState(false);
+
+  const toggleAudio = () => {
+    if (audioRef.current) {
+      if (isPlaying) {
+        audioRef.current.pause();
+      } else {
+        audioRef.current.play();
+      }
+      setIsPlaying(!isPlaying);
+    }
+  };
   const marqueeItems = [
     'Branding & Identity',
     'Performance Marketing',
@@ -37,9 +50,9 @@ const DigitalMarketingSection = () => {
           <polygon points="140,480 170,498 170,532 140,550 110,532 110,498" stroke="rgba(168, 85, 247, 0.15)" strokeWidth="1.2" />
         </svg>
 
-        <img src="/logo.png" className="bbbbb-bg-logo bbbbb-bg-logo-1" alt="Buzziwah Decorative Logo Left" />
-        <img src="/logo.png" className="bbbbb-bg-logo bbbbb-bg-logo-2" alt="Buzziwah Decorative Logo Right" />
-        <img src="/logo.png" className="bbbbb-bg-logo-3d" alt="Buzziwah Giant 3D Watermark Center" />
+        <img src="/logo.png" className="bbbbb-bg-logo bbbbb-bg-logo-1" alt="" role="presentation" />
+        <img src="/logo.png" className="bbbbb-bg-logo bbbbb-bg-logo-2" alt="" role="presentation" />
+        <img src="/logo.png" className="bbbbb-bg-logo-3d" alt="" role="presentation" />
 
         <div className="bbbbb-tech-plus bbbbb-tp-1">+</div>
         <div className="bbbbb-tech-plus bbbbb-tp-2">+</div>
@@ -132,31 +145,85 @@ const DigitalMarketingSection = () => {
             <strong>Because looking good is easy&hellip; getting results isn&apos;t.</strong>
           </p>
 
-          <div className="bbbbb-cta-row bbbbb-fiu" style={{ '--fiu-delay': '0.52s' }}>
+          <div className="bbbbb-cta-row bbbbb-fiu" style={{ '--fiu-delay': '0.52s', display: 'flex', alignItems: 'center', gap: '16px', flexWrap: 'wrap' }}>
             <a className="bbbbb-cta-primary" href="/contact">
               Start a Project →
             </a>
-            <a className="bbbbb-cta-secondary" href="/case-studies">
+            <a 
+              className="bbbbb-cta-secondary" 
+              href="#projects"
+              onClick={(e) => {
+                e.preventDefault();
+                const projectsSection = document.querySelector('#projects, .shuffle-cards-section');
+                if (projectsSection) {
+                  projectsSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+              }}
+            >
               See Our Work
               <span className="bbbbb-cta-arrow">→</span>
             </a>
+            
+            {/* Audio Player Button */}
+            <button
+              onClick={toggleAudio}
+              className="bbbbb-audio-btn"
+              style={{
+                display: 'flex',
+                alignItems: 'center',
+                gap: '8px',
+                padding: '12px 20px',
+                background: 'rgba(173, 250, 59, 0.1)',
+                border: '1px solid rgba(173, 250, 59, 0.3)',
+                borderRadius: '50px',
+                color: '#adfa3b',
+                fontSize: '13px',
+                fontWeight: '700',
+                cursor: 'pointer',
+                transition: 'all 0.3s ease',
+                fontFamily: "'Syne', sans-serif",
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.background = 'rgba(173, 250, 59, 0.2)';
+                e.currentTarget.style.borderColor = '#adfa3b';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.background = 'rgba(173, 250, 59, 0.1)';
+                e.currentTarget.style.borderColor = 'rgba(173, 250, 59, 0.3)';
+              }}
+            >
+              <span style={{ fontSize: '18px' }}>{isPlaying ? '⏸' : '▶'}</span>
+              {isPlaying ? 'Pause' : 'Play'} Buzziwah Song
+            </button>
+            
+            <audio ref={audioRef} src="/BuzziWah.mp3" loop />
           </div>
         </div>
 
         <div className="bbbbb-hero-left">
           <div className="bbbbb-hero-media-wrapper">
-            <img
-              className="bbbbb-hero-person-img"
-              src="/image.png"
-              alt="Buzziwah"
-            />
+            <picture>
+              <source srcSet="/image.webp" type="image/webp" />
+              <img
+                className="bbbbb-hero-person-img"
+                src="/image.png"
+                alt="Buzziwah Digital Marketing Team"
+                width="758"
+                height="948"
+                loading="eager"
+                fetchpriority="high"
+              />
+            </picture>
 
             <div className="bbbbb-phone-video-overlay">
-              <iframe
-                src="https://www.youtube.com/embed/S4QYOZeCPfw?autoplay=1&mute=1&rel=0&modestbranding=1&controls=0&loop=1&playlist=S4QYOZeCPfw&playsinline=1&showinfo=0&disablekb=1&fs=0&iv_load_policy=3"
-                title="Buzziwah"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                style={{ pointerEvents: 'none' }}
+              <video
+                src="/hero-reel.mp4"
+                autoPlay
+                loop
+                muted
+                playsInline
+                preload="auto"
+                style={{ width: '100%', height: '100%', objectFit: 'cover', pointerEvents: 'none', borderRadius: 'inherit' }}
               />
             </div>
           </div>

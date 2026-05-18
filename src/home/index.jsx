@@ -47,7 +47,7 @@ const caseStudies = [
     url: 'https://kovedaa.com/'
   },
   {
-    img: 'srichakra_case.png',
+    img: 'srichakra_case.webp',
     pill: 'Branding & Web',
     title: 'Sindoor Collection',
     tag: 'Because her beauty deserves to shine a little brighter. Refined brand identities, custom websites, and creative product shoots.',

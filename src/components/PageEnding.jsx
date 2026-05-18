@@ -391,7 +391,7 @@ const SharedContactForm = () => {
           </div>
           <div className="contact-form-image" style={{ display: "flex", alignItems: "flex-end", justifyContent: "flex-start" }}>
             <img 
-              src="/shared-contact-section-illustration.png" 
+              src="/conactimage.png" 
               alt="Contact Illustration" 
               className="w-full max-w-sm opacity-80 mix-blend-screen"
               style={{ display: "block" }}

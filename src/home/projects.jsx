@@ -52,7 +52,7 @@ const CARDS = [
         title: "Sindoor Collection",
         tag: "Branding · Website · Product Shoot",
         url: "/case-study/sindoor-collection",
-        img: "/best works/srichakra_case.png",
+        img: "/best works/srichakra_case.webp",
         video: ""
     }
 ];
@@ -65,7 +65,7 @@ const PARALLAX_IMAGES = [
     "/PROJECTS HOME PAGE /WMN Doctors.png",
     "/PROJECTS HOME PAGE /TENT .webp",
     "/PROJECTS HOME PAGE /Kovedaa.png",
-    "/best works/srichakra_case.png"
+    "/best works/srichakra_case.webp"
 ];
 
 import React, { useRef } from "react";
@@ -157,7 +157,7 @@ export default function SmoothScrollHero() {
     const sectionHeight = isMobile ? 1200 : 2600;
 
     return (
-        <div className="bg-[#060811] relative z-10 w-full overflow-hidden border-t border-b border-white/5">
+        <div id="projects" className="bg-[#060811] relative z-10 w-full overflow-hidden border-t border-b border-white/5">
             <WaterDropletEffect />
             <div className="absolute top-[50%] left-[50%] -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-[#adfa3b]/12 blur-[150px] pointer-events-none" />
             
@@ -394,18 +394,26 @@ const ParallaxCard = ({ card, start, end, style = {} }) => {
         >
             {card.video ? (
                 <video
-                    src={card.video}
-                    autoPlay
+                    preload="none"
                     loop
                     muted
                     playsInline
                     ref={(el) => {
-                        if (el) {
-                            el.muted = true;
-                            el.playsInline = true;
-                            el.loop = true;
-                            el.play().catch(() => {});
-                        }
+                        if (!el) return;
+                        // Only load + play when the card scrolls into view
+                        const io = new IntersectionObserver(
+                            ([entry]) => {
+                                if (entry.isIntersecting) {
+                                    el.src = card.video; // set src lazily
+                                    el.load();
+                                    el.play().catch(() => {});
+                                } else {
+                                    el.pause();
+                                }
+                            },
+                            { threshold: 0.15, rootMargin: '100px' }
+                        );
+                        io.observe(el);
                     }}
                     className="w-full h-auto block transition-transform duration-700 group-hover:scale-105"
                 />

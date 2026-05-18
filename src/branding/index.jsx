@@ -634,17 +634,17 @@ const BrandsGridSection = () => {
         {/* NEW DESIGN - Masonry/Bento Grid with Featured Cards */}
         <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-3 mb-16">
           {[
-            { name: "Angola Academy", cat: "Education" },
-            { name: "Skill Incarnate", cat: "EdTech" },
-            { name: "Kovedaa", cat: "Wellness" },
-            { name: "BodhiAble", cat: "Accessibility" },
-            { name: "Samrat Restaurant", cat: "Hospitality" },
-            { name: "Wisden Clinics", cat: "Healthcare" },
+            { name: "Angola Academy", cat: "Education", logo: "/CLIENTS/Angola Academy.png" },
+            { name: "Skill Incarnate", cat: "EdTech", logo: "/CLIENTS/Skill Incarnate.png" },
+            { name: "Kovedaa", cat: "Wellness", logo: "/clientlogos/17.png" },
+            { name: "BodhiAble", cat: "Accessibility", logo: "/CLIENTS/Bodhiable.png" },
+            { name: "Samrat Restaurant", cat: "Hospitality", logo: "/CLIENTS/Samrat.png" },
+            { name: "Wisden Clinics", cat: "Healthcare", logo: "/CLIENTS/Wisden Clinics.png" },
             { name: "Locally Groomed", cat: "Aesthetics" },
-            { name: "Kalpavriksha Wedding Venue", cat: "Events" },
-            { name: "Sindoor Collection", cat: "E-Commerce" },
-            { name: "Crime Stopper", cat: "Security" },
-            { name: "Sri Vidyanikethan School", cat: "Academy" },
+            { name: "Kalpavriksha Wedding Venue", cat: "Events", logo: "/CLIENTS/Kalpavriksha.png" },
+            { name: "Sindoor Collection", cat: "E-Commerce", logo: "/CLIENTS/Sri Chakra.png" },
+            { name: "Crime Stopper", cat: "Security", logo: "/clientlogos/41.png" },
+            { name: "Sri Vidyanikethan School", cat: "Academy", logo: "/clientlogos/42.png" },
             { name: "Aanya Hospital", cat: "Healthcare" }
           ].map((brand, idx) => {
             // Make some cards span 2 columns for visual interest
@@ -654,31 +654,38 @@ const BrandsGridSection = () => {
             return (
             <div 
               key={idx} 
-              className={`group relative rounded-xl border border-white/5 bg-gradient-to-br from-white/[0.02] to-white/[0.01] p-5 hover:border-[#adfa3b]/30 hover:shadow-[0_10px_30px_rgba(173,250,59,0.1)] transition-all duration-300 flex flex-col justify-between min-h-[140px] ${colSpan} overflow-hidden`}
+              className={`group relative rounded-xl border border-black/5 bg-white p-6 hover:border-[#adfa3b]/50 hover:shadow-[0_20px_40px_rgba(0,0,0,0.12)] transition-all duration-300 flex flex-col justify-between min-h-[180px] ${colSpan} overflow-hidden`}
             >
-              {/* Gradient overlay on hover */}
-              <div className="absolute inset-0 bg-gradient-to-br from-[#a855f7]/5 to-[#adfa3b]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
+              {/* Subtle gradient overlay on hover */}
+              <div className="absolute inset-0 bg-gradient-to-br from-white to-gray-50 opacity-100 group-hover:from-[#adfa3b]/5 group-hover:to-[#a855f7]/5 transition-all duration-300 pointer-events-none" />
               
               {/* Number badge */}
-              <div className="absolute top-3 right-3 w-8 h-8 rounded-lg bg-gradient-to-br from-[#a855f7]/10 to-[#adfa3b]/10 border border-white/5 flex items-center justify-center">
-                <span className="text-[10px] font-['Bebas_Neue'] font-black text-white/30">
+              <div className="absolute top-3 right-3 w-8 h-8 rounded-lg bg-gray-100 border border-black/5 flex items-center justify-center">
+                <span className="text-[10px] font-['Bebas_Neue'] font-black text-black/20">
                   {String(idx + 1).padStart(2, '0')}
                 </span>
               </div>
               
-              <div className="relative z-10">
-                {/* Brand Name */}
-                <h4 className="font-['Montserrat'] text-sm font-extrabold text-white uppercase tracking-wide leading-tight mb-3 group-hover:text-[#adfa3b] transition-colors duration-200 pr-10">
-                  {brand.name}
-                </h4>
+              <div className="relative z-10 flex-1 flex items-center justify-center mb-6">
+                {brand.logo ? (
+                  <img 
+                    src={brand.logo} 
+                    alt={brand.name} 
+                    className="max-w-[90%] max-h-[90px] object-contain group-hover:scale-115 transition-transform duration-500"
+                  />
+                ) : (
+                  <h4 className="font-['Montserrat'] text-base font-extrabold text-black uppercase tracking-wide leading-tight group-hover:text-[#a855f7] transition-colors duration-200 text-center">
+                    {brand.name}
+                  </h4>
+                )}
               </div>
               
               {/* Category Badge */}
               <div className="relative z-10 flex items-center gap-2">
-                <div className="flex-1 h-[1px] bg-gradient-to-r from-white/10 to-transparent" />
+                <div className="flex-1 h-[1px] bg-black/5" />
                 <span className="text-[9px] font-mono font-black uppercase tracking-widest px-2 py-1 rounded-md" style={{
                   color: '#a855f7',
-                  background: 'rgba(168, 85, 247, 0.1)',
+                  background: 'rgba(168, 85, 247, 0.08)',
                 }}>
                   {brand.cat}
                 </span>
