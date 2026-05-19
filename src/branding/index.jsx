@@ -15,38 +15,38 @@ const Branding = () => {
     () => [
       {
         back: null,
-        front: 'https://sripadastudiosdigital.com/wp-content/uploads/2025/05/ANGOLA-ACADEMY-2-1.png',
+        front: 'https://demo.sripadastudios.com/wp-content/uploads/2025/05/ANGOLA-ACADEMY-2-1.png',
       },
       {
-        back: 'https://sripadastudiosdigital.com/wp-content/uploads/2025/05/ANGOLA-ACADEMY-2.png',
-        front: 'https://sripadastudiosdigital.com/wp-content/uploads/2025/05/CINIMINI-2.png',
+        back: 'https://demo.sripadastudios.com/wp-content/uploads/2025/05/ANGOLA-ACADEMY-2.png',
+        front: 'https://demo.sripadastudios.com/wp-content/uploads/2025/05/CINIMINI-2.png',
       },
       {
-        back: 'https://sripadastudiosdigital.com/wp-content/uploads/2025/05/CINIMINI.png',
-        front: 'https://sripadastudiosdigital.com/wp-content/uploads/2025/05/SVNI-2-1.png',
+        back: 'https://demo.sripadastudios.com/wp-content/uploads/2025/05/CINIMINI.png',
+        front: 'https://demo.sripadastudios.com/wp-content/uploads/2025/05/SVNI-2-1.png',
       },
       {
-        back: 'https://sripadastudiosdigital.com/wp-content/uploads/2025/05/SVNI-3.png',
-        front: 'https://sripadastudiosdigital.com/wp-content/uploads/2025/05/CRIME-STOPPER-2-1.png',
+        back: 'https://demo.sripadastudios.com/wp-content/uploads/2025/05/SVNI-3.png',
+        front: 'https://demo.sripadastudios.com/wp-content/uploads/2025/05/CRIME-STOPPER-2-1.png',
       },
       {
-        back: 'https://sripadastudiosdigital.com/wp-content/uploads/2025/05/CRIME-STOPPER-2.png',
-        front: 'https://sripadastudiosdigital.com/wp-content/uploads/2025/05/BODHIABLE-1.png',
+        back: 'https://demo.sripadastudios.com/wp-content/uploads/2025/05/CRIME-STOPPER-2.png',
+        front: 'https://demo.sripadastudios.com/wp-content/uploads/2025/05/BODHIABLE-1.png',
       },
       {
-        back: 'https://sripadastudiosdigital.com/wp-content/uploads/2025/05/BODHIABLE.png',
-        front: 'https://sripadastudiosdigital.com/wp-content/uploads/2025/05/HELLO-RAMESH-4.png',
+        back: 'https://demo.sripadastudios.com/wp-content/uploads/2025/05/BODHIABLE.png',
+        front: 'https://demo.sripadastudios.com/wp-content/uploads/2025/05/HELLO-RAMESH-4.png',
       },
       {
-        back: 'https://sripadastudiosdigital.com/wp-content/uploads/2025/05/HELLO-RAMESH-2.png',
-        front: 'https://sripadastudiosdigital.com/wp-content/uploads/2025/05/KOVEDAA-1.png',
+        back: 'https://demo.sripadastudios.com/wp-content/uploads/2025/05/HELLO-RAMESH-2.png',
+        front: 'https://demo.sripadastudios.com/wp-content/uploads/2025/05/KOVEDAA-1.png',
       },
       {
-        back: 'https://sripadastudiosdigital.com/wp-content/uploads/2025/05/KOVEDAA.png',
-        front: 'https://sripadastudiosdigital.com/wp-content/uploads/2025/05/NKR-2.png',
+        back: 'https://demo.sripadastudios.com/wp-content/uploads/2025/05/KOVEDAA.png',
+        front: 'https://demo.sripadastudios.com/wp-content/uploads/2025/05/NKR-2.png',
       },
       {
-        back: 'https://sripadastudiosdigital.com/wp-content/uploads/2025/05/NKR.png',
+        back: 'https://demo.sripadastudios.com/wp-content/uploads/2025/05/NKR.png',
         front: null,
         cover: true,
       },

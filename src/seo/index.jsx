@@ -481,11 +481,11 @@ const mainServices = [
 ];
 
 const seoDetailedServices = [
-  { img: 'https://sripadastudiosdigital.com/wp-content/uploads/2026/03/SSD_Performance-Marketing-Webpage-27.png', title: 'Search-Ready Websites', desc: 'Deep site health check, technical performance audit, site infrastructure review, and SEO foundations audit to ensure your website is built to rank.' },
-  { img: 'https://sripadastudiosdigital.com/wp-content/uploads/2026/03/SSD_Performance-Marketing-Webpage-28.png', title: 'Targeted Keyword Optimization', desc: 'Competitor keyword insights, precision keyword research, hyperlocal keyword targeting, and keyword performance tracking for maximum reach.' },
-  { img: 'https://sripadastudiosdigital.com/wp-content/uploads/2026/03/SSD_Performance-Marketing-Webpage-29.png', title: 'On-Page SEO', desc: 'Content built to rank, optimized meta titles and tags, smart site linking, and enhanced search appearance for every page.' },
-  { img: 'https://sripadastudiosdigital.com/wp-content/uploads/2026/03/SSD_Performance-Marketing-Webpage-30.png', title: 'Regional SEO Solutions', desc: 'Google Business Profile enhancements, location-based directory linking, online reputation management, and geo-targeted listing management.' },
-  { img: 'https://sripadastudiosdigital.com/wp-content/uploads/2026/03/SSD_Performance-Marketing-Webpage-31.png', title: 'Backlink Strategy', desc: 'Power domain links, content-driven outreach, trusted page links, and backlink gap analysis to build your domain authority.' },
+  { img: 'https://demo.sripadastudios.com/wp-content/uploads/2026/03/SSD_Performance-Marketing-Webpage-27.png', title: 'Search-Ready Websites', desc: 'Deep site health check, technical performance audit, site infrastructure review, and SEO foundations audit to ensure your website is built to rank.' },
+  { img: 'https://demo.sripadastudios.com/wp-content/uploads/2026/03/SSD_Performance-Marketing-Webpage-28.png', title: 'Targeted Keyword Optimization', desc: 'Competitor keyword insights, precision keyword research, hyperlocal keyword targeting, and keyword performance tracking for maximum reach.' },
+  { img: 'https://demo.sripadastudios.com/wp-content/uploads/2026/03/SSD_Performance-Marketing-Webpage-29.png', title: 'On-Page SEO', desc: 'Content built to rank, optimized meta titles and tags, smart site linking, and enhanced search appearance for every page.' },
+  { img: 'https://demo.sripadastudios.com/wp-content/uploads/2026/03/SSD_Performance-Marketing-Webpage-30.png', title: 'Regional SEO Solutions', desc: 'Google Business Profile enhancements, location-based directory linking, online reputation management, and geo-targeted listing management.' },
+  { img: 'https://demo.sripadastudios.com/wp-content/uploads/2026/03/SSD_Performance-Marketing-Webpage-31.png', title: 'Backlink Strategy', desc: 'Power domain links, content-driven outreach, trusted page links, and backlink gap analysis to build your domain authority.' },
 ];
 
 const howItWorks = [

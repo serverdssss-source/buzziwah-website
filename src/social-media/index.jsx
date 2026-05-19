@@ -374,13 +374,13 @@ const HeroSection = () => {
    📱 PHONE MOCKS
 ══════════════════════════════════════════════════════ */
 const igImages = [
-  'https://sripadastudiosdigital.com/wp-content/uploads/2025/05/CRISPY-VADA-12.png',
-  'https://sripadastudiosdigital.com/wp-content/uploads/2025/05/CRISPY-VADA-19.png',
-  'https://sripadastudiosdigital.com/wp-content/uploads/2025/05/CRISPY-VADA-18.png',
-  'https://sripadastudiosdigital.com/wp-content/uploads/2025/05/CRISPY-VADA-17.png',
-  'https://sripadastudiosdigital.com/wp-content/uploads/2025/05/CRISPY-VADA-14.png',
-  'https://sripadastudiosdigital.com/wp-content/uploads/2025/05/CRISPY-VADA-13.png',
-  'https://sripadastudiosdigital.com/wp-content/uploads/2025/05/CRISPY-VADA-15.png',
+  'https://demo.sripadastudios.com/wp-content/uploads/2025/05/CRISPY-VADA-12.png',
+  'https://demo.sripadastudios.com/wp-content/uploads/2025/05/CRISPY-VADA-19.png',
+  'https://demo.sripadastudios.com/wp-content/uploads/2025/05/CRISPY-VADA-18.png',
+  'https://demo.sripadastudios.com/wp-content/uploads/2025/05/CRISPY-VADA-17.png',
+  'https://demo.sripadastudios.com/wp-content/uploads/2025/05/CRISPY-VADA-14.png',
+  'https://demo.sripadastudios.com/wp-content/uploads/2025/05/CRISPY-VADA-13.png',
+  'https://demo.sripadastudios.com/wp-content/uploads/2025/05/CRISPY-VADA-15.png',
 ];
 
 const IgPhone = () => {
@@ -426,14 +426,14 @@ const IgPhone = () => {
 };
 
 const sssImages = [
-  'https://sripadastudiosdigital.com/wp-content/uploads/2025/05/Bodhiable_Story-1-1.png',
-  'https://sripadastudiosdigital.com/wp-content/uploads/2025/05/01-2.png',
-  'https://sripadastudiosdigital.com/wp-content/uploads/2025/05/Fitness-Factory-1.png',
-  'https://sripadastudiosdigital.com/wp-content/uploads/2025/05/Story_01-1.png',
-  'https://sripadastudiosdigital.com/wp-content/uploads/2025/05/End-Card-2.png',
-  'https://sripadastudiosdigital.com/wp-content/uploads/2025/05/story-1.png',
-  'https://sripadastudiosdigital.com/wp-content/uploads/2025/05/WMN_Story-1.png',
-  'https://sripadastudiosdigital.com/wp-content/uploads/2025/05/FRY_S-STORIES.png',
+  'https://demo.sripadastudios.com/wp-content/uploads/2025/05/Bodhiable_Story-1-1.png',
+  'https://demo.sripadastudios.com/wp-content/uploads/2025/05/01-2.png',
+  'https://demo.sripadastudios.com/wp-content/uploads/2025/05/Fitness-Factory-1.png',
+  'https://demo.sripadastudios.com/wp-content/uploads/2025/05/Story_01-1.png',
+  'https://demo.sripadastudios.com/wp-content/uploads/2025/05/End-Card-2.png',
+  'https://demo.sripadastudios.com/wp-content/uploads/2025/05/story-1.png',
+  'https://demo.sripadastudios.com/wp-content/uploads/2025/05/WMN_Story-1.png',
+  'https://demo.sripadastudios.com/wp-content/uploads/2025/05/FRY_S-STORIES.png',
 ];
 
 const StoryPhone = () => {
@@ -459,12 +459,12 @@ const StoryPhone = () => {
 };
 
 const reelVideos = [
-  'https://sripadastudiosdigital.com/wp-content/uploads/2025/05/ﬁtness-fitnessmotivation-bangaloregyms-southbangalore-isrolayout.mp4',
-  'https://sripadastudiosdigital.com/wp-content/uploads/2025/05/In-Frame-@diyapalakkal.official.mp4',
-  'https://sripadastudiosdigital.com/wp-content/uploads/2025/05/Samrat-food.mp4.mp4',
-  'https://sripadastudiosdigital.com/wp-content/uploads/2025/05/prasanth.mp4.mp4',
-  'https://sripadastudiosdigital.com/wp-content/uploads/2025/05/Deepthi.mp4.mp4',
-  'https://sripadastudiosdigital.com/wp-content/uploads/2025/05/Copper-Edge.mp4.mp4',
+  'https://demo.sripadastudios.com/wp-content/uploads/2025/05/ﬁtness-fitnessmotivation-bangaloregyms-southbangalore-isrolayout.mp4',
+  'https://demo.sripadastudios.com/wp-content/uploads/2025/05/In-Frame-@diyapalakkal.official.mp4',
+  'https://demo.sripadastudios.com/wp-content/uploads/2025/05/Samrat-food.mp4.mp4',
+  'https://demo.sripadastudios.com/wp-content/uploads/2025/05/prasanth.mp4.mp4',
+  'https://demo.sripadastudios.com/wp-content/uploads/2025/05/Deepthi.mp4.mp4',
+  'https://demo.sripadastudios.com/wp-content/uploads/2025/05/Copper-Edge.mp4.mp4',
 ];
 
 const ReelPhone = () => {
@@ -919,21 +919,21 @@ const Section7 = () => (
    🎞️ SECTION 8 — Production House
 ══════════════════════════════════════════════════════ */
 const carouselImages = [
-  { src: 'https://sripadastudiosdigital.com/wp-content/uploads/2025/05/ISITA_1-1.jpg', alt: 'Carousel 1' },
-  { src: 'https://sripadastudiosdigital.com/wp-content/uploads/2025/05/01-2-scaled.jpg', alt: 'Carousel 2' },
-  { src: 'https://sripadastudiosdigital.com/wp-content/uploads/2025/05/5-days-2.jpg', alt: 'Carousel 3' },
-  { src: 'https://sripadastudiosdigital.com/wp-content/uploads/2025/05/24-04-2025-1.png', alt: 'Carousel 4' },
-  { src: 'https://sripadastudiosdigital.com/wp-content/uploads/2025/05/45-TEASER-POSTERS-1.jpg', alt: 'Carousel 5' },
-  { src: 'https://sripadastudiosdigital.com/wp-content/uploads/2025/05/Dear-Moments-Womens-Day-1.png', alt: 'Carousel 6' },
-  { src: 'https://sripadastudiosdigital.com/wp-content/uploads/2025/05/SOMETI_1-1.jpg', alt: 'Carousel 7' },
-  { src: 'https://sripadastudiosdigital.com/wp-content/uploads/2025/05/WhatsApp-Image-2025-05-19-at-1.05.43-PM-1-1.jpeg', alt: 'Carousel 8' },
-  { src: 'https://sripadastudiosdigital.com/wp-content/uploads/2025/05/WhatsApp-Image-2025-05-19-at-1.05.43-PM-2.jpeg', alt: 'Carousel 9' },
-  { src: 'https://sripadastudiosdigital.com/wp-content/uploads/2025/05/WhatsApp-Image-2025-05-19-at-1.05.43-PM-1.jpeg', alt: 'Carousel 10' },
-  { src: 'https://sripadastudiosdigital.com/wp-content/uploads/2025/05/Ui-Posters-4-Days-to-Go-1.png', alt: 'Carousel 11' },
-  { src: 'https://sripadastudiosdigital.com/wp-content/uploads/2025/05/G9-CME-POSTS.png', alt: 'Carousel 12' },
-  { src: 'https://sripadastudiosdigital.com/wp-content/uploads/2025/05/Song_01.png', alt: 'Carousel 13' },
-  { src: 'https://sripadastudiosdigital.com/wp-content/uploads/2025/05/Song_02.png', alt: 'Carousel 14' },
-  { src: 'https://sripadastudiosdigital.com/wp-content/uploads/2025/05/Song_03.png', alt: 'Carousel 15' },
+  { src: 'https://demo.sripadastudios.com/wp-content/uploads/2025/05/ISITA_1-1.jpg', alt: 'Carousel 1' },
+  { src: 'https://demo.sripadastudios.com/wp-content/uploads/2025/05/01-2-scaled.jpg', alt: 'Carousel 2' },
+  { src: 'https://demo.sripadastudios.com/wp-content/uploads/2025/05/5-days-2.jpg', alt: 'Carousel 3' },
+  { src: 'https://demo.sripadastudios.com/wp-content/uploads/2025/05/24-04-2025-1.png', alt: 'Carousel 4' },
+  { src: 'https://demo.sripadastudios.com/wp-content/uploads/2025/05/45-TEASER-POSTERS-1.jpg', alt: 'Carousel 5' },
+  { src: 'https://demo.sripadastudios.com/wp-content/uploads/2025/05/Dear-Moments-Womens-Day-1.png', alt: 'Carousel 6' },
+  { src: 'https://demo.sripadastudios.com/wp-content/uploads/2025/05/SOMETI_1-1.jpg', alt: 'Carousel 7' },
+  { src: 'https://demo.sripadastudios.com/wp-content/uploads/2025/05/WhatsApp-Image-2025-05-19-at-1.05.43-PM-1-1.jpeg', alt: 'Carousel 8' },
+  { src: 'https://demo.sripadastudios.com/wp-content/uploads/2025/05/WhatsApp-Image-2025-05-19-at-1.05.43-PM-2.jpeg', alt: 'Carousel 9' },
+  { src: 'https://demo.sripadastudios.com/wp-content/uploads/2025/05/WhatsApp-Image-2025-05-19-at-1.05.43-PM-1.jpeg', alt: 'Carousel 10' },
+  { src: 'https://demo.sripadastudios.com/wp-content/uploads/2025/05/Ui-Posters-4-Days-to-Go-1.png', alt: 'Carousel 11' },
+  { src: 'https://demo.sripadastudios.com/wp-content/uploads/2025/05/G9-CME-POSTS.png', alt: 'Carousel 12' },
+  { src: 'https://demo.sripadastudios.com/wp-content/uploads/2025/05/Song_01.png', alt: 'Carousel 13' },
+  { src: 'https://demo.sripadastudios.com/wp-content/uploads/2025/05/Song_02.png', alt: 'Carousel 14' },
+  { src: 'https://demo.sripadastudios.com/wp-content/uploads/2025/05/Song_03.png', alt: 'Carousel 15' },
 ];
 
 const Section8 = () => (

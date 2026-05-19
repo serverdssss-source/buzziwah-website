@@ -628,49 +628,49 @@ const services = [
     num: '01',
     title: 'Campaign Strategy & Planning',
     desc: "We map out your campaign goals, audience, and funnel strategy to ensure every ad dollar is spent with purpose and precision.",
-    img: 'https://sripadastudiosdigital.com/wp-content/uploads/2026/03/SSD_Performance-Marketing-Webpage-32.png',
+    img: 'https://demo.sripadastudios.com/wp-content/uploads/2026/03/SSD_Performance-Marketing-Webpage-32.png',
   },
   {
     num: '02',
     title: 'Paid Ads (Google, Meta, YouTube)',
     desc: 'We create and manage high-performing ad campaigns across Google, Meta, and YouTube to maximize reach and conversions.',
-    img: 'https://sripadastudiosdigital.com/wp-content/uploads/2026/03/SSD_Performance-Marketing-Webpage-33.png',
+    img: 'https://demo.sripadastudios.com/wp-content/uploads/2026/03/SSD_Performance-Marketing-Webpage-33.png',
   },
   {
     num: '03',
     title: 'Audience Targeting & Segmentation',
     desc: 'We identify and target the right audience segments based on behavior, demographics, and intent for better campaign performance.',
-    img: 'https://sripadastudiosdigital.com/wp-content/uploads/2026/03/SSD_Performance-Marketing-Webpage-34.png',
+    img: 'https://demo.sripadastudios.com/wp-content/uploads/2026/03/SSD_Performance-Marketing-Webpage-34.png',
   },
   {
     num: '04',
     title: 'Ad Creatives & Copy',
     desc: 'We design scroll-stopping visuals and write compelling ad copy that captures attention and drives action.',
-    img: 'https://sripadastudiosdigital.com/wp-content/uploads/2026/03/SSD_Performance-Marketing-Webpage-35.png',
+    img: 'https://demo.sripadastudios.com/wp-content/uploads/2026/03/SSD_Performance-Marketing-Webpage-35.png',
   },
   {
     num: '05',
     title: 'Landing Page Optimisation',
     desc: 'We optimize your landing pages for conversions, ensuring seamless user experience from click to conversion.',
-    img: 'https://sripadastudiosdigital.com/wp-content/uploads/2026/03/SSD_Performance-Marketing-Webpage-36.png',
+    img: 'https://demo.sripadastudios.com/wp-content/uploads/2026/03/SSD_Performance-Marketing-Webpage-36.png',
   },
   {
     num: '06',
     title: 'A/B Testing & Experimentation',
     desc: 'We continuously test ad variations, creatives, and messaging to identify what works best and scale winning campaigns.',
-    img: 'https://sripadastudiosdigital.com/wp-content/uploads/2026/03/SSD_Performance-Marketing-Webpage-37.png',
+    img: 'https://demo.sripadastudios.com/wp-content/uploads/2026/03/SSD_Performance-Marketing-Webpage-37.png',
   },
   {
     num: '07',
     title: 'Conversion Tracking & Analytics',
     desc: 'We implement precise tracking systems to measure every conversion, click, and customer action across all platforms.',
-    img: 'https://sripadastudiosdigital.com/wp-content/uploads/2026/03/SSD_Performance-Marketing-Webpage-38.png',
+    img: 'https://demo.sripadastudios.com/wp-content/uploads/2026/03/SSD_Performance-Marketing-Webpage-38.png',
   },
   {
     num: '08',
     title: 'Performance Monitoring & Reporting',
     desc: 'We provide transparent, data-driven reports that show exactly how your campaigns are performing and where to improve.',
-    img: 'https://sripadastudiosdigital.com/wp-content/uploads/2026/03/SSD_Performance-Marketing-Webpage-39.png',
+    img: 'https://demo.sripadastudios.com/wp-content/uploads/2026/03/SSD_Performance-Marketing-Webpage-39.png',
   },
 ];
 
@@ -768,37 +768,37 @@ const zigzagSteps = [
   {
     title: 'Strategy Planning',
     desc: 'Define goals, KPIs, audience, and funnel direction. We map out every stage of your customer journey so campaigns launch with clarity and purpose.',
-    img: 'https://sripadastudiosdigital.com/wp-content/uploads/2026/03/SSD_Performance-Marketing-Webpage-47.png',
+    img: 'https://demo.sripadastudios.com/wp-content/uploads/2026/03/SSD_Performance-Marketing-Webpage-47.png',
   },
   {
     title: 'Channel Selection',
     desc: 'Select platforms like Google Ads, Meta, YouTube, and more. We match each channel to your audience behaviour and business objectives.',
-    img: 'https://sripadastudiosdigital.com/wp-content/uploads/2026/03/SSD_Performance-Marketing-Webpage-46.png',
+    img: 'https://demo.sripadastudios.com/wp-content/uploads/2026/03/SSD_Performance-Marketing-Webpage-46.png',
   },
   {
     title: 'Ad Creative',
     desc: 'Create engaging visuals and ad copy that convert. Every asset is designed to stop the scroll and drive meaningful action.',
-    img: 'https://sripadastudiosdigital.com/wp-content/uploads/2026/03/SSD_Performance-Marketing-Webpage-41.png',
+    img: 'https://demo.sripadastudios.com/wp-content/uploads/2026/03/SSD_Performance-Marketing-Webpage-41.png',
   },
   {
     title: 'Campaign Execution',
     desc: 'Launch optimized campaigns with proper targeting and budgets. We set precise parameters to maximise reach and minimise waste.',
-    img: 'https://sripadastudiosdigital.com/wp-content/uploads/2026/03/SSD_Performance-Marketing-Webpage-42.png',
+    img: 'https://demo.sripadastudios.com/wp-content/uploads/2026/03/SSD_Performance-Marketing-Webpage-42.png',
   },
   {
     title: 'Tracking & Analytics',
     desc: 'Use pixels, UTM tracking, and tools like GA4, Meta Pixel. Every click and conversion is measured to guide smarter decisions.',
-    img: 'https://sripadastudiosdigital.com/wp-content/uploads/2026/03/SSD_Performance-Marketing-Webpage-43.png',
+    img: 'https://demo.sripadastudios.com/wp-content/uploads/2026/03/SSD_Performance-Marketing-Webpage-43.png',
   },
   {
     title: 'Optimization',
     desc: 'Test creatives, refine bids, and enhance audience targeting. Continuous improvement turns good campaigns into great ones.',
-    img: 'https://sripadastudiosdigital.com/wp-content/uploads/2026/03/SSD_Performance-Marketing-Webpage-44.png',
+    img: 'https://demo.sripadastudios.com/wp-content/uploads/2026/03/SSD_Performance-Marketing-Webpage-44.png',
   },
   {
     title: 'Scaling',
     desc: "Scale high-performing campaigns for growth and profit. We expand what works and cut what doesn't — driving predictable returns.",
-    img: 'https://sripadastudiosdigital.com/wp-content/uploads/2026/03/SSD_Performance-Marketing-Webpage-45.png',
+    img: 'https://demo.sripadastudios.com/wp-content/uploads/2026/03/SSD_Performance-Marketing-Webpage-45.png',
   },
 ];
 
@@ -1463,8 +1463,8 @@ const PerformanceMarketing = () => {
         'Used real-time performance tracking to drive high-quality leads and membership sign-ups.',
         'Exceeded expectations with measurable results, improved ROI, and scalable growth potential.',
       ]}
-      videoSrc="https://sripadastudiosdigital.com/wp-content/uploads/2025/05/gym1-mp4.mp4"
-      poster="https://sripadastudiosdigital.com/wp-content/uploads/2025/05/Untitled-design-38.png"
+      videoSrc="https://demo.sripadastudios.com/wp-content/uploads/2025/05/gym1-mp4.mp4"
+      poster="https://demo.sripadastudios.com/wp-content/uploads/2025/05/Untitled-design-38.png"
       accentFrom="#8B5CF6"
       accentTo="#A78BFA"
       ctaLabel="Explore More"
@@ -1488,8 +1488,8 @@ const PerformanceMarketing = () => {
         'Delivered strong lead quality and better campaign profitability.',
         'Surpassed expectations with measurable and scalable performance results.',
       ]}
-      videoSrc="https://sripadastudiosdigital.com/wp-content/uploads/2025/05/lilbeez1-mp4-2.mp4"
-      poster="https://sripadastudiosdigital.com/wp-content/uploads/2025/05/Untitled-design-59.png"
+      videoSrc="https://demo.sripadastudios.com/wp-content/uploads/2025/05/lilbeez1-mp4-2.mp4"
+      poster="https://demo.sripadastudios.com/wp-content/uploads/2025/05/Untitled-design-59.png"
       accentFrom="#7C3AED"
       accentTo="#9F7AEA"
       ctaLabel="Explore More"

@@ -859,17 +859,17 @@ const About = () => {
   const containerRef = React.useRef(null);
   const [selectedMember, setSelectedMember] = React.useState(null);
   const images = [
-    'https://sripadastudiosdigital.com/wp-content/uploads/2025/04/1-6.png',
-    'https://sripadastudiosdigital.com/wp-content/uploads/2025/04/2-5.png',
-    'https://sripadastudiosdigital.com/wp-content/uploads/2025/04/3-5.png',
-    'https://sripadastudiosdigital.com/wp-content/uploads/2025/04/4-5.png',
-    'https://sripadastudiosdigital.com/wp-content/uploads/2025/04/5-3.png',
-    'https://sripadastudiosdigital.com/wp-content/uploads/2025/04/6-4.png',
-    'https://sripadastudiosdigital.com/wp-content/uploads/2025/04/7-1.png',
-    'https://sripadastudiosdigital.com/wp-content/uploads/2025/04/8-1.png',
-    'https://sripadastudiosdigital.com/wp-content/uploads/2025/04/9-1.png',
-    'https://sripadastudiosdigital.com/wp-content/uploads/2025/04/10-2.png',
-    'https://sripadastudiosdigital.com/wp-content/uploads/2025/04/11-2.png',
+    'https://demo.sripadastudios.com/wp-content/uploads/2025/04/1-6.png',
+    'https://demo.sripadastudios.com/wp-content/uploads/2025/04/2-5.png',
+    'https://demo.sripadastudios.com/wp-content/uploads/2025/04/3-5.png',
+    'https://demo.sripadastudios.com/wp-content/uploads/2025/04/4-5.png',
+    'https://demo.sripadastudios.com/wp-content/uploads/2025/04/5-3.png',
+    'https://demo.sripadastudios.com/wp-content/uploads/2025/04/6-4.png',
+    'https://demo.sripadastudios.com/wp-content/uploads/2025/04/7-1.png',
+    'https://demo.sripadastudios.com/wp-content/uploads/2025/04/8-1.png',
+    'https://demo.sripadastudios.com/wp-content/uploads/2025/04/9-1.png',
+    'https://demo.sripadastudios.com/wp-content/uploads/2025/04/10-2.png',
+    'https://demo.sripadastudios.com/wp-content/uploads/2025/04/11-2.png',
   ];
 
   const loopImages = images.concat(images);
