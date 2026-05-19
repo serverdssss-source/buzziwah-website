@@ -299,7 +299,7 @@ const ParallaxImages = () => {
         <div className="relative z-20 mt-[-100vh] pt-[25vh] pb-[10vh]" style={{ maxWidth: '1400px', margin: '0 auto', marginTop: '-100vh', padding: '25vh 24px 10vh' }}>
             
             {/* Row 1 — small left, large right */}
-            <div className="flex gap-6 md:gap-10 mb-10 md:mb-16 items-start justify-between">
+            <div className="flex flex-col md:flex-row gap-6 md:gap-10 mb-10 md:mb-16 items-center md:items-start justify-between">
                 <ParallaxCard
                     card={CARDS[0]}
                     start={0} end={-250}
@@ -313,7 +313,7 @@ const ParallaxImages = () => {
             </div>
 
             {/* Row 2 — medium left, small right */}
-            <div className="flex gap-6 md:gap-10 mb-10 md:mb-16 items-start justify-between">
+            <div className="flex flex-col md:flex-row gap-6 md:gap-10 mb-10 md:mb-16 items-center md:items-start justify-between">
                 <ParallaxCard
                     card={CARDS[2]}
                     start={80} end={-320}
@@ -327,7 +327,7 @@ const ParallaxImages = () => {
             </div>
 
             {/* Row 3 — medium left (Tent Cinema), medium right (Kovedaa) */}
-            <div className="flex gap-6 md:gap-10 mb-10 md:mb-16 items-start justify-between">
+            <div className="flex flex-col md:flex-row gap-6 md:gap-10 mb-10 md:mb-16 items-center md:items-start justify-between">
                 <ParallaxCard
                     card={CARDS[4]}
                     start={60} end={-350}
@@ -341,7 +341,7 @@ const ParallaxImages = () => {
             </div>
 
             {/* Row 4 — Centered focal final showcase (Sri Chakra) */}
-            <div className="flex gap-6 md:gap-10 mb-10 md:mb-16 items-start justify-center">
+            <div className="flex flex-col md:flex-row gap-6 md:gap-10 mb-10 md:mb-16 items-center md:items-start justify-center">
                 <ParallaxCard
                     card={CARDS[6]}
                     start={80} end={-350}
@@ -378,6 +378,9 @@ const ParallaxCard = ({ card, start, end, style = {} }) => {
     const y = useTransform(scrollYProgress, [0, 1], [adjustedStart, adjustedEnd]);
     const transform = useMotionTemplate`translateY(${y}px) scale(${scale})`;
 
+    const finalTransform = isMobile ? 'none' : transform;
+    const finalOpacity = isMobile ? 1 : opacity;
+
     return (
         <motion.a
             ref={ref}
@@ -386,10 +389,12 @@ const ParallaxCard = ({ card, start, end, style = {} }) => {
             rel="noopener noreferrer"
             className="relative block group cursor-pointer shrink-0 overflow-hidden rounded-3xl mx-auto w-full"
             style={{ 
-                transform, 
-                opacity, 
-                maxWidth: '380px', // Caps max size from both width and height equally
-                ...style 
+                transform: finalTransform, 
+                opacity: finalOpacity, 
+                maxWidth: '380px',
+                ...style,
+                width: isMobile ? '100%' : style.width,
+                marginTop: isMobile ? '1.5rem' : style.marginTop
             }}
         >
             {card.video ? (
