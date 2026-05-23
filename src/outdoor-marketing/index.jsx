@@ -101,7 +101,7 @@ const FloatingOutdoorBadges = () => {
    SECTION 1 CSS
 ══════════════════════════════════════════════════════ */
 const CSS1 = `
-  @import url('https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Montserrat:wght@400;500;700;800;900&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;500;600;700;800;900&family=Montserrat:wght@400;500;700;800;900&display=swap');
   *,*::before,*::after{box-sizing:border-box}
   /* ── CODED PAGE BANNER STYLES ── */
   .coded-page-banner {
@@ -240,7 +240,7 @@ const CSS1 = `
   }
 
   .coded-page-banner-title {
-    font-family: 'Syne', 'Montserrat', sans-serif !important;
+    font-family: 'Nunito Sans', 'Montserrat', sans-serif !important;
     font-size: clamp(38px, 5.5vw, 68px);
     font-weight: 800;
     text-shadow: 0 0 30px rgba(168, 85, 247, 0.25);
@@ -276,10 +276,10 @@ const CSS1 = `
     to { opacity: 1; transform: translateY(0); }
   }
   .buzziwah-section-heading {
-    font-family: 'Syne', 'Montserrat', sans-serif !important;
+    font-family: 'Nunito Sans', 'Montserrat', sans-serif !important;
     font-size: clamp(30px, 4.5vw, 54px);
     font-weight: 800;
-    background: linear-gradient(135deg, #ffffff 40%, #c084fc 100%);
+    background: linear-gradient(135deg, #ffffff 40%, #c084fc 100%) rotate(0);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -391,7 +391,7 @@ const CSS1 = `
     z-index: 1;
   }
   .outdoor-marquee-stat {
-    font-family: 'Syne', 'Montserrat', sans-serif !important;
+    font-family: 'Nunito Sans', 'Montserrat', sans-serif !important;
     font-size: clamp(28px, 2.5vw, 38px);
     font-weight: 850;
     color: #adfa3b;
@@ -419,7 +419,7 @@ const CSS2 = `
   @keyframes tabletFloat1 { 0% { transform: translateY(0px) rotate(-6deg) scale(1); } 33% { transform: translateY(-28px) rotate(-3deg) scale(1.02); } 66% { transform: translateY(-14px) rotate(-8deg) scale(0.98); } 100% { transform: translateY(0px) rotate(-6deg) scale(1); } }
   @keyframes tabletFloat2 { 0% { transform: translateY(0px) rotate(10deg) scale(1); } 40% { transform: translateY(-22px) rotate(13deg) scale(1.03); } 80% { transform: translateY(-8px) rotate(7deg) scale(0.97); } 100% { transform: translateY(0px) rotate(10deg) scale(1); } }
 
-  .svc-section { background: linear-gradient(135deg, #06040c 0%, #110825 50%, #06040c 100%); width: 100%; min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 80px 5%; font-family: 'DM Sans','Segoe UI',sans-serif; position: relative; overflow: hidden; }
+  .svc-section { background: linear-gradient(135deg, #06040c 0%, #110825 50%, #06040c 100%); width: 100%; min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 80px 5%; font-family: 'Nunito Sans','Segoe UI',sans-serif; position: relative; overflow: hidden; }
   .svc-dotgrid-panel { position:absolute;top:0;right:0;width:50%;height:100%;background-image:radial-gradient(circle,rgba(180,255,0,0.10) 1px,transparent 1px);background-size:18px 18px;pointer-events:none;z-index:0; }
   .svc-tablet { position:absolute;border-radius:18px;pointer-events:none;z-index:0; }
   .svc-tablet-1 { width:110px;height:155px;top:6%;left:3%;background:rgba(124,58,237,0.12);border:1px solid rgba(124,58,237,0.25);backdrop-filter:blur(6px);animation:tabletFloat1 9s ease-in-out infinite; }
@@ -427,14 +427,14 @@ const CSS2 = `
   
   .svc-inner { display:flex;align-items:center;justify-content:center;gap:48px;max-width:1800px;width:100%;margin:0 auto;position:relative;z-index:1; }
   .svc-left { flex:1 1 0;min-width:0;max-width:680px;display:flex;flex-direction:column;gap:48px; }
-  .svc-title { font-size:48px;font-weight:700;color:#fff;margin:0;font-family:'Syne','Segoe UI',sans-serif;letter-spacing:-0.5px;line-height:1.15; }
+  .svc-title { font-size:48px;font-weight:700;color:#fff;margin:0;font-family:'Nunito Sans','Segoe UI',sans-serif;letter-spacing:-0.5px;line-height:1.15; }
   .svc-grid { display:grid;grid-template-columns:1fr 1fr;gap:24px; }
   .svc-card { background:rgba(255,255,255,0.04);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border:1px solid rgba(255,255,255,0.10);border-radius:20px;padding:33px 30px 36px;display:flex;flex-direction:column;gap:12px;position:relative;overflow:hidden;cursor:default;transition:border-color 0.3s ease,transform 0.3s ease,background 0.3s ease;animation:glowPulse 4s ease-in-out infinite; }
   .svc-card::before { content:'';position:absolute;inset:0;background:linear-gradient(105deg,transparent 30%,rgba(255,255,255,0.07) 50%,transparent 70%);background-size:200% 100%;opacity:0;transition:opacity 0.3s ease;pointer-events:none;border-radius:inherit; }
   .svc-card:hover::before { opacity:1;animation:glassShimmer 1.2s ease forwards; }
   .svc-card:hover { border-color:rgba(124,58,237,0.65);transform:translateY(-6px);background:rgba(124,58,237,0.10);backdrop-filter:blur(22px);-webkit-backdrop-filter:blur(22px); }
   .svc-card:nth-child(1){animation-delay:0s}.svc-card:nth-child(2){animation-delay:1s}.svc-card:nth-child(3){animation-delay:2s}.svc-card:nth-child(4){animation-delay:3s}
-  .svc-card-title { font-size:22px;font-weight:700;color:#fff;margin:0;line-height:1.35;font-family:'Syne','Segoe UI',sans-serif; }
+  .svc-card-title { font-size:22px;font-weight:700;color:#fff;margin:0;line-height:1.35;font-family:'Nunito Sans','Segoe UI',sans-serif; }
   .svc-card-body { font-size: 19px; color: rgba(255,255,255,0.65); line-height: 1.65; margin: 0; }
   .svc-right { flex:1 1 0;min-width:0;max-width:570px;height:680px;display:flex;align-items:center;justify-content:center; }
   
@@ -492,23 +492,23 @@ const CSS2 = `
 `;
 
 const CSS4 = `
-  @import url('https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500;600;700;800&display=swap');
-  .seo-wrap { position: relative; background: #05030a; min-height: auto; display: flex; align-items: center; justify-content: center; padding: 56px 48px 88px; box-sizing: border-box; overflow: hidden; font-family: 'Barlow', sans-serif; }
+  @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;500;600;700;800;900&family=Montserrat:wght@400;500;700;800;900&display=swap');
+  .seo-wrap { position: relative; background: #05030a; min-height: auto; display: flex; align-items: center; justify-content: center; padding: 56px 48px 88px; box-sizing: border-box; overflow: hidden; font-family: 'Nunito Sans', sans-serif; }
   .seo-canvas { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0; }
   .seo-inner-process { position: relative; z-index: 1; max-width: 1060px; width: 100%; }
   .seo-head { text-align: center; margin-bottom: 44px; opacity: 0; transform: translateY(22px); animation: seoFadeUp 0.75s cubic-bezier(0.22,1,0.36,1) 0.15s forwards; }
   @keyframes seoFadeUp { to { opacity: 1; transform: translateY(0); } }
-  .seo-title-v2 { font-family: 'Barlow', sans-serif; font-weight: 700; font-size: clamp(24px, 3.6vw, 42px); color: #ffffff; margin: 0 0 14px; letter-spacing: -0.015em; line-height: 1.15; }
-  .seo-subtitle { font-family: 'Barlow', sans-serif; font-weight: 300; font-size: 13.5px; color: #6b7888; letter-spacing: 0.14em; text-transform: uppercase; margin: 0; }
+  .seo-title-v2 { font-family: 'Nunito Sans', sans-serif; font-weight: 700; font-size: clamp(24px, 3.6vw, 42px); color: #ffffff; margin: 0 0 14px; letter-spacing: -0.015em; line-height: 1.15; }
+  .seo-subtitle { font-family: 'Nunito Sans', sans-serif; font-weight: 300; font-size: 13.5px; color: #6b7888; letter-spacing: 0.14em; text-transform: uppercase; margin: 0; }
   .seo-rows { display: flex; flex-direction: column; }
   .seo-row { display: grid; grid-template-columns: 64px 260px 1fr; align-items: start; gap: 0 40px; padding: 30px 0; position: relative; opacity: 0; transform: translateX(-20px); transition: opacity 0.65s cubic-bezier(0.22,1,0.36,1), transform 0.65s cubic-bezier(0.22,1,0.36,1); }
   .seo-row::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px; background: linear-gradient(90deg, transparent 0%, rgba(160,100,255,0.12) 15%, rgba(160,100,255,0.22) 50%, rgba(160,100,255,0.12) 85%, transparent 100%); transition: opacity 0.3s ease; }
   .seo-row:last-child::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 1px; background: linear-gradient(90deg, transparent 0%, rgba(160,100,255,0.12) 15%, rgba(160,100,255,0.22) 50%, rgba(160,100,255,0.12) 85%, transparent 100%); }
   .seo-row:hover::before { background: linear-gradient(90deg, transparent 0%, rgba(160,100,255,0.45) 20%, rgba(160,100,255,0.7) 50%, rgba(160,100,255,0.45) 80%, transparent 100%); }
   .seo-row.row-visible { opacity: 1; transform: translateX(0); }
-  .seo-num { font-family: 'Barlow', sans-serif; font-weight: 300; font-size: 14px; color: #414d5c; letter-spacing: 0.04em; padding-top: 3px; }
-  .seo-name { font-family: 'Barlow', sans-serif; font-weight: 700; font-size: clamp(15px, 1.8vw, 21px); color: #b06aff; line-height: 1.3; letter-spacing: 0.01em; padding-top: 2px; }
-  .seo-desc-v2 { font-family: 'Barlow', sans-serif; font-weight: 500; font-size: clamp(14px, 1.2vw, 16px); color: #a8b4c7; line-height: 1.8; letter-spacing: 0.06em; text-transform: uppercase; padding-top: 4px; }
+  .seo-num { font-family: 'Nunito Sans', sans-serif; font-weight: 300; font-size: 14px; color: #414d5c; letter-spacing: 0.04em; padding-top: 3px; }
+  .seo-name { font-family: 'Nunito Sans', sans-serif; font-weight: 700; font-size: clamp(15px, 1.8vw, 21px); color: #b06aff; line-height: 1.3; letter-spacing: 0.01em; padding-top: 2px; }
+  .seo-desc-v2 { font-family: 'Nunito Sans', sans-serif; font-weight: 500; font-size: clamp(14px, 1.2vw, 16px); color: #a8b4c7; line-height: 1.8; letter-spacing: 0.06em; text-transform: uppercase; padding-top: 4px; }
   @media (max-width: 700px) { .seo-wrap { padding: 44px 24px 68px; } .seo-head { margin-bottom: 28px; } .seo-row { grid-template-columns: 44px 1fr; grid-template-rows: auto auto; gap: 6px 14px; padding: 24px 0; } .seo-num { grid-column:1; grid-row:1; } .seo-name { grid-column:2; grid-row:1; } .seo-desc-v2 { grid-column:1/-1; grid-row:2; } }
 `;
 
@@ -621,7 +621,7 @@ const WhyOutdoorMattersSection = () => {
                   <span className="text-[28px] font-mono font-black text-white/5">{point.num}</span>
                   <span className="w-2.5 h-2.5 rounded-full bg-[#adfa3b]" style={{ boxShadow: `0 0 10px #adfa3b` }} />
                 </div>
-                <h3 style={{ fontFamily:"'Syne', 'Montserrat', sans-serif", fontSize:'clamp(22px,2.5vw,34px)', fontWeight:800, background: 'linear-gradient(135deg, #ffffff 40%, #c084fc 100%)', WebkitBackgroundClip: 'text', backgroundClip: 'text', WebkitTextFillColor: 'transparent', color: '#ffffff', margin:'0 0 12px' }} className="transition-colors">
+                <h3 style={{ fontFamily:"'Nunito Sans', 'Montserrat', sans-serif", fontSize:'clamp(22px,2.5vw,34px)', fontWeight:800, background: 'linear-gradient(135deg, #ffffff 40%, #c084fc 100%)', WebkitBackgroundClip: 'text', backgroundClip: 'text', WebkitTextFillColor: 'transparent', color: '#ffffff', margin:'0 0 12px' }} className="transition-colors">
                   {point.title}
                 </h3>
                 <p className="text-white/70 text-base sm:text-lg leading-relaxed mb-6 font-normal">
@@ -636,7 +636,7 @@ const WhyOutdoorMattersSection = () => {
           <div className="absolute inset-y-0 right-0 w-1/2 bg-[radial-gradient(circle_at_center,rgba(173,250,59,0.04)_0%,transparent_70%)] pointer-events-none" />
           <div className="relative z-10">
             <span className="text-[10px] font-mono font-black tracking-[0.2em] text-[#adfa3b] uppercase mb-2 block font-bold">STREET DOMINANCE</span>
-            <h3 style={{ fontFamily:"'Syne', 'Montserrat', sans-serif", fontSize:'clamp(22px,2.5vw,34px)', fontWeight:800, background: 'linear-gradient(135deg, #ffffff 40%, #c084fc 100%)', WebkitBackgroundClip: 'text', backgroundClip: 'text', WebkitTextFillColor: 'transparent', color: '#ffffff', margin:'0 0 12px' }}>
+            <h3 style={{ fontFamily:"'Nunito Sans', 'Montserrat', sans-serif", fontSize:'clamp(22px,2.5vw,34px)', fontWeight:800, background: 'linear-gradient(135deg, #ffffff 40%, #c084fc 100%)', WebkitBackgroundClip: 'text', backgroundClip: 'text', WebkitTextFillColor: 'transparent', color: '#ffffff', margin:'0 0 12px' }}>
               Real-world authority that works 24/7.
             </h3>
             <p className="text-white/60 text-sm max-w-lg leading-relaxed">
@@ -856,7 +856,7 @@ export default function OutdoorMarketingPage() {
               <div className="absolute inset-0 flex flex-col items-center justify-center p-8 text-center bg-gradient-to-t from-black/80 via-black/20 to-black/80 z-10">
                 <div className="px-6 py-12 rounded-2xl border border-white/10 bg-black/40 backdrop-blur-md max-w-sm">
                   <span className="text-[10px] font-mono tracking-[0.25em] text-[#adfa3b] font-black uppercase mb-3 block">BUZZIWAH IMPACT</span>
-                  <h3 style={{ fontFamily:"'Syne', 'Montserrat', sans-serif", fontSize:'clamp(22px,2.5vw,34px)', fontWeight:800, background: 'linear-gradient(135deg, #ffffff 40%, #c084fc 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', margin:'0 0 12px' }}>
+                  <h3 style={{ fontFamily:"'Nunito Sans', 'Montserrat', sans-serif", fontSize:'clamp(22px,2.5vw,34px)', fontWeight:800, background: 'linear-gradient(135deg, #ffffff 40%, #c084fc 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', margin:'0 0 12px' }}>
                     MASSIVE REAL-WORLD AUDIENCE REACH
                   </h3>
                   <div className="w-16 h-[2px] bg-[#adfa3b] mx-auto my-4" />
