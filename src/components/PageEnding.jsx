@@ -109,20 +109,34 @@ const FooterOnly = () => (
   </footer>
 );
 
-const SharedContactForm = () => {
-  const [formData, setFormData] = useState({ name: "", email: "", message: "", service: "" });
+const SharedContactForm = ({ isCareers = false }) => {
+  const [formData, setFormData] = useState({ 
+    name: "", 
+    email: "", 
+    phone: "",
+    role: "",
+    experience: "",
+    message: "", 
+    service: "" 
+  });
   const [submitted, setSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if (formData.name && formData.email && formData.message) {
+    const isValid = isCareers 
+      ? (formData.name && formData.email && formData.role && formData.experience && formData.message)
+      : (formData.name && formData.email && formData.message);
+
+    if (isValid) {
       setIsSubmitting(true);
       const finalData = {
         ...formData,
-        access_key: import.meta.env.VITE_WEB3FORMS_KEY,
-        subject: `New Lead for ${formData.service || 'General'}`,
-        from_name: "Buzziwah Website (Shared Form)",
+        access_key: import.meta.env.VITE_WEB3FORMS_KEY || "630055c9-f103-4cf8-a3d9-296452634b67",
+        subject: isCareers 
+          ? `Job Application: ${formData.role} (${formData.experience})`
+          : `New Lead for ${formData.service || 'General'}`,
+        from_name: isCareers ? "Buzziwah Careers Page" : "Buzziwah Website (Shared Form)",
       };
 
       try {
@@ -268,11 +282,6 @@ const SharedContactForm = () => {
           color: #adfa3b;
           box-shadow: 0 0 15px rgba(173, 250, 59, 0.15);
         }
-          border-color: #adfa3b;
-          background: rgba(173, 250, 59, 0.08);
-          color: #adfa3b;
-          box-shadow: 0 0 12px rgba(173, 250, 59, 0.15);
-        }
 
         .pe-submit-btn {
           display: inline-flex;
@@ -374,33 +383,35 @@ const SharedContactForm = () => {
         }
       `}</style>
 
-      <div className="contact-form-inner relative z-10 max-w-6xl mx-auto grid lg:grid-cols-2 gap-16" style={{ alignItems: "end" }}>
+      <div className={`contact-form-inner relative z-10 max-w-6xl mx-auto ${isCareers ? 'flex flex-col items-center justify-center' : 'grid lg:grid-cols-2 gap-16'}`} style={isCareers ? { display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", margin: "0 auto", width: "100%" } : { alignItems: "end" }}>
         {/* Left Side Content */}
-        <div className="space-y-8">
-          <div className="space-y-6">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-[#adfa3b]/20 bg-[#adfa3b]/5 text-[9px] uppercase tracking-[0.25em] text-[#adfa3b] font-bold">
-              ⚡ LET'S TALK
+        {!isCareers && (
+          <div className="space-y-8">
+            <div className="space-y-6">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-[#adfa3b]/20 bg-[#adfa3b]/5 text-[9px] uppercase tracking-[0.25em] text-[#adfa3b] font-bold">
+                ⚡ LET'S TALK
+              </div>
+              <h2 className="text-4xl md:text-5xl font-black uppercase tracking-tight leading-none text-white">
+                WE BRING THE BUZZ.<br />
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#adfa3b] to-purple-400">YOU GET THE RESULTS.</span>
+              </h2>
+              <p className="text-[#a3a3c2] text-sm md:text-base leading-relaxed max-w-md">
+                Fill in your goals and let’s coordinate a custom-designed digital action plan to transform your brand identity.
+              </p>
             </div>
-            <h2 className="text-4xl md:text-5xl font-black uppercase tracking-tight leading-none text-white">
-              WE BRING THE BUZZ.<br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#adfa3b] to-purple-400">YOU GET THE RESULTS.</span>
-            </h2>
-            <p className="text-[#a3a3c2] text-sm md:text-base leading-relaxed max-w-md">
-              Fill in your goals and let’s coordinate a custom-designed digital action plan to transform your brand identity.
-            </p>
+            <div className="contact-form-image" style={{ display: "flex", alignItems: "flex-end", justifyContent: "flex-start" }}>
+              <img 
+                src="/conactimage.png" 
+                alt="Contact Illustration" 
+                className="w-full max-w-sm opacity-80 mix-blend-screen"
+                style={{ display: "block" }}
+              />
+            </div>
           </div>
-          <div className="contact-form-image" style={{ display: "flex", alignItems: "flex-end", justifyContent: "flex-start" }}>
-            <img 
-              src="/conactimage.png" 
-              alt="Contact Illustration" 
-              className="w-full max-w-sm opacity-80 mix-blend-screen"
-              style={{ display: "block" }}
-            />
-          </div>
-        </div>
+        )}
 
         {/* Right Side Glass Form */}
-        <div className="page-ending-glass-form" style={{ marginBottom: "24px" }}>
+        <div className="page-ending-glass-form w-full" style={{ marginBottom: "24px", maxWidth: isCareers ? "600px" : "100%" }}>
           {submitted && (
             <div className="pe-success-overlay">
               <div className="text-center space-y-4 px-6">
@@ -418,6 +429,20 @@ const SharedContactForm = () => {
                   Send New Query
                 </button>
               </div>
+            </div>
+          )}
+
+          {isCareers && (
+            <div className="text-center mb-8">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-[#adfa3b]/20 bg-[#adfa3b]/5 text-[9px] uppercase tracking-[0.25em] text-[#adfa3b] font-bold mb-3">
+                💼 CAREERS
+              </div>
+              <h2 className="text-3xl font-black uppercase tracking-tight text-white">
+                JOIN THE CREATIVE ELITE
+              </h2>
+              <p className="text-[#a3a3c2] text-xs mt-2 max-w-sm mx-auto">
+                Submit your application, target role, and experience level below.
+              </p>
             </div>
           )}
 
@@ -448,36 +473,111 @@ const SharedContactForm = () => {
               </div>
             </div>
 
-            {/* Target Service Option Boxes */}
-            <div className="space-y-3">
-              <span className="text-[10px] font-bold uppercase tracking-[0.15em] text-[#adfa3b] block">
-                Target Service *
-              </span>
-              <div className="grid grid-cols-2 gap-3">
-                {services.map((srv) => (
-                  <div
-                    key={srv}
-                    onClick={() => setFormData({ ...formData, service: srv })}
-                    className={`pe-option-box ${formData.service === srv ? "active" : ""}`}
-                  >
-                    {srv}
+            {isCareers ? (
+              <>
+                <div className="grid grid-cols-2 gap-6">
+                  <div className="pe-input-wrap">
+                    <input
+                      required
+                      type="text"
+                      placeholder=" "
+                      className="pe-input"
+                      value={formData.phone}
+                      onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                    />
+                    <label className="pe-input-label">Phone Number *</label>
                   </div>
-                ))}
-              </div>
-            </div>
 
-            <div className="pe-input-wrap">
-              <textarea
-                required
-                rows={3}
-                placeholder=" "
-                className="pe-input"
-                style={{ resize: "none" }}
-                value={formData.message}
-                onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-              />
-              <label className="pe-input-label">Comment or Message *</label>
-            </div>
+                  <div className="pe-input-wrap">
+                    <input
+                      required
+                      type="text"
+                      placeholder=" "
+                      className="pe-input"
+                      value={formData.role}
+                      onChange={(e) => setFormData({ ...formData, role: e.target.value })}
+                    />
+                    <label className="pe-input-label">Target Role *</label>
+                  </div>
+                </div>
+
+                <div className="pe-input-wrap">
+                  <select
+                    required
+                    className="pe-input"
+                    value={formData.experience}
+                    onChange={(e) => setFormData({ ...formData, experience: e.target.value })}
+                    style={{ appearance: 'none', WebkitAppearance: 'none', color: formData.experience ? '#ffffff' : 'rgba(255, 255, 255, 0.4)' }}
+                  >
+                    <option value="" disabled></option>
+                    <option value="Freshers" style={{ background: '#05020e', color: '#fff' }}>Freshers (0 - 1 years)</option>
+                    <option value="Mid-Level" style={{ background: '#05020e', color: '#fff' }}>Mid-Level (1 - 3 years)</option>
+                    <option value="Senior" style={{ background: '#05020e', color: '#fff' }}>Senior (3 - 5 years)</option>
+                    <option value="Lead" style={{ background: '#05020e', color: '#fff' }}>Lead (5+ years)</option>
+                  </select>
+                  <label className="pe-input-label" style={{ 
+                    top: formData.experience ? '-10px' : '17px',
+                    left: formData.experience ? '14px' : '20px',
+                    fontSize: formData.experience ? '10px' : '14px',
+                    fontWeight: formData.experience ? '800' : 'bold',
+                    color: formData.experience ? '#adfa3b' : 'rgba(255, 255, 255, 0.4)',
+                    background: formData.experience ? '#03010a' : 'transparent',
+                    border: formData.experience ? '1px solid rgba(173, 250, 59, 0.2)' : 'none',
+                    padding: formData.experience ? '2px 10px' : '0',
+                    borderRadius: formData.experience ? '6px' : '0',
+                  }}>Experience Level *</label>
+                  <div className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-white/50 text-[10px]">
+                    ▼
+                  </div>
+                </div>
+
+                <div className="pe-input-wrap">
+                  <textarea
+                    required
+                    rows={4}
+                    placeholder=" "
+                    className="pe-input"
+                    style={{ resize: "none" }}
+                    value={formData.message}
+                    onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                  />
+                  <label className="pe-input-label">Role Description & Cover Letter *</label>
+                </div>
+              </>
+            ) : (
+              <>
+                {/* Target Service Option Boxes */}
+                <div className="space-y-3">
+                  <span className="text-[10px] font-bold uppercase tracking-[0.15em] text-[#adfa3b] block">
+                    Target Service *
+                  </span>
+                  <div className="grid grid-cols-2 gap-3">
+                    {services.map((srv) => (
+                      <div
+                        key={srv}
+                        onClick={() => setFormData({ ...formData, service: srv })}
+                        className={`pe-option-box ${formData.service === srv ? "active" : ""}`}
+                      >
+                        {srv}
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                <div className="pe-input-wrap">
+                  <textarea
+                    required
+                    rows={3}
+                    placeholder=" "
+                    className="pe-input"
+                    style={{ resize: "none" }}
+                    value={formData.message}
+                    onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                  />
+                  <label className="pe-input-label">Comment or Message *</label>
+                </div>
+              </>
+            )}
 
             <div>
               <button 
@@ -486,7 +586,7 @@ const SharedContactForm = () => {
                 disabled={isSubmitting}
                 style={{ opacity: isSubmitting ? 0.7 : 1 }}
               >
-                {isSubmitting ? "Processing..." : "Initiate Contact"} <FiArrowUpRight size={16} />
+                {isSubmitting ? "Processing..." : (isCareers ? "Submit Application" : "Initiate Contact")} <FiArrowUpRight size={16} />
               </button>
             </div>
           </form>
@@ -496,9 +596,9 @@ const SharedContactForm = () => {
   );
 };
 
-const PageEnding = ({ showContactForm = true }) => (
+const PageEnding = ({ showContactForm = true, isCareers = false }) => (
   <>
-    {showContactForm ? <SharedContactForm /> : null}
+    {showContactForm ? <SharedContactForm isCareers={isCareers} /> : null}
     <FooterOnly />
   </>
 );

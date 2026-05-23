@@ -475,7 +475,7 @@ export default function Contact() {
                       setIsSubmitting(true);
                       const finalData = {
                         ...formData,
-                        access_key: import.meta.env.VITE_WEB3FORMS_KEY,
+                        access_key: import.meta.env.VITE_WEB3FORMS_KEY || "630055c9-f103-4cf8-a3d9-296452634b67",
                         subject: "New Lead from Contact Page",
                         from_name: "Buzziwah Website",
                         services: selectedServices.join(", "),

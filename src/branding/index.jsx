@@ -15,6 +15,30 @@ const Branding = () => {
     () => [
       {
         back: null,
+        frontBrand: { name: "Aanya Hospital", cat: "Healthcare" },
+      },
+      {
+        backBrand: { name: "Sri Vidyanikethan School", cat: "Academy", logo: "/clientlogos/42.png" },
+        frontBrand: { name: "Crime Stopper", cat: "Security", logo: "/clientlogos/41.png" },
+      },
+      {
+        backBrand: { name: "Sindoor Collection", cat: "E-Commerce", logo: "/CLIENTS/Sri Chakra.png" },
+        frontBrand: { name: "Kalpavriksha Wedding Venue", cat: "Events", logo: "/CLIENTS/Kalpavriksha.png" },
+      },
+      {
+        backBrand: { name: "Locally Groomed", cat: "Aesthetics" },
+        frontBrand: { name: "Wisden Clinics", cat: "Healthcare", logo: "/CLIENTS/Wisden Clinics.png" },
+      },
+      {
+        backBrand: { name: "Samrat Restaurant", cat: "Hospitality", logo: "/CLIENTS/Samrat.png" },
+        frontBrand: { name: "BodhiAble", cat: "Accessibility", logo: "/CLIENTS/Bodhiable.png" },
+      },
+      {
+        backBrand: { name: "Kovedaa", cat: "Wellness", logo: "/clientlogos/17.png" },
+        frontBrand: { name: "Skill Incarnate", cat: "EdTech", logo: "/CLIENTS/Skill Incarnate.png" },
+      },
+      {
+        backBrand: { name: "Angola Academy", cat: "Education", logo: "/CLIENTS/Angola Academy.png" },
         front: 'https://demo.sripadastudios.com/wp-content/uploads/2025/05/ANGOLA-ACADEMY-2-1.png',
       },
       {
@@ -178,8 +202,37 @@ const Branding = () => {
           <div className="bbbbb-tech-plus bbbbb-tp-3">+</div>
           <div className="bbbbb-tech-plus bbbbb-tp-4">+</div>
         </div>
+
+        {/* Section Header */}
+        <div className="relative z-10 mb-14 text-center px-4">
+          <div className="inline-flex items-center gap-3 mb-4">
+            <FaTrophy className="text-3xl text-[#a855f7]" />
+            <span className="text-[11px] font-mono font-bold px-4 py-2 bg-[#a855f7]/10 text-[#a855f7] rounded-full uppercase tracking-[0.2em] border border-[#a855f7]/20">
+              ✦ PORTFOLIO SHOWCASE ✦
+            </span>
+            <FaStar className="text-3xl text-[#adfa3b]" />
+          </div>
+          <h2 className="font-['Bebas_Neue','Impact',sans-serif] text-[clamp(48px,8vw,96px)] font-black uppercase leading-[0.85] mb-2" style={{
+            color: 'transparent',
+            WebkitTextStroke: '1.5px white',
+            textShadow: '4px 4px 0 rgba(124,58,237,0.4)',
+          }}>
+            BRANDS BUILT
+          </h2>
+          <h2 className="font-['Bebas_Neue','Impact',sans-serif] text-[clamp(48px,8vw,96px)] font-black uppercase leading-[0.85] mb-4" style={{
+            color: '#adfa3b',
+            WebkitTextStroke: '1.5px white',
+            textShadow: '4px 4px 0 rgba(0,0,0,0.5)',
+          }}>
+            BY BUZZIWAH
+          </h2>
+          <p className="mt-4 max-w-xl text-white/50 text-sm sm:text-base leading-relaxed mx-auto">
+            A look at the professional identities, positioning strategies, and design directions we've established for our partners.
+          </p>
+        </div>
+
         <div
-          className="relative mx-auto mb-6 h-[420px] w-[90vw] max-w-[520px] sm:h-[500px] sm:max-w-[600px] md:h-[600px] md:w-[700px] md:max-w-[90vw]"
+          className="relative mx-auto mb-6 h-[420px] w-full max-w-[90%] sm:h-[500px] sm:max-w-[600px] md:h-[600px] md:max-w-[700px]"
           style={{ perspective: '1200px' }}
         >
           {pages.map((page, idx) => (
@@ -198,7 +251,14 @@ const Branding = () => {
                     ? { backgroundImage: `url('${page.back}')`, transform: 'rotateY(180deg)' }
                     : { transform: 'rotateY(180deg)' }
                 }
-              />
+              >
+                {page.backBrand && (
+                  <div className="w-full h-full flex flex-col items-center justify-center p-8 bg-gradient-to-br from-[#0d0b1a] to-[#1a0f2e] border-r border-[#a855f7]/20">
+                     {page.backBrand.logo ? <img src={page.backBrand.logo} alt={page.backBrand.name} className="max-w-[80%] max-h-[120px] object-contain mb-6 drop-shadow-2xl" /> : <h3 className="text-2xl font-black text-white mb-6 uppercase text-center font-['Montserrat']">{page.backBrand.name}</h3>}
+                     <span className="text-xs font-mono font-bold text-[#adfa3b] uppercase tracking-widest px-4 py-2 border border-[#adfa3b]/30 rounded-full bg-[#adfa3b]/10">{page.backBrand.cat}</span>
+                  </div>
+                )}
+              </figure>
               {page.cover ? (
                 <figure className="absolute inset-0 overflow-hidden bg-gradient-to-br from-[#0d0b1a] to-[#1a0f2e] [backface-visibility:hidden] rounded-r-[10px] shadow-[2px_2px_15px_-2px_rgba(0,0,0,0.2)] text-left px-6 py-8 sm:px-8 sm:py-10 border border-[#a855f7]/20">
                   <h1 className="text-xl font-bold tracking-wide text-white sm:text-2xl font-['Montserrat']">
@@ -212,7 +272,14 @@ const Branding = () => {
                 <figure
                   className="absolute inset-0 overflow-hidden bg-white bg-contain bg-no-repeat bg-center [backface-visibility:hidden] rounded-r-[10px] shadow-[2px_2px_15px_-2px_rgba(0,0,0,0.2)]"
                   style={page.front ? { backgroundImage: `url('${page.front}')` } : undefined}
-                />
+                >
+                  {page.frontBrand && (
+                    <div className="w-full h-full flex flex-col items-center justify-center p-8 bg-gradient-to-br from-[#0d0b1a] to-[#1a0f2e] border-l border-[#a855f7]/20">
+                       {page.frontBrand.logo ? <img src={page.frontBrand.logo} alt={page.frontBrand.name} className="max-w-[80%] max-h-[120px] object-contain mb-6 drop-shadow-2xl" /> : <h3 className="text-2xl font-black text-white mb-6 uppercase text-center font-['Montserrat']">{page.frontBrand.name}</h3>}
+                       <span className="text-xs font-mono font-bold text-[#a855f7] uppercase tracking-widest px-4 py-2 border border-[#a855f7]/30 rounded-full bg-[#a855f7]/10">{page.frontBrand.cat}</span>
+                    </div>
+                  )}
+                </figure>
               )}
             </div>
           ))}
@@ -257,47 +324,8 @@ const Branding = () => {
 
       {/* BRAND KIT & BRANDS GRID */}
       <BrandKitSection />
-      <BrandsGridSection />
 
-      <section className="parallax-stack">
-        <div className="parallax-inner">
-          <div className="parallax-header">
-            <p>OUR BEST PROJECTS</p>
-            <h2>Our Success Projects</h2>
-            <h3>That Inspire</h3>
-          </div>
 
-          <ScrollStack
-            className="parallax-stack-list"
-            useWindowScroll
-            itemDistance={80}
-            itemScale={0}
-            itemStackDistance={14}
-            stackPosition="18%"
-            scaleEndPosition="8%"
-            baseScale={1}
-            parallaxStrength={0}
-          >
-            {[
-              { src: '/branding images/SSD_Performance-Marketing-Webpage-2.png', label: 'Brand Strategy' },
-              { src: '/branding images/SSD_Performance-Marketing-Webpage-45.png', label: 'Competitive Analysis' },
-              { src: '/branding images/SSD_Performance-Marketing-Webpage-50.png', label: 'Brand Guidelines' },
-              { src: '/branding images/SSD_Performance-Marketing-Webpage-48.png', label: 'Tone of Voice & Messaging Frameworks' },
-              { src: '/branding images/SSD_Performance-Marketing-Webpage-46.png', label: 'Strategic Planning & Alignment' },
-              { src: '/branding images/SSD_Performance-Marketing-Webpage-49.png', label: 'Branding & Packaging Design' },
-              { src: '/branding images/SSD_Performance-Marketing-Webpage-47.png', label: 'Final Brand Deliverables' },
-            ].map((item, idx) => (
-              <ScrollStackItem itemClassName="parallax-card" key={`parallax-${item.src}`}>
-                <div className="parallax-media" style={{ backgroundImage: `url('${item.src}')` }} />
-                <div className="parallax-label">
-                  <span>{`0${idx + 1}`}</span>
-                  <span>{item.label}</span>
-                </div>
-              </ScrollStackItem>
-            ))}
-          </ScrollStack>
-        </div>
-      </section>
 
       <section className="faq-showcase">
         <div className="faq-inner">
@@ -583,150 +611,6 @@ const BrandKitSection = () => {
   );
 };
 
-/* ═══════════════════════════════════════════════════════
-   🌟 PORTFOLIO BRANDS SHOWCASE GRID & CTA BANNER
-═══════════════════════════════════════════════════════ */
-const BrandsGridSection = () => {
-  const containerRef = useRef(null);
-  
-  return (
-    <section ref={containerRef} className="relative overflow-hidden px-6 py-20 sm:px-10 lg:py-28" style={{ background: '#070312' }}>
-      <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-white/5 to-transparent" />
-      <div className="absolute inset-0 opacity-[0.03] pointer-events-none" style={{
-        backgroundImage: 'radial-gradient(circle at 50% 50%, rgba(139,92,246,0.1) 0%, transparent 50%)'
-      }} />
 
-      {/* Floating icons */}
-      <div className="absolute inset-0 pointer-events-none overflow-hidden opacity-10">
-        <div className="absolute top-[18%] left-[12%] text-3xl animate-[smFloatWobble_7s_ease-in-out_infinite]">🏆</div>
-        <div className="absolute top-[65%] right-[15%] text-2xl animate-[smFloatWobble_8s_ease-in-out_infinite_1.5s]">⭐</div>
-      </div>
-
-      <div className="relative z-10 mx-auto max-w-[1200px]">
-        {/* Section Header */}
-        <div className="mb-14 text-center">
-          <div className="inline-flex items-center gap-3 mb-4">
-            <FaTrophy className="text-3xl text-[#a855f7]" />
-            <span className="text-[11px] font-mono font-bold px-4 py-2 bg-[#a855f7]/10 text-[#a855f7] rounded-full uppercase tracking-[0.2em] border border-[#a855f7]/20">
-              ✦ PORTFOLIO SHOWCASE ✦
-            </span>
-            <FaStar className="text-3xl text-[#adfa3b]" />
-          </div>
-          <h2 className="font-['Bebas_Neue','Impact',sans-serif] text-[clamp(56px,10vw,120px)] font-black uppercase leading-[0.85] mb-2" style={{
-            color: 'transparent',
-            WebkitTextStroke: '2px white',
-            textShadow: '6px 6px 0 rgba(124,58,237,0.4)',
-          }}>
-            BRANDS BUILT
-          </h2>
-          <h2 className="font-['Bebas_Neue','Impact',sans-serif] text-[clamp(56px,10vw,120px)] font-black uppercase leading-[0.85] mb-4" style={{
-            color: '#adfa3b',
-            WebkitTextStroke: '2px white',
-            textShadow: '6px 6px 0 rgba(0,0,0,0.5)',
-          }}>
-            BY BUZZIWAH
-          </h2>
-          <p className="mt-4 max-w-xl text-white/50 text-sm sm:text-base leading-relaxed mx-auto">
-            A look at the professional identities, positioning strategies, and design directions we've established for our partners.
-          </p>
-        </div>
-
-        {/* NEW DESIGN - Masonry/Bento Grid with Featured Cards */}
-        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-3 mb-16">
-          {[
-            { name: "Angola Academy", cat: "Education", logo: "/CLIENTS/Angola Academy.png" },
-            { name: "Skill Incarnate", cat: "EdTech", logo: "/CLIENTS/Skill Incarnate.png" },
-            { name: "Kovedaa", cat: "Wellness", logo: "/clientlogos/17.png" },
-            { name: "BodhiAble", cat: "Accessibility", logo: "/CLIENTS/Bodhiable.png" },
-            { name: "Samrat Restaurant", cat: "Hospitality", logo: "/CLIENTS/Samrat.png" },
-            { name: "Wisden Clinics", cat: "Healthcare", logo: "/CLIENTS/Wisden Clinics.png" },
-            { name: "Locally Groomed", cat: "Aesthetics" },
-            { name: "Kalpavriksha Wedding Venue", cat: "Events", logo: "/CLIENTS/Kalpavriksha.png" },
-            { name: "Sindoor Collection", cat: "E-Commerce", logo: "/CLIENTS/Sri Chakra.png" },
-            { name: "Crime Stopper", cat: "Security", logo: "/clientlogos/41.png" },
-            { name: "Sri Vidyanikethan School", cat: "Academy", logo: "/clientlogos/42.png" },
-            { name: "Aanya Hospital", cat: "Healthcare" }
-          ].map((brand, idx) => {
-            // Make some cards span 2 columns for visual interest
-            const isFeatured = idx === 0 || idx === 5 || idx === 10;
-            const colSpan = isFeatured ? 'md:col-span-2' : '';
-            
-            return (
-            <div 
-              key={idx} 
-              className={`group relative rounded-xl border border-black/5 bg-white p-6 hover:border-[#adfa3b]/50 hover:shadow-[0_20px_40px_rgba(0,0,0,0.12)] transition-all duration-300 flex flex-col justify-between min-h-[180px] ${colSpan} overflow-hidden`}
-            >
-              {/* Subtle gradient overlay on hover */}
-              <div className="absolute inset-0 bg-gradient-to-br from-white to-gray-50 opacity-100 group-hover:from-[#adfa3b]/5 group-hover:to-[#a855f7]/5 transition-all duration-300 pointer-events-none" />
-              
-              {/* Number badge */}
-              <div className="absolute top-3 right-3 w-8 h-8 rounded-lg bg-gray-100 border border-black/5 flex items-center justify-center">
-                <span className="text-[10px] font-['Bebas_Neue'] font-black text-black/20">
-                  {String(idx + 1).padStart(2, '0')}
-                </span>
-              </div>
-              
-              <div className="relative z-10 flex-1 flex items-center justify-center mb-6">
-                {brand.logo ? (
-                  <img 
-                    src={brand.logo} 
-                    alt={brand.name} 
-                    className="max-w-[90%] max-h-[90px] object-contain group-hover:scale-115 transition-transform duration-500"
-                  />
-                ) : (
-                  <h4 className="font-['Montserrat'] text-base font-extrabold text-black uppercase tracking-wide leading-tight group-hover:text-[#a855f7] transition-colors duration-200 text-center">
-                    {brand.name}
-                  </h4>
-                )}
-              </div>
-              
-              {/* Category Badge */}
-              <div className="relative z-10 flex items-center gap-2">
-                <div className="flex-1 h-[1px] bg-black/5" />
-                <span className="text-[9px] font-mono font-black uppercase tracking-widest px-2 py-1 rounded-md" style={{
-                  color: '#a855f7',
-                  background: 'rgba(168, 85, 247, 0.08)',
-                }}>
-                  {brand.cat}
-                </span>
-              </div>
-            </div>
-          )})}
-        </div>
-
-        {/* Let's get your brand right Banner */}
-        <div className="rounded-[32px] border border-white/5 bg-gradient-to-r from-[#120a26]/75 to-[#080411]/75 p-8 sm:p-12 backdrop-blur-md relative overflow-hidden flex flex-col md:flex-row items-center justify-between gap-8">
-          <div className="absolute inset-y-0 right-0 w-1/2 bg-[radial-gradient(circle_at_center,rgba(173,250,59,0.06)_0%,transparent_70%)] pointer-events-none" />
-          <div className="text-center md:text-left">
-            <h3 className="font-['Montserrat'] text-[24px] sm:text-[32px] font-black text-white uppercase tracking-wide mb-3">
-              Let’s get your brand right.
-            </h3>
-            <p className="text-white/60 text-sm max-w-lg leading-relaxed">
-              Ready to craft a coherent system that positions your business, scaling your trust, and maximizing your market choice metrics?
-            </p>
-          </div>
-          <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
-            <a 
-              href="/case-studies"
-              className="rounded-full px-8 py-3.5 font-['Montserrat'] text-xs font-bold uppercase tracking-[0.08em] text-center text-white border-2 border-white/10 hover:border-white/30 hover:bg-white/5 transition-all duration-200"
-            >
-              Know More
-            </a>
-            <a 
-              href="/contact"
-              className="rounded-full px-8 py-3.5 font-['Montserrat'] text-xs font-bold uppercase tracking-[0.08em] text-center text-black transition-all duration-200"
-              style={{ background: '#adfa3b' }}
-              onMouseEnter={e => { e.currentTarget.style.background = '#a855f7'; e.currentTarget.style.color = '#ffffff'; }}
-              onMouseLeave={e => { e.currentTarget.style.background = '#adfa3b'; e.currentTarget.style.color = '#000000'; }}
-            >
-              Get In Touch
-            </a>
-          </div>
-        </div>
-
-      </div>
-    </section>
-  );
-};
 
 export default Branding;

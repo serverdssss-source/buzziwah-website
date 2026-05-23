@@ -214,7 +214,7 @@ export default function SmoothScrollHero() {
                 <span className="inline-block px-4 py-1.5 rounded-full border border-white/10 bg-white/5 text-[10px] uppercase tracking-[0.35em] text-white/50 mb-4" style={{ fontFamily: "'Syne', sans-serif" }}>
                     OUR PORTFOLIO
                 </span>
-                <h2 className="text-4xl md:text-7xl font-black text-white uppercase tracking-tight retro-10" style={{ fontFamily: "'Syne', sans-serif" }}>
+                <h2 className="text-2xl sm:text-3xl md:text-7xl font-black text-white uppercase tracking-tight retro-10" style={{ fontFamily: "'Syne', sans-serif" }}>
                     Look what we did.
                 </h2>
             </div>
@@ -277,7 +277,7 @@ const CenterImage = ({ sectionHeight }) => {
         >
             <div className="absolute inset-0 bg-black/40 mix-blend-multiply" />
             <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-                <h2 className="text-5xl md:text-8xl font-black text-white text-center drop-shadow-2xl retro-10" style={{ fontFamily: "'Syne', sans-serif" }}>
+                <h2 className="text-3xl sm:text-4xl md:text-8xl font-black text-white text-center drop-shadow-2xl retro-10" style={{ fontFamily: "'Syne', sans-serif" }}>
                     Look what we did.
                 </h2>
             </div>
@@ -299,7 +299,7 @@ const ParallaxImages = () => {
         <div className="relative z-20 mt-[-100vh] pt-[25vh] pb-[10vh]" style={{ maxWidth: '1400px', margin: '0 auto', marginTop: '-100vh', padding: '25vh 24px 10vh' }}>
             
             {/* Row 1 — small left, large right */}
-            <div className="flex flex-col md:flex-row gap-6 md:gap-10 mb-10 md:mb-16 items-center md:items-start justify-between">
+            <div className="flex gap-6 md:gap-10 mb-10 md:mb-16 items-start justify-between">
                 <ParallaxCard
                     card={CARDS[0]}
                     start={0} end={-250}
@@ -313,7 +313,7 @@ const ParallaxImages = () => {
             </div>
 
             {/* Row 2 — medium left, small right */}
-            <div className="flex flex-col md:flex-row gap-6 md:gap-10 mb-10 md:mb-16 items-center md:items-start justify-between">
+            <div className="flex gap-6 md:gap-10 mb-10 md:mb-16 items-start justify-between">
                 <ParallaxCard
                     card={CARDS[2]}
                     start={80} end={-320}
@@ -327,7 +327,7 @@ const ParallaxImages = () => {
             </div>
 
             {/* Row 3 — medium left (Tent Cinema), medium right (Kovedaa) */}
-            <div className="flex flex-col md:flex-row gap-6 md:gap-10 mb-10 md:mb-16 items-center md:items-start justify-between">
+            <div className="flex gap-6 md:gap-10 mb-10 md:mb-16 items-start justify-between">
                 <ParallaxCard
                     card={CARDS[4]}
                     start={60} end={-350}
@@ -341,7 +341,7 @@ const ParallaxImages = () => {
             </div>
 
             {/* Row 4 — Centered focal final showcase (Sri Chakra) */}
-            <div className="flex flex-col md:flex-row gap-6 md:gap-10 mb-10 md:mb-16 items-center md:items-start justify-center">
+            <div className="flex gap-6 md:gap-10 mb-10 md:mb-16 items-start justify-center">
                 <ParallaxCard
                     card={CARDS[6]}
                     start={80} end={-350}
@@ -378,9 +378,6 @@ const ParallaxCard = ({ card, start, end, style = {} }) => {
     const y = useTransform(scrollYProgress, [0, 1], [adjustedStart, adjustedEnd]);
     const transform = useMotionTemplate`translateY(${y}px) scale(${scale})`;
 
-    const finalTransform = isMobile ? 'none' : transform;
-    const finalOpacity = isMobile ? 1 : opacity;
-
     return (
         <motion.a
             ref={ref}
@@ -389,12 +386,10 @@ const ParallaxCard = ({ card, start, end, style = {} }) => {
             rel="noopener noreferrer"
             className="relative block group cursor-pointer shrink-0 overflow-hidden rounded-3xl mx-auto w-full"
             style={{ 
-                transform: finalTransform, 
-                opacity: finalOpacity, 
-                maxWidth: '380px',
-                ...style,
-                width: isMobile ? '100%' : style.width,
-                marginTop: isMobile ? '1.5rem' : style.marginTop
+                transform, 
+                opacity, 
+                maxWidth: '380px', // Caps max size from both width and height equally
+                ...style 
             }}
         >
             {card.video ? (
@@ -433,16 +428,17 @@ const ParallaxCard = ({ card, start, end, style = {} }) => {
             {/* Soft bottom text shade (only 120px tall, does NOT cover or darken the video!) */}
             <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-black/80 to-transparent pointer-events-none" />
             
-            <div className="absolute bottom-0 left-0 right-0 p-5 flex items-end justify-between gap-3 pointer-events-none">
+            <div className="absolute bottom-0 left-0 right-0 p-4 md:p-5 flex items-end justify-between gap-3 pointer-events-none">
                 <div className="min-w-0">
-                    <h3 className="text-white text-base md:text-xl font-black drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)] uppercase tracking-wider retro-sm" style={{ fontFamily: "'Syne', sans-serif" }}>
+                    <h3 className="text-white text-[10px] md:text-xl font-black drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)] uppercase tracking-wider retro-sm" style={{ fontFamily: "'Syne', sans-serif" }}>
                         {card.tag.replace(' · ', ' & ')}
                     </h3>
                 </div>
                 <div
-                    className="inline-flex items-center gap-1.5 px-4 py-2 bg-white/10 backdrop-blur-sm border border-white/20 text-white font-bold uppercase tracking-wider text-[9px] md:text-[10px] rounded-full group-hover:bg-[#C084FC] group-hover:border-[#C084FC] transition-all duration-300 shrink-0 whitespace-nowrap pointer-events-auto shadow-md"
+                    className="inline-flex items-center justify-center bg-white/10 backdrop-blur-sm border border-white/20 text-white font-bold uppercase rounded-full group-hover:bg-[#C084FC] group-hover:border-[#C084FC] transition-all duration-300 shrink-0 pointer-events-auto shadow-md p-1.5 md:px-4 md:py-2"
                 >
-                    Know More <FiArrowRight className="text-xs" />
+                    <span className="hidden md:inline text-[10px] tracking-wider mr-1.5">Know More</span>
+                    <FiArrowRight className="text-[10px] md:text-xs" />
                 </div>
             </div>
         </motion.a>

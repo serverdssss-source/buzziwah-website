@@ -1,4 +1,4 @@
-import { useRef, useState, useEffect } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import VariableProximity from '../components/VariableProximity';
 import '../home/Home.css';
 import servicesData from '../servicesData.json';
@@ -94,75 +94,6 @@ const FloatingSocialIcons = () => {
   );
 };
 
-/* ══════════════════════════════════════════════════════
-   🔤 SOCIAL MEDIA ALPHABET ICONS
-══════════════════════════════════════════════════════ */
-const AlphabetIcon = ({ letter, color, bgGradient }) => (
-  <div style={{
-    width: '60px',
-    height: '60px',
-    borderRadius: '16px',
-    background: bgGradient,
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    fontFamily: "'Bebas Neue', 'Impact', sans-serif",
-    fontSize: '36px',
-    fontWeight: 900,
-    color: color,
-    boxShadow: '0 8px 20px rgba(0,0,0,0.3)',
-    animation: 'iconBounce 2s ease-in-out infinite',
-  }}>
-    {letter}
-  </div>
-);
-
-const SocialAlphabetRow = () => {
-  const containerRef = useRef(null);
-  return (
-    <div ref={containerRef} style={{
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'center',
-      gap: '16px',
-      position: 'relative',
-      zIndex: 3,
-      marginBottom: '8px',
-      flexWrap: 'wrap',
-    }}>
-      <AlphabetIcon
-        letter="S"
-        color="#fff"
-        bgGradient="linear-gradient(135deg, #E1306C, #C13584)"
-      />
-      <AlphabetIcon
-        letter="O"
-        color="#fff"
-        bgGradient="linear-gradient(135deg, #1877F2, #0C63D4)"
-      />
-      <AlphabetIcon
-        letter="C"
-        color="#fff"
-        bgGradient="linear-gradient(135deg, #FF0000, #CC0000)"
-      />
-      <AlphabetIcon
-        letter="I"
-        color="#fff"
-        bgGradient="linear-gradient(135deg, #0A66C2, #004182)"
-      />
-      <AlphabetIcon
-        letter="A"
-        color="#fff"
-        bgGradient="linear-gradient(135deg, #adfa3b, #83cd15)"
-      />
-      <AlphabetIcon
-        letter="L"
-        color="#fff"
-        bgGradient="linear-gradient(135deg, #7c3aed, #5b21b6)"
-      />
-    </div>
-  );
-};
 
 /* ══════════════════════════════════════════════════════
    📊 STATS TICKER
@@ -361,17 +292,7 @@ const HeroSection = () => {
 };
 
 /* ══════════════════════════════════════════════════════
-   ✦ FEATURE CARD (light bg sections)
-══════════════════════════════════════════════════════ */
-
-
-/* ══════════════════════════════════════════════════════
-   🃏 FLIP CARD (portfolio images)
-══════════════════════════════════════════════════════ */
-
-
-/* ══════════════════════════════════════════════════════
-   📱 PHONE MOCKS
+   📱 PHONE MOCKS — Instagram / Stories / Reels
 ══════════════════════════════════════════════════════ */
 const igImages = [
   'https://demo.sripadastudios.com/wp-content/uploads/2025/05/CRISPY-VADA-12.png',
@@ -915,102 +836,6 @@ const Section7 = () => (
   </section>
 );
 
-/* ══════════════════════════════════════════════════════
-   🎞️ SECTION 8 — Production House
-══════════════════════════════════════════════════════ */
-const carouselImages = [
-  { src: 'https://demo.sripadastudios.com/wp-content/uploads/2025/05/ISITA_1-1.jpg', alt: 'Carousel 1' },
-  { src: 'https://demo.sripadastudios.com/wp-content/uploads/2025/05/01-2-scaled.jpg', alt: 'Carousel 2' },
-  { src: 'https://demo.sripadastudios.com/wp-content/uploads/2025/05/5-days-2.jpg', alt: 'Carousel 3' },
-  { src: 'https://demo.sripadastudios.com/wp-content/uploads/2025/05/24-04-2025-1.png', alt: 'Carousel 4' },
-  { src: 'https://demo.sripadastudios.com/wp-content/uploads/2025/05/45-TEASER-POSTERS-1.jpg', alt: 'Carousel 5' },
-  { src: 'https://demo.sripadastudios.com/wp-content/uploads/2025/05/Dear-Moments-Womens-Day-1.png', alt: 'Carousel 6' },
-  { src: 'https://demo.sripadastudios.com/wp-content/uploads/2025/05/SOMETI_1-1.jpg', alt: 'Carousel 7' },
-  { src: 'https://demo.sripadastudios.com/wp-content/uploads/2025/05/WhatsApp-Image-2025-05-19-at-1.05.43-PM-1-1.jpeg', alt: 'Carousel 8' },
-  { src: 'https://demo.sripadastudios.com/wp-content/uploads/2025/05/WhatsApp-Image-2025-05-19-at-1.05.43-PM-2.jpeg', alt: 'Carousel 9' },
-  { src: 'https://demo.sripadastudios.com/wp-content/uploads/2025/05/WhatsApp-Image-2025-05-19-at-1.05.43-PM-1.jpeg', alt: 'Carousel 10' },
-  { src: 'https://demo.sripadastudios.com/wp-content/uploads/2025/05/Ui-Posters-4-Days-to-Go-1.png', alt: 'Carousel 11' },
-  { src: 'https://demo.sripadastudios.com/wp-content/uploads/2025/05/G9-CME-POSTS.png', alt: 'Carousel 12' },
-  { src: 'https://demo.sripadastudios.com/wp-content/uploads/2025/05/Song_01.png', alt: 'Carousel 13' },
-  { src: 'https://demo.sripadastudios.com/wp-content/uploads/2025/05/Song_02.png', alt: 'Carousel 14' },
-  { src: 'https://demo.sripadastudios.com/wp-content/uploads/2025/05/Song_03.png', alt: 'Carousel 15' },
-];
-
-const Section8 = () => (
-  <section className="relative overflow-hidden py-16 bg-[#060811]">
-    <div className="bbbbb-bg-decorations pointer-events-none select-none opacity-90">
-      <div className="bbbbb-orb bbbbb-orb-purple" style={{ bottom: '15%', left: '10%' }} />
-      <div className="bbbbb-orb bbbbb-orb-lime" style={{ top: '15%', right: '10%' }} />
-      <div className="bbbbb-grid-perspective" />
-    </div>
-    <div className="relative z-[1] mb-12 px-10 text-center">
-      <div style={{ display: 'inline-flex', alignItems: 'center', gap: '12px', marginBottom: '12px' }}>
-        <YTIcon size={28} />
-        <span style={{ fontFamily: "'Montserrat',sans-serif", fontSize: '10px', fontWeight: 800, letterSpacing: '0.2em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.4)' }}>Film & Entertainment</span>
-      </div>
-      {/* Film-strip style heading */}
-      <div style={{ position: 'relative', display: 'inline-block' }}>
-        <h2 style={{
-          fontFamily: "'Bebas Neue', 'Montserrat', sans-serif",
-          fontSize: 'clamp(28px, 4.5vw, 58px)',
-          color: 'transparent',
-          WebkitTextStroke: '2.5px #adfa3b',
-          textShadow: '5px 5px 0 rgba(0,0,0,0.5), -2px -2px 0 rgba(124,58,237,0.3)',
-          textTransform: 'uppercase',
-          letterSpacing: '0.04em',
-          lineHeight: 1,
-          margin: 0,
-        }}>
-          PRODUCTION HOUSE
-        </h2>
-        <h2 style={{
-          fontFamily: "'Bebas Neue', 'Montserrat', sans-serif",
-          fontSize: 'clamp(28px, 4.5vw, 58px)',
-          color: '#adfa3b',
-          WebkitTextStroke: '1px white',
-          textTransform: 'uppercase',
-          letterSpacing: '0.04em',
-          lineHeight: 1,
-          margin: '2px 0 0',
-        }}>
-          MANAGEMENT
-        </h2>
-      </div>
-    </div>
-    <div className="relative z-[1] mx-auto grid max-w-[1200px] grid-cols-1 items-center gap-12 px-5 sm:px-10 lg:grid-cols-2">
-      <div>
-        <p className="mb-4 text-[15px] leading-[1.85] text-white/90 text-justify">
-          At BUZZIWAH, we specialize in <strong>social media management for film production houses</strong>, delivering consistent and impactful digital presence year-round. From managing high-engagement campaigns during peak <strong>film release seasons</strong> to keeping audiences captivated with <strong>behind-the-scenes trivia</strong>, <strong>interactive challenges</strong>, <strong>special day celebrations</strong>, and curated <strong>social media campaigns</strong>, we ensure every production house remains relevant and connected.
-        </p>
-        <p className="mb-7 text-[15px] leading-[1.85] text-white/90 text-justify">
-          Trusted by <strong>Suraj Production</strong>, <strong>G9 CME</strong>, <strong>Garuda Motion Pictures</strong>, <strong>EK Entertainers</strong>, and <strong>EK Pictures</strong>, BUZZIWAH continues to be a leading partner in <strong>digital marketing for the film industry</strong>.
-        </p>
-        <a href="#"
-          className="inline-flex items-center gap-2 rounded-full px-7 py-3 font-['Montserrat'] text-xs font-bold uppercase tracking-[0.08em] text-black shadow-lg transition-transform duration-300 hover:scale-105"
-          style={{ background: '#c8f03d' }}
-          onMouseEnter={e => { e.currentTarget.style.background = '#4a1a98'; e.currentTarget.style.color = '#ffffff'; }}
-          onMouseLeave={e => { e.currentTarget.style.background = '#c8f03d'; e.currentTarget.style.color = '#000000'; }}>
-          EXPLORE MORE →
-        </a>
-      </div>
-      <div className="relative overflow-hidden rounded-xl border border-white/5">
-        <div className="pointer-events-none absolute inset-y-0 left-0 z-[2] w-[15%]" style={{ background: 'linear-gradient(to right, #060811, transparent)' }} />
-        <div className="pointer-events-none absolute inset-y-0 right-0 z-[2] w-[15%]" style={{ background: 'linear-gradient(to left, #060811, transparent)' }} />
-        <div className="flex w-max" style={{ animation: 'aaaa-scroll 45s linear infinite' }}>
-          {[...carouselImages, ...carouselImages].map((img, i) => (
-            <div key={i} className="h-[420px] w-[280px] flex-shrink-0">
-              <img src={img.src} alt={img.alt} className="h-full w-full object-cover" />
-            </div>
-          ))}
-        </div>
-      </div>
-    </div>
-  </section>
-);
-
-/* ══════════════════════════════════════════════════════
-   🚀 SECTION 9 — Viral Content
-══════════════════════════════════════════════════════ */
 
 /* ══════════════════════════════════════════════════════
    🎯 POSITIONING SECTION
@@ -1080,22 +905,28 @@ const PositioningSection = () => (
               </div>
               <span className="text-[10px] font-bold opacity-30 font-mono text-white">08 Core Vectors</span>
             </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              {[
-                { title: "Content Planning & Calendar", desc: "Structured blueprints mapping every post and execution cycle." },
-                { title: "Reels, Carousels & Creatives", desc: "High-retention scroll stoppers custom tailored for each platform." },
-                { title: "Captions & Copywriting", desc: "Hook-driven text optimized for conversation and conversions." },
-                { title: "Posting & Scheduling", desc: "Precision posting aligned with your peak audience activity cycles." },
-                { title: "Community Management", desc: "Automated & active comment and DM nurturing to scale trust." },
-                { title: "Trend-Based Content", desc: "Agile piggybacking on active memes, audios, and subcultures." },
-                { title: "Performance & Insights", desc: "Data-backed reports explaining engagement metrics and growth." },
-                { title: "Platform Management", desc: "Complete channel oversight on Instagram, YouTube, and beyond." },
-              ].map((item, idx) => (
-                <div key={idx} className="rounded-xl border border-white/5 bg-white/[0.015] p-4 hover:bg-white/[0.035] hover:border-white/10 transition-all duration-200">
-                  <h4 className="text-white font-extrabold text-sm uppercase tracking-wide mb-1 hover:text-[#adfa3b] transition-colors duration-200">{item.title}</h4>
-                  <p className="text-white/50 text-[11px] leading-normal font-medium">{item.desc}</p>
-                </div>
-              ))}
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '20px', flex: 1, justifyContent: 'center', paddingTop: '8px' }}>
+              <p style={{ color: 'rgba(255,255,255,0.4)', fontSize: '13px', lineHeight: 1.85, fontFamily: "'Nunito Sans',sans-serif" }}>
+                Your brand's social presence is shaped by 8 core vectors — each one a deliberate lever that moves perception, builds authority, and compounds your digital growth over time.
+              </p>
+              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
+                {['Content Planning', 'Reels & Creatives', 'Copywriting', 'Scheduling', 'Community', 'Trend Content', 'Analytics', 'Platform Mgmt'].map((t, i) => (
+                  <span key={i} style={{
+                    fontSize: '9px', fontWeight: 800, letterSpacing: '0.12em',
+                    color: i % 2 === 0 ? '#adfa3b' : '#a855f7',
+                    textTransform: 'uppercase', padding: '4px 10px',
+                    border: `1px solid ${i % 2 === 0 ? 'rgba(173,250,59,0.2)' : 'rgba(168,85,247,0.2)'}`,
+                    borderRadius: '999px',
+                    background: i % 2 === 0 ? 'rgba(173,250,59,0.05)' : 'rgba(168,85,247,0.05)',
+                  }}>
+                    {t}
+                  </span>
+                ))}
+              </div>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '10px', color: 'rgba(255,255,255,0.2)', fontSize: '10px', fontFamily: "'Montserrat',sans-serif", fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.14em', marginTop: '4px' }}>
+                <div style={{ width: '24px', height: '1px', background: 'rgba(255,255,255,0.15)' }} />
+                Explore all vectors below ↓
+              </div>
             </div>
           </div>
         </div>
@@ -1107,66 +938,438 @@ const PositioningSection = () => (
 /* ══════════════════════════════════════════════════════
    🏆 POPULAR SOCIALS SECTION
 ══════════════════════════════════════════════════════ */
-const PopularSocialsSection = () => (
-  <section className="popular-socials-section relative overflow-hidden px-6 py-20 sm:px-10 lg:py-28 bg-[#060811]">
-    <div className="bbbbb-bg-decorations pointer-events-none select-none opacity-90">
-      <div className="bbbbb-orb bbbbb-orb-purple" style={{ bottom: '10%', left: '10%' }} />
-      <div className="bbbbb-orb bbbbb-orb-lime" style={{ top: '10%', right: '10%' }} />
-      <div className="bbbbb-grid-perspective" />
-      <div className="bbbbb-tech-plus bbbbb-tp-1 font-black text-[#adfa3b] text-base" style={{ top: '30%', left: '15%' }}>+</div>
-      <div className="bbbbb-tech-plus bbbbb-tp-4 font-black text-[#C084FC] text-base" style={{ bottom: '30%', right: '15%' }}>+</div>
-    </div>
-    <div className="relative z-10 mx-auto max-w-[1200px]">
-      <div className="mb-14 text-center">
-        <p className="text-[11px] font-bold uppercase tracking-[0.25em] text-[#a855f7] mb-3">Case Studies</p>
-        <h2 style={{
-          fontFamily: "'Bebas Neue', 'Montserrat', sans-serif",
-          fontSize: 'clamp(32px, 5vw, 64px)',
-          textTransform: 'uppercase',
-          letterSpacing: '0.02em',
-          lineHeight: 0.95,
-          color: 'white',
-        }}>
-          Socials That We{' '}
-          <span style={{ color: '#adfa3b', fontStyle: 'italic', WebkitTextStroke: '1px rgba(255,255,255,0.2)' }}>Made Popular</span>
-        </h2>
-        <div className="h-[2px] w-24 bg-[#a855f7] mx-auto my-4 rounded-full" />
+const PopularSocialsSection = () => {
+  const [tentIdx, setTentIdx] = useState(0);
+  const tentImages = [
+    '/SERICES CONTENTS/TENT CINEMIA CAPMGAIN ARTICALE/insta_DXWr1E_FNzZ_1.jpg',
+    '/SERICES CONTENTS/TENT CINEMIA CAPMGAIN ARTICALE/insta_DXWr1E_FNzZ_2.jpg',
+    '/SERICES CONTENTS/TENT CINEMIA CAPMGAIN ARTICALE/insta_DXWr1E_FNzZ_3.jpg',
+    '/SERICES CONTENTS/TENT CINEMIA CAPMGAIN ARTICALE/insta_DXWr1E_FNzZ_4.jpg',
+    '/SERICES CONTENTS/TENT CINEMIA CAPMGAIN ARTICALE/insta_DXWr1E_FNzZ_5.jpg',
+    '/SERICES CONTENTS/TENT CINEMIA CAPMGAIN ARTICALE/insta_DXWr1E_FNzZ_6.jpg',
+  ];
+
+  const handleNextTent = () => {
+    setTentIdx((prev) => (prev + 1) % tentImages.length);
+  };
+
+  const handlePrevTent = () => {
+    setTentIdx((prev) => (prev - 1 + tentImages.length) % tentImages.length);
+  };
+
+  return (
+    <section className="popular-socials-section relative overflow-hidden px-6 py-20 sm:px-10 lg:py-28 bg-[#060811]">
+      <div className="bbbbb-bg-decorations pointer-events-none select-none opacity-90">
+        <div className="bbbbb-orb bbbbb-orb-purple" style={{ bottom: '10%', left: '10%' }} />
+        <div className="bbbbb-orb bbbbb-orb-lime" style={{ top: '10%', right: '10%' }} />
+        <div className="bbbbb-grid-perspective" />
+        <div className="bbbbb-tech-plus bbbbb-tp-1 font-black text-[#adfa3b] text-base" style={{ top: '30%', left: '15%' }}>+</div>
+        <div className="bbbbb-tech-plus bbbbb-tp-4 font-black text-[#C084FC] text-base" style={{ bottom: '30%', right: '15%' }}>+</div>
       </div>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mb-16">
-        {[
-          { label: "Viral Reels", brand: "WMN", tag: "VIRAL", color: "#adfa3b", desc: "Leading motion campaigns with exponential reach spikes." },
-          { label: "Infotainment Reels", brand: "Fitness Factory", tag: "EDUCATION", color: "#a855f7", desc: "Scientific yet simplified fitness guides building high authority." },
-          { label: "Announcement Poster", brand: "Little Kidz", tag: "CAMPAIGN", color: "#00f0ff", desc: "Sleek and highly functional visuals with premium branding." },
-          { label: "AI-Powered Reel", brand: "Buzziwah Labs", tag: "AI / FUTURE", color: "#ff007f", desc: "Next-gen content powered by customized neural rendering." },
-          { label: "Trendy Posts", brand: "Durandhar", tag: "CULTURE", color: "#adfa3b", desc: "Agile meme marketing triggering massive user engagements." },
-          { label: "High-Concept Carousels", brand: "Tent Cinema", tag: "STORYTELLING", color: "#a855f7", desc: "Cinematic, multi-slide story grids that convert visitors to fans." },
-          { label: "Special Wishes", brand: "Celeb Pages", tag: "MOMENTS", color: "#00f0ff", desc: "Highly customizable event-focused aesthetic cards." },
-        ].map((item, idx) => (
-          <div key={idx}
-            className="rounded-[24px] border border-white/5 bg-gradient-to-b from-[#11132a]/60 to-[#070918]/60 p-5 hover:scale-[1.02] hover:border-white/10 hover:shadow-[0_15px_30px_rgba(0,0,0,0.4)] transition-all duration-300 flex flex-col justify-between group min-h-[190px]">
-            <div>
-              <div className="flex justify-between items-center mb-4">
-                <span className="font-mono text-[9px] tracking-wider opacity-40 group-hover:opacity-100 transition-opacity duration-300 font-bold" style={{ color: item.color }}>0{idx + 1}</span>
-                <span className="text-[8px] font-mono font-black tracking-widest px-2 py-0.5 rounded-full" style={{ backgroundColor: `${item.color}15`, color: item.color }}>{item.tag}</span>
+      <div className="relative z-10 mx-auto max-w-[1200px]">
+        <div className="mb-14 text-center">
+          <p className="text-[11px] font-bold uppercase tracking-[0.25em] text-[#a855f7] mb-3">Portfolio Showcase</p>
+          <h2 style={{
+            fontFamily: "'Bebas Neue', 'Montserrat', sans-serif",
+            fontSize: 'clamp(32px, 5vw, 64px)',
+            textTransform: 'uppercase',
+            letterSpacing: '0.02em',
+            lineHeight: 0.95,
+            color: 'white',
+          }}>
+            Socials That We{' '}
+            <span style={{ color: '#adfa3b', fontStyle: 'italic', WebkitTextStroke: '1px rgba(255,255,255,0.2)' }}>Made Popular</span>
+          </h2>
+          <div className="h-[2px] w-24 bg-[#a855f7] mx-auto my-4 rounded-full" />
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-8 mb-20 font-sans">
+          
+          {/* Card 1: Viral Reels - WMN (col-span-3) */}
+          <div className="lg:col-span-3 rounded-[32px] border border-white/10 bg-white/[0.01] p-6 sm:p-8 flex flex-col justify-between shadow-[0_15px_35px_rgba(0,0,0,0.4)] group overflow-hidden relative">
+            <div className="flex flex-col sm:flex-row gap-6 items-center justify-between h-full w-full">
+              <div className="flex-1 flex flex-col justify-between h-full">
+                <div>
+                  <div className="flex justify-between items-center mb-4">
+                    <span className="text-[9px] font-mono text-white/30 tracking-widest font-black uppercase">ST-01 // VIRAL REELS</span>
+                    <span className="text-[8px] font-mono font-black tracking-widest px-2 py-0.5 rounded-full bg-[#adfa3b]/10 text-[#adfa3b]">WMN</span>
+                  </div>
+                  <h3 className="font-['Montserrat'] text-md font-extrabold text-white uppercase tracking-wider mb-3 group-hover:text-[#adfa3b] transition-colors duration-300">
+                    Viral Health Campaign
+                  </h3>
+                  <p className="text-white/50 text-[12px] leading-relaxed mb-6">
+                    Our customized medical advisory campaigns for WMN Doctors achieved hyper-viral status. We simplified expert medical advice into scroll-stopping vertical Reels that amassed multi-million organic views.
+                  </p>
+                </div>
+                <div>
+                  <div className="flex items-center gap-2 mb-4">
+                    <span className="text-[10px] font-mono font-black text-[#adfa3b] uppercase tracking-wider bg-[#adfa3b]/10 px-2 py-0.5 rounded">4.2M+ Views</span>
+                    <span className="text-[10px] font-mono font-black text-[#a855f7] uppercase tracking-wider bg-[#a855f7]/10 px-2 py-0.5 rounded">Organic</span>
+                  </div>
+                </div>
               </div>
-              <h3 className="font-['Montserrat'] text-md font-bold text-white uppercase tracking-wide group-hover:text-[#adfa3b] transition-colors duration-300">{item.label}</h3>
-              <p className="text-[11px] font-mono text-[#a855f7] mb-3 font-semibold uppercase tracking-widest">Brand: {item.brand}</p>
-              <p className="text-white/75 text-base leading-relaxed font-medium">{item.desc}</p>
+              
+              {/* Phone Reel Player */}
+              <div className="relative w-[180px] h-[320px] rounded-[28px] border-[6px] border-[#333] bg-black shadow-[0_15px_30px_rgba(0,0,0,0.5)] overflow-hidden flex-shrink-0">
+                <div className="absolute left-1/2 top-0 z-10 h-3 w-16 -translate-x-1/2 rounded-b-[8px] bg-[#333]" />
+                <video 
+                  src="/SERICES CONTENTS/WMN .mp4" 
+                  className="w-full h-full object-cover" 
+                  autoPlay 
+                  loop 
+                  muted 
+                  playsInline 
+                />
+              </div>
             </div>
           </div>
-        ))}
-        <div className="rounded-[24px] border border-[#a855f7]/30 bg-gradient-to-br from-[#120a26]/70 to-[#070312]/70 p-6 flex flex-col justify-between min-h-[190px] relative overflow-hidden group shadow-[0_12px_24px_rgba(0,0,0,0.3)]">
-          <div>
-            <span className="text-[#a855f7] text-2xl">📁</span>
-            <h3 className="font-['Montserrat'] text-md font-black text-white uppercase tracking-wide mt-3 mb-2">Our Case Studies</h3>
-            <p className="text-white/60 text-xs leading-relaxed font-medium">Take a deep dive into our detailed execution strategies and campaign analytics.</p>
+
+          {/* Card 2: Fitness Factory - Infotainment Reels (col-span-3) */}
+          <div className="lg:col-span-3 rounded-[32px] border border-white/10 bg-white/[0.01] p-6 sm:p-8 flex flex-col justify-between shadow-[0_15px_35px_rgba(0,0,0,0.4)] group overflow-hidden relative">
+            <div className="flex flex-col sm:flex-row gap-6 items-center justify-between h-full w-full">
+              <div className="flex-1 flex flex-col justify-between h-full">
+                <div>
+                  <div className="flex justify-between items-center mb-4">
+                    <span className="text-[9px] font-mono text-white/30 tracking-widest font-black uppercase">ST-02 // INFOTAINMENT</span>
+                    <span className="text-[8px] font-mono font-black tracking-widest px-2 py-0.5 rounded-full bg-[#a855f7]/10 text-[#a855f7]">FITNESS FACTORY</span>
+                  </div>
+                  <h3 className="font-['Montserrat'] text-md font-extrabold text-white uppercase tracking-wider mb-3 group-hover:text-[#a855f7] transition-colors duration-300">
+                    Authority-Building Guides
+                  </h3>
+                  <p className="text-white/50 text-[12px] leading-relaxed mb-6">
+                    Combining sports science and hyper-retention visual editing, we created fitness advisory Reels that educate and entertain. Every frame is optimized to drive direct saves and profile visits.
+                  </p>
+                </div>
+                <div>
+                  <div className="flex items-center gap-2 mb-4">
+                    <span className="text-[10px] font-mono font-black text-[#a855f7] uppercase tracking-wider bg-[#a855f7]/10 px-2 py-0.5 rounded">High Saves</span>
+                    <span className="text-[10px] font-mono font-black text-[#adfa3b] uppercase tracking-wider bg-[#adfa3b]/10 px-2 py-0.5 rounded">Scientific</span>
+                  </div>
+                </div>
+              </div>
+              
+              {/* Phone Reel Player */}
+              <div className="relative w-[180px] h-[320px] rounded-[28px] border-[6px] border-[#333] bg-black shadow-[0_15px_30px_rgba(0,0,0,0.5)] overflow-hidden flex-shrink-0">
+                <div className="absolute left-1/2 top-0 z-10 h-3 w-16 -translate-x-1/2 rounded-b-[8px] bg-[#333]" />
+                <video 
+                  src="/SERICES CONTENTS/FITNESS_INFOTAINMENT.mp4" 
+                  className="w-full h-full object-cover" 
+                  autoPlay 
+                  loop 
+                  muted 
+                  playsInline 
+                />
+              </div>
+            </div>
           </div>
-          <a href="/case-studies" className="inline-flex items-center gap-2 text-xs font-black uppercase text-[#adfa3b] hover:text-[#a855f7] tracking-wider mt-4 transition-colors duration-200">Know More →</a>
+
+          {/* Card 3: Tent Cinema - High-Concept Carousels (col-span-4) */}
+          <div className="lg:col-span-4 rounded-[32px] border border-white/10 bg-white/[0.01] p-6 sm:p-8 flex flex-col justify-between shadow-[0_15px_35px_rgba(0,0,0,0.4)] group overflow-hidden relative">
+            <div className="flex flex-col lg:flex-row gap-6 items-center justify-between h-full w-full">
+              <div className="flex-1 flex flex-col justify-between h-full">
+                <div>
+                  <div className="flex justify-between items-center mb-4">
+                    <span className="text-[9px] font-mono text-white/30 tracking-widest font-black uppercase">ST-03 // STORYTELLING</span>
+                    <span className="text-[8px] font-mono font-black tracking-widest px-2 py-0.5 rounded-full bg-[#00f0ff]/10 text-[#00f0ff]">TENT CINEMA</span>
+                  </div>
+                  <h3 className="font-['Montserrat'] text-md font-extrabold text-white uppercase tracking-wider mb-3 group-hover:text-[#00f0ff] transition-colors duration-300">
+                    High-Concept Carousels
+                  </h3>
+                  <p className="text-white/50 text-[12px] leading-relaxed mb-6">
+                    Multi-slide storytelling grids designed for Tent Cinema. Each slide flows seamlessly into the next, utilizing custom crop frameworks and cinematic text copy to maximize audience reading time and saves.
+                  </p>
+                </div>
+                <div>
+                  <div className="flex items-center gap-2 mb-4">
+                    <span className="text-[10px] font-mono font-black text-[#00f0ff] uppercase tracking-wider bg-[#00f0ff]/10 px-2 py-0.5 rounded">Fluid Swipes</span>
+                    <span className="text-[10px] font-mono font-black text-white/40 uppercase tracking-wider bg-white/5 px-2 py-0.5 rounded">6 Slide Arc</span>
+                  </div>
+                </div>
+              </div>
+
+              {/* Instagram Style Carousel Mockup */}
+              <div className="relative w-[260px] h-[320px] rounded-[28px] border-[6px] border-[#333] bg-[#0c0d12] shadow-[0_15px_30px_rgba(0,0,0,0.5)] overflow-hidden flex-shrink-0 flex flex-col justify-between group/carousel">
+                {/* Status Bar */}
+                <div className="flex justify-between items-center px-4 py-2 border-b border-white/5 bg-[#12131a] relative z-20">
+                  <div className="flex items-center gap-2">
+                    <div className="w-4 h-4 rounded-full bg-gradient-to-tr from-[#00f0ff] to-[#a855f7] flex items-center justify-center font-bold text-[7px] text-white">TC</div>
+                    <span className="text-[8px] font-black text-white uppercase tracking-wide">tentcinema</span>
+                  </div>
+                  <div className="flex items-center gap-1.5">
+                    <span className="text-[8px] font-mono font-black bg-[#adfa3b] text-black px-1 rounded">{tentIdx + 1}/6</span>
+                  </div>
+                </div>
+
+                {/* Slides wrapper */}
+                <div className="flex-1 relative overflow-hidden flex items-center justify-center">
+                  <img 
+                    src={tentImages[tentIdx]} 
+                    alt={`Tent Cinema Slide ${tentIdx + 1}`} 
+                    className="w-full h-full object-cover select-none transition-all duration-300"
+                  />
+
+                  {/* Navigation Arrows */}
+                  <button 
+                    onClick={handlePrevTent} 
+                    className="absolute left-2 top-1/2 -translate-y-1/2 w-6 h-6 rounded-full bg-black/70 border border-white/10 flex items-center justify-center text-white text-xs font-black hover:bg-black hover:scale-105 active:scale-95 transition-all z-20"
+                    type="button"
+                  >
+                    ←
+                  </button>
+                  <button 
+                    onClick={handleNextTent} 
+                    className="absolute right-2 top-1/2 -translate-y-1/2 w-6 h-6 rounded-full bg-black/70 border border-white/10 flex items-center justify-center text-white text-xs font-black hover:bg-black hover:scale-105 active:scale-95 transition-all z-20"
+                    type="button"
+                  >
+                    →
+                  </button>
+                </div>
+
+                {/* Dot Indicators */}
+                <div className="flex justify-center gap-1 py-1.5 border-t border-white/5 bg-[#12131a]">
+                  {tentImages.map((_, i) => (
+                    <span 
+                      key={i} 
+                      onClick={() => setTentIdx(i)}
+                      className={`h-1.5 rounded-full cursor-pointer transition-all duration-300 ${i === tentIdx ? 'w-4 bg-[#adfa3b]' : 'w-1.5 bg-white/30 hover:bg-white/50'}`} 
+                    />
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Card 4: Little Kidz - Announcement Poster (col-span-2) */}
+          <div className="lg:col-span-2 rounded-[32px] border border-white/10 bg-white/[0.01] p-6 flex flex-col justify-between shadow-[0_15px_35px_rgba(0,0,0,0.4)] group overflow-hidden relative">
+            <div>
+              <div className="flex justify-between items-center mb-4">
+                <span className="text-[9px] font-mono text-white/30 tracking-widest font-black uppercase">ST-04 // POSTERS</span>
+                <span className="text-[8px] font-mono font-black tracking-widest px-2 py-0.5 rounded-full bg-[#ff007f]/10 text-[#ff007f]">LITTLE KIDZ</span>
+              </div>
+              <h3 className="font-['Montserrat'] text-sm font-extrabold text-white uppercase tracking-wider mb-3 group-hover:text-[#ff007f] transition-colors duration-300">
+                Announcement Posters
+              </h3>
+              <p className="text-white/50 text-[11px] leading-relaxed mb-5">
+                Vibrant, engaging announcement creative crafted with premium branding to drive school admissions and parental interactions.
+              </p>
+            </div>
+            
+            {/* Announcement Mockup */}
+            <div className="w-full h-[180px] bg-gradient-to-tr from-[#ffe2e2] to-[#e8f0fe] rounded-2xl border border-white/10 shadow-lg relative overflow-hidden flex flex-col p-4 justify-between font-sans">
+              <div className="absolute top-0 right-0 p-2 bg-[#ff007f] text-white text-[8px] font-mono font-black uppercase rounded-bl-xl tracking-widest shadow-md">
+                ADMISSIONS
+              </div>
+              <div className="flex items-center gap-2">
+                <img src="/CLIENTS/Little Kidz.png" alt="Little Kidz" className="h-8 object-contain" />
+                <div>
+                  <span className="block text-[9px] font-black text-black/70 uppercase tracking-wider leading-none">Little Kidz</span>
+                  <span className="text-[6.5px] text-black/55 font-bold uppercase tracking-wider">Play-School Campaigns</span>
+                </div>
+              </div>
+              <div className="flex-1 flex flex-col justify-center">
+                <h4 className="text-black font-black uppercase text-[12px] leading-tight tracking-wide">
+                  Global Admissions <span className="text-[#ff007f]">& Carnival</span> 2026
+                </h4>
+                <p className="text-black/60 text-[8.5px] font-medium mt-1 leading-relaxed">
+                  Sleek and playful layout designed for maximum parental engagement.
+                </p>
+              </div>
+              <div className="flex justify-between items-center text-[7px] font-mono font-black text-black/40 uppercase tracking-widest border-t border-black/5 pt-2">
+                <span>Join The Fun</span>
+                <span>Active Campaign</span>
+              </div>
+            </div>
+          </div>
+
+          {/* Card 5: AI-Powered Reels - Buzziwah Labs (col-span-2) */}
+          <div className="lg:col-span-2 rounded-[32px] border border-white/10 bg-white/[0.01] p-6 flex flex-col justify-between shadow-[0_15px_35px_rgba(0,0,0,0.4)] group overflow-hidden relative">
+            <div>
+              <div className="flex justify-between items-center mb-4">
+                <span className="text-[9px] font-mono text-white/30 tracking-widest font-black uppercase">ST-05 // AI CREATIVE</span>
+                <span className="text-[8px] font-mono font-black tracking-widest px-2 py-0.5 rounded-full bg-[#adfa3b]/10 text-[#adfa3b]">BUZZIWAH LABS</span>
+              </div>
+              <h3 className="font-['Montserrat'] text-sm font-extrabold text-white uppercase tracking-wider mb-3 group-hover:text-[#adfa3b] transition-colors duration-300">
+                AI-Powered Reels
+              </h3>
+              <p className="text-white/50 text-[11px] leading-relaxed mb-5">
+                Next-gen video content leveraging customized neural rendering and high-retention audio-reactive visualizer templates.
+              </p>
+            </div>
+            
+            {/* Phone Reel Player */}
+            <div className="w-full h-[180px] bg-black rounded-2xl overflow-hidden border border-white/10 shadow-2xl flex items-center justify-center p-1">
+              <video 
+                src="/SERICES CONTENTS/AI_CONTENT.mp4" 
+                className="w-full h-full rounded-xl object-cover bg-black" 
+                autoPlay 
+                loop 
+                muted 
+                playsInline 
+              />
+            </div>
+          </div>
+
+          {/* Card 6: Trendy Posts - Durandhar (col-span-2) */}
+          <div className="lg:col-span-2 rounded-[32px] border border-white/10 bg-white/[0.01] p-6 flex flex-col justify-between shadow-[0_15px_35px_rgba(0,0,0,0.4)] group overflow-hidden relative">
+            <div>
+              <div className="flex justify-between items-center mb-4">
+                <span className="text-[9px] font-mono text-white/30 tracking-widest font-black uppercase">ST-06 // TREND MARKETING</span>
+                <span className="text-[8px] font-mono font-black tracking-widest px-2 py-0.5 rounded-full bg-[#a855f7]/10 text-[#a855f7]">DURANDHAR</span>
+              </div>
+              <h3 className="font-['Montserrat'] text-sm font-extrabold text-white uppercase tracking-wider mb-3 group-hover:text-[#a855f7] transition-colors duration-300">
+                Trendy Posts
+              </h3>
+              <p className="text-white/50 text-[11px] leading-relaxed mb-5">
+                Agile cultural piggybacking and meme assets built to hook community attention and scale social interaction rates.
+              </p>
+            </div>
+            
+            {/* Post Mockup */}
+            <div className="w-full h-[180px] bg-black rounded-2xl border border-white/10 shadow-lg relative overflow-hidden flex flex-col justify-between p-4">
+              <div className="flex items-center justify-between pb-2 border-b border-white/5">
+                <div className="flex items-center gap-2">
+                  <div className="w-6 h-6 rounded-full bg-gradient-to-tr from-[#adfa3b] to-[#a855f7] flex items-center justify-center font-bold text-[8px] text-white">D</div>
+                  <div>
+                    <span className="block text-[8.5px] font-black text-white uppercase tracking-wider">Durandhar Posts</span>
+                    <span className="text-[6.5px] text-white/40 font-semibold uppercase tracking-widest">Culture & Trends</span>
+                  </div>
+                </div>
+                <span className="text-[7.5px] font-mono font-black text-[#adfa3b] px-2 py-0.5 rounded bg-[#adfa3b]/10 tracking-widest">MEME</span>
+              </div>
+              <div className="flex-1 flex flex-col justify-center py-2">
+                <div className="bg-[#111] p-3 rounded-lg border border-white/5 font-mono text-[9px] text-[#adfa3b]">
+                  {"{ trend: 'Viral Audio Shift', reach: '+1420%', sentiment: 'Highly Positive' }"}
+                </div>
+                <p className="text-white/80 text-[9.5px] font-semibold mt-2 leading-relaxed italic">
+                  "Agile marketing triggering massive comments and story shares."
+                </p>
+              </div>
+              <div className="flex justify-between items-center text-[7.5px] font-mono text-white/30 uppercase tracking-wider">
+                <span>❤️ 4.8K Likes</span>
+                <span>💬 382 Comments</span>
+              </div>
+            </div>
+          </div>
+
+          {/* Card 7: Special Wishes - Celeb Pages (col-span-2) */}
+          <div className="lg:col-span-2 rounded-[32px] border border-white/10 bg-white/[0.01] p-6 flex flex-col justify-between shadow-[0_15px_35px_rgba(0,0,0,0.4)] group overflow-hidden relative">
+            <div>
+              <div className="flex justify-between items-center mb-4">
+                <span className="text-[9px] font-mono text-white/30 tracking-widest font-black uppercase">ST-07 // CELEB GRAPHICS</span>
+                <span className="text-[8px] font-mono font-black tracking-widest px-2 py-0.5 rounded-full bg-[#00f0ff]/10 text-[#00f0ff]">CELEB PAGES</span>
+              </div>
+              <h3 className="font-['Montserrat'] text-sm font-extrabold text-white uppercase tracking-wider mb-3 group-hover:text-[#00f0ff] transition-colors duration-300">
+                Special Wishes
+              </h3>
+              <p className="text-white/50 text-[11px] leading-relaxed mb-5">
+                Premium, highly stylized wishes and milestone greetings created to stand out and build personalized audience relationships.
+              </p>
+            </div>
+            
+            {/* Wishes Mockup */}
+            <div className="w-full h-[180px] bg-gradient-to-br from-[#120e24] via-[#090615] to-[#04020a] rounded-2xl border border-white/10 shadow-lg relative overflow-hidden flex flex-col p-4 justify-between">
+              <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-amber-500/10 via-transparent to-transparent pointer-events-none" />
+              <div className="flex items-center justify-between pb-2 border-b border-white/5 relative z-10">
+                <span className="text-[8px] font-black text-amber-400 uppercase tracking-widest">Celeb Milestones</span>
+                <span className="text-[7.5px] font-mono font-black text-amber-400/80 px-2 py-0.5 rounded bg-amber-400/5 tracking-widest">VIP</span>
+              </div>
+              <div className="flex-1 flex flex-col justify-center text-center relative z-10">
+                <span className="text-[8px] font-bold text-amber-200/50 uppercase tracking-[0.2em] leading-none">Celebrating Excellence</span>
+                <h4 className="text-white font-black uppercase text-[11px] tracking-wider mt-2" style={{ fontFamily: "'Montserrat', sans-serif" }}>
+                  FESTIVAL WISHES <span className="text-amber-400">&</span> SHOWCASE
+                </h4>
+                <span className="text-[7.5px] text-white/40 mt-2 font-mono uppercase">Premium Gold Aesthetic Layout</span>
+              </div>
+              <div className="flex justify-between items-center text-[7px] font-mono text-white/30 uppercase tracking-wider relative z-10 border-t border-white/5 pt-2">
+                <span>Festival Wishes</span>
+                <span>Milestones</span>
+              </div>
+            </div>
+          </div>
+
+          {/* Card 8: Case Studies (col-span-6) */}
+          <div className="lg:col-span-6 rounded-[32px] border border-[#a855f7]/30 bg-gradient-to-br from-[#120a26]/70 to-[#070312]/70 p-6 sm:p-8 flex flex-col justify-between shadow-[0_15px_35px_rgba(0,0,0,0.4)] group overflow-hidden relative">
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_right,_var(--tw-gradient-stops))] from-[#a855f7]/10 via-transparent to-transparent pointer-events-none" />
+            
+            <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-6 relative z-10 pb-4 border-b border-white/5">
+              <div>
+                <div className="flex items-center gap-2 mb-2">
+                  <span className="text-lg">📁</span>
+                  <h3 className="font-['Montserrat'] text-md font-black text-white uppercase tracking-wide">
+                    Our Social Media Case Studies
+                  </h3>
+                </div>
+                <p className="text-white/60 text-xs leading-relaxed max-w-2xl">
+                  Take a deep dive into our detailed execution strategies, visual assets, and metrics where storytelling drives high organic growth.
+                </p>
+              </div>
+              <a 
+                href="/case-studies" 
+                className="inline-flex items-center gap-2 text-xs font-black uppercase bg-[#adfa3b] text-black px-4 py-2 rounded-xl hover:bg-[#a855f7] hover:text-white tracking-wider transition-all duration-300 shadow-[0_5px_15px_rgba(173,250,59,0.3)] hover:shadow-none"
+              >
+                Explore Case Studies →
+              </a>
+            </div>
+
+            {/* Case Studies Visual Panel */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 relative z-10">
+              {[
+                {
+                  title: "WMN Doctors",
+                  image: "/best works/wmn_case.png",
+                  metric: "+2.4M Views",
+                  metricColor: "#adfa3b",
+                  tag: "Healthcare",
+                  strategy: "Strategic medical infotainment loops."
+                },
+                {
+                  title: "Tent Cinema",
+                  image: "/best works/tentcinema_case.png",
+                  metric: "+65K Followers",
+                  metricColor: "#a855f7",
+                  tag: "Entertainment",
+                  strategy: "Cinematic student-actor journeys."
+                },
+                {
+                  title: "Kovedaa",
+                  image: "/best works/kovedaa_case.png",
+                  metric: "+450K Reach",
+                  metricColor: "#00f0ff",
+                  tag: "Ayurveda",
+                  strategy: "Modernizing traditional wellness content."
+                }
+              ].map((cs, cIdx) => (
+                <div key={cIdx} className="bg-black/40 rounded-2xl border border-white/5 p-4 flex flex-col justify-between group/cs hover:border-white/10 transition-all duration-300">
+                  <div>
+                    <div className="flex justify-between items-center mb-3">
+                      <span className="text-[7.5px] font-mono font-black tracking-widest bg-white/5 px-2 py-0.5 rounded text-white/50 uppercase">{cs.tag}</span>
+                      <span className="text-[9px] font-mono font-black uppercase tracking-wider" style={{ color: cs.metricColor }}>{cs.metric}</span>
+                    </div>
+                    <h4 className="font-['Montserrat'] text-xs font-bold text-white uppercase tracking-wider mb-2 group-hover/cs:text-[#adfa3b] transition-colors">{cs.title}</h4>
+                    <p className="text-white/40 text-[10px] leading-relaxed mb-4">{cs.strategy}</p>
+                  </div>
+                  
+                  {/* Visual Case Preview */}
+                  <div className="w-full h-[120px] rounded-xl overflow-hidden border border-white/5 relative bg-zinc-950">
+                    <img 
+                      src={cs.image} 
+                      alt={cs.title} 
+                      className="w-full h-full object-cover group-hover/cs:scale-105 transition-transform duration-500" 
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex items-end p-2 opacity-0 group-hover/cs:opacity-100 transition-opacity">
+                      <span className="text-[8px] font-black uppercase tracking-widest text-[#adfa3b]">View Case Study →</span>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
         </div>
       </div>
-    </div>
-  </section>
-);
+    </section>
+  );
+};
 
 /* ══════════════════════════════════════════════════════
    ❓ FAQ
@@ -1220,6 +1423,230 @@ const SMFaq = () => (
 /* ══════════════════════════════════════════════════════
    🌐 MAIN PAGE
 ══════════════════════════════════════════════════════ */
+/* ══════════════════════════════════════════════════════
+   BRAND PERCEPTION — 08 CORE VECTORS
+══════════════════════════════════════════════════════ */
+const smmVectors = [
+  {
+    num: '01',
+    title: 'Content Planning & Calendar',
+    desc: 'Structured blueprints mapping every post and execution cycle. No guesswork — just a clear roadmap that keeps your brand consistent and active across every platform.',
+    icon: '🗓️',
+    tags: ['Strategy', 'Planning', 'Execution'],
+    accent: '#adfa3b',
+  },
+  {
+    num: '02',
+    title: 'Reels, Carousels & Creatives',
+    desc: 'High-retention scroll stoppers custom tailored for each platform. Every frame designed to hold attention, trigger saves, and drive shares.',
+    icon: '🎞️',
+    tags: ['Reels', 'Design', 'Creatives'],
+    accent: '#a855f7',
+  },
+  {
+    num: '03',
+    title: 'Captions & Copywriting',
+    desc: 'Hook-driven text optimized for conversation and conversions. Words that stop the scroll, spark emotion, and move your audience to act.',
+    icon: '✍️',
+    tags: ['Copy', 'Hooks', 'CTA'],
+    accent: '#adfa3b',
+  },
+  {
+    num: '04',
+    title: 'Posting & Scheduling',
+    desc: 'Precision posting aligned with your peak audience activity cycles. Right content, right time — every single day without fail.',
+    icon: '⏱️',
+    tags: ['Scheduling', 'Timing', 'Automation'],
+    accent: '#a855f7',
+  },
+  {
+    num: '05',
+    title: 'Community Management',
+    desc: 'Automated & active comment and DM nurturing to scale trust. Every reply, reaction, and conversation is an opportunity to deepen brand loyalty.',
+    icon: '💬',
+    tags: ['Engagement', 'DMs', 'Trust'],
+    accent: '#adfa3b',
+  },
+  {
+    num: '06',
+    title: 'Trend-Based Content',
+    desc: 'Agile piggybacking on active memes, audios, and subcultures. We move fast so your brand stays culturally relevant and always in the conversation.',
+    icon: '🔥',
+    tags: ['Trends', 'Culture', 'Viral'],
+    accent: '#a855f7',
+  },
+  {
+    num: '07',
+    title: 'Performance & Insights',
+    desc: 'Data-backed reports explaining engagement metrics and growth. Clear numbers that tell the story of what\'s working and where to push harder.',
+    icon: '📊',
+    tags: ['Analytics', 'Reports', 'Growth'],
+    accent: '#adfa3b',
+  },
+  {
+    num: '08',
+    title: 'Platform Management',
+    desc: 'Complete channel oversight on Instagram, YouTube, and beyond. We handle every aspect of your digital presence so you never have to worry about what\'s going live.',
+    icon: '📱',
+    tags: ['Instagram', 'YouTube', 'LinkedIn'],
+    accent: '#a855f7',
+  },
+];
+
+const SMMVectorRow = ({ item, index }) => {
+  const reversed = index % 2 !== 0;
+  const ref = useRef(null);
+  const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+    const el = ref.current; if (!el) return;
+    const obs = new IntersectionObserver(
+      ([e]) => { if (e.isIntersecting) { setVisible(true); obs.disconnect(); } },
+      { threshold: 0.12 }
+    );
+    obs.observe(el); return () => obs.disconnect();
+  }, []);
+
+  const textBlock = (
+    <div style={{
+      flex: '1 1 min(100%, 400px)',
+      minWidth: 0,
+      display: 'flex',
+      flexDirection: 'column',
+      gap: '18px',
+      opacity: visible ? 1 : 0,
+      transform: visible ? 'translateX(0)' : `translateX(${reversed ? '48px' : '-48px'})`,
+      transition: 'opacity 0.65s ease, transform 0.65s ease',
+      position: 'relative',
+      zIndex: 2,
+    }}>
+      {/* Number label */}
+      <div style={{ fontFamily: "'Bebas Neue','Impact',sans-serif", fontSize: 'clamp(60px,10vw,100px)', lineHeight: 1, color: 'transparent', WebkitTextStroke: `1px ${item.accent}22`, userSelect: 'none', pointerEvents: 'none', marginBottom: '-12px' }}>
+        {item.num}
+      </div>
+
+      {/* Tag */}
+      <span style={{ fontSize: '10px', fontWeight: 800, letterSpacing: '0.26em', color: item.accent, textTransform: 'uppercase', padding: '5px 14px', border: `1px solid ${item.accent}30`, background: `${item.accent}10`, borderRadius: '999px', display: 'inline-block', width: 'fit-content' }}>
+        VECTOR {item.num}
+      </span>
+
+      {/* Title */}
+      <h3 style={{ fontFamily: "'Bebas Neue','Impact',sans-serif", fontSize: 'clamp(28px,3.5vw,48px)', color: '#fff', WebkitTextStroke: `2px ${item.accent}55`, letterSpacing: '0.04em', lineHeight: 0.92, margin: 0, wordBreak: 'break-word' }}>
+        {item.title}
+      </h3>
+
+      {/* Divider */}
+      <div style={{ width: '40px', height: '3px', background: `linear-gradient(90deg, ${item.accent}, transparent)`, borderRadius: '2px' }} />
+
+      {/* Description */}
+      <p style={{ color: 'rgba(255,255,255,0.5)', fontSize: 'clamp(13px,1.4vw,15px)', lineHeight: 1.8, margin: 0 }}>
+        {item.desc}
+      </p>
+
+      {/* Tags row */}
+      <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
+        {item.tags.map((t, i) => (
+          <span key={i} style={{ fontSize: '10px', fontWeight: 700, letterSpacing: '0.14em', color: 'rgba(255,255,255,0.35)', textTransform: 'uppercase', padding: '4px 12px', border: '1px solid rgba(255,255,255,0.08)', borderRadius: '999px', background: 'rgba(255,255,255,0.03)' }}>
+            {t}
+          </span>
+        ))}
+      </div>
+    </div>
+  );
+
+  const visualBlock = (
+    <div style={{
+      flex: '1 1 min(100%, 480px)',
+      minWidth: 0,
+      opacity: visible ? 1 : 0,
+      transform: visible ? 'translateX(0) scale(1)' : `translateX(${reversed ? '-48px' : '48px'}) scale(0.96)`,
+      transition: 'opacity 0.65s ease 0.1s, transform 0.65s ease 0.1s',
+      position: 'relative',
+      zIndex: 1,
+    }}>
+      <div style={{
+        borderRadius: '24px',
+        background: `linear-gradient(135deg, ${item.accent}08, rgba(255,255,255,0.02))`,
+        border: `1px solid ${item.accent}20`,
+        padding: 'clamp(32px,4vw,56px)',
+        position: 'relative',
+        overflow: 'hidden',
+        minHeight: '240px',
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'space-between',
+      }}>
+        {/* BG glow */}
+        <div style={{ position: 'absolute', top: '-30%', right: '-20%', width: '280px', height: '280px', background: `radial-gradient(circle, ${item.accent}12, transparent 70%)`, borderRadius: '50%', pointerEvents: 'none' }} />
+
+        {/* Big icon */}
+        <div style={{ fontSize: 'clamp(56px,8vw,88px)', lineHeight: 1, marginBottom: '20px', filter: 'saturate(0.9)' }}>
+          {item.icon}
+        </div>
+
+        {/* Number watermark */}
+        <div style={{ fontFamily: "'Bebas Neue','Impact',sans-serif", fontSize: 'clamp(48px,8vw,80px)', color: `${item.accent}18`, letterSpacing: '0.08em', lineHeight: 1, userSelect: 'none' }}>
+          {item.title.toUpperCase()}
+        </div>
+
+        {/* Bottom accent bar */}
+        <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, height: '3px', background: `linear-gradient(90deg, transparent, ${item.accent}60, transparent)` }} />
+      </div>
+    </div>
+  );
+
+  return (
+    <div ref={ref} style={{
+      display: 'flex',
+      flexWrap: 'wrap',
+      gap: 'clamp(28px,5vw,64px)',
+      alignItems: 'center',
+      flexDirection: reversed ? 'row-reverse' : 'row',
+      padding: 'clamp(40px,5vw,72px) 0',
+      borderBottom: '1px solid rgba(255,255,255,0.04)',
+    }}>
+      {textBlock}
+      {visualBlock}
+    </div>
+  );
+};
+
+const SMMCoreVectorsSection = () => {
+  return (
+    <section style={{ background: 'linear-gradient(160deg, #060811 0%, #0a0519 40%, #060811 100%)', padding: 'clamp(60px,8vw,100px) clamp(20px,5vw,48px)', overflow: 'hidden' }}>
+      <style>{`
+        @keyframes smmVecGlow { 0%,100%{opacity:0.5} 50%{opacity:1} }
+      `}</style>
+      <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
+
+        {/* Section header */}
+        <div style={{ textAlign: 'center', marginBottom: 'clamp(48px,6vw,80px)', position: 'relative' }}>
+          {/* Decorative glow */}
+          <div style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%,-50%)', width: '500px', height: '200px', background: 'radial-gradient(ellipse, rgba(173,250,59,0.07), transparent 70%)', pointerEvents: 'none', animation: 'smmVecGlow 6s ease-in-out infinite' }} />
+
+          <span style={{ fontSize: '10px', fontWeight: 800, letterSpacing: '0.28em', color: '#adfa3b', textTransform: 'uppercase', display: 'block', marginBottom: '16px', position: 'relative', zIndex: 1 }}>✦ BRAND PERCEPTION ✦</span>
+
+          <h2 style={{ fontFamily: "'Bebas Neue','Impact',sans-serif", fontSize: 'clamp(40px,7vw,86px)', lineHeight: 0.88, margin: '0 0 20px', position: 'relative', zIndex: 1 }}>
+            <span style={{ color: '#adfa3b', WebkitTextStroke: '2px white', display: 'block' }}>HOW YOU LOOK</span>
+            <span style={{ color: 'transparent', WebkitTextStroke: '2px rgba(255,255,255,0.35)', display: 'block' }}>IS HOW YOU'RE SEEN</span>
+          </h2>
+
+          <div style={{ display: 'inline-flex', alignItems: 'center', gap: '12px', padding: '10px 24px', borderRadius: '999px', border: '1px solid rgba(168,85,247,0.3)', background: 'rgba(168,85,247,0.06)', position: 'relative', zIndex: 1 }}>
+            <span style={{ width: '6px', height: '6px', borderRadius: '50%', background: '#a855f7', animation: 'smmVecGlow 2s ease-in-out infinite', boxShadow: '0 0 8px #a855f7' }} />
+            <span style={{ fontFamily: "'Bebas Neue','Impact',sans-serif", fontSize: '18px', color: '#a855f7', letterSpacing: '0.18em' }}>08 CORE VECTORS</span>
+            <span style={{ width: '6px', height: '6px', borderRadius: '50%', background: '#adfa3b', animation: 'smmVecGlow 2s ease-in-out infinite 1s', boxShadow: '0 0 8px #adfa3b' }} />
+          </div>
+        </div>
+
+        {/* Alternating rows */}
+        {smmVectors.map((item, i) => (
+          <SMMVectorRow key={i} item={item} index={i} />
+        ))}
+      </div>
+    </section>
+  );
+};
+
 const SocialMediaPage = () => {
   useEffect(() => {
     if (typeof IntersectionObserver === 'undefined') {
@@ -1361,6 +1788,9 @@ const SocialMediaPage = () => {
 
       <PositioningSection />
 
+      {/* ── BRAND PERCEPTION: 08 CORE VECTORS ── */}
+      <SMMCoreVectorsSection />
+
       {/* ── PLATFORM DIVIDER STRIP ── */}
       <div style={{
         position: 'relative',
@@ -1394,7 +1824,6 @@ const SocialMediaPage = () => {
       <Section5 />
       <Section6 />
       <Section7 />
-      <Section8 />
       <SMFaq />
     </div>
   );

@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import "./CaseStudy.css";
 import "../home/Home.css";
 
-const CASE_STUDIES_DATA = {
+export const CASE_STUDIES_DATA = {
   "aanya-hospital": {
     client: "Aanya Hospital",
     category: "healthcare",
@@ -290,6 +290,134 @@ const CASE_STUDIES_DATA = {
     visuals: {
       hasVisuals: false
     }
+  },
+  "hearfon-seo": {
+    client: "HearFon — Hearing & Speech Clinic",
+    category: "healthcare",
+    subCategory: "SEO & Organic Growth",
+    tagline: "From zero digital presence to first-page Google rankings in Bangalore’s competitive audiology market.",
+    image: "/PROJECTS HOME PAGE /HEARPHON.png",
+    problem: "Starting from absolute zero digital presence — with no website, no rankings, and no digital visibility — HearFon needed to establish strong organic visibility and local search authority for its 13 Bangalore clinics. In a highly competitive audiology and hearing care market, traditional paid ads were too expensive and stopped delivering value the moment the budget hit zero.",
+    assessment: "Mobile devices drove a staggering 86.4% of potential customer searches. We identified a massive opportunity to capture high-intent audiologist queries by coupling a lightning-fast, mobile-first website foundation with optimized Google Business Profiles and local semantic search webs.",
+    actionTitle: "What We Did: Organic Dominance Strategy",
+    actions: [
+      {
+        num: "01",
+        title: "Built Website from Scratch",
+        desc: "Designed and developed a complete digital presence optimized for page load velocity, strong trust cues, and absolute search crawlablity."
+      },
+      {
+        num: "02",
+        title: "Mobile-First UI/UX Design",
+        desc: "Since 86.4% of visitors browse on mobile, the entire navigation, booking, and location search flows were optimized for smaller screens."
+      },
+      {
+        num: "03",
+        title: "On-Page SEO Optimization",
+        desc: "Mapped and integrated localized audiology keywords across pages to capture consumers actively looking for clinics near them."
+      },
+      {
+        num: "04",
+        title: "Local SEO & GBP Strategy",
+        desc: "Claimed and optimized Google Business Profiles across all 13 physical Bangalore clinics to drive map pack authority and maps discoverability."
+      }
+    ],
+    result: "Starting from a complete blank slate, HearFon established supreme local SEO dominance. The campaign delivered a 489.6% increase in organic traffic and multiple top positions on page 1 of Google.",
+    stats: [
+      { value: "3.3K", label: "Total Visitors" },
+      { value: "+489.6%", label: "Organic Growth" },
+      { value: "86.4%", label: "Mobile Traffic" }
+    ],
+    aboutClient: "HearFon is a premium unit of the Rajan Speech & Hearing Centre, established in 1994. They operate a highly trusted network of hearing and speech clinics across 13 prime locations in Bangalore, staffed by professionally trained audiologists certified by Starkey, Oticon, Widex, and Phonak.",
+    servicesList: [
+      "Hearing Assessments",
+      "Advanced Hearing Aid Solutions",
+      "Speech Therapy",
+      "Hearing Counselling",
+      "Audiology Consultation"
+    ],
+    keywordRankings: [
+      {
+        keyword: "Bangalore’s Leading Audiology & Clinics",
+        intent: "High-intent local clinic discovery",
+        ranking: "Page 1 · #1"
+      },
+      {
+        keyword: "Hearing Aid Center in Bangalore",
+        intent: "High-volume transactional query",
+        ranking: "Page 1 · #5"
+      },
+      {
+        keyword: "Best Hearing Aid in Bangalore",
+        intent: "Competitive product comparison keyword",
+        ranking: "Page 2 · #1"
+      }
+    ],
+    visuals: {
+      hasVisuals: false
+    }
+  },
+  "kovedaa-seo": {
+    client: "Kovedaa — Ayurveda & Wellness",
+    category: "cosmetics",
+    subCategory: "SEO & Brand Expansion",
+    tagline: "Blending traditional Ayurvedic wellness with a modern ecommerce experience to build a growing digital wellness brand.",
+    image: "/PROJECTS HOME PAGE /Kovedaa.png",
+    problem: "Kovedaa wanted to establish a strong, national e-commerce presence for their Ayurvedic wellness products. The challenge was building a scalable digital platform that could capture organic commerce traffic while preserving the authentic trust and tradition associated with historical Ayurveda.",
+    assessment: "We identified that health-conscious buyers look for highly specific skincare solutions. To bridge this gap, we designed a customized wellness and skin assessment funnel that acts as an organic hook, combined with modern on-page optimization for wellness keywords.",
+    actionTitle: "What We Did: Ecommerce SEO & Growth",
+    actions: [
+      {
+        num: "01",
+        title: "Ecommerce Platform Dev",
+        desc: "Designed and engineered an ultra-fast, mobile-friendly shopify/e-commerce experience focused on product discovery and checkout velocity."
+      },
+      {
+        num: "02",
+        title: "UI/UX Optimization",
+        desc: "Created a gorgeous minimal wellness aesthetic, utilizing clean spaces and high-trust product reviews to optimize shopping trust."
+      },
+      {
+        num: "03",
+        title: "Performance SEO Strategy",
+        desc: "Built targeted semantic content around specific ayurvedic remedies, elevating organic impressions and ranking products nationwide."
+      },
+      {
+        num: "04",
+        title: "Personalized Assessments",
+        desc: "Developed custom interactive skin and wellness query tools to engage shoppers and recommend personalized products."
+      }
+    ],
+    result: "Within 6 months, the new e-commerce and search ecosystem scaled Kovedaa from a local wellness brand to a growing nationwide organic player, boosting conversions by 45%.",
+    stats: [
+      { value: "+45%", label: "Conversion Growth" },
+      { value: "9.85K+", label: "Total Impressions" },
+      { value: "500+", label: "Products Sold" }
+    ],
+    projectOverview: {
+      industry: "Ayurveda & Wellness",
+      year: "2025",
+      services: "Ecommerce Development, UI/UX Design, Performance Marketing, SEO",
+      duration: "6 Months",
+      focus: "Ecommerce Growth & Nationwide Brand Expansion"
+    },
+    aboutClient: "Kovedaa is a luxury Ayurvedic wellness brand delivering premium skincare and lifestyle remedies inspired by authentic centuries-old Ayurvedic formulations, repackaged for the modern aesthetic consumer.",
+    keyResultsList: [
+      "45% increase in website conversion rates",
+      "9.85K+ total organic search impressions in 6 months",
+      "500+ premium products sold directly through the portal",
+      "High shopper conversion engagement on personalized assessment widgets",
+      "Successful national expansion of their online organic presence"
+    ],
+    visuals: {
+      palette: ["#1C1917", "#D4AF37", "#064E3B", "#10B981"],
+      hasVisuals: true,
+      scrollingVideo: true,
+      bts: true,
+      smm: true,
+      branding: true,
+      campaignVideo: "Kovedaa Campaign Video"
+    }
   }
 };
 
@@ -436,6 +564,93 @@ export default function CaseStudyPage({ id }) {
             ))}
           </div>
         </section>
+
+        {/* Dynamic SEO Keyword Ranking Board (Bespoke HearFon widget) */}
+        {data.keywordRankings && (
+          <section className="cs-keywords-section">
+            <div className="cs-section-header">
+              <span className="cs-section-kicker">SEO DOMINANCE</span>
+              <h2>Keyword Rankings Achieved</h2>
+              <div className="cs-section-line" />
+            </div>
+            <div className="cs-keywords-grid">
+              {data.keywordRankings.map((kw, idx) => (
+                <div key={idx} className="cs-keyword-card">
+                  <div className="cs-keyword-glow" />
+                  <div className="cs-keyword-rank-badge">{kw.ranking}</div>
+                  <h3 className="cs-keyword-title">{kw.keyword}</h3>
+                  <div className="cs-keyword-intent-box">
+                    <span className="cs-keyword-intent-label">Search Intent</span>
+                    <span className="cs-keyword-intent-val">{kw.intent}</span>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </section>
+        )}
+
+        {/* Dynamic Project Overview Board (Bespoke Kovedaa widget) */}
+        {data.projectOverview && (
+          <section className="cs-overview-section">
+            <div className="cs-section-header">
+              <span className="cs-section-kicker">CAMPAIGN METADATA</span>
+              <h2>Project Overview</h2>
+              <div className="cs-section-line" />
+            </div>
+            <div className="cs-overview-matrix">
+              {Object.entries(data.projectOverview).map(([key, val], idx) => (
+                <div key={idx} className="cs-overview-card">
+                  <div className="cs-overview-glow" />
+                  <span className="cs-overview-label">{key}</span>
+                  <span className="cs-overview-value">{val}</span>
+                </div>
+              ))}
+            </div>
+          </section>
+        )}
+
+        {/* Bespoke Narrative Content: About, Services, Accomplishments Lists */}
+        {(data.aboutClient || data.servicesList || data.keyResultsList) && (
+          <section className="cs-bespoke-details-section">
+            <div className="cs-bespoke-grid">
+              {data.aboutClient && (
+                <div className="cs-bespoke-card cs-about-card">
+                  <div className="cs-bespoke-glow" />
+                  <h3>About the Client</h3>
+                  <p>{data.aboutClient}</p>
+                </div>
+              )}
+
+              {data.servicesList && (
+                <div className="cs-bespoke-card cs-services-card">
+                  <div className="cs-bespoke-glow" />
+                  <h3>Services Offered</h3>
+                  <ul className="cs-bespoke-list">
+                    {data.servicesList.map((item, idx) => (
+                      <li key={idx}>
+                        <span className="cs-list-icon">✦</span> {item}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+
+              {data.keyResultsList && (
+                <div className="cs-bespoke-card cs-results-list-card">
+                  <div className="cs-bespoke-glow" />
+                  <h3>Key Campaign Accomplishments</h3>
+                  <ul className="cs-bespoke-list">
+                    {data.keyResultsList.map((item, idx) => (
+                      <li key={idx}>
+                        <span className="cs-list-icon">✓</span> {item}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+            </div>
+          </section>
+        )}
 
         {/* Brand Specific Visual Assets Showcase (If active) */}
         {data.visuals?.hasVisuals && (

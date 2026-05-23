@@ -182,7 +182,7 @@ const VariableProximity = forwardRef((props, ref) => {
       }}
       className={`variable-proximity ${className}`}
       onClick={onClick}
-      style={{ display: 'block', textAlign: 'left' }}
+      style={{ display: 'block', textAlign: 'inherit', ...props.style }}
       {...rest}
     >
       {lines.map((line, lineIdx) => (

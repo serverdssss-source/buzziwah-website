@@ -660,6 +660,30 @@ const FunnyCardWall = ({ teamMembers, blackImages, onSelectMember }) => {
   const cardColors = ['#adfa3b', '#a855f7', '#f59e0b', '#ec4899', '#06b6d4', '#adfa3b', '#a855f7', '#10b981', '#f59e0b', '#adfa3b', '#a855f7', '#ec4899', '#06b6d4', '#adfa3b', '#10b981', '#f59e0b', '#a855f7', '#adfa3b'];
   const rotations = [-6, 4, -3, 7, -5, 3, -7, 5, -4, 6, -2, 8, -6, 3, -8, 5, -3, 7];
 
+  const getEmployeeGif = (name) => {
+    const mapping = {
+      'PHANI SRIVATSA PV': '/Employee Website Shoot/Sorted_Employees/phani/phani.gif',
+      'SATISH MS': '/Employee Website Shoot/Sorted_Employees/satish/satish.gif',
+      'RAKSHA S': '/Employee Website Shoot/Sorted_Employees/raksha/raksha.gif',
+      'SATHWIK NJ': '/Employee Website Shoot/Sorted_Employees/sathwik/sathwik.gif',
+      'GOUTHAM SRINAG': '/Employee Website Shoot/Sorted_Employees/gauthm/gauthm.gif',
+      'MANISH N': '/Employee Website Shoot/Sorted_Employees/manish/manish.gif',
+      'VYSHNAVI AM': '/Employee Website Shoot/Sorted_Employees/vaishnvi/vaishnvi.gif',
+      'HEMASHREE K': '/Employee Website Shoot/Sorted_Employees/hemashree/hemashree.gif',
+      'ASHOK KUMAR S': '/Employee Website Shoot/Sorted_Employees/Ashok%20kumar/Ashok%20kumar.gif',
+      'ARPITHA M': '/Employee Website Shoot/Sorted_Employees/arpitha/arpitha.gif',
+      'KARTHIK D': '/Employee Website Shoot/Sorted_Employees/karthick/karthick.gif',
+      'NAYANA CN': '/Employee Website Shoot/Sorted_Employees/nayna/nayna.gif',
+      'JITENDRA': '/Employee Website Shoot/Sorted_Employees/jitendra/jitendra.gif',
+      'AMITHA SHETTY': '/Employee Website Shoot/Sorted_Employees/Amitha/Amitha.gif',
+      'HARIPRASAD': '/Employee Website Shoot/Sorted_Employees/hari/hari.gif',
+      'VARUNGOWDA': '/Employee Website Shoot/Sorted_Employees/varun/varun.gif',
+      'RANJAN NAVEEN': '/Employee Website Shoot/Sorted_Employees/ranjan/ranjan.gif',
+      'ADITYA NAYAK': '/Employee Website Shoot/Sorted_Employees/aditya%20nayak/aditya%20nayak.gif'
+    };
+    return mapping[name] || null;
+  };
+
   return (
     <div style={{ position: 'relative', width: '100%' }}>
       <style>{`
@@ -698,6 +722,7 @@ const FunnyCardWall = ({ teamMembers, blackImages, onSelectMember }) => {
           const color = cardColors[idx % cardColors.length];
           const rot = rotations[idx % rotations.length];
           const isDark = color === '#adfa3b' || color === '#f59e0b';
+          const gifUrl = getEmployeeGif(member.name);
 
           return (
             <button
@@ -761,6 +786,7 @@ const FunnyCardWall = ({ teamMembers, blackImages, onSelectMember }) => {
                 borderRadius: '14px 14px 0 0',
                 overflow: 'hidden',
                 background: '#060811',
+                position: 'relative',
               }}>
                 <img
                   src={blackImages[idx]}
@@ -769,12 +795,30 @@ const FunnyCardWall = ({ teamMembers, blackImages, onSelectMember }) => {
                     width: '100%',
                     height: '100%',
                     objectFit: 'cover',
-                    filter: isHovered ? 'grayscale(0%) saturate(1.2)' : 'grayscale(100%)',
-                    transition: 'filter 0.4s ease, transform 0.4s ease',
+                    filter: isHovered && gifUrl ? 'grayscale(0%) saturate(1.2)' : 'grayscale(100%)',
+                    transition: 'opacity 0.4s ease, transform 0.4s ease',
                     transform: isHovered ? 'scale(1.07)' : 'scale(1)',
+                    opacity: isHovered && gifUrl ? 0 : 1,
                     display: 'block',
                   }}
                 />
+                {gifUrl && (
+                  <img
+                    src={gifUrl}
+                    alt={`${member.name} Animated`}
+                    style={{
+                      position: 'absolute',
+                      inset: 0,
+                      width: '100%',
+                      height: '100%',
+                      objectFit: 'cover',
+                      opacity: isHovered ? 1 : 0,
+                      transform: isHovered ? 'scale(1.07)' : 'scale(1)',
+                      transition: 'opacity 0.4s ease, transform 0.4s ease',
+                      pointerEvents: 'none',
+                    }}
+                  />
+                )}
               </div>
 
               {/* Info panel */}
@@ -1270,7 +1314,7 @@ const About = () => {
                   desc: 'Monitors viral platform trends, creating high-reach daily content strategies.'
                 },
                 {
-                  name: 'JITENDRANTHA',
+                  name: 'JITENDRA',
                   role: 'AD OPS EXECUTIVE',
                   desc: 'Deploys paid programmatic marketing campaigns and audits delivery metrics.'
                 },
@@ -1356,8 +1400,8 @@ const About = () => {
       </section>
 
       {/* Section D: Sripada Studios Main Page Redirect */}
-      <section className="w-full bg-[#0a0d1a] py-24 px-6 relative overflow-hidden border-b border-white/5">
-        <div className="absolute top-0 right-0 w-[400px] h-[400px] rounded-full bg-purple-600/5 blur-[120px] pointer-events-none" />
+      <section className="w-full bg-[#216974] py-24 px-6 relative overflow-hidden border-b border-white/5">
+        <div className="absolute top-0 right-0 w-[400px] h-[400px] rounded-full bg-black/10 blur-[120px] pointer-events-none" />
 
         <div className="mx-auto max-w-7xl relative z-10">
           <div className="bg-gradient-to-br from-white/[0.03] to-white/[0.01] rounded-[40px] border border-white/10 p-8 md:p-16 overflow-hidden relative shadow-2xl">
@@ -1368,23 +1412,28 @@ const About = () => {
 
             <div className="grid lg:grid-cols-[1fr_1.6fr] gap-12 items-center relative z-10">
               <div className="space-y-6">
-                <span className="inline-block px-3 py-1 rounded-full border border-purple-400/20 bg-purple-400/5 text-[9px] uppercase tracking-[0.25em] text-purple-400 font-bold" style={{ fontFamily: "'DM Sans', sans-serif" }}>
+                <span className="inline-block px-3 py-1 rounded-full border border-white/30 bg-white/10 text-[9px] uppercase tracking-[0.25em] text-white font-bold" style={{ fontFamily: "'DM Sans', sans-serif" }}>
                   The Parent Company
                 </span>
                 <h2 style={{ fontFamily: "'Bebas Neue','Impact','Arial Black',sans-serif", fontSize: 'clamp(36px,5vw,72px)', color: 'white', WebkitTextStroke: '1.5px rgba(255,255,255,0.25)', letterSpacing: '0.05em', lineHeight: 0.9, margin: 0 }}>
                   SRIPADA STUDIOS
                 </h2>
-                <p className="text-[#a3a3c2] leading-relaxed text-sm md:text-base">
+                <p className="text-white/85 leading-relaxed text-sm md:text-base font-medium">
                   Buzziwah is backed by the colossal capabilities of Sripada Studios. Discover the master studio where cinema, high-end film production, professional studio shoots, and creative storytelling are forged at scale.
                 </p>
                 <div className="pt-2">
-                  <a href="https://sripadastudios.com" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-6 py-3 bg-purple-600 text-white font-bold text-xs uppercase tracking-wider rounded-xl hover:bg-[#adfa3b] hover:text-black hover:shadow-[0_0_20px_rgba(168,85,247,0.3)] transition-all duration-300">
+                  <a href="https://sripadastudios.com" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-6 py-3 bg-white text-[#216974] font-bold text-xs uppercase tracking-wider rounded-xl hover:bg-[#adfa3b] hover:text-black hover:shadow-[0_0_20px_rgba(173,250,59,0.5)] transition-all duration-300">
                     Visit Main Page <span className="text-sm">→</span>
                   </a>
                 </div>
               </div>
 
-              <div className="relative group rounded-2xl border border-white/15 overflow-hidden h-[400px] md:h-[550px] lg:h-[650px] bg-[#0c0d16] flex flex-col shadow-2xl transition-all duration-300 hover:border-purple-500/30">
+              <a
+                href="https://sripadastudios.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="relative group rounded-2xl border border-white/15 overflow-hidden h-[400px] md:h-[550px] lg:h-[650px] bg-[#0c0d16] flex flex-col shadow-2xl transition-all duration-300 hover:border-[#216974]/50 hover:shadow-[0_0_50px_rgba(33,105,116,0.25)]"
+              >
                 {/* Browser Mockup Top Bar */}
                 <div className="flex items-center gap-2 px-4 py-3 bg-[#0a0c14] border-b border-white/10 select-none">
                   <div className="flex gap-1.5">
@@ -1397,24 +1446,44 @@ const About = () => {
                   </div>
                 </div>
 
-                {/* Live iframe container */}
-                <div className="flex-1 w-full h-full relative overflow-hidden bg-black">
-                  <iframe
-                    src="https://sripadastudios.com"
-                    title="Sripada Studios Live Website"
-                    className="w-full h-full border-0 opacity-85 hover:opacity-100 transition-opacity duration-300"
-                    style={{ background: '#000' }}
-                    sandbox="allow-scripts allow-same-origin"
+                {/* High-Fidelity Website Preview Container */}
+                <div className="flex-1 w-full h-full relative overflow-hidden bg-black group-hover:cursor-pointer">
+                  {/* Website Screenshot */}
+                  <img
+                    src="/about page/SSD_Website (14).png"
+                    alt="Sripada Studios Website Preview"
+                    className="w-full h-full object-cover object-top opacity-80 group-hover:opacity-95 group-hover:scale-[1.03] transition-all duration-700 ease-out"
                     loading="lazy"
                   />
 
+                  {/* Dark Cyber Gradient Overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#060811] via-black/20 to-black/10 transition-all duration-500 group-hover:from-black/60" />
+
+                  {/* High-fidelity interactive button floating in center on hover */}
+                  <div className="absolute inset-0 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20">
+                    <div className="w-16 h-16 rounded-full bg-[#216974] text-white flex items-center justify-center text-2xl font-bold shadow-[0_0_30px_rgba(33,105,116,0.6)] transform scale-90 group-hover:scale-100 transition-transform duration-500">
+                      🌐
+                    </div>
+                    <span className="mt-4 text-[#adfa3b] font-black text-xs tracking-[0.25em] uppercase text-shadow-sm">
+                      Visit Live Website ↗
+                    </span>
+                    <span className="mt-1 text-white/50 text-[10px] font-mono tracking-wider">
+                      sripadastudios.com
+                    </span>
+                  </div>
+
                   {/* Subtle glass touch element or label */}
-                  <div className="absolute bottom-4 left-4 z-20 backdrop-blur-md bg-black/60 px-4 py-2 rounded-xl border border-white/10 pointer-events-none">
-                    <span className="text-[#adfa3b] text-[8px] font-black tracking-widest block uppercase mb-0.5">Live Preview</span>
+                  <div className="absolute bottom-4 left-4 z-20 backdrop-blur-md bg-black/60 px-4 py-2 rounded-xl border border-white/10">
+                    <span className="text-[#adfa3b] text-[8px] font-black tracking-widest block uppercase mb-0.5">Interactive Preview</span>
                     <span className="text-white font-bold text-[11px]">Sripada Studios Official</span>
                   </div>
+
+                  {/* Absolute Badge provided by user replacing Explore Site */}
+                  <div className="absolute -bottom-4 -right-4 bg-[#216974] text-white px-4 py-2 rounded-xl text-sm font-semibold shadow-lg shadow-[#216974]/30 z-30 group-hover:-translate-y-4 group-hover:-translate-x-4 transition-transform duration-300">
+                    Sripada Studios
+                  </div>
                 </div>
-              </div>
+              </a>
             </div>
           </div>
         </div>

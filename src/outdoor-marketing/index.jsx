@@ -23,32 +23,55 @@ const useCountUp = (end, duration = 1800) => {
   return [ref, count];
 };
 
-/* ── Outdoor Stats Strip ── */
-const OutdoorStatsStrip = () => {
-  const stats = [
-    { end: 850, suffix: '+', label: 'Billboard Placements' },
-    { end: 12, suffix: 'M+', label: 'Daily Impressions' },
-    { end: 48, suffix: '+', label: 'Cities Covered' },
-    { end: 94, suffix: '%', label: 'Brand Recall Rate' },
-    { end: 5, suffix: 'x', label: 'Audience Multiplier' },
+/* ── Outdoor Image Carousel ── */
+const OutdoorImageCarousel = () => {
+  const items = [
+    {
+      img: "/outdoor/outdoor1.png",
+      stat: "850+",
+      label: "Billboard Placements"
+    },
+    {
+      img: "/outdoor/outdoor2.png",
+      stat: "12M+",
+      label: "Daily Impressions"
+    },
+    {
+      img: "/outdoor/outdoor3.png",
+      stat: "48+",
+      label: "Cities Covered"
+    },
+    {
+      img: "/outdoor/outdoor1.png",
+      stat: "94%",
+      label: "Brand Recall Rate"
+    },
+    {
+      img: "/outdoor/outdoor2.png",
+      stat: "5x",
+      label: "Audience Multiplier"
+    }
   ];
+
+  // We duplicate items to create a seamless infinite loop track
+  const carouselItems = [...items, ...items, ...items];
+
   return (
-    <div style={{ background:'#060811', borderTop:'1px solid rgba(173,250,59,0.18)', borderBottom:'1px solid rgba(173,250,59,0.18)', padding:'22px 5%', overflow:'hidden', position:'relative' }}>
-      <div style={{ position:'absolute', inset:0, background:'linear-gradient(90deg, rgba(124,58,237,0.06) 0%, rgba(173,250,59,0.04) 50%, rgba(124,58,237,0.06) 100%)', pointerEvents:'none' }} />
-      <div style={{ display:'flex', gap:'clamp(24px,4vw,60px)', justifyContent:'center', flexWrap:'wrap', maxWidth:'1100px', margin:'0 auto', position:'relative', zIndex:1 }}>
-        {stats.map((s, i) => {
-          const [ref, count] = useCountUp(s.end, 1600 + i*200);
-          return (
-            <div key={i} ref={ref} style={{ textAlign:'center', minWidth:'90px' }}>
-              <div style={{ fontFamily:"'Bebas Neue',Impact,sans-serif", fontSize:'clamp(26px,3.5vw,44px)', color:'#adfa3b', letterSpacing:'0.03em', lineHeight:1, textShadow:'0 0 20px rgba(173,250,59,0.3)' }}>
-                {count}{s.suffix}
-              </div>
-              <div style={{ fontSize:'10px', color:'rgba(255,255,255,0.45)', textTransform:'uppercase', letterSpacing:'0.18em', marginTop:'4px', fontWeight:600 }}>
-                {s.label}
-              </div>
+    <div className="outdoor-marquee-container">
+      <div className="outdoor-marquee-track">
+        {carouselItems.map((item, idx) => (
+          <div key={idx} className="outdoor-marquee-item">
+            <img 
+              src={item.img} 
+              alt={item.label} 
+              className="outdoor-marquee-img" 
+            />
+            <div className="outdoor-marquee-overlay">
+              <div className="outdoor-marquee-stat">{item.stat}</div>
+              <div className="outdoor-marquee-label">{item.label}</div>
             </div>
-          );
-        })}
+          </div>
+        ))}
       </div>
     </div>
   );
@@ -66,7 +89,7 @@ const FloatingOutdoorBadges = () => {
     <>
       <style>{`@keyframes outdoorFloat{0%,100%{transform:translateY(0)rotate(var(--rot));}50%{transform:translateY(-14px)rotate(var(--rot));}}`}</style>
       {badges.map((b,i)=>(
-        <div key={i} style={{ position:'absolute', left:b.x, top:b.y, background:b.color, color:b.textColor, fontFamily:"'Bebas Neue',Impact,sans-serif", fontSize:'11px', letterSpacing:'0.18em', padding:'5px 12px', borderRadius:'6px', border:`1px solid ${b.textColor === '#060811' ? 'transparent' : 'rgba(173,250,59,0.25)'}`, '--rot':b.rot, animation:`outdoorFloat ${b.dur} ease-in-out infinite`, animationDelay:b.delay, pointerEvents:'none', zIndex:1, whiteSpace:'nowrap', backdropFilter:'blur(8px)' }}>
+        <div key={i} style={{ position:'absolute', left:b.x, top:b.y, background:b.color, color:b.textColor, fontFamily:"'Montserrat',sans-serif", fontSize:'10px', fontWeight:800, letterSpacing:'0.18em', padding:'6px 14px', borderRadius:'6px', border:`1px solid ${b.textColor === '#060811' ? 'transparent' : 'rgba(173,250,59,0.25)'}`, '--rot':b.rot, animation:`outdoorFloat ${b.dur} ease-in-out infinite`, animationDelay:b.delay, pointerEvents:'none', zIndex:1, whiteSpace:'nowrap', backdropFilter:'blur(8px)' }}>
           {b.label}
         </div>
       ))}
@@ -78,7 +101,7 @@ const FloatingOutdoorBadges = () => {
    SECTION 1 CSS
 ══════════════════════════════════════════════════════ */
 const CSS1 = `
-  @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Montserrat:wght@400;500;700;800;900&display=swap');
   *,*::before,*::after{box-sizing:border-box}
   /* ── CODED PAGE BANNER STYLES ── */
   .coded-page-banner {
@@ -217,20 +240,23 @@ const CSS1 = `
   }
 
   .coded-page-banner-title {
-    font-family: 'Bebas Neue', 'Impact', 'Arial Black', sans-serif !important;
-    font-size: clamp(34px, 4.5vw, 58px);
-    font-weight: 400;
-    color: #adfa3b;
-    -webkit-text-stroke: 2.5px white;
-    text-shadow: 6px 6px 0 rgba(0,0,0,0.55), 0 0 40px rgba(173,250,59,0.15);
-    -webkit-text-fill-color: unset;
-    background: none;
+    font-family: 'Syne', 'Montserrat', sans-serif !important;
+    font-size: clamp(38px, 5.5vw, 68px);
+    font-weight: 800;
+    text-shadow: 0 0 30px rgba(168, 85, 247, 0.25);
     margin: 0;
-    line-height: 0.92;
-    letter-spacing: 0.04em;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
     position: relative;
     z-index: 2;
     animation: titleFadeInUp 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+
+  .coded-page-banner-title .char {
+    background: linear-gradient(135deg, #ffffff 30%, #c084fc 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
   }
 
   .coded-page-banner-subtitle {
@@ -250,29 +276,142 @@ const CSS1 = `
     to { opacity: 1; transform: translateY(0); }
   }
   .buzziwah-section-heading {
-    font-family: 'Bebas Neue', 'Impact', 'Arial Black', sans-serif !important;
-    font-size: clamp(24px, 3vw, 44px);
-    color: #adfa3b;
-    -webkit-text-stroke: 2px white;
-    text-shadow: 5px 5px 0 rgba(0,0,0,0.5);
-    letter-spacing: 0.04em;
-    line-height: 0.92;
+    font-family: 'Syne', 'Montserrat', sans-serif !important;
+    font-size: clamp(30px, 4.5vw, 54px);
+    font-weight: 800;
+    background: linear-gradient(135deg, #ffffff 40%, #c084fc 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke: 0px !important;
+    text-shadow: 0 0 30px rgba(168, 85, 247, 0.2);
+    letter-spacing: -0.02em;
+    line-height: 1.1;
     margin: 0 0 24px;
   }
+  .buzziwah-section-heading span {
+    color: #adfa3b !important;
+    -webkit-text-fill-color: #adfa3b !important;
+    background: none !important;
+  }
   .buzziwah-section-heading-outline {
-    font-family: 'Bebas Neue', 'Impact', 'Arial Black', sans-serif !important;
-    font-size: clamp(24px, 3vw, 44px);
-    color: transparent;
-    -webkit-text-stroke: 2.5px #adfa3b;
-    letter-spacing: 0.04em;
-    line-height: 0.92;
+    font-family: 'Syne', 'Montserrat', sans-serif !important;
+    font-size: clamp(30px, 4.5vw, 54px);
+    font-weight: 800;
+    background: linear-gradient(135deg, #ffffff 40%, #c084fc 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke: 0px !important;
+    text-shadow: 0 0 30px rgba(168, 85, 247, 0.2);
+    letter-spacing: -0.02em;
+    line-height: 1.1;
     margin: 0 0 24px;
+  }
+  .buzziwah-section-heading-outline span {
+    color: #adfa3b !important;
+    -webkit-text-fill-color: #adfa3b !important;
+    background: none !important;
   }
   @keyframes countUp {
     from { opacity: 0; transform: translateY(20px); }
     to { opacity: 1; transform: translateY(0); }
   }
+
+  /* ── OUTDOOR MARQUEE CAROUSEL ── */
+  .outdoor-marquee-container {
+    width: 100%;
+    overflow: hidden;
+    background: #060811;
+    border-top: 1px solid rgba(173, 250, 59, 0.18);
+    border-bottom: 1px solid rgba(173, 250, 59, 0.18);
+    padding: 40px 0;
+    position: relative;
+  }
+  .outdoor-marquee-container::before,
+  .outdoor-marquee-container::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 150px;
+    z-index: 2;
+    pointer-events: none;
+  }
+  .outdoor-marquee-container::before {
+    left: 0;
+    background: linear-gradient(90deg, #060811 0%, transparent 100%);
+  }
+  .outdoor-marquee-container::after {
+    right: 0;
+    background: linear-gradient(270deg, #060811 0%, transparent 100%);
+  }
+  .outdoor-marquee-track {
+    display: flex;
+    width: max-content;
+    animation: marqueeRTL 25s linear infinite;
+  }
+  @keyframes marqueeRTL {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-33.333%); }
+  }
+  .outdoor-marquee-item {
+    position: relative;
+    width: 320px;
+    height: 420px;
+    margin: 0 15px;
+    border-radius: 24px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+    flex-shrink: 0;
+    transition: border-color 0.3s, box-shadow 0.3s;
+  }
+  .outdoor-marquee-item:hover {
+    border-color: rgba(173, 250, 59, 0.3);
+    box-shadow: 0 15px 35px rgba(173, 250, 59, 0.15);
+  }
+  .outdoor-marquee-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .outdoor-marquee-item:hover .outdoor-marquee-img {
+    transform: scale(1.08);
+  }
+  .outdoor-marquee-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, transparent 40%, rgba(6, 8, 17, 0.9) 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 24px;
+    z-index: 1;
+  }
+  .outdoor-marquee-stat {
+    font-family: 'Syne', 'Montserrat', sans-serif !important;
+    font-size: clamp(28px, 2.5vw, 38px);
+    font-weight: 850;
+    color: #adfa3b;
+    margin: 0 0 4px;
+    text-shadow: 0 0 15px rgba(173, 250, 59, 0.4);
+    letter-spacing: -0.02em;
+    line-height: 1;
+  }
+  .outdoor-marquee-label {
+    font-family: 'Montserrat', sans-serif !important;
+    font-size: 10px;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.65);
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    line-height: 1.2;
+  }
 `;
+
+
 
 const CSS2 = `
   @keyframes glassShimmer { 0% { background-position: -200% 0; } 100% { background-position: 200% 0; } }
@@ -482,7 +621,7 @@ const WhyOutdoorMattersSection = () => {
                   <span className="text-[28px] font-mono font-black text-white/5">{point.num}</span>
                   <span className="w-2.5 h-2.5 rounded-full bg-[#adfa3b]" style={{ boxShadow: `0 0 10px #adfa3b` }} />
                 </div>
-                <h3 style={{ fontFamily:"'Bebas Neue','Impact',sans-serif", fontSize:'clamp(24px,2.8vw,40px)', color:'#adfa3b', WebkitTextStroke:'1.5px white', letterSpacing:'0.04em', lineHeight:0.95, margin:'0 0 12px' }} className="group-hover:text-[#adfa3b] transition-colors">
+                <h3 style={{ fontFamily:"'Syne', 'Montserrat', sans-serif", fontSize:'clamp(22px,2.5vw,34px)', fontWeight:800, background: 'linear-gradient(135deg, #ffffff 40%, #c084fc 100%)', WebkitBackgroundClip: 'text', backgroundClip: 'text', WebkitTextFillColor: 'transparent', color: '#ffffff', margin:'0 0 12px' }} className="transition-colors">
                   {point.title}
                 </h3>
                 <p className="text-white/70 text-base sm:text-lg leading-relaxed mb-6 font-normal">
@@ -497,7 +636,7 @@ const WhyOutdoorMattersSection = () => {
           <div className="absolute inset-y-0 right-0 w-1/2 bg-[radial-gradient(circle_at_center,rgba(173,250,59,0.04)_0%,transparent_70%)] pointer-events-none" />
           <div className="relative z-10">
             <span className="text-[10px] font-mono font-black tracking-[0.2em] text-[#adfa3b] uppercase mb-2 block font-bold">STREET DOMINANCE</span>
-            <h3 style={{ fontFamily:"'Bebas Neue','Impact',sans-serif", fontSize:'clamp(24px,2.8vw,40px)', color:'#adfa3b', WebkitTextStroke:'1.5px white', letterSpacing:'0.04em', lineHeight:0.95, margin:'0 0 12px' }}>
+            <h3 style={{ fontFamily:"'Syne', 'Montserrat', sans-serif", fontSize:'clamp(22px,2.5vw,34px)', fontWeight:800, background: 'linear-gradient(135deg, #ffffff 40%, #c084fc 100%)', WebkitBackgroundClip: 'text', backgroundClip: 'text', WebkitTextFillColor: 'transparent', color: '#ffffff', margin:'0 0 12px' }}>
               Real-world authority that works 24/7.
             </h3>
             <p className="text-white/60 text-sm max-w-lg leading-relaxed">
@@ -685,8 +824,8 @@ export default function OutdoorMarketingPage() {
         </div>
       </section>
 
-      {/* ── Outdoor Stats Strip ── */}
-      <OutdoorStatsStrip />
+      {/* ── Outdoor Image Carousel ── */}
+      <OutdoorImageCarousel />
 
       {/* Built for Real-World Visibility */}
       <WhatIsOutdoorTodaySection />
@@ -717,7 +856,7 @@ export default function OutdoorMarketingPage() {
               <div className="absolute inset-0 flex flex-col items-center justify-center p-8 text-center bg-gradient-to-t from-black/80 via-black/20 to-black/80 z-10">
                 <div className="px-6 py-12 rounded-2xl border border-white/10 bg-black/40 backdrop-blur-md max-w-sm">
                   <span className="text-[10px] font-mono tracking-[0.25em] text-[#adfa3b] font-black uppercase mb-3 block">BUZZIWAH IMPACT</span>
-                  <h3 style={{ fontFamily:"'Bebas Neue','Impact',sans-serif", fontSize:'clamp(24px,2.8vw,40px)', color:'#adfa3b', WebkitTextStroke:'1.5px white', letterSpacing:'0.04em', lineHeight:0.95, margin:'0 0 12px' }}>
+                  <h3 style={{ fontFamily:"'Syne', 'Montserrat', sans-serif", fontSize:'clamp(22px,2.5vw,34px)', fontWeight:800, background: 'linear-gradient(135deg, #ffffff 40%, #c084fc 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', margin:'0 0 12px' }}>
                     MASSIVE REAL-WORLD AUDIENCE REACH
                   </h3>
                   <div className="w-16 h-[2px] bg-[#adfa3b] mx-auto my-4" />

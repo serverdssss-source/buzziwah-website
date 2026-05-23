@@ -168,6 +168,7 @@ const Navbar = () => {
           <ul className="nav-links" id="navLinks">
             <li><a href="/">Home</a></li>
             <li><a href="/about">About Us</a></li>
+            <li><a href="/case-studies">Case Studies</a></li>
             <li
               className={`${servicesActive ? 'active-link' : ''} ${openDropdown === 'services' ? 'open' : ''}`}
               onMouseEnter={() => setOpenDropdown('services')}
@@ -234,6 +235,7 @@ const Navbar = () => {
         <ul className="mobile-links" id="mobileLinks">
           <li><a href="/">Home</a></li>
           <li><a href="/about">About Us</a></li>
+          <li><a href="/case-studies">Case Studies</a></li>
           <li className={openMobileSub ? 'open' : ''}>
             <button type="button" onClick={toggleMobileSub}>
               Services

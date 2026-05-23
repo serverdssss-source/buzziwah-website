@@ -16,6 +16,8 @@ const SEO = lazy(() => import('./seo'));
 const OutdoorMarketingPage = lazy(() => import('./outdoor-marketing'));
 const Services = lazy(() => import('./services'));
 const CaseStudyPage = lazy(() => import('./case-studies'));
+const CaseStudiesList = lazy(() => import('./case-studies/CaseStudiesList'));
+const SeoCaseStudies = lazy(() => import('./case-studies/SeoCaseStudies'));
 const PageEnding = lazy(() => import('./components/PageEnding'));
 const Careers = lazy(() => import('./carrer/carrer'));
 
@@ -59,6 +61,10 @@ function App() {
                 return <OutdoorMarketingPage />;
               case '/services':
                 return <Services />;
+              case '/case-studies':
+                return <CaseStudiesList />;
+              case '/seo-case-studies':
+                return <SeoCaseStudies />;
               case '/careers':
               case '/carrer':
                 return <Careers />;
@@ -66,7 +72,7 @@ function App() {
                 return <Home />;
             }
           })()}
-          {path !== '/about' && !isCaseStudy && <PageEnding showContactForm={path !== '/contact'} />}
+          {path !== '/about' && !isCaseStudy && <PageEnding showContactForm={path !== '/contact' && path !== '/case-studies' && path !== '/seo-case-studies'} isCareers={path === '/careers' || path === '/carrer'} />}
         </Suspense>
       </>
     </>

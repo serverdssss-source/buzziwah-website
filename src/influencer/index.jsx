@@ -1,7 +1,6 @@
 import React, { useRef, useState, useEffect } from 'react';
 import VariableProximity from '../components/VariableProximity';
 import '../home/Home.css';
-import { IMProcess, WhyChooseUs } from './IMComponents';
 import servicesData from '../servicesData.json';
 
 const serviceConfig = servicesData['influencer'];
@@ -75,110 +74,95 @@ const FloatingInfluencerBadges = () => {
   );
 };
 
-const imVideoIds = ['Ba0Ek_aTd68', 'XBBYtirs4JU', 'S4QYOZeCPfw', 'siKBCPG-YKo'];
+/* ── Credible Collaborations Section ── */
+const IMCredibleSection = () => {
+  const ref = useRef(null);
+  const [visible, setVisible] = useState(false);
+  useEffect(() => {
+    const el = ref.current; if (!el) return;
+    const obs = new IntersectionObserver(([e]) => { if (e.isIntersecting) { setVisible(true); obs.disconnect(); } }, { threshold: 0.1 });
+    obs.observe(el); return () => obs.disconnect();
+  }, []);
 
-const TiltVideo = ({ videoId }) => {
-  const cardRef = useRef(null);
-  const handleMove = (e) => {
-    const rect = e.currentTarget.getBoundingClientRect();
-    cardRef.current.style.transform = `perspective(1000px) rotateX(${((e.clientY - rect.top - rect.height / 2) / (rect.height / 2)) * -15}deg) rotateY(${((e.clientX - rect.left - rect.width / 2) / (rect.width / 2)) * 15}deg)`;
-  };
-  const handleLeave = () => { cardRef.current.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg)'; };
+  const pillars = [
+    { icon: '🎯', label: 'Relevance First', desc: 'We match creators by niche, audience fit, and brand values — not just follower count.' },
+    { icon: '🤝', label: 'End-to-End Managed', desc: 'From discovery and outreach to contracts, briefs, content review, and reporting.' },
+    { icon: '📈', label: 'ROI Tracked', desc: 'Every collaboration is measured — reach, saves, clicks, and conversions.' },
+  ];
+
   return (
-    <div onMouseMove={handleMove} onMouseLeave={handleLeave} onTouchEnd={handleLeave} style={{ perspective: '1000px', flex: '1 1 calc(50% - 15px)', maxWidth: '600px' }}>
-      <div ref={cardRef} style={{ height: '360px', borderRadius: '12px', overflow: 'hidden', boxShadow: '0 8px 15px rgba(0,0,0,0.3)', transition: 'transform 0.6s ease-out', transformStyle: 'preserve-3d' }}>
-        <iframe src={`https://www.youtube.com/embed/${videoId}`} title="video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen style={{ width: '100%', height: '100%', border: 'none', display: 'block' }} />
-      </div>
-    </div>
-  );
-};
+    <section ref={ref} style={{ background: 'linear-gradient(160deg, #060811 0%, #0d0820 50%, #060811 100%)', padding: 'clamp(60px,8vw,100px) clamp(20px,5vw,60px)', overflow: 'hidden', position: 'relative' }}>
+      {/* BG orbs */}
+      <div style={{ position:'absolute', top:'-10%', left:'-5%', width:'500px', height:'500px', background:'radial-gradient(circle, rgba(124,58,237,0.18) 0%, transparent 65%)', borderRadius:'50%', filter:'blur(80px)', pointerEvents:'none' }} />
+      <div style={{ position:'absolute', bottom:'-10%', right:'-5%', width:'400px', height:'400px', background:'radial-gradient(circle, rgba(173,250,59,0.1) 0%, transparent 65%)', borderRadius:'50%', filter:'blur(80px)', pointerEvents:'none' }} />
 
-const IMVideos = () => (
-  <section style={{ background: '#0d0d0d', padding: '60px 40px' }}>
-    <h2 style={{ fontFamily:"'Bebas Neue','Impact','Arial Black',sans-serif", fontSize:'clamp(26px,3.5vw,48px)', color:'#adfa3b', WebkitTextStroke:'2px white', textShadow:'5px 5px 0 rgba(0,0,0,0.5)', textAlign:'center', marginBottom:'48px', letterSpacing:'0.05em', lineHeight:0.9 }}>VIDEOS</h2>
-    <div style={{ maxWidth: '1300px', margin: '0 auto', display: 'flex', flexWrap: 'wrap', gap: '30px', justifyContent: 'center' }}>
-      {imVideoIds.map((id) => <TiltVideo key={id} videoId={id} />)}
-    </div>
-  </section>
-);
+      <div style={{ maxWidth:'1200px', margin:'0 auto', position:'relative', zIndex:1 }}>
+        <div style={{ display:'flex', flexWrap:'wrap', gap:'clamp(40px,6vw,80px)', alignItems:'center' }}>
 
-const imFaqs = [
-  { q: 'What services does Buzziwah Studio offer?', a: 'We offer end-to-end social media management including content strategy, reel creation, carousel design, Instagram stories, special day creatives, and performance analytics.' },
-  { q: 'Which platforms do you manage?', a: 'We primarily focus on Instagram, but also manage Facebook, YouTube Shorts, and LinkedIn depending on your brand needs.' },
-  { q: 'How long does it take to see results?', a: 'Most clients see measurable engagement growth within 30–60 days. Viral results like our Samrat campaign can happen much faster with the right strategy.' },
-  { q: 'Do you work with small businesses?', a: 'Absolutely. We work with everyone from local restaurants and pre-schools to production houses and celebrity pages. Every brand deserves great content.' },
-  { q: "What makes Buzziwah different from other agencies?", a: "We combine deep cultural understanding, meme-driven creativity, and data-backed strategy. We don't just post — we craft content that resonates and converts." },
-  { q: 'How do I get started with Buzziwah?', a: "Simply click 'Get Started' or reach out via our contact page. We'll schedule a discovery call to understand your brand and build a custom strategy." },
-];
+          {/* Left: copy */}
+          <div style={{
+            flex:'1 1 min(100%, 500px)', minWidth:0,
+            opacity: visible ? 1 : 0,
+            transform: visible ? 'translateX(0)' : 'translateX(-48px)',
+            transition: 'opacity 0.7s ease, transform 0.7s ease',
+          }}>
+            {/* Label */}
+            <span style={{ fontSize:'10px', fontWeight:800, letterSpacing:'0.28em', color:'#adfa3b', textTransform:'uppercase', display:'block', marginBottom:'16px' }}>
+              ✦ INFLUENCER MARKETING ✦
+            </span>
 
-const IMFAQCard = ({ f, i }) => {
-  const [open, setOpen] = useState(false);
-  return (
-    <div className={`faq-card ${open ? 'open' : ''}`}>
-      <button className="faq-question" type="button" onClick={() => setOpen(!open)} aria-expanded={open}>
-        <span>{`${i + 1}. ${f.q}`}</span>
-        <span className="faq-arrow">&#8964;</span>
-      </button>
-      <div className="faq-answer">{f.a}</div>
-    </div>
-  );
-};
+            {/* Heading */}
+            <h2 style={{ fontFamily:"'Bebas Neue','Impact',sans-serif", fontSize:'clamp(40px,6vw,78px)', lineHeight:0.88, margin:'0 0 24px', color:'#fff', WebkitTextStroke:'2px rgba(173,250,59,0.4)', letterSpacing:'0.03em' }}>
+              Credible<br />
+              <span style={{ color:'#adfa3b', WebkitTextStroke:'2px white' }}>Collaborations</span>
+            </h2>
 
-const IMFAQ = () => (
-  <section className="faq-showcase">
-    <div className="faq-inner">
-      <div className="faq-header">
-        <div className="faq-title-block">
-          <h2 style={{ fontFamily:"'Bebas Neue','Impact',sans-serif", fontSize:'clamp(24px,3vw,44px)', color:'#adfa3b', WebkitTextStroke:'2px white', textShadow:'5px 5px 0 rgba(0,0,0,0.5)', lineHeight:0.9, margin:'0 0 8px' }}>Any questions?</h2>
-          <h3 style={{ fontFamily:"'Bebas Neue','Impact',sans-serif", fontSize:'clamp(32px,4vw,64px)', color:'transparent', WebkitTextStroke:'2px #a855f7', letterSpacing:'0.04em', lineHeight:0.9, margin:'0 0 32px' }}>We got you.</h3>
+            {/* Divider */}
+            <div style={{ width:'48px', height:'3px', background:'linear-gradient(90deg, #adfa3b, transparent)', borderRadius:'2px', marginBottom:'24px' }} />
+
+            {/* Body copy */}
+            <p style={{ color:'rgba(255,255,255,0.75)', fontSize:'clamp(15px,1.6vw,18px)', lineHeight:1.85, margin:'0 0 16px', fontWeight:500 }}>
+              People trust people more than brands. And the right voice can make your brand feel <span style={{ color:'#adfa3b', fontWeight:700 }}>real, relatable and trusted.</span>
+            </p>
+            <p style={{ color:'rgba(255,255,255,0.5)', fontSize:'clamp(13px,1.4vw,15px)', lineHeight:1.9, margin:0 }}>
+              We connect your brand with the right creators — not just based on reach, but <strong style={{ color:'rgba(255,255,255,0.75)' }}>relevance and alignment.</strong> From identifying influencers to managing collaborations and content, we handle everything end-to-end.
+            </p>
+          </div>
+
+          {/* Right: pillars */}
+          <div style={{
+            flex:'1 1 min(100%, 420px)', minWidth:0,
+            display:'flex', flexDirection:'column', gap:'16px',
+            opacity: visible ? 1 : 0,
+            transform: visible ? 'translateX(0)' : 'translateX(48px)',
+            transition: 'opacity 0.7s ease 0.15s, transform 0.7s ease 0.15s',
+          }}>
+            {pillars.map((p, i) => (
+              <div key={i} style={{
+                display:'flex', alignItems:'flex-start', gap:'18px',
+                padding:'22px 24px',
+                borderRadius:'20px',
+                background:`rgba(255,255,255,0.02)`,
+                border:`1px solid ${i === 0 ? 'rgba(173,250,59,0.15)' : 'rgba(255,255,255,0.05)'}`,
+                transition:'border-color 0.3s',
+              }}>
+                <div style={{ fontSize:'28px', lineHeight:1, flexShrink:0, marginTop:'2px' }}>{p.icon}</div>
+                <div>
+                  <div style={{ fontFamily:"'Bebas Neue','Impact',sans-serif", fontSize:'18px', color:'#adfa3b', letterSpacing:'0.1em', marginBottom:'6px' }}>{p.label}</div>
+                  <div style={{ fontSize:'13px', color:'rgba(255,255,255,0.5)', lineHeight:1.7 }}>{p.desc}</div>
+                </div>
+              </div>
+            ))}
+          </div>
+
         </div>
-        <p className="faq-intro">Have something on your mind? Whether it's about our services, process, timelines, or pricing — we've answered the most common questions to help you move forward with clarity and confidence.</p>
       </div>
-      <div className="faq-grid">
-        {imFaqs.map((f, i) => <IMFAQCard key={i} f={f} i={i} />)}
-      </div>
-    </div>
-  </section>
-);
+    </section>
+  );
+};
 
 const InfluencerPage = () => {
   const containerRef = useRef(null);
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitted, setSubmitted] = useState(false);
-
-  const handleLocalSubmit = async (e) => {
-    e.preventDefault();
-    const formDataObj = new FormData(e.target);
-    const data = Object.fromEntries(formDataObj.entries());
-    
-    if (data.name && data.email && data.message) {
-      setIsSubmitting(true);
-      data.access_key = import.meta.env.VITE_WEB3FORMS_KEY;
-      data.subject = "New Lead from Influencer Page";
-      data.from_name = "Buzziwah Website (Influencer)";
-
-      try {
-        const response = await fetch("https://api.web3forms.com/submit", {
-          method: "POST",
-          headers: { "Content-Type": "application/json", Accept: "application/json" },
-          body: JSON.stringify(data),
-        });
-        const result = await response.json();
-        if (result.success) {
-          setSubmitted(true);
-          e.target.reset();
-        } else {
-          alert(result.message || "Something went wrong");
-        }
-      } catch (err) {
-        alert("Error connecting to the server");
-      } finally {
-        setIsSubmitting(false);
-      }
-    } else {
-      alert("Please fill in all required fields *");
-    }
-  };
 
   return (
     <div className="im-font">
@@ -427,123 +411,12 @@ const InfluencerPage = () => {
       {/* ── Influencer Stats Strip ── */}
       <InfluencerStatsStrip />
 
-  
+      {/* ── Credible Collaborations ── */}
+      <IMCredibleSection />
 
-    <IMProcess />
-    <WhyChooseUs />
-    <IMVideos />
+      {/* ── Collaborations We Did ── */}
+      <IMCollaborationsSection />
 
-    {/* 🌟 PREMIUM INTERACTIVE INFLUENCER COLLABORATIONS */}
-    <IMCollaborationsSection />
-
-    <IMFAQ />
-
-    <section className="contact-form-section" id="contact">
-      <div className="contact-form-header">
-        <h2>Contact Us</h2>
-        <p>Tell us about your project and we will get back to you quickly.</p>
-      </div>
-      <div className="contact-form-inner">
-        <div className="contact-form-image">
-          <img src="/shared-contact-section-illustration.png" alt="Contact" />
-        </div>
-        <div className="relative">
-          {submitted ? (
-            <div className="bg-[#adfa3b]/10 border border-[#adfa3b] p-8 rounded-2xl text-center">
-              <h3 className="text-[#adfa3b] text-xl font-bold mb-2">Success!</h3>
-              <p className="text-white/70">Your message has been sent. We will get back to you soon.</p>
-              <button onClick={() => setSubmitted(false)} className="mt-4 text-[#adfa3b] underline">Send another message</button>
-            </div>
-          ) : (
-            <form className="contact-form" onSubmit={handleLocalSubmit}>
-              <div className="form-row two">
-                <label className="form-field"><span>Name *</span><input name="name" type="text" placeholder="Full Name" required /></label>
-                <label className="form-field"><span>Email *</span><input name="email" type="email" placeholder="Email" required /></label>
-              </div>
-              <div className="form-row two">
-                <label className="form-field"><span>Phone</span><input name="phone" type="tel" placeholder="Phone" /></label>
-                <label className="form-field">
-                  <span>Select Service *</span>
-                  <select name="service" required>
-                    <option value="">Select your Services</option>
-                    <option>Branding</option>
-                    <option>Digital Marketing</option>
-                    <option>Performance Marketing</option>
-                    <option>Film Promotion</option>
-                    <option>Web Design</option>
-                  </select>
-                </label>
-              </div>
-              <div className="form-row">
-                <label className="form-field"><span>Message *</span><textarea name="message" rows="5" placeholder="Comment or Message" required /></label>
-              </div>
-              <div className="form-actions">
-                <button type="submit" disabled={isSubmitting}>
-                  {isSubmitting ? "Sending..." : "Submit"}
-                </button>
-              </div>
-            </form>
-          )}
-        </div>
-      </div>
-    </section>
-
-    <footer className="site-footer">
-      <div className="footer-cta">
-        <img className="footer-logo" src="/Buzziwah_FInal_Logo_White.png" alt="Buzziwah" />
-        <div className="footer-cta-text">Ready To Get Started</div>
-        <button className="footer-cta-button" type="button">Get Started →</button>
-      </div>
-      <div className="footer-divider" />
-      <div className="footer-grid">
-        <div className="footer-col">
-          <h4>SUBSCRIBE TO OUR NEWSLETTER</h4>
-          <input className="footer-input" type="text" placeholder="Name" />
-          <input className="footer-input" type="email" placeholder="Email Address" />
-          <button className="footer-subscribe" type="button">Subscribe</button>
-        </div>
-        <div className="footer-col">
-          <h4>SERVICES</h4>
-          <ul><li>Performance Marketing</li><li>Social Media Management</li><li>Website Development</li><li>Branding and Re-branding</li></ul>
-        </div>
-        <div className="footer-col">
-          <h4>ABOUT</h4>
-          <ul><li>Our Story</li><li>Benefits</li><li>Team</li><li>Careers</li></ul>
-        </div>
-        <div className="footer-col">
-          <h4>NAVIGATION</h4>
-          <ul><li>Content Solution</li><li>Video Production</li><li>Search Engine Optimization</li><li>Influencer Marketing</li></ul>
-        </div>
-        <div className="footer-col">
-          <h4>HELP</h4>
-          <ul><li>FAQs</li><li>Contact Us</li></ul>
-        </div>
-      </div>
-      <div className="footer-divider" />
-      <div className="footer-bottom">
-        <div className="footer-socials">
-          <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="footer-social facebook" aria-label="Facebook">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" width="18" height="18">
-              <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
-            </svg>
-          </a>
-          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="footer-social instagram" aria-label="Instagram">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" width="18" height="18">
-              <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
-              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
-              <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
-            </svg>
-          </a>
-          <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" className="footer-social youtube" aria-label="YouTube">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" width="18" height="18">
-              <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z" />
-              <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02" fill="currentColor" />
-            </svg>
-          </a>
-        </div>
-        <div className="footer-copy">2026 Buzziwah.com | All Rights Reserved</div>
-      </div>
-    </footer>
     </div>
   );
 };
@@ -552,12 +425,13 @@ const InfluencerPage = () => {
    🌟 INTERACTIVE INFLUENCER COLLABORATIONS ROSTER
 ═══════════════════════════════════════════════════════ */
 const IMCollaborationsSection = () => {
-  const collabs = [
-    { name: "Vaibhav Srinivas", brand: "Fitness Factory", role: "Fitness & Lifestyle Creator", reach: "1.2M+", engagement: "14.2%", img: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=300", tag: "FITNESS" },
-    { name: "Bakasura Brahmana", brand: "Samrat Restaurant", role: "Food & Culinary Storyteller", reach: "850K+", engagement: "18.9%", img: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=300", tag: "FOOD & TRAVEL" },
-    { name: "Shwetha Prasad", brand: "Fitness Factory", role: "Actor & Wellness Influencer", reach: "2.4M+", engagement: "11.5%", img: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=300", tag: "WELLNESS" },
-    { name: "Nikhil Goal", brand: "Buzziwah Collabs", role: "Tech & Travel Explorer", reach: "480K+", engagement: "9.2%", img: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&q=80&w=300", tag: "TECH" },
-    { name: "Mahira", brand: "Buzziwah Collabs", role: "Fashion & Creative Director", reach: "620K+", engagement: "12.8%", img: "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&q=80&w=300", tag: "FASHION" }
+  const [activeVaibhavIdx, setActiveVaibhavIdx] = useState(0);
+  
+  const vaibhavReels = [
+    { label: "High-Energy Workout", src: "/SERICES CONTENTS/VAIBHAV_FITNESS_1.mp4", views: "1.2M+" },
+    { label: "Form & Science", src: "/SERICES CONTENTS/VAIBHAV_FITNESS_2.mp4", views: "840K+" },
+    { label: "Routine Breakdown", src: "/SERICES CONTENTS/VAIBHAV_FITNESS_3.mp4", views: "1.5M+" },
+    { label: "Community Challenge", src: "/SERICES CONTENTS/VAIBHAV_FITNESS_4.mp4", views: "920K+" }
   ];
 
   return (
@@ -589,49 +463,229 @@ const IMCollaborationsSection = () => {
           </div>
         </div>
 
-        {/* Collaborations Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 mb-16">
-          {collabs.map((collab, idx) => (
-            <div 
-              key={idx}
-              className="rounded-3xl border border-white/5 bg-gradient-to-b from-white/[0.03] to-white/[0.01] hover:border-[#a78bfa]/40 hover:bg-white/[0.04] transition-all duration-500 relative overflow-hidden group flex flex-col justify-between min-h-[280px]"
-            >
-              {/* Profile Header without image */}
-              <div className="p-6 pt-10 flex-1 flex flex-col justify-between relative z-10 bg-transparent rounded-3xl">
-                <div className="absolute top-4 right-4">
-                  <span className="text-[9px] font-mono font-black uppercase tracking-widest text-black bg-[#adfa3b] px-3 py-1 rounded-full">
-                    {collab.tag}
-                  </span>
-                </div>
-
+        {/* Bento Grid layout */}
+        <div className="grid grid-cols-1 lg:grid-cols-6 gap-8 mb-20 font-sans">
+          
+          {/* Card 1: Vaibhav Srinivas (col-span-3) */}
+          <div className="lg:col-span-3 rounded-[32px] border border-white/10 bg-white/[0.01] p-6 sm:p-8 flex flex-col justify-between shadow-[0_15px_35px_rgba(0,0,0,0.4)] group overflow-hidden relative min-h-[420px]">
+            <div className="flex flex-col sm:flex-row gap-6 items-center justify-between h-full w-full">
+              <div className="flex-1 flex flex-col justify-between h-full">
                 <div>
-                  <h3 className="font-['Bebas_Neue','Impact',sans-serif] text-3xl font-black text-white uppercase tracking-wider group-hover:text-[#a78bfa] transition-colors duration-300 leading-none">
-                    {collab.name}
-                  </h3>
-                  <p className="text-white/40 text-xs font-bold uppercase tracking-widest mt-2">
-                    {collab.role}
-                  </p>
-                  
-                  <div className="p-3 rounded-2xl bg-white/[0.02] border border-white/[0.05] mt-6 flex items-center justify-between text-xs">
-                    <span className="text-white/30 font-medium font-mono uppercase tracking-tighter">For Brand</span>
-                    <span className="text-[#adfa3b] font-black uppercase tracking-wide">{collab.brand}</span>
+                  <div className="flex justify-between items-center mb-4">
+                    <span className="text-[9px] font-mono text-white/30 tracking-widest font-black uppercase">ST-01 // CO-BRAND REELS</span>
+                    <span className="text-[8px] font-mono font-black tracking-widest px-2 py-0.5 rounded-full bg-[#adfa3b]/10 text-[#adfa3b]">FITNESS FACTORY</span>
                   </div>
+                  <h3 className="font-['Montserrat'] text-md font-extrabold text-white uppercase tracking-wider mb-2 group-hover:text-[#adfa3b] transition-colors duration-300">
+                    Vaibhav Srinivas
+                  </h3>
+                  <p className="text-[#a78bfa] text-xs font-bold uppercase tracking-widest mb-3">Fitness & Lifestyle Creator</p>
+                  <p className="text-white/50 text-[12px] leading-relaxed mb-6">
+                    We managed 4 high-octane campaigns featuring Vaibhav, driving extreme profile visits and gym sign-ups. Select a campaign reel to play the organic high-retention video.
+                  </p>
+                </div>
+                
+                {/* Reel selector tabs */}
+                <div className="space-y-2 mb-6">
+                  {vaibhavReels.map((item, idx) => (
+                    <button
+                      key={idx}
+                      onClick={() => setActiveVaibhavIdx(idx)}
+                      className={`w-full text-left px-3 py-2 rounded-xl text-[10px] font-mono tracking-wider font-black uppercase transition-all flex justify-between items-center border ${
+                        activeVaibhavIdx === idx 
+                          ? 'bg-[#adfa3b]/10 text-[#adfa3b] border-[#adfa3b]/30' 
+                          : 'bg-white/5 text-white/60 border-transparent hover:text-white hover:bg-white/10'
+                      }`}
+                      type="button"
+                    >
+                      <span>{item.label}</span>
+                      <span className="text-[8.5px] opacity-60">{item.views} views</span>
+                    </button>
+                  ))}
                 </div>
 
-                {/* Micro Stats */}
-                <div className="mt-8 pt-6 border-t border-white/10 grid grid-cols-2 gap-4 text-center">
+                <div className="grid grid-cols-2 gap-4 text-center pt-4 border-t border-white/10">
                   <div>
-                    <span className="text-[10px] font-mono text-white/30 uppercase tracking-widest block mb-1">REACH</span>
-                    <span className="text-white text-sm font-mono font-black">{collab.reach}</span>
+                    <span className="text-[9px] font-mono text-white/30 uppercase tracking-widest block mb-1">AGGREGATE REACH</span>
+                    <span className="text-white text-md font-mono font-black">4.8M+</span>
                   </div>
                   <div className="border-l border-white/10">
-                    <span className="text-[10px] font-mono text-white/30 uppercase tracking-widest block mb-1">ENG. RATE</span>
-                    <span className="text-[#a78bfa] text-sm font-mono font-black">{collab.engagement}</span>
+                    <span className="text-[9px] font-mono text-white/30 uppercase tracking-widest block mb-1">ENGAGEMENT RATE</span>
+                    <span className="text-[#a78bfa] text-md font-mono font-black">14.2%</span>
                   </div>
                 </div>
               </div>
+              
+              {/* Phone Reel Player */}
+              <div className="relative w-[180px] h-[340px] rounded-[28px] border-[6px] border-[#333] bg-black shadow-[0_15px_30px_rgba(0,0,0,0.5)] overflow-hidden flex-shrink-0">
+                <div className="absolute left-1/2 top-0 z-10 h-3 w-16 -translate-x-1/2 rounded-b-[8px] bg-[#333]" />
+                <video 
+                  key={activeVaibhavIdx}
+                  src={vaibhavReels[activeVaibhavIdx].src}
+                  className="w-full h-full object-cover" 
+                  autoPlay 
+                  loop 
+                  muted 
+                  playsInline 
+                />
+              </div>
             </div>
-          ))}
+          </div>
+
+          {/* Card 2: Bakasura Brahmana for Samrat (col-span-3) */}
+          <div className="lg:col-span-3 rounded-[32px] border border-white/10 bg-white/[0.01] p-6 sm:p-8 flex flex-col justify-between shadow-[0_15px_35px_rgba(0,0,0,0.4)] group overflow-hidden relative min-h-[420px]">
+            <div className="flex flex-col sm:flex-row gap-6 items-center justify-between h-full w-full">
+              <div className="flex-1 flex flex-col justify-between h-full">
+                <div>
+                  <div className="flex justify-between items-center mb-4">
+                    <span className="text-[9px] font-mono text-white/30 tracking-widest font-black uppercase">ST-02 // FOOD INFLUENCER</span>
+                    <span className="text-[8px] font-mono font-black tracking-widest px-2 py-0.5 rounded-full bg-[#a855f7]/10 text-[#a855f7]">SAMRAT RESTAURANT</span>
+                  </div>
+                  <h3 className="font-['Montserrat'] text-md font-extrabold text-white uppercase tracking-wider mb-2 group-hover:text-[#a855f7] transition-colors duration-300">
+                    Bakasura Brahmana
+                  </h3>
+                  <p className="text-[#adfa3b] text-xs font-bold uppercase tracking-widest mb-3">Food & Culinary Storyteller</p>
+                  <p className="text-white/50 text-[12px] leading-relaxed mb-6">
+                    For Samrat Restaurant Sheshadripuram, we deployed food-critic campaigns starring Bakasura Brahmana. The high-production culinary showcase triggered massive dining footfall and viral local authority.
+                  </p>
+                </div>
+                
+                <div className="grid grid-cols-2 gap-4 text-center pt-4 border-t border-white/10">
+                  <div>
+                    <span className="text-[9px] font-mono text-white/30 uppercase tracking-widest block mb-1">CAMPAIGN REACH</span>
+                    <span className="text-white text-md font-mono font-black">850K+</span>
+                  </div>
+                  <div className="border-l border-white/10">
+                    <span className="text-[9px] font-mono text-white/30 uppercase tracking-widest block mb-1">ENGAGEMENT RATE</span>
+                    <span className="text-[#adfa3b] text-md font-mono font-black">18.9%</span>
+                  </div>
+                </div>
+              </div>
+              
+              {/* Phone Reel Player with culinary loop */}
+              <div className="relative w-[180px] h-[340px] rounded-[28px] border-[6px] border-[#333] bg-black shadow-[0_15px_30px_rgba(0,0,0,0.5)] overflow-hidden flex-shrink-0">
+                <div className="absolute left-1/2 top-0 z-10 h-3 w-16 -translate-x-1/2 rounded-b-[8px] bg-[#333]" />
+                <video 
+                  src="https://demo.sripadastudios.com/wp-content/uploads/2025/05/Samrat-food.mp4.mp4" 
+                  className="w-full h-full object-cover" 
+                  autoPlay 
+                  loop 
+                  muted 
+                  playsInline 
+                />
+              </div>
+            </div>
+          </div>
+
+          {/* Card 3: Nikhil Goal (col-span-2) */}
+          <div className="lg:col-span-2 rounded-[32px] border border-white/10 bg-white/[0.01] p-6 flex flex-col justify-between shadow-[0_15px_35px_rgba(0,0,0,0.4)] group overflow-hidden relative">
+            <div>
+              <div className="flex justify-between items-center mb-4">
+                <span className="text-[9px] font-mono text-white/30 tracking-widest font-black uppercase">ST-03 // TECH & ADVENTURE</span>
+                <span className="text-[8px] font-mono font-black tracking-widest px-2 py-0.5 rounded-full bg-[#00f0ff]/10 text-[#00f0ff]">BUZZIWAH COLLABS</span>
+              </div>
+              <h3 className="font-['Montserrat'] text-sm font-extrabold text-white uppercase tracking-wider mb-2 group-hover:text-[#00f0ff] transition-colors duration-300">
+                Nikhil Goal
+              </h3>
+              <p className="text-white/40 text-[10px] font-bold uppercase tracking-widest mb-3">Tech & Travel Explorer</p>
+              <p className="text-white/50 text-[11px] leading-relaxed mb-5">
+                We managed travel-tech lifestyle integrations showcasing next-gen setups. Delivering highly interactive, product-focused reels optimized to build viewer trust and conversions.
+              </p>
+            </div>
+            
+            {/* Travel setup mockup */}
+            <div className="w-full h-[180px] bg-gradient-to-tr from-[#141517] to-[#1e293b] rounded-2xl border border-white/10 shadow-lg relative overflow-hidden flex flex-col justify-between p-4">
+              <div className="absolute top-2 right-2 text-[9px] font-mono text-[#00f0ff] bg-[#00f0ff]/10 px-2 py-0.5 rounded">TRAVEL TECH</div>
+              <div className="flex items-center gap-2">
+                <div className="w-7 h-7 rounded-full bg-gradient-to-tr from-[#00f0ff] to-[#a855f7] flex items-center justify-center text-[10px] font-black text-white">N</div>
+                <div>
+                  <span className="block text-[10px] font-black text-white uppercase">nikhilgoal</span>
+                  <span className="block text-[6.5px] text-white/40 uppercase">Creator network</span>
+                </div>
+              </div>
+              
+              <div className="bg-black/40 border border-white/5 p-2 rounded-lg font-mono text-[9px] text-[#00f0ff] mt-2">
+                {"{ reach: '480K+', eng: '9.2%', saves: '12K+' }"}
+              </div>
+
+              <div className="flex justify-between items-center text-[7.5px] font-mono text-white/30 uppercase tracking-widest mt-2 border-t border-white/5 pt-2">
+                <span>480K+ Reach</span>
+                <span>Active Collabs</span>
+              </div>
+            </div>
+          </div>
+
+          {/* Card 4: Mahira (col-span-2) */}
+          <div className="lg:col-span-2 rounded-[32px] border border-white/10 bg-white/[0.01] p-6 flex flex-col justify-between shadow-[0_15px_35px_rgba(0,0,0,0.4)] group overflow-hidden relative">
+            <div>
+              <div className="flex justify-between items-center mb-4">
+                <span className="text-[9px] font-mono text-white/30 tracking-widest font-black uppercase">ST-04 // FASHION</span>
+                <span className="text-[8px] font-mono font-black tracking-widest px-2 py-0.5 rounded-full bg-[#ff007f]/10 text-[#ff007f]">BUZZIWAH COLLABS</span>
+              </div>
+              <h3 className="font-['Montserrat'] text-sm font-extrabold text-white uppercase tracking-wider mb-2 group-hover:text-[#ff007f] transition-colors duration-300">
+                Mahira
+              </h3>
+              <p className="text-white/40 text-[10px] font-bold uppercase tracking-widest mb-3">Fashion & Creative Director</p>
+              <p className="text-white/50 text-[11px] leading-relaxed mb-5">
+                Targeting aesthetic-driven lifestyle brands, we created highly curated, editorial fashion integrations that gained high-fidelity viewer shares and organic community advocate growth.
+              </p>
+            </div>
+            
+            {/* Editorial card mockup */}
+            <div className="w-full h-[180px] bg-gradient-to-br from-[#1b1226] via-[#0d0914] to-[#040206] rounded-2xl border border-white/10 shadow-lg relative overflow-hidden flex flex-col p-4 justify-between">
+              <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,0,127,0.1)_0%,transparent_60%)] pointer-events-none" />
+              <div className="flex items-center justify-between relative z-10">
+                <span className="text-[9px] font-black text-[#ff007f] uppercase tracking-wider">Aesthetic Editorial</span>
+                <span className="text-[8.5px] font-mono text-[#ff007f] bg-[#ff007f]/10 px-2 rounded">FASHION</span>
+              </div>
+              <div className="text-center py-2 relative z-10">
+                <h4 className="text-white font-black uppercase text-xs tracking-wider" style={{ fontFamily: "'Montserrat', sans-serif" }}>MAHIRA COLLABS</h4>
+                <span className="text-[7.5px] font-mono text-[#ff007f] block mt-1 uppercase">620K+ TOTAL REACH</span>
+              </div>
+              <div className="flex justify-between items-center text-[7.5px] font-mono text-white/30 uppercase tracking-widest relative z-10 border-t border-white/5 pt-2">
+                <span>Engagement: 12.8%</span>
+                <span>Advocates</span>
+              </div>
+            </div>
+          </div>
+
+          {/* Card 5: Shwetha Prasad (col-span-2) */}
+          <div className="lg:col-span-2 rounded-[32px] border border-white/10 bg-white/[0.01] p-6 flex flex-col justify-between shadow-[0_15px_35px_rgba(0,0,0,0.4)] group overflow-hidden relative">
+            <div>
+              <div className="flex justify-between items-center mb-4">
+                <span className="text-[9px] font-mono text-white/30 tracking-widest font-black uppercase">ST-05 // CELEBRITY WELLNESS</span>
+                <span className="text-[8px] font-mono font-black tracking-widest px-2 py-0.5 rounded-full bg-[#adfa3b]/10 text-[#adfa3b]">FITNESS FACTORY</span>
+              </div>
+              <h3 className="font-['Montserrat'] text-sm font-extrabold text-white uppercase tracking-wider mb-2 group-hover:text-[#adfa3b] transition-colors duration-300">
+                Shwetha Prasad
+              </h3>
+              <p className="text-white/40 text-[10px] font-bold uppercase tracking-widest mb-3">Actor & Wellness Influencer</p>
+              <p className="text-white/50 text-[11px] leading-relaxed mb-5">
+                We managed premium, high-production celebrity wellness integrations with Shwetha to represent clean health values. Built authority, trust, and massive organic reach.
+              </p>
+            </div>
+            
+            {/* Shwetha mockup */}
+            <div className="w-full h-[180px] bg-gradient-to-tr from-[#121f15] to-[#1c3221] rounded-2xl border border-white/10 shadow-lg relative overflow-hidden flex flex-col p-4 justify-between">
+              <div className="absolute top-2 right-2 text-[9px] font-mono text-[#adfa3b] bg-[#adfa3b]/10 px-2 py-0.5 rounded">CELEBRITY</div>
+              <div className="flex items-center gap-2">
+                <div className="w-7 h-7 rounded-full bg-[#adfa3b] flex items-center justify-center text-[10px] font-black text-black">SP</div>
+                <div>
+                  <span className="block text-[10px] font-black text-white uppercase">shwethaprasad</span>
+                  <span className="block text-[6.5px] text-white/40 uppercase">Regional Actor</span>
+                </div>
+              </div>
+              
+              <div className="bg-black/40 border border-white/5 p-2 rounded-lg font-mono text-[9px] text-[#adfa3b] mt-2">
+                {"{ reach: '2.4M+', eng: '11.5%', type: 'Celebrity' }"}
+              </div>
+
+              <div className="flex justify-between items-center text-[7.5px] font-mono text-white/30 uppercase tracking-widest mt-2 border-t border-white/5 pt-2">
+                <span>Wellness Anchor</span>
+                <span>Verified creator</span>
+              </div>
+            </div>
+          </div>
+
         </div>
 
         {/* Dynamic Premium Case Studies Redirect CTA Banner */}

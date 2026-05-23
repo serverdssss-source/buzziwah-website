@@ -68,16 +68,14 @@ const VisibleOnlineSection = () => {
                 <span className="von-gif-title">BUZZIWAH_WORKSPACE.exe</span>
               </div>
               <div className="von-gif-body">
-                <iframe 
-                  src="https://tenor.com/embed/10369691214082701500" 
-                  width="100%" 
-                  height="460" 
-                  style={{ border: 'none', borderRadius: '12px', display: 'block' }} 
-                  allowFullScreen
-                  title="Job Application GIF"
-                  scrolling="no"
+                <video 
+                  src="/home page join .mp4" 
+                  style={{ width: '100%', height: 'auto', border: 'none', borderRadius: '12px', display: 'block', objectFit: 'cover' }} 
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
                 />
-                <div className="von-gif-blocker" />
               </div>
             </div>
             <div className="von-gif-badge">

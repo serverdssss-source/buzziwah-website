@@ -538,7 +538,6 @@ body {
 }
 
 .retro-10 {
-  font-size: 1.8rem;
   font-family: 'Arial Black', sans-serif;
   font-weight: 900;
   color: #ffffff;
@@ -559,15 +558,22 @@ body {
 }
 
 .retro-sm {
-  font-size: 1rem;
+  font-family: 'Syne', sans-serif;
   font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 0.12em;
   color: #ffffff;
-  text-shadow:
-    1px 1px 0 #8b5cf6,
-    2px 2px 0 #adfa3b,
-    3px 3px 0 #4e4e63;
+  text-shadow: none;
+}
+
+@media (min-width: 768px) {
+  .retro-sm {
+    font-size: 1rem;
+    text-shadow:
+      1px 1px 0 #8b5cf6,
+      2px 2px 0 #adfa3b,
+      3px 3px 0 #4e4e63;
+  }
 }
 
 .clientele-section {

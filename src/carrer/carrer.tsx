@@ -305,7 +305,7 @@ export default function Careers() {
                             View Open Roles <span className="text-[#060811] text-sm font-black">→</span>
                         </button>
                         <a
-                            href="mailto:careers@buzziwah.com"
+                            href="mailto:connect@sripadastudios.com"
                             className="text-[#a855f7] text-xs uppercase tracking-[0.2em] border-b border-[#a855f7]/20 hover:text-[#adfa3b] hover:border-[#adfa3b] transition-colors duration-200 pb-0.5"
                         >
                             Or just say hello
@@ -471,7 +471,7 @@ export default function Careers() {
                                 <p className="text-white/70 text-sm">
                                     Don&apos;t see your role?{"  "}
                                     <a
-                                        href="mailto:careers@buzziwah.com"
+                                        href="mailto:connect@sripadastudios.com"
                                         className="text-[#adfa3b] font-bold border-b border-[#adfa3b]/20 hover:text-[#a855f7] hover:border-[#a855f7]/40 transition-all duration-300 inline-flex items-center gap-1"
                                     >
                                         Send a speculative application <span className="text-xs">→</span>
@@ -535,7 +535,11 @@ export default function Careers() {
                                             <span className="text-xs font-semibold text-white/50 tracking-wide">Ready to shape culture?</span>
                                         </div>
                                         <a 
-                                            href="/contact"
+                                            href="#contact"
+                                            onClick={(e) => {
+                                                e.preventDefault();
+                                                document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
+                                            }}
                                             className="group inline-flex items-center gap-3 bg-[#adfa3b] text-[#060811] px-8 py-4 rounded-xl text-sm font-bold hover:bg-[#adfa3b]/90 hover:shadow-[0_0_30px_rgba(173,250,59,0.45)] transition-all duration-300 justify-center"
                                         >
                                             Apply Now{" "}
@@ -555,7 +559,7 @@ export default function Careers() {
                             <p className="text-white/70 text-sm text-center">
                                 Don&apos;t see your role?{"  "}
                                 <a
-                                    href="mailto:careers@buzziwah.com"
+                                    href="mailto:connect@sripadastudios.com"
                                     className="text-[#adfa3b] font-bold border-b border-[#adfa3b]/20 hover:text-[#a855f7] hover:border-[#a855f7]/40 transition-all duration-300 inline-flex items-center gap-1"
                                 >
                                     Send a speculative application <span className="text-xs">→</span>
@@ -1026,7 +1030,7 @@ export default function Careers() {
                                         Apply
                                     </p>
                                     <p className="mt-2 text-sm leading-relaxed text-white sm:text-base">
-                                        Send the resume at <a href="mailto:connect@buzziwah.com" className="font-semibold text-[#adfa3b] underline decoration-[#adfa3b]/30 underline-offset-4">connect@buzziwah.com</a> or <a href="tel:+918050236982" className="font-semibold text-[#adfa3b] underline decoration-[#adfa3b]/30 underline-offset-4">+91 80502 36982</a>.
+                                        Send the resume at <a href="mailto:connect@sripadastudios.com" className="font-semibold text-[#adfa3b] underline decoration-[#adfa3b]/30 underline-offset-4">connect@sripadastudios.com</a> or <a href="tel:+918050236982" className="font-semibold text-[#adfa3b] underline decoration-[#adfa3b]/30 underline-offset-4">+91 80502 36982</a>.
                                     </p>
                                 </div>
                             </div>

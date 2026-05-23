@@ -37,7 +37,7 @@ const SEOStatsStrip = () => {
           const [ref, count] = useCountUp(s.end, 1600 + i*200);
           return (
             <div key={i} ref={ref} style={{ textAlign:'center', minWidth:'90px' }}>
-              <div style={{ fontFamily:"'Bebas Neue',Impact,sans-serif", fontSize:'clamp(26px,3.5vw,44px)', color:'#adfa3b', letterSpacing:'0.03em', lineHeight:1, textShadow:'0 0 20px rgba(173,250,59,0.3)' }}>
+              <div style={{ fontFamily:"'Nunito Sans', sans-serif", fontWeight:800, fontSize:'clamp(26px,3.5vw,44px)', color:'#adfa3b', letterSpacing:'0.03em', lineHeight:1, textShadow:'0 0 20px rgba(173,250,59,0.3)' }}>
                 {count}{s.suffix}
               </div>
               <div style={{ fontSize:'10px', color:'rgba(255,255,255,0.45)', textTransform:'uppercase', letterSpacing:'0.18em', marginTop:'4px', fontWeight:600 }}>
@@ -63,7 +63,7 @@ const FloatingSEOBadges = () => {
     <>
       <style>{`@keyframes seoFloat{0%,100%{transform:translateY(0)rotate(var(--rot));}50%{transform:translateY(-14px)rotate(var(--rot));}}`}</style>
       {badges.map((b,i)=>(
-        <div key={i} style={{ position:'absolute', left:b.x, top:b.y, background:b.color, color:b.textColor, fontFamily:"'Bebas Neue',Impact,sans-serif", fontSize:'11px', letterSpacing:'0.18em', padding:'5px 12px', borderRadius:'6px', border:`1px solid ${b.textColor === '#060811' ? 'transparent' : 'rgba(173,250,59,0.25)'}`, '--rot':b.rot, animation:`seoFloat ${b.dur} ease-in-out infinite`, animationDelay:b.delay, pointerEvents:'none', zIndex:1, whiteSpace:'nowrap', backdropFilter:'blur(8px)' }}>
+        <div key={i} style={{ position:'absolute', left:b.x, top:b.y, background:b.color, color:b.textColor, fontFamily:"'Nunito Sans',sans-serif", fontWeight:800, fontSize:'11px', letterSpacing:'0.18em', padding:'5px 12px', borderRadius:'6px', border:`1px solid ${b.textColor === '#060811' ? 'transparent' : 'rgba(173,250,59,0.25)'}`, '--rot':b.rot, animation:`seoFloat ${b.dur} ease-in-out infinite`, animationDelay:b.delay, pointerEvents:'none', zIndex:1, whiteSpace:'nowrap', backdropFilter:'blur(8px)' }}>
           {b.label}
         </div>
       ))}
@@ -78,7 +78,7 @@ const LIVE_CAMPAIGNS = serviceConfig.campaigns;
    SECTION 1 CSS
 ══════════════════════════════════════════════════════ */
 const CSS1 = `
-  @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Montserrat:wght@400;500;700;800;900&family=Nunito+Sans:wght@400;600;700;800;900&display=swap');
   *,*::before,*::after{box-sizing:border-box}
   /* ── CODED PAGE BANNER STYLES ── */
   .coded-page-banner {
@@ -187,7 +187,7 @@ const CSS1 = `
   }
 
   .coded-page-banner-badge {
-    font-family: 'Montserrat', sans-serif !important;
+    font-family: 'Nunito Sans', sans-serif !important;
     font-size: 11px;
     font-weight: 800;
     text-transform: uppercase;
@@ -217,20 +217,23 @@ const CSS1 = `
   }
 
   .coded-page-banner-title {
-    font-family: 'Bebas Neue', 'Impact', 'Arial Black', sans-serif !important;
-    font-size: clamp(34px, 4.5vw, 58px);
-    font-weight: 400;
-    color: #adfa3b;
-    -webkit-text-stroke: 2.5px white;
-    text-shadow: 6px 6px 0 rgba(0,0,0,0.55), 0 0 40px rgba(173,250,59,0.15);
-    -webkit-text-fill-color: unset;
-    background: none;
+    font-family: 'Nunito Sans', sans-serif !important;
+    font-size: clamp(38px, 5.5vw, 68px);
+    font-weight: 800;
+    text-shadow: 0 0 30px rgba(168, 85, 247, 0.25);
     margin: 0;
-    line-height: 0.92;
-    letter-spacing: 0.04em;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
     position: relative;
     z-index: 2;
     animation: titleFadeInUp 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+
+  .coded-page-banner-title .char {
+    background: linear-gradient(135deg, #ffffff 30%, #c084fc 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
   }
 
   .coded-page-banner-subtitle {
@@ -249,24 +252,46 @@ const CSS1 = `
     from { opacity: 0; transform: translateY(20px); }
     to { opacity: 1; transform: translateY(0); }
   }
+  .buzziwah-section-heading-nunito {
+    font-family: 'Nunito Sans', sans-serif !important;
+  }
   .buzziwah-section-heading {
-    font-family: 'Bebas Neue', 'Impact', 'Arial Black', sans-serif !important;
-    font-size: clamp(24px, 3vw, 44px);
-    color: #adfa3b;
-    -webkit-text-stroke: 2px white;
-    text-shadow: 5px 5px 0 rgba(0,0,0,0.5);
-    letter-spacing: 0.04em;
-    line-height: 0.92;
+    font-family: 'Nunito Sans', sans-serif !important;
+    font-size: clamp(30px, 4.5vw, 54px);
+    font-weight: 800;
+    background: linear-gradient(135deg, #ffffff 40%, #c084fc 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke: 0px !important;
+    text-shadow: 0 0 30px rgba(168, 85, 247, 0.2);
+    letter-spacing: -0.02em;
+    line-height: 1.1;
     margin: 0 0 24px;
   }
+  .buzziwah-section-heading span {
+    color: #adfa3b !important;
+    -webkit-text-fill-color: #adfa3b !important;
+    background: none !important;
+  }
   .buzziwah-section-heading-outline {
-    font-family: 'Bebas Neue', 'Impact', 'Arial Black', sans-serif !important;
-    font-size: clamp(24px, 3vw, 44px);
-    color: transparent;
-    -webkit-text-stroke: 2.5px #adfa3b;
-    letter-spacing: 0.04em;
-    line-height: 0.92;
+    font-family: 'Nunito Sans', sans-serif !important;
+    font-size: clamp(30px, 4.5vw, 54px);
+    font-weight: 800;
+    background: linear-gradient(135deg, #ffffff 40%, #c084fc 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke: 0px !important;
+    text-shadow: 0 0 30px rgba(168, 85, 247, 0.2);
+    letter-spacing: -0.02em;
+    line-height: 1.1;
     margin: 0 0 24px;
+  }
+  .buzziwah-section-heading-outline span {
+    color: #adfa3b !important;
+    -webkit-text-fill-color: #adfa3b !important;
+    background: none !important;
   }
   @keyframes countUp {
     from { opacity: 0; transform: translateY(20px); }
@@ -336,7 +361,7 @@ const CSS2 = `
   @keyframes tabletFloat4 { 0% { transform: translateY(0px) rotate(4deg) scale(1); } 45% { transform: translateY(-20px) rotate(7deg) scale(1.02); } 100% { transform: translateY(0px) rotate(4deg) scale(1); } }
   @keyframes tabletFloat5 { 0% { transform: translateY(0px) rotate(-20deg) scale(1); } 55% { transform: translateY(-18px) rotate(-16deg) scale(1.03); } 100% { transform: translateY(0px) rotate(-20deg) scale(1); } }
 
-  .svc-section { background: linear-gradient(135deg, #0d0d1a 0%, #150d2e 50%, #0d0d1a 100%); width: 100%; min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 80px 5%; font-family: 'DM Sans','Segoe UI',sans-serif; position: relative; overflow: hidden; }
+  .svc-section { background: linear-gradient(135deg, #0d0d1a 0%, #150d2e 50%, #0d0d1a 100%); width: 100%; min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 80px 5%; font-family: 'Nunito Sans', sans-serif; position: relative; overflow: hidden; }
   .svc-dotgrid-panel { position:absolute;top:0;right:0;width:50%;height:100%;background-image:radial-gradient(circle,rgba(180,255,0,0.10) 1px,transparent 1px);background-size:18px 18px;pointer-events:none;z-index:0; }
   .svc-tablet { position:absolute;border-radius:18px;pointer-events:none;z-index:0; }
   .svc-tablet-1 { width:110px;height:155px;top:6%;left:3%;background:rgba(124,58,237,0.12);border:1px solid rgba(124,58,237,0.25);backdrop-filter:blur(6px);animation:tabletFloat1 9s ease-in-out infinite; }
@@ -347,14 +372,14 @@ const CSS2 = `
   .svc-tablet-6 { width:60px;height:85px;top:8%;right:22%;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.10);backdrop-filter:blur(3px);animation:tabletFloat2 16s ease-in-out infinite;animation-delay:-9s; }
   .svc-inner { display:flex;align-items:center;justify-content:center;gap:48px;max-width:1800px;width:100%;margin:0 auto;position:relative;z-index:1; }
   .svc-left { flex:1 1 0;min-width:0;max-width:680px;display:flex;flex-direction:column;gap:48px; }
-  .svc-title { font-size:48px;font-weight:700;color:#fff;margin:0;font-family:'Syne','Segoe UI',sans-serif;letter-spacing:-0.5px;line-height:1.15; }
+  .svc-title { font-size:48px;font-weight:700;color:#fff;margin:0;font-family:'Nunito Sans',sans-serif;letter-spacing:-0.5px;line-height:1.15; }
   .svc-grid { display:grid;grid-template-columns:1fr 1fr;gap:24px; }
   .svc-card { background:rgba(255,255,255,0.04);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border:1px solid rgba(255,255,255,0.10);border-radius:20px;padding:33px 30px 36px;display:flex;flex-direction:column;gap:12px;position:relative;overflow:hidden;cursor:default;transition:border-color 0.3s ease,transform 0.3s ease,background 0.3s ease;animation:glowPulse 4s ease-in-out infinite; }
   .svc-card::before { content:'';position:absolute;inset:0;background:linear-gradient(105deg,transparent 30%,rgba(255,255,255,0.07) 50%,transparent 70%);background-size:200% 100%;opacity:0;transition:opacity 0.3s ease;pointer-events:none;border-radius:inherit; }
   .svc-card:hover::before { opacity:1;animation:glassShimmer 1.2s ease forwards; }
   .svc-card:hover { border-color:rgba(124,58,237,0.65);transform:translateY(-6px);background:rgba(124,58,237,0.10);backdrop-filter:blur(22px);-webkit-backdrop-filter:blur(22px); }
   .svc-card:nth-child(1){animation-delay:0s}.svc-card:nth-child(2){animation-delay:1s}.svc-card:nth-child(3){animation-delay:2s}.svc-card:nth-child(4){animation-delay:3s}
-  .svc-card-title { font-size:22px;font-weight:700;color:#fff;margin:0;line-height:1.35;font-family:'Syne','Segoe UI',sans-serif; }
+  .svc-card-title { font-size:22px;font-weight:700;color:#fff;margin:0;line-height:1.35;font-family:'Nunito Sans',sans-serif; }
   .svc-card-body { font-size:19px;color:rgba(255,255,255,0.58);line-height:1.65;margin:0; }
   .svc-right { flex:1 1 0;min-width:0;max-width:570px;height:840px;display:flex;align-items:center;justify-content:center; }
   .svc-right img { width:100%;height:100%;object-fit:contain;object-position:center;display:block; }
@@ -376,8 +401,8 @@ const CSS2 = `
 
 const CSS3 = `
   @keyframes shimmerSweep { 0% { background-position: -200% 0; } 100% { background-position: 200% 0; } }
-  .seo-section4 { padding: 80px 5%; background: linear-gradient(135deg, #000000 0%, #0d0020 40%, #150d2e 70%, #0a1a00 100%); font-family: 'DM Sans','Segoe UI',sans-serif; }
-  .seo-section-title { text-align: center; font-family: 'Syne','Segoe UI',sans-serif; font-size: 2.2rem; font-weight: 800; color: #83cd15; margin-bottom: 48px; }
+  .seo-section4 { padding: 80px 5%; background: linear-gradient(135deg, #000000 0%, #0d0020 40%, #150d2e 70%, #0a1a00 100%); font-family: 'Nunito Sans', sans-serif; }
+  .seo-section-title { text-align: center; font-family: 'Nunito Sans', sans-serif; font-size: 2.2rem; font-weight: 800; color: #83cd15; margin-bottom: 48px; }
   .seo-services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; max-width: 1200px; margin: 0 auto; }
   .seo-services-last-row { display: flex; justify-content: center; gap: 24px; max-width: 1200px; margin: 24px auto 0; }
   .seo-services-last-row .seo-service-container { flex: 0 0 calc(33.333% - 16px); max-width: calc(33.333% - 16px); }
@@ -447,23 +472,22 @@ const CSS3 = `
 `;
 
 const CSS4 = `
-  @import url('https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500;600;700;800&display=swap');
-  .seo-wrap { position: relative; background: #090e14; min-height: auto; display: flex; align-items: center; justify-content: center; padding: 56px 48px 88px; box-sizing: border-box; overflow: hidden; font-family: 'Barlow', sans-serif; }
+  .seo-wrap { position: relative; background: #090e14; min-height: auto; display: flex; align-items: center; justify-content: center; padding: 56px 48px 88px; box-sizing: border-box; overflow: hidden; font-family: 'Nunito Sans', sans-serif; }
   .seo-canvas { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0; }
   .seo-inner-process { position: relative; z-index: 1; max-width: 1060px; width: 100%; }
   .seo-head { text-align: center; margin-bottom: 44px; opacity: 0; transform: translateY(22px); animation: seoFadeUp 0.75s cubic-bezier(0.22,1,0.36,1) 0.15s forwards; }
   @keyframes seoFadeUp { to { opacity: 1; transform: translateY(0); } }
-  .seo-title-v2 { font-family: 'Barlow', sans-serif; font-weight: 700; font-size: clamp(24px, 3.6vw, 42px); color: #ffffff; margin: 0 0 14px; letter-spacing: -0.015em; line-height: 1.15; }
-  .seo-subtitle { font-family: 'Barlow', sans-serif; font-weight: 300; font-size: 13.5px; color: #6b7888; letter-spacing: 0.14em; text-transform: uppercase; margin: 0; }
+  .seo-title-v2 { font-family: 'Nunito Sans', sans-serif; font-weight: 700; font-size: clamp(24px, 3.6vw, 42px); color: #ffffff; margin: 0 0 14px; letter-spacing: -0.015em; line-height: 1.15; }
+  .seo-subtitle { font-family: 'Nunito Sans', sans-serif; font-weight: 300; font-size: 13.5px; color: #6b7888; letter-spacing: 0.14em; text-transform: uppercase; margin: 0; }
   .seo-rows { display: flex; flex-direction: column; }
   .seo-row { display: grid; grid-template-columns: 64px 260px 1fr; align-items: start; gap: 0 40px; padding: 30px 0; position: relative; opacity: 0; transform: translateX(-20px); transition: opacity 0.65s cubic-bezier(0.22,1,0.36,1), transform 0.65s cubic-bezier(0.22,1,0.36,1); }
   .seo-row::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px; background: linear-gradient(90deg, transparent 0%, rgba(160,100,255,0.12) 15%, rgba(160,100,255,0.22) 50%, rgba(160,100,255,0.12) 85%, transparent 100%); transition: opacity 0.3s ease; }
   .seo-row:last-child::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 1px; background: linear-gradient(90deg, transparent 0%, rgba(160,100,255,0.12) 15%, rgba(160,100,255,0.22) 50%, rgba(160,100,255,0.12) 85%, transparent 100%); }
   .seo-row:hover::before { background: linear-gradient(90deg, transparent 0%, rgba(160,100,255,0.45) 20%, rgba(160,100,255,0.7) 50%, rgba(160,100,255,0.45) 80%, transparent 100%); }
   .seo-row.row-visible { opacity: 1; transform: translateX(0); }
-  .seo-num { font-family: 'Barlow', sans-serif; font-weight: 300; font-size: 14px; color: #414d5c; letter-spacing: 0.04em; padding-top: 3px; }
-  .seo-name { font-family: 'Barlow', sans-serif; font-weight: 700; font-size: clamp(15px, 1.8vw, 21px); color: #b06aff; line-height: 1.3; letter-spacing: 0.01em; padding-top: 2px; }
-  .seo-desc-v2 { font-family: 'Barlow', sans-serif; font-weight: 500; font-size: clamp(11px, 1vw, 13px); color: #a8b4c7; line-height: 1.95; letter-spacing: 0.09em; text-transform: uppercase; padding-top: 4px; }
+  .seo-num { font-family: 'Nunito Sans', sans-serif; font-weight: 300; font-size: 14px; color: #414d5c; letter-spacing: 0.04em; padding-top: 3px; }
+  .seo-name { font-family: 'Nunito Sans', sans-serif; font-weight: 700; font-size: clamp(15px, 1.8vw, 21px); color: #b06aff; line-height: 1.3; letter-spacing: 0.01em; padding-top: 2px; }
+  .seo-desc-v2 { font-family: 'Nunito Sans', sans-serif; font-weight: 500; font-size: clamp(11px, 1vw, 13px); color: #a8b4c7; line-height: 1.95; letter-spacing: 0.09em; text-transform: uppercase; padding-top: 4px; }
   @media (max-width: 700px) { .seo-wrap { padding: 44px 24px 68px; } .seo-head { margin-bottom: 28px; } .seo-row { grid-template-columns: 44px 1fr; grid-template-rows: auto auto; gap: 6px 14px; padding: 24px 0; } .seo-num { grid-column:1; grid-row:1; } .seo-name { grid-column:2; grid-row:1; } .seo-desc-v2 { grid-column:1/-1; grid-row:2; } }
 `;
 
@@ -515,13 +539,13 @@ const WhatIsSEOTodaySection = () => {
         </div>
 
         {/* Big Question Heading */}
-        <h2 className="buzziwah-section-heading" style={{ WebkitTextStroke:'2px white', color:'#adfa3b' }}>
+        <h2 className="buzziwah-section-heading">
           What is SEO <span className="text-[#adfa3b] italic">today</span>?
         </h2>
 
         {/* Text Body with customized font-styles and quotes */}
         <div className="max-w-4xl mx-auto">
-          <p className="font-['Montserrat'] text-[clamp(20px,2.8vw,36px)] font-light text-white/90 leading-[1.4] tracking-wide mb-6">
+          <p className="text-[clamp(20px,2.8vw,36px)] font-light text-white/90 leading-[1.4] tracking-wide mb-6" style={{ fontFamily: "'Nunito Sans', sans-serif" }}>
             "SEO is how your brand gets <span className="text-[#adfa3b] font-black">found</span> without paying for every click."
           </p>
           <p className="font-sans text-[clamp(16px,1.8vw,21px)] text-white/50 leading-relaxed max-w-2xl mx-auto font-normal">
@@ -541,24 +565,6 @@ const WhatIsSEOTodaySection = () => {
 };
 
 const WhySEOMattersSection = () => {
-  const points = [
-    {
-      title: "Increase Visibility",
-      desc: "Climb to the top of Google page 1 to claim your authority and dominate your competitive space.",
-      num: "01"
-    },
-    {
-      title: "Bring In Organic Traffic",
-      desc: "Funnel highly motivated, high-intent prospective buyers directly to your digital doors without ad fees.",
-      num: "02"
-    },
-    {
-      title: "Build Long-Term Credibility",
-      desc: "Position your brand as the trusted industry leader—organic search ranking is the ultimate stamp of validation.",
-      num: "03"
-    }
-  ];
-
   return (
     <section className="relative overflow-hidden px-6 py-24 sm:px-10 lg:py-28" style={{ background: '#070512' }}>
       {/* Background radial glows */}
@@ -581,27 +587,80 @@ const WhySEOMattersSection = () => {
           </p>
         </div>
 
-        {/* Benefits Grid */}
+        {/* Bento Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
-          {points.map((point, idx) => (
-            <div 
-              key={idx}
-              className="rounded-[28px] border border-white/5 bg-gradient-to-b from-white/[0.015] to-white/[0.002] hover:border-white/10 hover:bg-white/[0.02] p-8 transition-all duration-300 relative overflow-hidden group flex flex-col justify-between"
-            >
-              <div>
+          
+          {/* Card 1: Climb to Page 1 (Spans 2 columns, purple theme) */}
+          <div className="md:col-span-2 rounded-[28px] border border-white/5 bg-gradient-to-br from-purple-950/20 via-white/[0.015] to-white/[0.002] hover:border-purple-500/30 hover:bg-purple-950/10 p-8 sm:p-10 transition-all duration-500 relative overflow-hidden group flex flex-col justify-between min-h-[320px] shadow-[0_15px_35px_rgba(0,0,0,0.4)]">
+            <div className="absolute -right-20 -top-20 w-60 h-60 bg-[radial-gradient(circle,rgba(168,85,247,0.15)_0%,transparent_70%)] pointer-events-none group-hover:scale-125 transition-transform duration-700" />
+            <div>
+              <div className="flex justify-between items-start mb-6">
+                <span className="text-[32px] font-bold text-purple-400/20 font-mono">01</span>
+                <span className="w-2.5 h-2.5 rounded-full bg-purple-500 shadow-[0_0_15px_rgba(168,85,247,0.8)]" />
+              </div>
+              <h3 className="text-[clamp(24px,3vw,38px)] font-extrabold tracking-tight leading-tight mb-4" style={{ fontFamily: "'Nunito Sans', sans-serif", background: 'linear-gradient(to right, #ffffff, #c084fc)', WebkitBackgroundClip: 'text', backgroundClip: 'text', WebkitTextFillColor: 'transparent', color: '#ffffff' }}>
+                Climb to Page 1
+              </h3>
+              <p className="text-white/70 text-sm sm:text-base max-w-xl leading-relaxed">
+                Dominate your industry's search terms. Climbing to the top of Google page 1 claims your authority and secures your space before competitors even notice.
+              </p>
+            </div>
+          </div>
+
+          {/* Card 2: Siphon Traffic (Spans 1 column, green theme) */}
+          <div className="md:col-span-1 rounded-[28px] border border-white/5 bg-gradient-to-br from-[#adfa3b]/5 via-white/[0.015] to-white/[0.002] hover:border-[#adfa3b]/30 hover:bg-[#adfa3b]/5 p-8 transition-all duration-500 relative overflow-hidden group flex flex-col justify-between min-h-[320px] shadow-[0_15px_35px_rgba(0,0,0,0.4)]">
+            <div className="absolute -right-20 -top-20 w-60 h-60 bg-[radial-gradient(circle,rgba(173,250,59,0.1)_0%,transparent_70%)] pointer-events-none group-hover:scale-125 transition-transform duration-700" />
+            <div>
+              <div className="flex justify-between items-start mb-6">
+                <span className="text-[32px] font-bold text-[#adfa3b]/20 font-mono">02</span>
+                <span className="w-2.5 h-2.5 rounded-full bg-[#adfa3b] shadow-[0_0_15px_rgba(173,250,59,0.8)]" />
+              </div>
+              <h3 className="text-[clamp(24px,3vw,38px)] font-extrabold tracking-tight leading-tight mb-4" style={{ fontFamily: "'Nunito Sans', sans-serif", background: 'linear-gradient(to right, #ffffff, #adfa3b)', WebkitBackgroundClip: 'text', backgroundClip: 'text', WebkitTextFillColor: 'transparent', color: '#ffffff' }}>
+                Siphon Traffic
+              </h3>
+              <p className="text-white/70 text-sm leading-relaxed">
+                Funnel highly motivated, high-intent prospective buyers directly to your digital doorsteps. Get high-converting traffic without paying a single dime for CPC ad networks.
+              </p>
+            </div>
+          </div>
+
+          {/* Card 3: Establish Compounding Authority (Spans 3 columns, blue/indigo theme) */}
+          <div className="md:col-span-3 rounded-[28px] border border-white/5 bg-gradient-to-br from-blue-950/20 via-white/[0.015] to-white/[0.002] hover:border-blue-500/30 hover:bg-blue-950/10 p-8 sm:p-10 transition-all duration-500 relative overflow-hidden group flex flex-col justify-between min-h-[280px] shadow-[0_15px_35px_rgba(0,0,0,0.4)]">
+            <div className="absolute -right-20 -top-20 w-[400px] h-[400px] bg-[radial-gradient(circle,rgba(59,130,246,0.1)_0%,transparent_70%)] pointer-events-none group-hover:scale-125 transition-transform duration-700" />
+            <div className="grid md:grid-cols-3 gap-6 items-center">
+              <div className="md:col-span-2">
                 <div className="flex justify-between items-start mb-6">
-                  <span className="text-[28px] font-mono font-black text-white/5">{point.num}</span>
-                  <span className="w-2.5 h-2.5 rounded-full bg-[#adfa3b]" style={{ boxShadow: `0 0 10px #adfa3b` }} />
+                  <span className="text-[32px] font-bold text-blue-400/20 font-mono">03</span>
+                  <span className="w-2.5 h-2.5 rounded-full bg-blue-500 shadow-[0_0_15px_rgba(59,130,246,0.8)]" />
                 </div>
-                <h3 style={{ fontFamily:"'Bebas Neue','Impact',sans-serif", fontSize:'clamp(24px,2.8vw,40px)', color:'#adfa3b', WebkitTextStroke:'1.5px white', letterSpacing:'0.04em', lineHeight:0.95, margin:'0 0 12px' }} className="group-hover:text-[#adfa3b] transition-colors">
-                  {point.title}
+                <h3 className="text-[clamp(24px,3vw,38px)] font-extrabold tracking-tight leading-tight mb-4" style={{ fontFamily: "'Nunito Sans', sans-serif", background: 'linear-gradient(to right, #ffffff, #60a5fa)', WebkitBackgroundClip: 'text', backgroundClip: 'text', WebkitTextFillColor: 'transparent', color: '#ffffff' }}>
+                  Establish Compounding Authority
                 </h3>
-                <p className="text-white/60 text-sm leading-relaxed mb-6 font-normal">
-                  {point.desc}
+                <p className="text-white/70 text-sm sm:text-base leading-relaxed">
+                  Position your brand as the ultimate trusted industry leader. Organic search rankings provide an unmatched stamp of industry validation, building continuous, long-term brand equity and customer trust.
                 </p>
               </div>
+              <div className="md:col-span-1 flex justify-center md:justify-end">
+                {/* Modern high-fidelity UI visual graphic */}
+                <div className="w-full max-w-[200px] aspect-square rounded-2xl border border-white/10 bg-black/40 p-4 flex flex-col justify-between relative overflow-hidden shadow-inner">
+                  <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-transparent pointer-events-none" />
+                  <div className="flex items-center gap-1.5 border-b border-white/5 pb-2">
+                    <span className="w-2 h-2 rounded-full bg-[#adfa3b]" />
+                    <span className="text-[9px] font-mono text-white/40 tracking-wider">DOMAIN RATING</span>
+                  </div>
+                  <div className="my-3 text-center">
+                    <span className="text-[44px] font-black text-white tracking-tight" style={{ fontFamily: "'Nunito Sans', sans-serif" }}>DR 89</span>
+                    <div className="text-[10px] text-[#adfa3b] font-semibold mt-1">↑ TOP 1.2% NATIONALLY</div>
+                  </div>
+                  <div className="flex justify-between text-[8px] font-mono text-white/30 border-t border-white/5 pt-2">
+                    <span>INDEXED: 104K</span>
+                    <span>BACKLINKS: 2.1M</span>
+                  </div>
+                </div>
+              </div>
             </div>
-          ))}
+          </div>
+
         </div>
 
         {/* Compounding Ad Contrast Banner */}
@@ -618,9 +677,9 @@ const WhySEOMattersSection = () => {
           </div>
           <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto relative z-10 flex-shrink-0">
             <a 
-              href="/case-studies"
-              className="rounded-full px-8 py-3.5 font-['Montserrat'] text-xs font-bold uppercase tracking-[0.08em] text-center text-black transition-all duration-200"
-              style={{ background: '#adfa3b', display: 'inline-block', textDecoration: 'none' }}
+              href="/seo-case-studies"
+              className="rounded-full px-8 py-3.5 text-xs font-bold uppercase tracking-[0.08em] text-center text-black transition-all duration-200"
+              style={{ background: '#adfa3b', display: 'inline-block', textDecoration: 'none', fontFamily: "'Nunito Sans', sans-serif" }}
               onMouseEnter={e => { e.currentTarget.style.background = '#7c3aed'; e.currentTarget.style.color = '#ffffff'; }}
               onMouseLeave={e => { e.currentTarget.style.background = '#adfa3b'; e.currentTarget.style.color = '#000000'; }}
             >
@@ -800,7 +859,7 @@ export default function SEOPage() {
             {/* Box 1 (Strategic Growth) - Spans 2 Columns */}
             <div className="lg:col-span-2 p-8 sm:p-10 rounded-[32px] bg-white/[0.015] border border-white/5 flex flex-col justify-between items-start min-h-[280px]">
               <div>
-                <h2 className="buzziwah-section-heading" style={{ fontSize:'clamp(20px,2.2vw,34px)' }}>
+                <h2 className="buzziwah-section-heading buzziwah-section-heading-nunito" style={{ fontSize:'clamp(20px,2.2vw,34px)' }}>
                   Unlocking Organic Authority
                 </h2>
                 <p className="text-[16px] text-white/75 leading-relaxed max-w-[640px]">
@@ -809,11 +868,9 @@ export default function SEOPage() {
               </div>
               <div className="mt-8">
                 <a
-                  href="http://linkedin.com/in/satish-ms-b7842a8b"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="inline-flex items-center gap-2 rounded-full px-7 py-3 font-['Montserrat'] text-xs font-bold uppercase tracking-[0.08em] text-white border-2 border-transparent transition-all duration-200 hover:text-[#07030f]"
-                  style={{ background: 'linear-gradient(135deg,#7c3aed,#9333ea)', transition: 'background 0.2s, color 0.2s, border-color 0.2s' }}
+                  href="/case-studies"
+                  className="inline-flex items-center gap-2 rounded-full px-7 py-3 text-xs font-bold uppercase tracking-[0.08em] text-white border-2 border-transparent transition-all duration-200 hover:text-[#07030f]"
+                  style={{ fontFamily: "'Nunito Sans', sans-serif", background: 'linear-gradient(135deg,#7c3aed,#9333ea)', transition: 'background 0.2s, color 0.2s, border-color 0.2s' }}
                   onMouseEnter={e => { e.currentTarget.style.background = '#ffffff'; e.currentTarget.style.color = '#07030f'; }}
                   onMouseLeave={e => { e.currentTarget.style.background = 'linear-gradient(135deg,#7c3aed,#9333ea)'; e.currentTarget.style.color = '#ffffff'; }}
                 >
@@ -834,10 +891,10 @@ export default function SEOPage() {
 
             {/* Four Symmetrical Key Point Boxes */}
             {[
-              { num: '01', text: 'More than 1,200+ target keywords secured in Google top #3 search results for compounding domain value.' },
-              { num: '02', text: 'Delivering massive organic reach: averaging over 4.2M+ organic impressions and 145K+ organic clicks monthly.' },
-              { num: '03', text: 'Crafted high-authority rank strategies and technical audits for Shield Security, Omni Travel, and Cloud Storage.' },
-              { num: '04', text: 'Local Map Pack dominance and semantic core directories that increase direct customer bookings by up to 3x.' }
+              { num: '01', text: 'Laser-focused target intent modeling that aligns every organic impression directly to revenue-generating buyer pathways.' },
+              { num: '02', text: 'Ethical domain siphoning strategies that identify competitor organic traffic gaps and funnel their buyers to your site.' },
+              { num: '03', text: 'Zero-latency page speed optimizations and clean indexation hygiene to maximize search engine crawl budgets.' },
+              { num: '04', text: 'Semantic content clustering and comprehensive authority networks that position your brand as the absolute expert in your niche.' }
             ].map((box, i) => (
               <div key={i} className="p-8 rounded-[24px] bg-white/[0.012] border border-white/5 hover:border-[#adfa3b]/20 hover:bg-white/[0.02] transition-all duration-300 flex flex-col justify-between min-h-[180px]">
                 <span className="text-2xl font-black text-white/10 font-mono">{box.num}</span>

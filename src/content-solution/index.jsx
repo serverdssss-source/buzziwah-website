@@ -494,24 +494,23 @@ const Section1 = () => {
         }} />
 
         <div className="relative z-[1] mx-auto max-w-[1200px]">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full">
+          <div className="flex flex-col lg:flex-row gap-12 lg:gap-16 items-start w-full">
             
-            {/* Box 1 (Strategic Growth) - Spans 2 Columns */}
-            <div className="lg:col-span-2 p-8 sm:p-10 rounded-[32px] bg-white/[0.015] border border-white/5 flex flex-col justify-between items-start min-h-[280px]">
+            {/* Left Column - Content & Terminal */}
+            <div className="w-full lg:w-5/12 flex flex-col gap-8 lg:sticky lg:top-32">
               <div>
-                <h2 style={{ fontFamily:"'Bebas Neue','Impact',sans-serif", fontSize:'clamp(22px,2.8vw,40px)', color:'#adfa3b', WebkitTextStroke:'2px white', textShadow:'5px 5px 0 rgba(0,0,0,0.5)', letterSpacing:'0.04em', lineHeight:0.92, marginBottom:'20px' }}>
-                  Writing Words That Convert
+                <h2 style={{ fontFamily:"'Bebas Neue','Impact',sans-serif", fontSize:'clamp(32px,4vw,56px)', color:'#adfa3b', WebkitTextStroke:'2px white', textShadow:'5px 5px 0 rgba(0,0,0,0.5)', letterSpacing:'0.04em', lineHeight:0.92, marginBottom:'20px' }}>
+                  Writing Words<br/>That Convert
                 </h2>
-                <p className="text-[16px] text-white/75 leading-relaxed max-w-[640px]">
+                <p className="text-[16px] text-white/75 leading-relaxed max-w-lg">
                   Words are the ultimate sales asset. We design viral storytelling frameworks, high-engagement newsletters, and persuasive marketing copy that builds deep loyalty and converts traffic.
                 </p>
               </div>
-              <div className="mt-8">
+              
+              <div>
                 <a
-                  href="http://linkedin.com/in/satish-ms-b7842a8b"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="inline-flex items-center gap-2 rounded-full px-7 py-3 font-['Montserrat'] text-xs font-bold uppercase tracking-[0.08em] text-white border-2 border-transparent transition-all duration-200 hover:text-[#07030f]"
+                  href="/case-studies"
+                  className="inline-flex items-center gap-2 rounded-full px-8 py-3.5 font-['Montserrat'] text-xs font-bold uppercase tracking-[0.08em] text-white border-2 border-transparent transition-all duration-200 hover:text-[#07030f]"
                   style={{ background: 'linear-gradient(135deg,#7c3aed,#9333ea)', transition: 'background 0.2s, color 0.2s, border-color 0.2s' }}
                   onMouseEnter={e => { e.currentTarget.style.background = '#ffffff'; e.currentTarget.style.color = '#07030f'; }}
                   onMouseLeave={e => { e.currentTarget.style.background = 'linear-gradient(135deg,#7c3aed,#9333ea)'; e.currentTarget.style.color = '#ffffff'; }}
@@ -519,30 +518,89 @@ const Section1 = () => {
                   Know More
                 </a>
               </div>
-            </div>
 
-            {/* Box 2 (Interactive Visual) - Spans 1 Column */}
-            <div className="p-8 rounded-[32px] bg-white/[0.015] border border-white/5 flex justify-center items-center relative overflow-hidden group min-h-[280px]">
-              <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(139,92,246,0.15)_0%,transparent_70%)] opacity-30 group-hover:opacity-60 transition-opacity duration-500" />
-              <img 
-                src="/SSD_Performance-Marketing-Webpage-12.png" 
-                alt="Content Copywriting Visual"
-                className="w-[85%] sm:w-[75%] md:w-[70%] lg:w-[80%] max-w-[340px] h-auto object-contain relative z-10 transition-all duration-500 group-hover:scale-105" 
-              />
-            </div>
-
-            {/* Four Symmetrical Key Point Boxes */}
-            {[
-              { num: '01', text: 'Over 65K+ active subscribers scaled across custom brand blogs, editorial substacks, and premium newsletters.' },
-              { num: '02', text: 'Securing an elite 48% average newsletter open rate and a 4x increase in high-intent commercial clicks.' },
-              { num: '03', text: 'Engineered compelling messaging frameworks and automated lead flows for Hybrid Energy, Delta Coffee, and Swift Academy.' },
-              { num: '04', text: 'Utilizing deep psychological triggers to drive high conversion rates across landing pages, blogs, and marketing assets.' }
-            ].map((box, i) => (
-              <div key={i} className="p-8 rounded-[24px] bg-white/[0.012] border border-white/5 hover:border-[#adfa3b]/20 hover:bg-white/[0.02] transition-all duration-300 flex flex-col justify-between min-h-[180px]">
-                <span className="text-2xl font-black text-white/10 font-mono">{box.num}</span>
-                <p className="text-[14px] text-white/70 font-medium leading-relaxed mt-4">{box.text}</p>
+              {/* Box 2 (Animated Typography Visual) */}
+              <div className="rounded-[32px] bg-[#090614] border border-white/10 flex flex-col justify-center relative overflow-hidden group min-h-[220px] shadow-[inset_0_0_40px_rgba(139,92,246,0.05)] p-6 sm:p-8 mt-4 lg:mt-8">
+                <style>{`
+                  @keyframes typingEffect {
+                    0%, 15% { width: 0; }
+                    35%, 85% { width: 100%; }
+                    95%, 100% { width: 0; }
+                  }
+                  @keyframes cursorBlink {
+                    50% { border-color: transparent; }
+                  }
+                  @keyframes fadeInSequence1 {
+                    0%, 35% { opacity: 0; transform: translateY(5px); }
+                    40%, 85% { opacity: 1; transform: translateY(0); }
+                    95%, 100% { opacity: 0; transform: translateY(-5px); }
+                  }
+                  @keyframes fadeInSequence2 {
+                    0%, 45% { opacity: 0; transform: translateY(5px); }
+                    50%, 85% { opacity: 1; transform: translateY(0); }
+                    95%, 100% { opacity: 0; transform: translateY(-5px); }
+                  }
+                  @keyframes fadeInSequence3 {
+                    0%, 55% { opacity: 0; transform: translateY(5px); }
+                    60%, 85% { opacity: 1; transform: translateY(0); }
+                    95%, 100% { opacity: 0; transform: translateY(-5px); }
+                  }
+                `}</style>
+                <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(173,250,59,0.08)_0%,transparent_60%)] opacity-50 group-hover:opacity-100 transition-opacity duration-500" />
+                <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,rgba(139,92,246,0.08)_0%,transparent_60%)] opacity-50 group-hover:opacity-100 transition-opacity duration-500" />
+                
+                <div className="relative z-10 w-full font-mono">
+                  <div className="flex items-center gap-2 mb-6 border-b border-white/10 pb-3">
+                    <div className="w-2.5 h-2.5 rounded-full bg-[#ff5f56]" />
+                    <div className="w-2.5 h-2.5 rounded-full bg-[#ffbd2e]" />
+                    <div className="w-2.5 h-2.5 rounded-full bg-[#27c93f]" />
+                    <span className="ml-2 text-[10px] text-white/30 uppercase tracking-widest">campaign_copy.md</span>
+                  </div>
+                  
+                  <div className="text-[#adfa3b] text-[13px] sm:text-sm font-bold whitespace-nowrap overflow-hidden border-r-2 border-[#adfa3b]" style={{ animation: 'typingEffect 6s steps(30, end) infinite, cursorBlink .75s step-end infinite', width: '0' }}>
+                    $ generate_viral_hook()
+                  </div>
+                  
+                  <div className="mt-5 space-y-3 text-[11px] sm:text-xs text-white/60 font-medium">
+                    <div className="flex gap-3 opacity-0" style={{ animation: 'fadeInSequence1 6s infinite' }}>
+                      <span className="text-[#a855f7] opacity-70 shrink-0">&gt;</span>
+                      <span>Analyzing audience intent...</span>
+                    </div>
+                    <div className="flex gap-3 opacity-0" style={{ animation: 'fadeInSequence2 6s infinite' }}>
+                      <span className="text-[#a855f7] opacity-70 shrink-0">&gt;</span>
+                      <span className="text-white">Drafting persuasive copy...</span>
+                    </div>
+                    <div className="flex gap-3 opacity-0" style={{ animation: 'fadeInSequence3 6s infinite' }}>
+                      <span className="text-[#a855f7] opacity-70 shrink-0">&gt;</span>
+                      <span className="text-[#adfa3b] bg-[#adfa3b]/10 px-2 py-0.5 rounded">Conversion rate optimized [98%]</span>
+                    </div>
+                  </div>
+                </div>
               </div>
-            ))}
+            </div>
+
+            {/* Right Column - Feature Cards in a Grid */}
+            <div className="w-full lg:w-7/12 grid grid-cols-1 sm:grid-cols-2 gap-6 pt-4 lg:pt-0">
+               {[
+                 { num: '01', title: 'Content Scale', text: 'Over 65K+ active subscribers scaled across custom brand blogs, editorial substacks, and premium newsletters.', color: '#adfa3b' },
+                 { num: '02', title: 'Engagement', text: 'Securing an elite 48% average newsletter open rate and a 4x increase in high-intent commercial clicks.', color: '#a855f7' },
+                 { num: '03', title: 'Lead Flows', text: 'Engineered compelling messaging frameworks and automated lead flows for Hybrid Energy, Delta Coffee, and Swift Academy.', color: '#adfa3b' },
+                 { num: '04', title: 'Psychology', text: 'Utilizing deep psychological triggers to drive high conversion rates across landing pages, blogs, and marketing assets.', color: '#a855f7' }
+               ].map((box, i) => (
+                 <div key={i} className="p-8 rounded-[28px] bg-white/[0.015] border border-white/5 hover:border-white/10 hover:bg-white/[0.03] transition-all duration-300 flex flex-col justify-between min-h-[220px] group overflow-hidden relative">
+                   <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-bl from-white/[0.03] to-transparent rounded-bl-[40px] pointer-events-none group-hover:from-white/[0.06] transition-colors duration-300" />
+                   <div>
+                     <div className="flex items-center justify-between mb-6">
+                       <span className="text-3xl font-black text-white/10 font-mono group-hover:text-white/20 transition-colors duration-300">{box.num}</span>
+                       <div className="w-1.5 h-1.5 rounded-full" style={{ backgroundColor: box.color, boxShadow: `0 0 10px ${box.color}` }} />
+                     </div>
+                     <h3 className="text-white font-['Montserrat'] font-bold uppercase tracking-wider text-xs mb-3 group-hover:text-[#adfa3b] transition-colors duration-300">{box.title}</h3>
+                     <p className="text-[13px] text-white/60 font-medium leading-relaxed">{box.text}</p>
+                   </div>
+                 </div>
+               ))}
+            </div>
+
           </div>
         </div>
       </section>
@@ -1097,8 +1155,6 @@ const ContentMarketingPage = () => (
     <ContentBucketsSection />
     <NarratedStoriesSection />
 
-    <Section3Cards />
-    <WhyChooseUs />
     <Section10 />
     </div>
   </>
@@ -1261,6 +1317,19 @@ const ContentBucketsSection = () => {
    🌟 NARRATED BRAND STORIES GRID & CTA BANNER
 ═══════════════════════════════════════════════════════ */
 const NarratedStoriesSection = () => {
+  const [carouselIdx, setCarouselIdx] = useState(0);
+
+  const tentCinemaImages = [
+    "/SERICES CONTENTS/TENT CINEMIA CAPMGAIN ARTICALE/insta_DXWr1E_FNzZ_1.jpg",
+    "/SERICES CONTENTS/TENT CINEMIA CAPMGAIN ARTICALE/insta_DXWr1E_FNzZ_2.jpg",
+    "/SERICES CONTENTS/TENT CINEMIA CAPMGAIN ARTICALE/insta_DXWr1E_FNzZ_3.jpg",
+    "/SERICES CONTENTS/TENT CINEMIA CAPMGAIN ARTICALE/insta_DXWr1E_FNzZ_4.jpg",
+    "/SERICES CONTENTS/TENT CINEMIA CAPMGAIN ARTICALE/insta_DXWr1E_FNzZ_5.jpg",
+    "/SERICES CONTENTS/TENT CINEMIA CAPMGAIN ARTICALE/insta_DXWr1E_FNzZ_6.jpg"
+  ];
+
+
+
   return (
     <section className="relative overflow-hidden px-6 py-20 sm:px-10 lg:py-28" style={{ background: '#070312' }}>
       <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-white/5 to-transparent" />
@@ -1271,49 +1340,305 @@ const NarratedStoriesSection = () => {
       <div className="relative z-10 mx-auto max-w-[1200px]">
         
         {/* Section Header */}
-        <div className="mb-14 text-center">
+        <div className="mb-16 text-center">
           <p className="text-[11px] font-bold uppercase tracking-[0.25em] text-[#a855f7] mb-3">Narrative Archive</p>
           <h2 className="font-['Montserrat'] text-[clamp(28px,4vw,52px)] font-black uppercase text-white leading-tight">
             Brand Stories We Have <span className="text-[#adfa3b] italic">Narrated</span>
           </h2>
           <p className="mt-4 max-w-xl text-white/50 text-sm sm:text-base leading-relaxed mx-auto">
-            A curated showcase of showreels, high-production campaign videos, custom web copy, and platform-specific storytelling campaigns.
+            A high-fidelity live display of our showreels, responsive website designs, copywriting campaigns, strategy maps, and PR assets.
           </p>
           <div className="h-[2px] w-24 bg-[#a855f7] mx-auto mt-6 rounded-full" />
         </div>
 
-        {/* 8 Stories Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mb-16">
-          {[
-            { name: "Deepthi Prashanth Showreel", cat: "Banner Showreel", icon: "🎬" },
-            { name: "WMN Women’s Day Video", cat: "Brand Film", icon: "👩" },
-            { name: "BodhiAble YouTube Video", cat: "Social Content", icon: "🎥" },
-            { name: "Samrat Restaurant Web Content", cat: "Copywriting", icon: "✍️" },
-            { name: "Aanya Hospital Content Calendar", cat: "Strategy", icon: "🗓️" },
-            { name: "Fitness Factory Script", cat: "Influencer Collab", icon: "💪" },
-            { name: "Blogs for LilBeez", cat: "SEO Articles", icon: "📝" },
-            { name: "Tent Cinema Campaign Article", cat: "PR Copy", icon: "📰" }
-          ].map((story, idx) => (
-            <div 
-              key={idx} 
-              className="rounded-2xl border border-white/5 bg-white/[0.01] p-5 hover:bg-gradient-to-b hover:from-[#110e2b]/50 hover:to-[#070312]/50 hover:border-[#adfa3b]/30 hover:shadow-[0_10px_25px_rgba(0,0,0,0.3)] transition-all duration-300 flex flex-col justify-between min-h-[120px] group"
-            >
-              <div className="flex justify-between items-start">
-                <span className="text-[9px] font-mono text-white/30 tracking-widest block mb-2 font-black uppercase">
-                  ST-0{idx + 1}
-                </span>
-                <span className="text-sm opacity-60 group-hover:scale-110 transition-transform duration-200">{story.icon}</span>
+        {/* 🔮 STUNNING DIRECT BENTO SHOWCASE GRID */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-8 mb-20 font-sans">
+          
+          {/* ST-01: Deepthi Prashanth Showreel (Col span 3) */}
+          <div className="lg:col-span-3 rounded-[32px] border border-white/10 bg-white/[0.01] p-6 flex flex-col justify-between shadow-[0_15px_35px_rgba(0,0,0,0.4)] group overflow-hidden">
+            <div>
+              <div className="flex justify-between items-center mb-4">
+                <span className="text-[9px] font-mono text-white/30 tracking-widest font-black uppercase">ST-01 // BANNER SHOWREEL</span>
               </div>
-              <div>
-                <h4 className="font-['Montserrat'] text-xs sm:text-sm font-extrabold text-white uppercase tracking-wide group-hover:text-[#adfa3b] transition-colors duration-200">
-                  {story.name}
-                </h4>
-                <span className="text-[8px] font-mono font-black uppercase tracking-widest text-[#a855f7] bg-[#a855f7]/10 px-2 py-0.5 rounded-md inline-block mt-3">
-                  {story.cat}
-                </span>
+              <h3 className="font-['Montserrat'] text-sm font-extrabold text-white uppercase tracking-wider mb-3 group-hover:text-[#adfa3b] transition-colors">
+                Deepthi Prashanth Showreel
+              </h3>
+              <p className="text-white/50 text-[11px] leading-relaxed mb-5">
+                A premium, high-production showreel showcasing a curated compilation of storytelling and cinematographic visuals designed to elevate digital presence.
+              </p>
+            </div>
+            <div className="w-full aspect-video rounded-2xl overflow-hidden border border-white/10 shadow-2xl relative bg-black">
+              <iframe 
+                title="Deepthi Prashanth Showreel"
+                src="https://www.youtube.com/embed/eeeSFNzyk7s?autoplay=1&mute=1&playlist=eeeSFNzyk7s&loop=1"
+                className="w-full h-full border-none"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowFullScreen
+              />
+            </div>
+          </div>
+
+          {/* ST-02: WMN Women’s Day Video (Col span 3) */}
+          <div className="lg:col-span-3 rounded-[32px] border border-white/10 bg-white/[0.01] p-6 flex flex-col justify-between shadow-[0_15px_35px_rgba(0,0,0,0.4)] group overflow-hidden">
+            <div>
+              <div className="flex justify-between items-center mb-4">
+                <span className="text-[9px] font-mono text-white/30 tracking-widest font-black uppercase">ST-02 // BRAND FILM</span>
+              </div>
+              <h3 className="font-['Montserrat'] text-sm font-extrabold text-white uppercase tracking-wider mb-3 group-hover:text-[#adfa3b] transition-colors">
+                WMN Women’s Day Video
+              </h3>
+              <p className="text-white/50 text-[11px] leading-relaxed mb-5">
+                An emotional, high-impact brand film created for International Women's Day, focusing on female leadership, resilience, and empowerment.
+              </p>
+            </div>
+            <div className="w-full aspect-video rounded-2xl overflow-hidden border border-white/10 shadow-2xl relative bg-black flex items-center justify-center p-2">
+              <video 
+                src="/SERICES CONTENTS/WMN .mp4"
+                className="w-full h-full rounded-xl object-contain bg-black"
+                controls
+                autoPlay
+                loop
+                muted
+                playsInline
+              />
+            </div>
+          </div>
+
+          {/* ST-03: BodhiAble YouTube Video (Col span 2) */}
+          <div className="lg:col-span-2 rounded-[32px] border border-white/10 bg-white/[0.01] p-6 flex flex-col justify-between shadow-[0_15px_35px_rgba(0,0,0,0.4)] group overflow-hidden">
+            <div>
+              <div className="flex justify-between items-center mb-4">
+                <span className="text-[9px] font-mono text-white/30 tracking-widest font-black uppercase">ST-03 // SOCIAL CONTENT</span>
+              </div>
+              <h3 className="font-['Montserrat'] text-sm font-extrabold text-white uppercase tracking-wider mb-3 group-hover:text-[#adfa3b] transition-colors">
+                BodhiAble YouTube Video
+              </h3>
+              <p className="text-white/50 text-[11px] leading-relaxed mb-5">
+                A search-optimized, high-production informational YouTube video engineered to capture intent.
+              </p>
+            </div>
+            <div className="w-full aspect-video rounded-2xl overflow-hidden border border-white/10 shadow-2xl relative bg-black">
+              <iframe 
+                title="BodhiAble YouTube Video"
+                src="https://www.youtube.com/embed/Jg7Doera2LE?autoplay=1&mute=1&playlist=Jg7Doera2LE&loop=1"
+                className="w-full h-full border-none"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowFullScreen
+              />
+            </div>
+          </div>
+
+          {/* ST-04: Samrat Restaurant Web Content (Col span 4) */}
+          <div className="lg:col-span-4 rounded-[32px] border border-white/10 bg-white/[0.01] p-6 flex flex-col justify-between shadow-[0_15px_35px_rgba(0,0,0,0.4)] group overflow-hidden">
+            <div>
+              <div className="flex justify-between items-center mb-4">
+                <span className="text-[9px] font-mono text-white/30 tracking-widest font-black uppercase">ST-04 // COPYWRITING & WEB</span>
+              </div>
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-3">
+                <h3 className="font-['Montserrat'] text-sm font-extrabold text-white uppercase tracking-wider group-hover:text-[#adfa3b] transition-colors">
+                  Samrat Restaurant Web Content
+                </h3>
+                <a 
+                  href="https://samratrestaurantsheshadripuram.com/" 
+                  target="_blank" 
+                  rel="noreferrer"
+                  className="text-[9px] font-mono tracking-widest text-[#adfa3b] hover:underline"
+                >
+                  VISIT LIVE SITE ↗
+                </a>
+              </div>
+              <p className="text-white/50 text-[11px] leading-relaxed mb-5">
+                A complete brand copy refresh and web structure redesign for Samrat Restaurant, emphasizing heritage, premium dining experiences, and modern visual hierarchy.
+              </p>
+            </div>
+            {/* Auto scrolling portal for Samrat Restaurant */}
+            <div className="w-full h-[280px] rounded-2xl overflow-hidden border border-white/15 bg-black relative group shadow-2xl">
+              <iframe 
+                title="Samrat Restaurant Web Content"
+                src="https://samratrestaurantsheshadripuram.com/"
+                className="bento-scroller-iframe"
+              />
+              <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/40 pointer-events-none" />
+              <div className="absolute bottom-3 left-1/2 -translate-x-1/2 text-[8px] font-mono tracking-[0.25em] text-[#adfa3b] bg-black/80 border border-[#adfa3b]/30 px-3 py-1.5 rounded-full">
+                AUTO-SCROLL SHOWCASE
               </div>
             </div>
-          ))}
+          </div>
+
+          {/* ST-05: Tent Cinema Campaign Posts (Col span 4) */}
+          <div className="lg:col-span-4 rounded-[32px] border border-white/10 bg-white/[0.01] p-6 flex flex-col justify-between shadow-[0_15px_35px_rgba(0,0,0,0.4)] group overflow-hidden">
+            <div>
+              <div className="flex justify-between items-center mb-4">
+                <span className="text-[9px] font-mono text-white/30 tracking-widest font-black uppercase">ST-05 // PR & CAMPAIGN POSTS</span>
+              </div>
+              <h3 className="font-['Montserrat'] text-sm font-extrabold text-white uppercase tracking-wider mb-3 group-hover:text-[#adfa3b] transition-colors">
+                Tent Cinema Campaign Posts
+              </h3>
+              <p className="text-white/50 text-[11px] leading-relaxed mb-5">
+                A highly creative, multi-slide storytelling campaign for Tent Cinema, showcasing course highlights, pupil journeys, and artistic craft copy.
+              </p>
+            </div>
+            {/* Sliding Instagram Mockup Carousel - Taller Portrait Aspect */}
+            <div className="w-full max-w-[320px] mx-auto bg-black/60 rounded-3xl border border-white/10 overflow-hidden flex flex-col shadow-2xl">
+              {/* Instagram Post Header */}
+              <div className="flex items-center justify-between px-4 py-3 border-b border-white/5">
+                <div className="flex items-center gap-2.5">
+                  <div className="w-8 h-8 rounded-full bg-gradient-to-tr from-yellow-500 via-pink-500 to-purple-600 p-[1.5px] flex items-center justify-center">
+                    <div className="w-full h-full rounded-full bg-black flex items-center justify-center font-bold text-[9px] text-[#adfa3b] font-mono">
+                      TC
+                    </div>
+                  </div>
+                  <div className="flex flex-col">
+                    <span className="text-[10px] font-bold text-white/90 tracking-wide font-sans">tentcinema_nagathihalli</span>
+                    <span className="text-[8px] text-white/40 tracking-wider">Bengaluru, India</span>
+                  </div>
+                </div>
+                <div className="flex gap-1">
+                  <span className="w-1 h-1 rounded-full bg-white/40"></span>
+                  <span className="w-1 h-1 rounded-full bg-white/40"></span>
+                  <span className="w-1 h-1 rounded-full bg-white/40"></span>
+                </div>
+              </div>
+
+              {/* Instagram Post Image Viewport (Portrait Aspect 4:5) */}
+              <div className="w-full aspect-[4/5] bg-[#0c0a15] relative overflow-hidden select-none flex items-center justify-center">
+                <img 
+                  src={tentCinemaImages[carouselIdx]} 
+                  alt={`Tent Cinema Slide ${carouselIdx + 1}`}
+                  className="w-full h-full object-contain transition-all duration-300"
+                />
+
+                {/* Overlaid Navigation Arrows */}
+                <button 
+                  onClick={() => setCarouselIdx((prev) => (prev === 0 ? tentCinemaImages.length - 1 : prev - 1))}
+                  className="absolute left-2.5 top-1/2 -translate-y-1/2 w-7 h-7 rounded-full bg-black/70 border border-white/15 flex items-center justify-center text-white text-xs hover:bg-black/90 hover:scale-105 transition-all z-10 font-bold"
+                >
+                  ‹
+                </button>
+                <button 
+                  onClick={() => setCarouselIdx((prev) => (prev === tentCinemaImages.length - 1 ? 0 : prev + 1))}
+                  className="absolute right-2.5 top-1/2 -translate-y-1/2 w-7 h-7 rounded-full bg-black/70 border border-white/15 flex items-center justify-center text-white text-xs hover:bg-black/90 hover:scale-105 transition-all z-10 font-bold"
+                >
+                  ›
+                </button>
+
+                {/* Slide Count Indicator */}
+                <div className="absolute top-3 right-3 bg-black/75 backdrop-blur-md border border-white/10 px-2 py-0.5 rounded-full text-[8px] font-mono tracking-widest text-[#adfa3b] font-black">
+                  {carouselIdx + 1} / {tentCinemaImages.length}
+                </div>
+              </div>
+
+              {/* Instagram Post Action & Dots Bar */}
+              <div className="px-4 py-3 flex items-center justify-between border-t border-white/5 bg-white/[0.01]">
+                <div className="flex items-center gap-3">
+                  {/* Heart Icon SVG */}
+                  <svg className="w-4 h-4 text-red-500 fill-current cursor-pointer hover:scale-110 transition-transform" viewBox="0 0 24 24">
+                    <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                  </svg>
+                  {/* Comment Icon SVG */}
+                  <svg className="w-4 h-4 text-white/70 hover:text-white cursor-pointer hover:scale-110 transition-transform" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/>
+                  </svg>
+                  {/* Share Icon SVG */}
+                  <svg className="w-4 h-4 text-white/70 hover:text-white cursor-pointer hover:scale-110 transition-transform" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M8.684 10.742l4.636-2.318M8.684 13.258l4.636 2.318M21 12a3 3 0 11-6 0 3 3 0 016 0zm-12-6a3 3 0 11-6 0 3 3 0 016 0zm0 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+                  </svg>
+                </div>
+                
+                {/* Page Indicator Dots */}
+                <div className="flex gap-1">
+                  {tentCinemaImages.map((_, bulletI) => (
+                    <button 
+                      key={bulletI}
+                      onClick={() => setCarouselIdx(bulletI)}
+                      className={`h-1 rounded-full transition-all duration-300 ${carouselIdx === bulletI ? 'w-4 bg-[#adfa3b]' : 'w-1 bg-white/20'}`}
+                    />
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* ST-06: Fitness Factory Script (Col span 2) */}
+          <div className="lg:col-span-2 rounded-[32px] border border-white/10 bg-white/[0.01] p-6 flex flex-col justify-between shadow-[0_15px_35px_rgba(0,0,0,0.4)] group overflow-hidden">
+            <div>
+              <div className="flex justify-between items-center mb-4">
+                <span className="text-[9px] font-mono text-white/30 tracking-widest font-black uppercase">ST-06 // INFLUENCER COLLAB</span>
+              </div>
+              <h3 className="font-['Montserrat'] text-sm font-extrabold text-white uppercase tracking-wider mb-3 group-hover:text-[#adfa3b] transition-colors">
+                Fitness Factory Script
+              </h3>
+              <p className="text-white/50 text-[11px] leading-relaxed mb-5">
+                An engaging, high-energy influencer collaboration reel script and execution.
+              </p>
+            </div>
+            {/* Vertical phone player */}
+            <div className="w-full h-[280px] bg-black rounded-2xl overflow-hidden border border-white/10 shadow-2xl flex items-center justify-center p-2">
+              <video 
+                src="/SERICES CONTENTS/FITNESS.mp4"
+                className="w-full h-full rounded-xl object-contain bg-black"
+                controls
+                autoPlay
+                loop
+                muted
+                playsInline
+              />
+            </div>
+          </div>
+
+          {/* ST-07: Blogs for LilBeez (Col span 6) */}
+          <div className="lg:col-span-6 rounded-[32px] border border-white/10 bg-white/[0.01] p-6 flex flex-col justify-between shadow-[0_15px_35px_rgba(0,0,0,0.4)] group overflow-hidden">
+            <div>
+              <div className="flex justify-between items-center mb-4">
+                <span className="text-[9px] font-mono text-white/30 tracking-widest font-black uppercase">ST-07 // SEO ARTICLES</span>
+              </div>
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-3">
+                <h3 className="font-['Montserrat'] text-sm font-extrabold text-white uppercase tracking-wider group-hover:text-[#adfa3b] transition-colors">
+                  Blogs for LilBeez
+                </h3>
+                <a 
+                  href="https://lilbeez.com/blog/" 
+                  target="_blank" 
+                  rel="noreferrer"
+                  className="text-[9px] font-mono tracking-widest text-[#adfa3b] hover:underline"
+                >
+                  BLOG ↗
+                </a>
+              </div>
+              <p className="text-white/50 text-[11px] leading-relaxed mb-5">
+                High-value blogs written for LilBeez, optimized for target search-intent queries.
+              </p>
+            </div>
+            {/* Auto scrolling portal */}
+            <div className="w-full h-[280px] rounded-2xl overflow-hidden border border-white/15 bg-black relative group shadow-2xl">
+              <style>{`
+                .bento-scroller-iframe {
+                  width: 100%;
+                  height: 350%;
+                  border: none;
+                  animation: bentoAutoScroll 22s linear infinite;
+                  pointer-events: none;
+                }
+                @keyframes bentoAutoScroll {
+                  0% { transform: translateY(0); }
+                  50% { transform: translateY(-70%); }
+                  100% { transform: translateY(0); }
+                }
+              `}</style>
+              <iframe 
+                title="LilBeez Blog content"
+                src="https://lilbeez.com/blog/"
+                className="bento-scroller-iframe"
+              />
+              <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/40 pointer-events-none" />
+              <div className="absolute bottom-3 left-1/2 -translate-x-1/2 text-[8px] font-mono tracking-[0.25em] text-[#adfa3b] bg-black/80 border border-[#adfa3b]/30 px-3 py-1.5 rounded-full">
+                AUTO-SCROLL SHOWCASE
+              </div>
+            </div>
+          </div>
+
+
+
         </div>
 
         {/* Let's get your brand right Banner */}
@@ -1347,6 +1672,23 @@ const NarratedStoriesSection = () => {
         </div>
 
       </div>
+
+      <style>{`
+        .custom-scroll::-webkit-scrollbar {
+          width: 4px;
+        }
+        .custom-scroll::-webkit-scrollbar-track {
+          background: rgba(255,255,255,0.02);
+        }
+        .custom-scroll::-webkit-scrollbar-thumb {
+          background: rgba(255,255,255,0.1);
+          border-radius: 99px;
+        }
+        .custom-scroll::-webkit-scrollbar-thumb:hover {
+          background: rgba(173,250,59,0.3);
+        }
+      `}</style>
+
     </section>
   );
 };
