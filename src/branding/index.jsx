@@ -15,30 +15,6 @@ const Branding = () => {
     () => [
       {
         back: null,
-        frontBrand: { name: "Aanya Hospital", cat: "Healthcare" },
-      },
-      {
-        backBrand: { name: "Sri Vidyanikethan School", cat: "Academy", logo: "/clientlogos/42.png" },
-        frontBrand: { name: "Crime Stopper", cat: "Security", logo: "/clientlogos/41.png" },
-      },
-      {
-        backBrand: { name: "Sindoor Collection", cat: "E-Commerce", logo: "/CLIENTS/Sri Chakra.png" },
-        frontBrand: { name: "Kalpavriksha Wedding Venue", cat: "Events", logo: "/CLIENTS/Kalpavriksha.png" },
-      },
-      {
-        backBrand: { name: "Locally Groomed", cat: "Aesthetics" },
-        frontBrand: { name: "Wisden Clinics", cat: "Healthcare", logo: "/CLIENTS/Wisden Clinics.png" },
-      },
-      {
-        backBrand: { name: "Samrat Restaurant", cat: "Hospitality", logo: "/CLIENTS/Samrat.png" },
-        frontBrand: { name: "BodhiAble", cat: "Accessibility", logo: "/CLIENTS/Bodhiable.png" },
-      },
-      {
-        backBrand: { name: "Kovedaa", cat: "Wellness", logo: "/clientlogos/17.png" },
-        frontBrand: { name: "Skill Incarnate", cat: "EdTech", logo: "/CLIENTS/Skill Incarnate.png" },
-      },
-      {
-        backBrand: { name: "Angola Academy", cat: "Education", logo: "/CLIENTS/Angola Academy.png" },
         front: 'https://demo.sripadastudios.com/wp-content/uploads/2025/05/ANGOLA-ACADEMY-2-1.png',
       },
       {
