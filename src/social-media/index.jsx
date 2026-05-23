@@ -1431,7 +1431,7 @@ const smmVectors = [
     num: '01',
     title: 'Content Planning & Calendar',
     desc: 'Structured blueprints mapping every post and execution cycle. No guesswork — just a clear roadmap that keeps your brand consistent and active across every platform.',
-    icon: '🗓️',
+    icon: '/social-media/vector_calendar.png',
     tags: ['Strategy', 'Planning', 'Execution'],
     accent: '#adfa3b',
   },
@@ -1439,7 +1439,7 @@ const smmVectors = [
     num: '02',
     title: 'Reels, Carousels & Creatives',
     desc: 'High-retention scroll stoppers custom tailored for each platform. Every frame designed to hold attention, trigger saves, and drive shares.',
-    icon: '🎞️',
+    icon: '/social-media/vector_creatives.png',
     tags: ['Reels', 'Design', 'Creatives'],
     accent: '#a855f7',
   },
@@ -1447,7 +1447,7 @@ const smmVectors = [
     num: '03',
     title: 'Captions & Copywriting',
     desc: 'Hook-driven text optimized for conversation and conversions. Words that stop the scroll, spark emotion, and move your audience to act.',
-    icon: '✍️',
+    icon: '/social-media/vector_copywriting.png',
     tags: ['Copy', 'Hooks', 'CTA'],
     accent: '#adfa3b',
   },
@@ -1455,7 +1455,7 @@ const smmVectors = [
     num: '04',
     title: 'Posting & Scheduling',
     desc: 'Precision posting aligned with your peak audience activity cycles. Right content, right time — every single day without fail.',
-    icon: '⏱️',
+    icon: '/social-media/vector_scheduling.png',
     tags: ['Scheduling', 'Timing', 'Automation'],
     accent: '#a855f7',
   },
@@ -1463,7 +1463,7 @@ const smmVectors = [
     num: '05',
     title: 'Community Management',
     desc: 'Automated & active comment and DM nurturing to scale trust. Every reply, reaction, and conversation is an opportunity to deepen brand loyalty.',
-    icon: '💬',
+    icon: '/social-media/vector_community.png',
     tags: ['Engagement', 'DMs', 'Trust'],
     accent: '#adfa3b',
   },
@@ -1471,7 +1471,7 @@ const smmVectors = [
     num: '06',
     title: 'Trend-Based Content',
     desc: 'Agile piggybacking on active memes, audios, and subcultures. We move fast so your brand stays culturally relevant and always in the conversation.',
-    icon: '🔥',
+    icon: '/social-media/vector_trends.png',
     tags: ['Trends', 'Culture', 'Viral'],
     accent: '#a855f7',
   },
@@ -1479,7 +1479,7 @@ const smmVectors = [
     num: '07',
     title: 'Performance & Insights',
     desc: 'Data-backed reports explaining engagement metrics and growth. Clear numbers that tell the story of what\'s working and where to push harder.',
-    icon: '📊',
+    icon: '/social-media/vector_insights.png',
     tags: ['Analytics', 'Reports', 'Growth'],
     accent: '#adfa3b',
   },
@@ -1487,7 +1487,7 @@ const smmVectors = [
     num: '08',
     title: 'Platform Management',
     desc: 'Complete channel oversight on Instagram, YouTube, and beyond. We handle every aspect of your digital presence so you never have to worry about what\'s going live.',
-    icon: '📱',
+    icon: '/social-media/vector_platforms.png',
     tags: ['Instagram', 'YouTube', 'LinkedIn'],
     accent: '#a855f7',
   },
@@ -1568,25 +1568,50 @@ const SMMVectorRow = ({ item, index }) => {
         borderRadius: '24px',
         background: `linear-gradient(135deg, ${item.accent}08, rgba(255,255,255,0.02))`,
         border: `1px solid ${item.accent}20`,
-        padding: 'clamp(32px,4vw,56px)',
+        padding: '12px',
         position: 'relative',
         overflow: 'hidden',
-        minHeight: '240px',
         display: 'flex',
         flexDirection: 'column',
-        justifyContent: 'space-between',
-      }}>
+        transition: 'transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.4s ease',
+        cursor: 'pointer',
+      }}
+      onMouseOver={(e) => {
+        e.currentTarget.style.transform = 'translateY(-6px)';
+        e.currentTarget.style.borderColor = `${item.accent}40`;
+      }}
+      onMouseOut={(e) => {
+        e.currentTarget.style.transform = 'translateY(0)';
+        e.currentTarget.style.borderColor = `${item.accent}20`;
+      }}
+      >
         {/* BG glow */}
         <div style={{ position: 'absolute', top: '-30%', right: '-20%', width: '280px', height: '280px', background: `radial-gradient(circle, ${item.accent}12, transparent 70%)`, borderRadius: '50%', pointerEvents: 'none' }} />
 
-        {/* Big icon */}
-        <div style={{ fontSize: 'clamp(56px,8vw,88px)', lineHeight: 1, marginBottom: '20px', filter: 'saturate(0.9)' }}>
-          {item.icon}
-        </div>
-
-        {/* Number watermark */}
-        <div style={{ fontFamily: "'Bebas Neue','Impact',sans-serif", fontSize: 'clamp(48px,8vw,80px)', color: `${item.accent}18`, letterSpacing: '0.08em', lineHeight: 1, userSelect: 'none' }}>
-          {item.title.toUpperCase()}
+        {/* Premium Bespoke 3D Vector Graphic */}
+        <div style={{
+          width: '100%',
+          borderRadius: '14px',
+          overflow: 'hidden',
+          border: '1px solid rgba(255,255,255,0.06)',
+          background: 'rgba(0,0,0,0.35)',
+          position: 'relative',
+          boxShadow: '0 20px 40px rgba(0,0,0,0.5)',
+          zIndex: 2,
+        }}>
+          <img 
+            src={item.icon} 
+            alt={item.title} 
+            style={{ 
+              width: '100%', 
+              height: 'auto',
+              display: 'block',
+              objectFit: 'cover',
+              transition: 'transform 0.6s cubic-bezier(0.16, 1, 0.3, 1)',
+            }}
+            onMouseOver={(e) => e.currentTarget.style.transform = 'scale(1.06)'}
+            onMouseOut={(e) => e.currentTarget.style.transform = 'scale(1)'}
+          />
         </div>
 
         {/* Bottom accent bar */}
