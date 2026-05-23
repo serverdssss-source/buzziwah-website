@@ -287,8 +287,8 @@ export default function Contact() {
                 <div>
                   <h4 className="text-[10px] font-bold text-white/40 uppercase tracking-widest mb-1">Base HQ</h4>
                   <p className="text-xs text-white/80 leading-relaxed font-semibold">
-                    3086/7, 8th C Cross Rd, RPC Layout,<br />
-                    Vijayanagar, Bengaluru, 560040
+                    No.4/2, 1st Main Road, West of Chord Road,<br />
+                    Rajajinagar Industrial Town, Bengaluru - 560010
                   </p>
                 </div>
               </div>
@@ -300,7 +300,7 @@ export default function Contact() {
                 <div>
                   <h4 className="text-[10px] font-bold text-white/40 uppercase tracking-widest mb-1">Direct Mail</h4>
                   <p className="text-xs text-white/80 font-semibold group-hover:text-white transition-all">
-                    contact@sripadastudios.com
+                    connect@sripadastudios.com
                   </p>
                 </div>
               </div>
@@ -527,7 +527,7 @@ export default function Contact() {
           }}>
             <iframe
               title="Sripada Studios Location map"
-              src="https://www.google.com/maps?q=3086/7,%208th%20C%20Cross%20Rd,%20Weavers%20Layout,%20RPC%20Layout,%20Vijayanagar,%20Bengaluru,%20Karnataka%20560040&output=embed"
+              src="https://www.google.com/maps?q=No.4/2,+1st+Main+Road,+West+of+Chord+Road,+Rajajinagar+Industrial+Town,+Bengaluru+560010&output=embed"
               style={{ 
                 width: "100%", 
                 height: 420, 
