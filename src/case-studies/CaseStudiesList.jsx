@@ -113,13 +113,6 @@ export default function CaseStudiesList() {
     { key: "cinema", label: "Cinema & Entertainment" },
   ];
 
-  // Calculate live counts for each filter tag based on total list (before search filter is applied)
-  const getFilterCount = (filterKey) => {
-    const list = Object.keys(CASE_STUDIES_DATA);
-    if (filterKey === "all") return list.length;
-    return list.filter((key) => getFilterCategory(CASE_STUDIES_DATA[key].category) === filterKey).length;
-  };
-
   // Filter and search computation
   const filteredCaseStudies = Object.keys(CASE_STUDIES_DATA).filter((key) => {
     const item = CASE_STUDIES_DATA[key];
@@ -186,7 +179,6 @@ export default function CaseStudiesList() {
                 className={`csl-filter-btn ${selectedFilter === filter.key ? "active" : ""}`}
               >
                 {filter.label}
-                <span className="csl-filter-count">{getFilterCount(filter.key)}</span>
               </button>
             ))}
           </div>
