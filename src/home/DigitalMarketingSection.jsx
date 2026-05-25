@@ -83,7 +83,7 @@ const DigitalMarketingSection = () => {
                 '--fiu-delay': '0.2s',
                 margin: 0,
                 marginBottom: '32px',
-                lineHeight: '0.55',
+                lineHeight: isMobile ? '1.15' : '0.55',
                 textAlign: 'left',
                 textTransform: 'uppercase',
                 letterSpacing: '0.03em',
@@ -221,7 +221,7 @@ const DigitalMarketingSection = () => {
               {isPlaying ? 'Pause' : 'Play'} Buzziwah Song
             </button>
             
-            <audio ref={audioRef} src="/BuzziWah.mp3" loop />
+            <audio ref={audioRef} src="/BuzziWah.mp3" loop preload="none" />
           </div>
         </div>
 

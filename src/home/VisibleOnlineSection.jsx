@@ -71,10 +71,18 @@ const VisibleOnlineSection = () => {
                 <video 
                   src="/home page join .mp4" 
                   style={{ width: '100%', height: 'auto', border: 'none', borderRadius: '12px', display: 'block', objectFit: 'cover' }} 
-                  autoPlay
+                  ref={(el) => {
+                    if (!el) return;
+                    const io = new IntersectionObserver(([entry]) => {
+                      if (entry.isIntersecting) { el.play().catch(() => {}); }
+                      else { el.pause(); }
+                    }, { threshold: 0.15 });
+                    io.observe(el);
+                  }}
                   loop
                   muted
                   playsInline
+                  preload="none"
                 />
               </div>
             </div>
