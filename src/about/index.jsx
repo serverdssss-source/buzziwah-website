@@ -1053,7 +1053,7 @@ const About = () => {
           <div className="flex justify-center fade-up" style={{ '--delay': '0s', marginTop: '36px' }}>
             <img
               className="w-full max-w-xl rounded-2xl object-cover"
-              src="/founders image about us.png"
+              src="/founders image about us.webp"
               alt="The Boys Story"
               style={{ boxShadow: '0 20px 60px rgba(0,0,0,0.6)', border: '1px solid rgba(173,250,59,0.15)' }}
             />
@@ -1496,37 +1496,43 @@ const About = () => {
         </div>
         <div className="contact-form-inner">
           <div className="contact-form-image">
-            <img src="/shared-contact-section-illustration.png" alt="Contact" />
+            <img 
+              src="/shared-contact-section-illustration.webp" 
+              alt="Contact" 
+              width="600"
+              height="750"
+              style={{ height: 'auto' }}
+            />
           </div>
 
           <div>
             <form className="contact-form">
               <div className="form-row two">
-                <label className="form-field">
+                <label className="form-field" htmlFor="about_first_name">
                   <span>Name *</span>
-                  <input type="text" placeholder="First" required />
+                  <input type="text" id="about_first_name" placeholder="First" required />
                 </label>
-                <label className="form-field">
+                <label className="form-field" htmlFor="about_last_name">
                   <span>&nbsp;</span>
-                  <input type="text" placeholder="Last" required />
+                  <input type="text" id="about_last_name" placeholder="Last" required />
                 </label>
               </div>
 
               <div className="form-row two">
-                <label className="form-field">
+                <label className="form-field" htmlFor="about_email">
                   <span>Email *</span>
-                  <input type="email" placeholder="Email" required />
+                  <input type="email" id="about_email" placeholder="Email" required />
                 </label>
-                <label className="form-field">
+                <label className="form-field" htmlFor="about_phone">
                   <span>Numbers</span>
-                  <input type="tel" placeholder="Phone" />
+                  <input type="tel" id="about_phone" placeholder="Phone" />
                 </label>
               </div>
 
               <div className="form-row">
-                <label className="form-field">
+                <label className="form-field" htmlFor="about_services">
                   <span>Select your Services *</span>
-                  <select required>
+                  <select id="about_services" required>
                     <option value="">Select your Services</option>
                     <option>Branding</option>
                     <option>Digital Marketing</option>
@@ -1538,9 +1544,9 @@ const About = () => {
               </div>
 
               <div className="form-row">
-                <label className="form-field">
+                <label className="form-field" htmlFor="about_msg">
                   <span>Message *</span>
-                  <textarea rows="5" placeholder="Comment or Message" required />
+                  <textarea id="about_msg" rows="5" placeholder="Comment or Message" required />
                 </label>
               </div>
 
@@ -1556,8 +1562,11 @@ const About = () => {
         <div className="footer-cta">
           <img
             className="footer-logo"
-            src="/Buzziwah_FInal_Logo_White.png"
+            src="/Buzziwah_FInal_Logo_White.webp"
             alt="Buzziwah"
+            width="180"
+            height="45"
+            style={{ height: 'auto' }}
           />
           <div className="footer-cta-text">Ready To Get Started</div>
           <button className="footer-cta-button" type="button">
@@ -1568,14 +1577,7 @@ const About = () => {
         <div className="footer-divider" />
 
         <div className="footer-grid">
-          <div className="footer-col">
-            <h4>SUBSCRIBE TO OUR NEWSLETTER</h4>
-            <input className="footer-input" type="text" placeholder="Name" />
-            <input className="footer-input" type="email" placeholder="Email Address" />
-            <button className="footer-subscribe" type="button">
-              Subscribe
-            </button>
-          </div>
+
 
           <div className="footer-col">
             <h4>SERVICES</h4>

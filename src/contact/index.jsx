@@ -415,12 +415,13 @@ export default function Contact() {
                   <input
                     required
                     type="text"
+                    id="contact_name"
                     value={formData.name}
                     onChange={handle("name")}
                     placeholder=" "
                     className="cyber-input"
                   />
-                  <label className="cyber-input-label">Your Name *</label>
+                  <label htmlFor="contact_name" className="cyber-input-label">Your Name *</label>
                   <div className="cyber-input-line" />
                 </div>
 
@@ -428,24 +429,26 @@ export default function Contact() {
                   <input
                     required
                     type="email"
+                    id="contact_email"
                     value={formData.email}
                     onChange={handle("email")}
                     placeholder=" "
                     className="cyber-input"
                   />
-                  <label className="cyber-input-label">Email Address *</label>
+                  <label htmlFor="contact_email" className="cyber-input-label">Email Address *</label>
                   <div className="cyber-input-line" />
                 </div>
 
                 <div className="cyber-input-wrap">
                   <input
                     type="tel"
+                    id="contact_phone"
                     value={formData.phone}
                     onChange={handle("phone")}
                     placeholder=" "
                     className="cyber-input"
                   />
-                  <label className="cyber-input-label">Phone Number</label>
+                  <label htmlFor="contact_phone" className="cyber-input-label">Phone Number</label>
                   <div className="cyber-input-line" />
                 </div>
 
@@ -453,13 +456,14 @@ export default function Contact() {
                   <textarea
                     required
                     rows={4}
+                    id="contact_msg"
                     value={formData.message}
                     onChange={handle("message")}
                     placeholder=" "
                     className="cyber-input"
                     style={{ resize: "none" }}
                   />
-                  <label className="cyber-input-label">Tell us about your project *</label>
+                  <label htmlFor="contact_msg" className="cyber-input-label">Tell us about your project *</label>
                   <div className="cyber-input-line" />
                 </div>
               </div>

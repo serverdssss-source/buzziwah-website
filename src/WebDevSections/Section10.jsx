@@ -3,7 +3,12 @@ import { reviews, ReviewCard } from './Section9';
 
 const Section10 = () => {
   const [active, setActive] = useState(0);
-  const [isMobile, setIsMobile] = useState(false);
+  const [isMobile, setIsMobile] = useState(() => {
+    if (typeof window !== 'undefined') {
+      return window.innerWidth < 1024;
+    }
+    return true; // Safe default for mobile-first hydration
+  });
 
   // Screen size check
   useEffect(() => {
@@ -56,7 +61,7 @@ const Section10 = () => {
           alignItems: 'center',
           gap: 24,
         }}>
-          <img src="/logo.png" alt="Buzziwah Logo" className="section10-logo" style={{ width: 150 }} />
+          <img src="/logo.webp" alt="Buzziwah Logo" className="section10-logo" width="150" height="188" style={{ width: 150, height: 'auto' }} />
           <p className="section10-label" style={{
             color: 'rgba(255,255,255,0.5)',
             fontSize: 15,
@@ -85,6 +90,7 @@ const Section10 = () => {
               <button
                 key={i}
                 onClick={() => setActive(i)}
+                aria-label={`View review slide ${i + 1}`}
                 style={{
                   width: active === i ? 42 : 12,
                   height: 12,

@@ -157,6 +157,8 @@ export default function CaseStudiesList() {
           <div className="csl-search-wrapper">
             <input
               type="text"
+              id="csl_search"
+              aria-label="Search case studies"
               placeholder="Search case studies by client, service, keyword..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}

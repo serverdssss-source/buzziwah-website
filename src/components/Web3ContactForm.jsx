@@ -59,20 +59,20 @@ const Web3ContactForm = ({
     <form onSubmit={handleSubmit} className={className}>
       <div className="space-y-6">
         <div className="cyber-input-wrap">
-          <input required type="text" name="name" placeholder=" " className="cyber-input" />
-          <label className="cyber-input-label">Your Name *</label>
+          <input required type="text" id="web3_name" name="name" placeholder=" " className="cyber-input" />
+          <label htmlFor="web3_name" className="cyber-input-label">Your Name *</label>
           <div className="cyber-input-line" />
         </div>
 
         <div className="cyber-input-wrap">
-          <input required type="email" name="email" placeholder=" " className="cyber-input" />
-          <label className="cyber-input-label">Email Address *</label>
+          <input required type="email" id="web3_email" name="email" placeholder=" " className="cyber-input" />
+          <label htmlFor="web3_email" className="cyber-input-label">Email Address *</label>
           <div className="cyber-input-line" />
         </div>
 
         <div className="cyber-input-wrap">
-          <textarea required rows={4} name="message" placeholder=" " className="cyber-input" style={{ resize: "none" }} />
-          <label className="cyber-input-label">Tell us about your project *</label>
+          <textarea required rows={4} id="web3_msg" name="message" placeholder=" " className="cyber-input" style={{ resize: "none" }} />
+          <label htmlFor="web3_msg" className="cyber-input-label">Tell us about your project *</label>
           <div className="cyber-input-line" />
         </div>
 

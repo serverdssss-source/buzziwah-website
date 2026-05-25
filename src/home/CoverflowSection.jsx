@@ -35,11 +35,11 @@ const CoverflowSection = () => {
       {/* High-fidelity background decorations */}
       <div className="bbbbb-bg-decorations">
         {/* Floating high-fidelity green navbar logo shapes */}
-        <img src="/logo.png" className="bbbbb-bg-logo bbbbb-bg-logo-1" alt="Buzziwah Decorative Logo Left" style={{ opacity: 0.12 }} />
-        <img src="/logo.png" className="bbbbb-bg-logo bbbbb-bg-logo-2" alt="Buzziwah Decorative Logo Right" style={{ opacity: 0.12 }} />
+        <img src="/logo.webp" className="bbbbb-bg-logo bbbbb-bg-logo-1" width="300" height="375" style={{ opacity: 0.12, height: 'auto' }} alt="Buzziwah Decorative Logo Left" />
+        <img src="/logo.webp" className="bbbbb-bg-logo bbbbb-bg-logo-2" width="300" height="375" style={{ opacity: 0.12, height: 'auto' }} alt="Buzziwah Decorative Logo Right" />
 
         {/* Giant middle 3D watermark brand logo */}
-        <img src="/logo.png" className="bbbbb-bg-logo-3d" alt="Buzziwah Giant 3D Watermark Center" style={{ opacity: 0.04 }} />
+        <img src="/logo.webp" className="bbbbb-bg-logo-3d" width="300" height="375" style={{ opacity: 0.04, height: 'auto' }} alt="Buzziwah Giant 3D Watermark Center" />
 
         {/* Floating technical plus particles (+) */}
         <div className="bbbbb-tech-plus bbbbb-tp-1">+</div>

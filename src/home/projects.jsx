@@ -4,7 +4,7 @@ const CARDS = [
         title: "Aanya Hospital",
         tag: "Branding · Digital",
         url: "/case-study/aanya-hospital",
-        img: "/PROJECTS HOME PAGE /AH-CC-02.png",
+        img: "/best works/branding_case.webp",
         video: "/PROJECTS HOME PAGE /aanya.mp4"
     },
     {
@@ -12,7 +12,7 @@ const CARDS = [
         title: "Ramesh Aravind",
         tag: "Branding · Social",
         url: "/case-study/ramesh-arvind",
-        img: "/PROJECTS HOME PAGE /RAMESH ARVIND.png",
+        img: "/CLIENTS/Ramesh Arvind.png",
         video: "/PROJECTS HOME PAGE /ramesh arvind.mp4"
     },
     {
@@ -20,7 +20,7 @@ const CARDS = [
         title: "HearFon",
         tag: "Video · Production",
         url: "/case-study/hearfon",
-        img: "/PROJECTS HOME PAGE /HEARPHON.png",
+        img: "/best works/hearfon_case.webp",
         video: "/PROJECTS HOME PAGE /hearphon.mp4"
     },
     {
@@ -28,7 +28,7 @@ const CARDS = [
         title: "WMN",
         tag: "Web · Marketing",
         url: "/case-study/wmn-healthcare",
-        img: "/PROJECTS HOME PAGE /WMN Doctors.png",
+        img: "/best works/wmn_case.webp",
         video: "/PROJECTS HOME PAGE /wmn.mp4"
     },
     {
@@ -36,7 +36,7 @@ const CARDS = [
         title: "Tent Cinema",
         tag: "Social · Leads",
         url: "/case-study/tent-cinema",
-        img: "/PROJECTS HOME PAGE /TENT .webp",
+        img: "/best works/tentcinema_case.webp",
         video: "/PROJECTS HOME PAGE /tent cenima.mp4"
     },
     {
@@ -44,7 +44,7 @@ const CARDS = [
         title: "Kovedaa",
         tag: "Branding · Web",
         url: "/case-study/kovedaa",
-        img: "/PROJECTS HOME PAGE /Kovedaa.png",
+        img: "/best works/kovedaa_case.webp",
         video: "/PROJECTS HOME PAGE /kovedaa.mp4"
     },
     {
@@ -59,12 +59,12 @@ const CARDS = [
 
 // Local images for the parallax - using real high-fidelity portfolio assets!
 const PARALLAX_IMAGES = [
-    "/PROJECTS HOME PAGE /AH-CC-02.png",
-    "/PROJECTS HOME PAGE /RAMESH ARVIND.png",
-    "/PROJECTS HOME PAGE /HEARPHON.png",
-    "/PROJECTS HOME PAGE /WMN Doctors.png",
-    "/PROJECTS HOME PAGE /TENT .webp",
-    "/PROJECTS HOME PAGE /Kovedaa.png",
+    "/best works/branding_case.webp",
+    "/CLIENTS/Ramesh Arvind.png",
+    "/best works/hearfon_case.webp",
+    "/best works/wmn_case.webp",
+    "/best works/tentcinema_case.webp",
+    "/best works/kovedaa_case.webp",
     "/best works/srichakra_case.webp"
 ];
 
@@ -79,73 +79,18 @@ import {
 } from "framer-motion";
 import { FiArrowRight } from "react-icons/fi";
 
-const WaterDropletEffect = () => {
-  const [drops, setDrops] = React.useState([]);
-  const [ripples, setRipples] = React.useState([]);
-  const containerRef = React.useRef(null);
-
-  React.useEffect(() => {
-    const dropInterval = setInterval(() => {
-      const id = Math.random().toString(36).substring(2, 9);
-      const left = Math.random() * 100;
-      const scale = 0.3 + Math.random() * 0.7; 
-      const speed = 1.8 + Math.random() * 2.2; 
-
-      setDrops((prev) => [...prev, { id, left, scale, speed }]);
-
-      setTimeout(() => {
-        setDrops((prev) => prev.filter((d) => d.id !== id));
-
-        const rippleId = Math.random().toString(36).substring(2, 9);
-        const size = 30 + Math.random() * 50; 
-        setRipples((prev) => [
-          ...prev,
-          { id: rippleId, x: left, y: 90 + Math.random() * 8, size }
-        ]);
-
-        setTimeout(() => {
-          setRipples((prev) => prev.filter((r) => r.id !== rippleId));
-        }, 1200);
-
-      }, speed * 1000);
-    }, 400); 
-
-    return () => clearInterval(dropInterval);
-  }, []);
-
-  return (
-    <div ref={containerRef} className="water-droplet-container">
-      {drops.map((drop) => (
-        <div
-          key={drop.id}
-          className="water-drop"
-          style={{
-            left: `${drop.left}%`,
-            animationDuration: `${drop.speed}s`,
-            transform: `scale(${drop.scale})`
-          }}
-        />
-      ))}
-
-      {ripples.map((ripple) => (
-        <div
-          key={ripple.id}
-          className="water-ripple"
-          style={{
-            left: `${ripple.x}%`,
-            top: `${ripple.y}%`,
-            width: `${ripple.size}px`,
-            height: `${ripple.size}px`
-          }}
-        />
-      ))}
-    </div>
-  );
-};
+// WaterDropletEffect removed — caused constant re-renders via 400ms setInterval (major mobile lag source)
 
 export default function SmoothScrollHero() {
-    const [isMobile, setIsMobile] = React.useState(false);
+    const [isMobile, setIsMobile] = React.useState(() => {
+        if (typeof window !== 'undefined') {
+            return window.innerWidth < 768;
+        }
+        return true;
+    });
+    const [isMounted, setIsMounted] = React.useState(false);
     React.useEffect(() => {
+        setIsMounted(true);
         const checkMobile = () => {
             setIsMobile(window.innerWidth < 768);
         };
@@ -158,7 +103,6 @@ export default function SmoothScrollHero() {
 
     return (
         <div id="projects" className="bg-[#060811] relative z-10 w-full overflow-hidden border-t border-b border-white/5">
-            <WaterDropletEffect />
             <div className="absolute top-[50%] left-[50%] -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-[#adfa3b]/12 blur-[150px] pointer-events-none" />
             
             {/* High-fidelity background decorations */}
@@ -168,7 +112,7 @@ export default function SmoothScrollHero() {
                 <div className="bbbbb-grid-perspective" />
                 
                 {/* Animated technical lines and vector curves */}
-                <svg className="bbbbb-decor-waves animate-pulse" style={{ animationDuration: '8s' }} viewBox="0 0 1440 800" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <svg className="bbbbb-decor-waves" viewBox="0 0 1440 800" fill="none" xmlns="http://www.w3.org/2000/svg">
                   {/* Sweeping diagonal orbit halo */}
                   <path d="M-200,600 Q720,-100 1640,600" stroke="rgba(168, 85, 247, 0.45)" strokeWidth="1.5" strokeDasharray="16 12" />
                   
@@ -219,14 +163,16 @@ export default function SmoothScrollHero() {
                 </h2>
             </div>
 
-            <ReactLenis
-                root
-                options={{
-                    lerp: 0.05,
-                }}
-            >
+            {isMobile ? (
                 <Hero sectionHeight={sectionHeight} />
-            </ReactLenis>
+            ) : (
+                <ReactLenis
+                    root
+                    options={{ lerp: 0.08 }}
+                >
+                    <Hero sectionHeight={sectionHeight} />
+                </ReactLenis>
+            )}
         </div>
     );
 }
@@ -270,7 +216,7 @@ const CenterImage = ({ sectionHeight }) => {
                 clipPath,
                 backgroundSize,
                 opacity,
-                backgroundImage: "url('/PROJECTS HOME PAGE /RAMESH ARVIND.png')",
+                backgroundImage: "url('/CLIENTS/Ramesh Arvind.webp')",  /* use webp if available, falls back gracefully */
                 backgroundPosition: "center",
                 backgroundRepeat: "no-repeat",
             }}
@@ -354,9 +300,16 @@ const ParallaxImages = () => {
 
 const ParallaxCard = ({ card, start, end, style = {} }) => {
     const ref = useRef(null);
-    const [isMobile, setIsMobile] = React.useState(false);
+    const [isMobile, setIsMobile] = React.useState(() => {
+        if (typeof window !== 'undefined') {
+            return window.innerWidth < 768;
+        }
+        return true;
+    });
+    const [isMounted, setIsMounted] = React.useState(false);
 
     React.useEffect(() => {
+        setIsMounted(true);
         const checkMobile = () => {
             setIsMobile(window.innerWidth < 768);
         };
@@ -368,15 +321,20 @@ const ParallaxCard = ({ card, start, end, style = {} }) => {
     const adjustedStart = isMobile ? Math.round(start * 0.4) : start;
     const adjustedEnd = isMobile ? Math.round(end * 0.4) : end;
 
-    const { scrollYProgress } = useScroll({
-        target: ref,
-        offset: [`${adjustedStart}px end`, `end ${adjustedEnd * -1}px`],
-    });
+    // On mobile: skip all scroll tracking entirely — massive perf win
+    const { scrollYProgress } = useScroll(
+        isMobile ? {} : {
+            target: ref,
+            offset: [`${adjustedStart}px end`, `end ${adjustedEnd * -1}px`],
+        }
+    );
 
     const opacity = useTransform(scrollYProgress, [0.75, 1], [1, 0]);
     const scale = useTransform(scrollYProgress, [0.75, 1], [1, 0.85]);
     const y = useTransform(scrollYProgress, [0, 1], [adjustedStart, adjustedEnd]);
     const transform = useMotionTemplate`translateY(${y}px) scale(${scale})`;
+    const transformStyle = (!isMounted || isMobile) ? "none" : transform;
+    const opacityStyle = (!isMounted || isMobile) ? 1 : opacity;
 
     return (
         <motion.a
@@ -386,13 +344,13 @@ const ParallaxCard = ({ card, start, end, style = {} }) => {
             rel="noopener noreferrer"
             className="relative block group cursor-pointer shrink-0 overflow-hidden rounded-3xl mx-auto w-full"
             style={{ 
-                transform, 
-                opacity, 
+                transform: transformStyle, 
+                opacity: opacityStyle, 
                 maxWidth: '380px', // Caps max size from both width and height equally
                 ...style 
             }}
         >
-            {card.video ? (
+            {isMounted && card.video && !isMobile ? (
                 <video
                     preload="none"
                     loop

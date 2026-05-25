@@ -45,8 +45,11 @@ const FooterOnly = () => (
       <a href="/" aria-label="Buzziwah home">
         <img
           className="footer-logo"
-          src="/logo.png"
+          src="/logo.webp"
           alt="Buzziwah"
+          width="150"
+          height="188"
+          style={{ height: 'auto' }}
         />
       </a>
       <div className="footer-cta-text">Ready To Get Started</div>
@@ -56,18 +59,7 @@ const FooterOnly = () => (
     </div>
 
     <div className="footer-divider" />
-
-    <div className="footer-grid">
-      <div className="footer-col">
-        <h4>SUBSCRIBE TO OUR NEWSLETTER</h4>
-        <input className="footer-input" type="text" placeholder="Name" />
-        <input className="footer-input" type="email" placeholder="Email Address" />
-        <button className="footer-subscribe" type="button">
-          Subscribe
-        </button>
-      </div>
-
-      {footerSections.map((section) => (
+    <div className="footer-grid">      {footerSections.map((section) => (
         <div className="footer-col" key={section.title}>
           <h4>{section.title}</h4>
           <ul>
@@ -401,10 +393,12 @@ const SharedContactForm = ({ isCareers = false }) => {
             </div>
             <div className="contact-form-image" style={{ display: "flex", alignItems: "flex-end", justifyContent: "flex-start" }}>
               <img 
-                src="/conactimage.png" 
+                src="/conactimage.webp" 
                 alt="Contact Illustration" 
+                width="600"
+                height="750"
                 className="w-full max-w-sm opacity-80 mix-blend-screen"
-                style={{ display: "block" }}
+                style={{ display: "block", height: 'auto' }}
               />
             </div>
           </div>
@@ -452,24 +446,26 @@ const SharedContactForm = ({ isCareers = false }) => {
                 <input
                   required
                   type="text"
+                  id="pe_name"
                   placeholder=" "
                   className="pe-input"
                   value={formData.name}
                   onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                 />
-                <label className="pe-input-label">Your Name *</label>
+                <label htmlFor="pe_name" className="pe-input-label">Your Name *</label>
               </div>
 
               <div className="pe-input-wrap">
                 <input
                   required
                   type="email"
+                  id="pe_email"
                   placeholder=" "
                   className="pe-input"
                   value={formData.email}
                   onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                 />
-                <label className="pe-input-label">Email Address *</label>
+                <label htmlFor="pe_email" className="pe-input-label">Email Address *</label>
               </div>
             </div>
 
@@ -480,30 +476,33 @@ const SharedContactForm = ({ isCareers = false }) => {
                     <input
                       required
                       type="text"
+                      id="pe_phone"
                       placeholder=" "
                       className="pe-input"
                       value={formData.phone}
                       onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                     />
-                    <label className="pe-input-label">Phone Number *</label>
+                    <label htmlFor="pe_phone" className="pe-input-label">Phone Number *</label>
                   </div>
 
                   <div className="pe-input-wrap">
                     <input
                       required
                       type="text"
+                      id="pe_role"
                       placeholder=" "
                       className="pe-input"
                       value={formData.role}
                       onChange={(e) => setFormData({ ...formData, role: e.target.value })}
                     />
-                    <label className="pe-input-label">Target Role *</label>
+                    <label htmlFor="pe_role" className="pe-input-label">Target Role *</label>
                   </div>
                 </div>
 
                 <div className="pe-input-wrap">
                   <select
                     required
+                    id="pe_experience"
                     className="pe-input"
                     value={formData.experience}
                     onChange={(e) => setFormData({ ...formData, experience: e.target.value })}
@@ -515,7 +514,7 @@ const SharedContactForm = ({ isCareers = false }) => {
                     <option value="Senior" style={{ background: '#05020e', color: '#fff' }}>Senior (3 - 5 years)</option>
                     <option value="Lead" style={{ background: '#05020e', color: '#fff' }}>Lead (5+ years)</option>
                   </select>
-                  <label className="pe-input-label" style={{ 
+                  <label htmlFor="pe_experience" className="pe-input-label" style={{ 
                     top: formData.experience ? '-10px' : '17px',
                     left: formData.experience ? '14px' : '20px',
                     fontSize: formData.experience ? '10px' : '14px',
@@ -535,13 +534,14 @@ const SharedContactForm = ({ isCareers = false }) => {
                   <textarea
                     required
                     rows={4}
+                    id="pe_career_msg"
                     placeholder=" "
                     className="pe-input"
                     style={{ resize: "none" }}
                     value={formData.message}
                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                   />
-                  <label className="pe-input-label">Role Description & Cover Letter *</label>
+                  <label htmlFor="pe_career_msg" className="pe-input-label">Role Description & Cover Letter *</label>
                 </div>
               </>
             ) : (
@@ -568,13 +568,14 @@ const SharedContactForm = ({ isCareers = false }) => {
                   <textarea
                     required
                     rows={3}
+                    id="pe_contact_msg"
                     placeholder=" "
                     className="pe-input"
                     style={{ resize: "none" }}
                     value={formData.message}
                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                   />
-                  <label className="pe-input-label">Comment or Message *</label>
+                  <label htmlFor="pe_contact_msg" className="pe-input-label">Comment or Message *</label>
                 </div>
               </>
             )}

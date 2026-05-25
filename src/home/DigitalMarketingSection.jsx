@@ -5,14 +5,32 @@ const DigitalMarketingSection = () => {
   const containerRef = useRef(null);
   const audioRef = useRef(null);
   const [isPlaying, setIsPlaying] = useState(false);
-  const [isMobile, setIsMobile] = useState(false);
+  const [isMobile, setIsMobile] = useState(() => {
+    if (typeof window !== 'undefined') {
+      return window.innerWidth < 768;
+    }
+    return true; // Safe default for mobile-first hydration
+  });
+  const [isMounted, setIsMounted] = useState(false);
+  const [shouldLoadVideo, setShouldLoadVideo] = useState(false);
+  const [isVideoLoaded, setIsVideoLoaded] = useState(false);
 
   useEffect(() => {
+    setIsMounted(true);
     const media = window.matchMedia('(max-width: 768px)');
     setIsMobile(media.matches);
     const listener = (e) => setIsMobile(e.matches);
     media.addEventListener('change', listener);
-    return () => media.removeEventListener('change', listener);
+
+    // Delay background video load by 1.5 seconds to maximize startup speed
+    const timer = setTimeout(() => {
+      setShouldLoadVideo(true);
+    }, 1500);
+
+    return () => {
+      media.removeEventListener('change', listener);
+      clearTimeout(timer);
+    };
   }, []);
 
   const toggleAudio = () => {
@@ -59,9 +77,9 @@ const DigitalMarketingSection = () => {
           <polygon points="140,480 170,498 170,532 140,550 110,532 110,498" stroke="rgba(168, 85, 247, 0.15)" strokeWidth="1.2" />
         </svg>
 
-        <img src="/logo.png" className="bbbbb-bg-logo bbbbb-bg-logo-1" alt="" role="presentation" />
-        <img src="/logo.png" className="bbbbb-bg-logo bbbbb-bg-logo-2" alt="" role="presentation" />
-        <img src="/logo.png" className="bbbbb-bg-logo-3d" alt="" role="presentation" />
+        <img src="/logo.webp" className="bbbbb-bg-logo bbbbb-bg-logo-1" width="300" height="375" style={{ height: 'auto' }} alt="" role="presentation" />
+        <img src="/logo.webp" className="bbbbb-bg-logo bbbbb-bg-logo-2" width="300" height="375" style={{ height: 'auto' }} alt="" role="presentation" />
+        <img src="/logo.webp" className="bbbbb-bg-logo-3d" width="300" height="375" style={{ height: 'auto' }} alt="" role="presentation" />
 
         <div className="bbbbb-tech-plus bbbbb-tp-1">+</div>
         <div className="bbbbb-tech-plus bbbbb-tp-2">+</div>
@@ -240,17 +258,55 @@ const DigitalMarketingSection = () => {
               />
             </picture>
 
-            <div className="bbbbb-phone-video-overlay">
-              <video
-                src="/hero-reel.mp4"
-                autoPlay
-                loop
-                muted
-                playsInline
-                preload="auto"
-                style={{ width: '100%', height: '100%', objectFit: 'cover', pointerEvents: 'none', borderRadius: 'inherit' }}
-              />
-            </div>
+            {isMounted && (
+              <div className="bbbbb-phone-video-overlay" style={{ background: '#07030f' }}>
+                {/* Sleek radial gradient placeholder with high-performance pulse indicator */}
+                {!isVideoLoaded && (
+                  <div style={{
+                    position: 'absolute',
+                    inset: 0,
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    background: 'radial-gradient(circle, rgba(168, 85, 247, 0.15) 0%, #07030f 100%)',
+                    zIndex: 2,
+                  }}>
+                    <div 
+                      className="animate-pulse"
+                      style={{
+                        width: '28px',
+                        height: '28px',
+                        borderRadius: '50%',
+                        backgroundColor: '#adfa3b',
+                        boxShadow: '0 0 20px rgba(173, 250, 59, 0.6)',
+                        opacity: 0.6,
+                      }}
+                    />
+                  </div>
+                )}
+                
+                {shouldLoadVideo && (
+                  <video
+                    src="/hero-reel.mp4"
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    preload="auto"
+                    onLoadedData={() => setIsVideoLoaded(true)}
+                    style={{
+                      width: '100%',
+                      height: '100%',
+                      objectFit: 'cover',
+                      pointerEvents: 'none',
+                      borderRadius: 'inherit',
+                      opacity: isVideoLoaded ? 1 : 0,
+                      transition: 'opacity 0.8s ease',
+                    }}
+                  />
+                )}
+              </div>
+            )}
           </div>
         </div>
       </div>

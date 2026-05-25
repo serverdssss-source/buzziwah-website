@@ -55,141 +55,38 @@ const caseStudies = [
   }
 ];
 
-const WaterDropletEffect = () => {
-  const [drops, setDrops] = React.useState([]);
-  const [ripples, setRipples] = React.useState([]);
-  const containerRef = React.useRef(null);
-
-  React.useEffect(() => {
-    // 1. Auto spawn falling water drops
-    const dropInterval = setInterval(() => {
-      const id = Math.random().toString(36).substring(2, 9);
-      const left = Math.random() * 100;
-      const scale = 0.3 + Math.random() * 0.7; // size variance
-      const speed = 1.8 + Math.random() * 2.2; // 1.8s to 4s speed
-
-      setDrops((prev) => [...prev, { id, left, scale, speed }]);
-
-      // When the drop reaches the bottom, spawn a beautiful ripple!
-      setTimeout(() => {
-        // Remove the drop
-        setDrops((prev) => prev.filter((d) => d.id !== id));
-
-        // Create a concentric ripple at the bottom where it fell
-        const rippleId = Math.random().toString(36).substring(2, 9);
-        const size = 30 + Math.random() * 50; // ripple size variance
-        setRipples((prev) => [
-          ...prev,
-          { id: rippleId, x: left, y: 90 + Math.random() * 8, size }
-        ]);
-
-        // Remove the ripple after its animation is complete
-        setTimeout(() => {
-          setRipples((prev) => prev.filter((r) => r.id !== rippleId));
-        }, 1200);
-
-      }, speed * 1000);
-    }, 400); // spawn a droplet every 400ms
-
-    return () => clearInterval(dropInterval);
-  }, []);
-
-  React.useEffect(() => {
-    const handleGlobalClick = (e) => {
-      if (!containerRef.current) return;
-      const parentSection = containerRef.current.closest('.case-studies-section');
-      if (!parentSection) return;
-
-      // Check if click was on or inside the interactive tabs/cards to avoid disturbing focused action clicks
-      if (e.target.closest('.case-tab-item') || e.target.closest('.case-showcase-card')) {
-        return;
-      }
-
-      const rect = parentSection.getBoundingClientRect();
-      // Only trigger if click is inside the Case Studies section bounds
-      if (
-        e.clientX >= rect.left &&
-        e.clientX <= rect.right &&
-        e.clientY >= rect.top &&
-        e.clientY <= rect.bottom
-      ) {
-        const x = ((e.clientX - rect.left) / rect.width) * 100;
-        const y = ((e.clientY - rect.top) / rect.height) * 100;
-        const rippleId = Math.random().toString(36).substring(2, 9);
-        const size = 120 + Math.random() * 60; // larger ripple for clicks!
-
-        setRipples((prev) => [
-          ...prev,
-          { id: rippleId, x, y, size }
-        ]);
-
-        setTimeout(() => {
-          setRipples((prev) => prev.filter((r) => r.id !== rippleId));
-        }, 1200);
-      }
-    };
-
-    window.addEventListener('click', handleGlobalClick);
-    return () => window.removeEventListener('click', handleGlobalClick);
-  }, []);
-
-  return (
-    <div ref={containerRef} className="water-droplet-container">
-      {/* Falling droplet visual tracks */}
-      {drops.map((drop) => (
-        <div
-          key={drop.id}
-          className="water-drop"
-          style={{
-            left: `${drop.left}%`,
-            animationDuration: `${drop.speed}s`,
-            transform: `scale(${drop.scale})`
-          }}
-        />
-      ))}
-
-      {/* Dynamic concentric expanding ripples */}
-      {ripples.map((ripple) => (
-        <div
-          key={ripple.id}
-          className="water-ripple"
-          style={{
-            left: `${ripple.x}%`,
-            top: `${ripple.y}%`,
-            width: `${ripple.size}px`,
-            height: `${ripple.size}px`
-          }}
-        />
-      ))}
-    </div>
-  );
-};
+// WaterDropletEffect removed — 400ms setInterval was causing constant re-renders (major mobile lag)
 
 const Home = () => {
   const [openFaqIndex, setOpenFaqIndex] = React.useState(0);
   const [activeCaseIndex, setActiveCaseIndex] = React.useState(0);
-  
+  const [isMobile, setIsMobile] = React.useState(() => {
+    if (typeof window !== 'undefined') return window.innerWidth < 768;
+    return true;
+  });
+
   const activeCase = caseStudies[activeCaseIndex];
-  
-  // High-fidelity Scroll Reveal Engine
+
   React.useEffect(() => {
-    const observerOptions = {
-      threshold: 0.12,
-      rootMargin: "0px 0px -50px 0px"
-    };
+    const mq = window.matchMedia('(max-width: 768px)');
+    setIsMobile(mq.matches);
+    const handler = (e) => setIsMobile(e.matches);
+    mq.addEventListener('change', handler);
 
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("is-visible");
-        }
-      });
-    }, observerOptions);
-
-    const revealElements = document.querySelectorAll(".scroll-reveal");
-    revealElements.forEach((el) => observer.observe(el));
-
-    return () => observer.disconnect();
+    // Scroll-reveal only on desktop — on mobile all sections visible immediately
+    if (!mq.matches) {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) entry.target.classList.add('is-visible');
+        });
+      }, { threshold: 0.12, rootMargin: '0px 0px -50px 0px' });
+      document.querySelectorAll('.scroll-reveal').forEach((el) => observer.observe(el));
+      return () => { observer.disconnect(); mq.removeEventListener('change', handler); };
+    } else {
+      // On mobile: instantly make all scroll-reveal elements visible
+      document.querySelectorAll('.scroll-reveal').forEach((el) => el.classList.add('is-visible'));
+      return () => mq.removeEventListener('change', handler);
+    }
   }, []);
 
   return (

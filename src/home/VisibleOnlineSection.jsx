@@ -1,7 +1,24 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import './VisibleOnlineSection.css';
 
 const VisibleOnlineSection = () => {
+  const [isMobile, setIsMobile] = useState(() => {
+    if (typeof window !== 'undefined') {
+      return window.innerWidth < 768;
+    }
+    return true;
+  });
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    setIsMounted(true);
+    const media = window.matchMedia('(max-width: 768px)');
+    setIsMobile(media.matches);
+    const listener = (e) => setIsMobile(e.matches);
+    media.addEventListener('change', listener);
+    return () => media.removeEventListener('change', listener);
+  }, []);
+
   return (
     <section className="von-hero">
       <div className="von-orb von-orb-1" />
@@ -68,22 +85,30 @@ const VisibleOnlineSection = () => {
                 <span className="von-gif-title">BUZZIWAH_WORKSPACE.exe</span>
               </div>
               <div className="von-gif-body">
-                <video 
-                  src="/home page join .mp4" 
-                  style={{ width: '100%', height: 'auto', border: 'none', borderRadius: '12px', display: 'block', objectFit: 'cover' }} 
-                  ref={(el) => {
-                    if (!el) return;
-                    const io = new IntersectionObserver(([entry]) => {
-                      if (entry.isIntersecting) { el.play().catch(() => {}); }
-                      else { el.pause(); }
-                    }, { threshold: 0.15 });
-                    io.observe(el);
-                  }}
-                  loop
-                  muted
-                  playsInline
-                  preload="none"
-                />
+                {(!isMounted || isMobile) ? (
+                  <img 
+                    src="/BEGIDN THE BUZZ.webp" 
+                    alt="Buzziwah Team Workspace"
+                    style={{ width: '100%', height: 'auto', border: 'none', borderRadius: '12px', display: 'block', objectFit: 'cover' }}
+                  />
+                ) : (
+                  <video 
+                    src="/home page join .mp4" 
+                    style={{ width: '100%', height: 'auto', border: 'none', borderRadius: '12px', display: 'block', objectFit: 'cover' }} 
+                    ref={(el) => {
+                      if (!el) return;
+                      const io = new IntersectionObserver(([entry]) => {
+                        if (entry.isIntersecting) { el.play().catch(() => {}); }
+                        else { el.pause(); }
+                      }, { threshold: 0.15 });
+                      io.observe(el);
+                    }}
+                    loop
+                    muted
+                    playsInline
+                    preload="none"
+                  />
+                )}
               </div>
             </div>
             <div className="von-gif-badge">

@@ -152,13 +152,13 @@ const Section10 = () => {
       <div style={{ position: 'absolute', bottom: '10%', right: '2%', width: 90, height: 90, borderRadius: '50%', background: 'rgba(124,58,237,0.2)', filter: 'blur(30px)', pointerEvents: 'none' }} />
       <div className="section10-inner" style={{ display: 'flex', alignItems: 'center', gap: 78, width: '100%', maxWidth: 1800, margin: '0 auto' }}>
         <div className="section10-logo-col" style={{ flex: '0 0 auto', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 24 }}>
-          <img src="/logo.png" alt="Buzziwah Logo" className="section10-logo" style={{ width: 150 }} />
+          <img src="/logo.webp" alt="Buzziwah Logo" className="section10-logo" width="150" height="188" style={{ width: 150, height: 'auto' }} />
           <p className="section10-label" style={{ color: 'rgba(255,255,255,0.5)', fontSize: 15, fontFamily: "'Syne', sans-serif", letterSpacing: '0.15em', textTransform: 'uppercase', textAlign: 'center', fontWeight: 700 }}>Our Reviews</p>
         </div>
         <div className="section10-carousel-col" style={{ flex: '1 1 500px', display: 'flex', flexDirection: 'column', gap: 40, overflow: 'hidden' }}>
           <div style={{ display: 'flex', gap: 15, justifyContent: 'flex-end', marginBottom: 6 }}>
             {Array.from({ length: pageCount }).map((_, i) => (
-              <button key={i} onClick={() => setActive(i)} style={{ width: active === i ? 42 : 12, height: 12, borderRadius: 6, background: active === i ? '#c8ff00' : 'rgba(255,255,255,0.2)', border: 'none', cursor: 'pointer', transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)' }} />
+              <button key={i} onClick={() => setActive(i)} aria-label={`View review slide ${i + 1}`} style={{ width: active === i ? 42 : 12, height: 12, borderRadius: 6, background: active === i ? '#c8ff00' : 'rgba(255,255,255,0.2)', border: 'none', cursor: 'pointer', transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)' }} />
             ))}
           </div>
           <div style={{ display: 'flex', transition: 'transform 0.8s cubic-bezier(0.4, 0, 0.2, 1)', transform: `translateX(-${active * 100}%)` }}>

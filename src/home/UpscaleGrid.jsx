@@ -24,7 +24,7 @@ const UpscaleGrid = () => {
       icon: <FiAward />,
       href: '/branding',
       color: '#adfa3b', // Primary Lime
-      image: '/grid/brand.png',
+      image: '/grid/brand.webp',
       description: 'Creating cohesive brands, logos, guidelines, custom typography and tone frameworks.'
     },
     {
@@ -34,7 +34,7 @@ const UpscaleGrid = () => {
       icon: <FiCamera />,
       href: '/video-production',
       color: '#8b5cf6', // Primary Violet
-      image: '/grid/photograpohy.png',
+      image: '/grid/photograpohy.webp',
       description: 'Stunning high-fidelity digital captures, creative model shoots, and studio product photography.'
     },
     {
@@ -44,7 +44,7 @@ const UpscaleGrid = () => {
       icon: <FiEdit3 />,
       href: '/content-solution',
       color: '#8888a8', // Muted Slate
-      image: '/grid/content.png',
+      image: '/grid/content.webp',
       description: 'Engaging narratives, SEO articles, and conversion-centered copywriting designed to attract attention.'
     },
     {
@@ -54,7 +54,7 @@ const UpscaleGrid = () => {
       icon: <FiShare2 />,
       href: '/social-media',
       color: '#adfa3b', // Primary Lime
-      image: '/grid/social media manegementpng.png',
+      image: '/grid/social media manegementpng.webp',
       description: 'Build organic presence, capture viral short-form video loops, and cultivate highly active communities.'
     },
     {
@@ -64,7 +64,7 @@ const UpscaleGrid = () => {
       icon: <FiVideo />,
       href: '/video-production',
       color: '#8b5cf6', // Primary Violet
-      image: '/grid/video.png',
+      image: '/grid/video.webp',
       description: 'Directing, shooting and editing professional short films, reels, and stunning high-retention social ads.'
     },
     {
@@ -74,7 +74,7 @@ const UpscaleGrid = () => {
       icon: <FiCode />,
       href: '/website-development',
       color: '#adfa3b', // Primary Lime
-      image: '/grid/web devlopmnnt.png',
+      image: '/grid/web devlopmnnt.webp',
       description: 'Building blazing-fast, pixel-perfect, highly responsive reactive web experiences.'
     },
     {
@@ -84,7 +84,7 @@ const UpscaleGrid = () => {
       icon: <FiSearch />,
       href: '/seo',
       color: '#8888a8', // Muted Slate
-      image: '/grid/seo.png',
+      image: '/grid/seo.webp',
       description: 'On-page technical auditing, link acquisition, and keyword optimization to claim organic page-one positions.'
     },
     {
@@ -94,7 +94,7 @@ const UpscaleGrid = () => {
       icon: <FiTrendingUp />,
       href: '/performance-marketing',
       color: '#8b5cf6', // Primary Violet
-      image: '/grid/performance markting.png',
+      image: '/grid/performance markting.webp',
       description: 'Precision-targeted paid search and social campaigns tailored for consistent return on ad spend.'
     },
   ];
@@ -753,8 +753,8 @@ const UpscaleGrid = () => {
           </svg>
   
           {/* Floating brand logo images rotating / pulsing */}
-          <img src="/logo.png" className="absolute top-[8%] right-[5%] w-[4vw] min-w-[50px] opacity-15 animate-pulse select-none pointer-events-none" alt="Buzziwah Decorative Logo" />
-          <img src="/logo.png" className="absolute bottom-[8%] left-[5%] w-[4vw] min-w-[50px] opacity-15 animate-pulse select-none pointer-events-none" alt="Buzziwah Decorative Logo" />
+          <img src="/logo.webp" width="300" height="375" className="absolute top-[8%] right-[5%] w-[4vw] min-w-[50px] opacity-15 animate-pulse select-none pointer-events-none" style={{ height: 'auto' }} alt="Buzziwah Decorative Logo" />
+          <img src="/logo.webp" width="300" height="375" className="absolute bottom-[8%] left-[5%] w-[4vw] min-w-[50px] opacity-15 animate-pulse select-none pointer-events-none" style={{ height: 'auto' }} alt="Buzziwah Decorative Logo" />
 
           {/* Large brand watermarks in outline font */}
           <div className="absolute top-[15%] left-[2%] text-transparent select-none pointer-events-none text-[8vw] md:text-[10vw] font-black tracking-[0.25em] uppercase opacity-20 rotate-[-4deg]" style={{ fontFamily: "'Syne', sans-serif", WebkitTextStroke: '1px rgba(255,255,255,0.25)' }}>

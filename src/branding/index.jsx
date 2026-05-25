@@ -166,11 +166,11 @@ const Branding = () => {
           </svg>
 
           {/* Floating high-fidelity green navbar logo shapes */}
-          <img src="/logo.png" className="bbbbb-bg-logo bbbbb-bg-logo-1" alt="Buzziwah Decorative Logo Left" />
-          <img src="/logo.png" className="bbbbb-bg-logo bbbbb-bg-logo-2" alt="Buzziwah Decorative Logo Right" />
+          <img src="/logo.webp" className="bbbbb-bg-logo bbbbb-bg-logo-1" width="300" height="375" style={{ height: 'auto' }} alt="Buzziwah Decorative Logo Left" />
+          <img src="/logo.webp" className="bbbbb-bg-logo bbbbb-bg-logo-2" width="300" height="375" style={{ height: 'auto' }} alt="Buzziwah Decorative Logo Right" />
 
           {/* Giant middle 3D watermark brand logo */}
-          <img src="/logo.png" className="bbbbb-bg-logo-3d" alt="Buzziwah Giant 3D Watermark Center" />
+          <img src="/logo.webp" className="bbbbb-bg-logo-3d" width="300" height="375" style={{ height: 'auto' }} alt="Buzziwah Giant 3D Watermark Center" />
 
           {/* Floating technical plus particles (+) */}
           <div className="bbbbb-tech-plus bbbbb-tp-1">+</div>

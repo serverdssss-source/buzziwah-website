@@ -10,13 +10,12 @@ const NearbyStudioSection = () => {
   const canvasRef = useRef(null);
 
   useEffect(() => {
+    // Skip GSAP scroll scrub on mobile — saves CPU on every scroll frame
+    if (window.innerWidth < 768) return;
+
     let ctx = gsap.context(() => {
       gsap.fromTo(videoWrapperRef.current,
-        { 
-          scale: 0.7, 
-          opacity: 0.4, 
-          y: 100 
-        },
+        { scale: 0.7, opacity: 0.4, y: 100 },
         {
           scale: 1,
           opacity: 1,
@@ -24,9 +23,9 @@ const NearbyStudioSection = () => {
           ease: "power2.out",
           scrollTrigger: {
             trigger: videoWrapperRef.current,
-            start: "top 95%", // Start animation when the top of the video is at 95% of viewport
-            end: "center 60%", // End animation when the center of the video reaches 60% of viewport
-            scrub: 1, // Smooth scrubbing taking 1 second to catch up
+            start: "top 95%",
+            end: "center 60%",
+            scrub: 1,
           }
         }
       );
@@ -37,6 +36,7 @@ const NearbyStudioSection = () => {
 
   // Volumetric Canvas Smoke/Mist Particle Engine
   useEffect(() => {
+    if (window.innerWidth < 768) return;
     const canvas = canvasRef.current;
     if (!canvas) return;
     const ctx = canvas.getContext('2d');
@@ -223,7 +223,10 @@ const NearbyStudioSection = () => {
           <img 
             src="/clientlogos/Nearby studio_white.webp" 
             alt="Nearby Studio Logo" 
+            width="224"
+            height="64"
             className="w-24 sm:w-56 object-contain"
+            style={{ height: 'auto' }}
           />
           <a 
             href="https://nearbystudio.in/" 
