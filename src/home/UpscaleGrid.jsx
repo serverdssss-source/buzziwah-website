@@ -765,22 +765,6 @@ const UpscaleGrid = () => {
           </div>
       </div>
 
-      {/* 🌧️ Rain Droplets Backdrop Pane */}
-      <div className="raindrops-container">
-        {[...Array(14)].map((_, i) => (
-          <div
-            className="rain-trail"
-            key={i}
-            style={{
-              left: `${3 + (i * 7.4) % 94}%`,
-              animationDelay: `${i * 1.5}s`,
-              animationDuration: `${5.2 + (i * 2.1) % 6}s`,
-            }}
-          >
-            <div className="droplet" />
-          </div>
-        ))}
-      </div>
 
       <header className="upscale-header">
         <h2 className="retro-1" style={{ fontSize: 'clamp(1.8rem, 3.5vw, 2.6rem)', marginBottom: '16px', letterSpacing: '-2px' }}>Explore Our Core Suite</h2>

@@ -1,10 +1,19 @@
-import { useRef, useState } from 'react';
+import { useRef, useState, useEffect } from 'react';
 import VariableProximity from '../components/VariableProximity';
 
 const DigitalMarketingSection = () => {
   const containerRef = useRef(null);
   const audioRef = useRef(null);
   const [isPlaying, setIsPlaying] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const media = window.matchMedia('(max-width: 768px)');
+    setIsMobile(media.matches);
+    const listener = (e) => setIsMobile(e.matches);
+    media.addEventListener('change', listener);
+    return () => media.removeEventListener('change', listener);
+  }, []);
 
   const toggleAudio = () => {
     if (audioRef.current) {
@@ -81,61 +90,77 @@ const DigitalMarketingSection = () => {
                 transform: 'skewX(-8deg)',
               }}
             >
-              <VariableProximity
-                label="We're the"
-                fromFontVariationSettings="'wght' 400, 'opsz' 9"
-                toFontVariationSettings="'wght' 1000, 'opsz' 40"
-                containerRef={containerRef}
-                mode="sequential"
-                autoSpeed={1.2}
-                autoIntensity={1}
-              />
-              <br />
-              <span style={{ color: '#adfa3b' }}>
-                <VariableProximity
-                  label="people"
-                  fromFontVariationSettings="'wght' 400, 'opsz' 9"
-                  toFontVariationSettings="'wght' 1000, 'opsz' 40"
-                  containerRef={containerRef}
-                  mode="sequential"
-                  autoSpeed={1.2}
-                  autoIntensity={1}
-                />
-              </span>
-              <br />
-              <VariableProximity
-                label="who think"
-                fromFontVariationSettings="'wght' 400, 'opsz' 9"
-                toFontVariationSettings="'wght' 1000, 'opsz' 40"
-                containerRef={containerRef}
-                mode="sequential"
-                autoSpeed={1.2}
-                autoIntensity={1}
-              />
-              <br />
-              <span style={{ color: '#adfa3b' }}>
-                <VariableProximity
-                  label="sharp"
-                  fromFontVariationSettings="'wght' 400, 'opsz' 9"
-                  toFontVariationSettings="'wght' 1000, 'opsz' 40"
-                  containerRef={containerRef}
-                  mode="sequential"
-                  autoSpeed={1.2}
-                  autoIntensity={1}
-                />
-              </span>
-              <br />
-              <span style={{ fontSize: '0.65em' }}>
-                <VariableProximity
-                  label="and move with swag."
-                  fromFontVariationSettings="'wght' 400, 'opsz' 9"
-                  toFontVariationSettings="'wght' 1000, 'opsz' 40"
-                  containerRef={containerRef}
-                  mode="sequential"
-                  autoSpeed={1.2}
-                  autoIntensity={1}
-                />
-              </span>
+              {isMobile ? (
+                <>
+                  We're the
+                  <br />
+                  <span style={{ color: '#adfa3b' }}>people</span>
+                  <br />
+                  who think
+                  <br />
+                  <span style={{ color: '#adfa3b' }}>sharp</span>
+                  <br />
+                  <span style={{ fontSize: '0.65em' }}>and move with swag.</span>
+                </>
+              ) : (
+                <>
+                  <VariableProximity
+                    label="We're the"
+                    fromFontVariationSettings="'wght' 400, 'opsz' 9"
+                    toFontVariationSettings="'wght' 1000, 'opsz' 40"
+                    containerRef={containerRef}
+                    mode="sequential"
+                    autoSpeed={1.2}
+                    autoIntensity={1}
+                  />
+                  <br />
+                  <span style={{ color: '#adfa3b' }}>
+                    <VariableProximity
+                      label="people"
+                      fromFontVariationSettings="'wght' 400, 'opsz' 9"
+                      toFontVariationSettings="'wght' 1000, 'opsz' 40"
+                      containerRef={containerRef}
+                      mode="sequential"
+                      autoSpeed={1.2}
+                      autoIntensity={1}
+                    />
+                  </span>
+                  <br />
+                  <VariableProximity
+                    label="who think"
+                    fromFontVariationSettings="'wght' 400, 'opsz' 9"
+                    toFontVariationSettings="'wght' 1000, 'opsz' 40"
+                    containerRef={containerRef}
+                    mode="sequential"
+                    autoSpeed={1.2}
+                    autoIntensity={1}
+                  />
+                  <br />
+                  <span style={{ color: '#adfa3b' }}>
+                    <VariableProximity
+                      label="sharp"
+                      fromFontVariationSettings="'wght' 400, 'opsz' 9"
+                      toFontVariationSettings="'wght' 1000, 'opsz' 40"
+                      containerRef={containerRef}
+                      mode="sequential"
+                      autoSpeed={1.2}
+                      autoIntensity={1}
+                    />
+                  </span>
+                  <br />
+                  <span style={{ fontSize: '0.65em' }}>
+                    <VariableProximity
+                      label="and move with swag."
+                      fromFontVariationSettings="'wght' 400, 'opsz' 9"
+                      toFontVariationSettings="'wght' 1000, 'opsz' 40"
+                      containerRef={containerRef}
+                      mode="sequential"
+                      autoSpeed={1.2}
+                      autoIntensity={1}
+                    />
+                  </span>
+                </>
+              )}
             </h1>
           </div>
 
