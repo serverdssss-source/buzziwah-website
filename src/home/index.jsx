@@ -1,14 +1,21 @@
 import React from 'react';
 import './Home.css';
-import UpscaleGrid from './UpscaleGrid';
-import ContentSalesSection from './ContentSalesSection';
 import DigitalMarketingSection from './DigitalMarketingSection';
-import ClienteleSection from './ClienteleSection';
-import VisibleOnlineSection from './VisibleOnlineSection';
-import Section10 from '../WebDevSections/Section10';
-import NearbyStudioSection from './NearbyStudioSection';
-import StatsSection from './StatsSection';
-import ShuffleCards from './projects';
+
+const UpscaleGrid = React.lazy(() => import('./UpscaleGrid'));
+const ContentSalesSection = React.lazy(() => import('./ContentSalesSection'));
+const ClienteleSection = React.lazy(() => import('./ClienteleSection'));
+const VisibleOnlineSection = React.lazy(() => import('./VisibleOnlineSection'));
+const Section10 = React.lazy(() => import('../WebDevSections/Section10'));
+const NearbyStudioSection = React.lazy(() => import('./NearbyStudioSection'));
+const StatsSection = React.lazy(() => import('./StatsSection'));
+const ShuffleCards = React.lazy(() => import('./projects'));
+
+const LazySection = ({ children }) => (
+  <React.Suspense fallback={<div style={{ minHeight: '200px' }} />}>
+    {children}
+  </React.Suspense>
+);
 
 const caseStudies = [
   {
@@ -96,18 +103,18 @@ const Home = () => {
       </div>
 
       <div className="scroll-reveal reveal-slide-up">
-        <UpscaleGrid />
+        <LazySection><UpscaleGrid /></LazySection>
       </div>
 
       <div className="scroll-reveal reveal-zoom-in">
-        <NearbyStudioSection />
+        <LazySection><NearbyStudioSection /></LazySection>
       </div>
 
       <div className="scroll-reveal reveal-slide-right">
-        <ContentSalesSection />
+        <LazySection><ContentSalesSection /></LazySection>
       </div>
 
-      <ShuffleCards />
+      <LazySection><ShuffleCards /></LazySection>
 
       <section className="growth-section">
         <div className="growth-inner">
@@ -191,7 +198,7 @@ const Home = () => {
       </section>
 
       <div className="scroll-reveal reveal-fade-in">
-        <VisibleOnlineSection />
+        <LazySection><VisibleOnlineSection /></LazySection>
       </div>
 
       <section className="faq-showcase" id="faq">
@@ -274,7 +281,7 @@ const Home = () => {
         </div>
       </section>
 
-      <ClienteleSection />
+      <LazySection><ClienteleSection /></LazySection>
 
       <section className="home-bottom-megablock relative overflow-hidden">
         {/* High-fidelity background decorations inherited from 'Look what we did' */}
@@ -295,10 +302,10 @@ const Home = () => {
 
         <div className="relative z-10">
           <div className="scroll-reveal reveal-slide-up">
-            <StatsSection />
+            <LazySection><StatsSection /></LazySection>
           </div>
           <div className="scroll-reveal reveal-slide-up">
-            <Section10 />
+            <LazySection><Section10 /></LazySection>
           </div>
         </div>
       </section>
