@@ -35,11 +35,11 @@ const CoverflowSection = () => {
       {/* High-fidelity background decorations */}
       <div className="bbbbb-bg-decorations">
         {/* Floating high-fidelity green navbar logo shapes */}
-        <img src="/logo.webp" className="bbbbb-bg-logo bbbbb-bg-logo-1" width="300" height="375" style={{ opacity: 0.12, height: 'auto' }} alt="Buzziwah Decorative Logo Left" />
-        <img src="/logo.webp" className="bbbbb-bg-logo bbbbb-bg-logo-2" width="300" height="375" style={{ opacity: 0.12, height: 'auto' }} alt="Buzziwah Decorative Logo Right" />
+        <img src="/logo.webp" className="bbbbb-bg-logo bbbbb-bg-logo-1" width="300" height="375" style={{ opacity: 0.12, height: 'auto' }} alt="" role="presentation" loading="lazy" />
+        <img src="/logo.webp" className="bbbbb-bg-logo bbbbb-bg-logo-2" width="300" height="375" style={{ opacity: 0.12, height: 'auto' }} alt="" role="presentation" loading="lazy" />
 
         {/* Giant middle 3D watermark brand logo */}
-        <img src="/logo.webp" className="bbbbb-bg-logo-3d" width="300" height="375" style={{ opacity: 0.04, height: 'auto' }} alt="Buzziwah Giant 3D Watermark Center" />
+        <img src="/logo.webp" className="bbbbb-bg-logo-3d" width="300" height="375" style={{ opacity: 0.04, height: 'auto' }} alt="" role="presentation" loading="lazy" />
 
         {/* Floating technical plus particles (+) */}
         <div className="bbbbb-tech-plus bbbbb-tp-1">+</div>
@@ -80,7 +80,7 @@ const CoverflowSection = () => {
               tabIndex={0}
               onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') setActiveIndex(idx); }}
             >
-              <img src={src} alt={`Coverflow item ${idx + 1}`} />
+              <img src={src} alt={`Buzziwah service showcase ${idx + 1} — Why Choose Us`} loading="lazy" decoding="async" />
             </div>
           );
         })}

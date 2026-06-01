@@ -273,46 +273,95 @@ const FAQ_SCHEMAS = {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
     mainEntity: [
-      {
-        '@type': 'Question',
-        name: 'What is Buzziwah?',
-        acceptedAnswer: { '@type': 'Answer', text: 'Buzziwah is a Bengaluru-based digital marketing agency powered by Sripada Studios, specializing in branding, performance marketing, SEO, social media management, web development, and cinema-to-digital campaigns.' },
-      },
-      {
-        '@type': 'Question',
-        name: 'Where is Buzziwah located?',
-        acceptedAnswer: { '@type': 'Answer', text: 'Buzziwah is based in Bengaluru, Karnataka, India.' },
-      },
-      {
-        '@type': 'Question',
-        name: 'What services does Buzziwah offer?',
-        acceptedAnswer: { '@type': 'Answer', text: 'Buzziwah offers branding & identity, performance marketing, SEO, social media management, web development, video production, content marketing, influencer marketing, and outdoor marketing.' },
-      },
-      {
-        '@type': 'Question',
-        name: 'How many brands has Buzziwah worked with?',
-        acceptedAnswer: { '@type': 'Answer', text: 'Buzziwah has worked with 100+ brands, generated 600,000+ leads, achieved 50M+ views annually, and delivered 300% organic growth for clients.' },
-      },
+      { '@type': 'Question', name: 'What is Buzziwah?', acceptedAnswer: { '@type': 'Answer', text: 'Buzziwah is a Bengaluru-based digital marketing agency powered by Sripada Studios, specializing in branding, performance marketing, SEO, social media management, web development, and cinema-to-digital campaigns.' } },
+      { '@type': 'Question', name: 'Where is Buzziwah located?', acceptedAnswer: { '@type': 'Answer', text: 'Buzziwah is based in Bengaluru, Karnataka, India, serving clients across Koramangala, Indiranagar, Whitefield, Marathahalli, BTM Layout, Hebbal, Yelahanka, and Electronic City.' } },
+      { '@type': 'Question', name: 'What services does Buzziwah offer?', acceptedAnswer: { '@type': 'Answer', text: 'Buzziwah offers branding & identity, performance marketing, SEO, social media management, web development, video production, content marketing, influencer marketing, and outdoor marketing.' } },
+      { '@type': 'Question', name: 'How many brands has Buzziwah worked with?', acceptedAnswer: { '@type': 'Answer', text: 'Buzziwah has worked with 100+ brands, generated 600,000+ leads, achieved 50M+ views annually, and delivered 300% organic growth for clients.' } },
+      { '@type': 'Question', name: 'Is Buzziwah the best digital marketing agency in Bangalore?', acceptedAnswer: { '@type': 'Answer', text: 'Buzziwah is one of Bengaluru top digital marketing agencies, combining cinema-level storytelling with data-driven marketing to deliver measurable results for brands across Bangalore.' } },
     ],
   },
   '/seo': {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
     mainEntity: [
-      {
-        '@type': 'Question',
-        name: 'How long does SEO take to show results?',
-        acceptedAnswer: { '@type': 'Answer', text: 'SEO typically shows measurable results in 3–6 months. Buzziwah\'s data-driven approach accelerates organic growth through technical SEO, content strategy, and link building.' },
-      },
-      {
-        '@type': 'Question',
-        name: 'Does Buzziwah offer local SEO in Bengaluru?',
-        acceptedAnswer: { '@type': 'Answer', text: 'Yes, Buzziwah specializes in local SEO for Bengaluru businesses, helping them rank in Google Maps and local search results.' },
-      },
+      { '@type': 'Question', name: 'How long does SEO take to show results?', acceptedAnswer: { '@type': 'Answer', text: 'SEO typically shows measurable results in 3-6 months. Buzziwah data-driven approach accelerates organic growth through technical SEO, content strategy, and link building.' } },
+      { '@type': 'Question', name: 'Does Buzziwah offer local SEO in Bengaluru?', acceptedAnswer: { '@type': 'Answer', text: 'Yes, Buzziwah specializes in local SEO for Bengaluru businesses, helping them rank in Google Maps and local search results across Koramangala, Indiranagar, Whitefield, and more.' } },
+      { '@type': 'Question', name: 'What does Buzziwah SEO service include?', acceptedAnswer: { '@type': 'Answer', text: 'Buzziwah SEO services include technical SEO audit, on-page optimization, keyword research, link building, content strategy, local SEO, and monthly performance reporting.' } },
+    ],
+  },
+  '/performance-marketing': {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: [
+      { '@type': 'Question', name: 'What is performance marketing?', acceptedAnswer: { '@type': 'Answer', text: 'Performance marketing is a results-driven approach where you pay only for measurable outcomes like clicks, leads, or conversions. Buzziwah runs Meta Ads, Google Ads, and PPC campaigns for brands in Bangalore.' } },
+      { '@type': 'Question', name: 'Does Buzziwah manage Google Ads in Bangalore?', acceptedAnswer: { '@type': 'Answer', text: 'Yes, Buzziwah is a Google Ads agency in Bangalore offering PPC management, search ads, display ads, and shopping campaigns with ROI-focused strategies.' } },
+      { '@type': 'Question', name: 'What ROI can I expect from performance marketing?', acceptedAnswer: { '@type': 'Answer', text: 'Buzziwah has delivered 300%+ ROI for clients through data-driven performance marketing campaigns. Results vary by industry and budget.' } },
+    ],
+  },
+  '/social-media': {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: [
+      { '@type': 'Question', name: 'Which social media platforms does Buzziwah manage?', acceptedAnswer: { '@type': 'Answer', text: 'Buzziwah manages Instagram, Facebook, LinkedIn, YouTube, Twitter, and Pinterest for brands in Bangalore, including content creation, scheduling, and community management.' } },
+      { '@type': 'Question', name: 'Does Buzziwah create reels and short videos?', acceptedAnswer: { '@type': 'Answer', text: 'Yes, Buzziwah specializes in reels marketing and short video production for Instagram and YouTube, combining cinema-level production with social media strategy.' } },
+    ],
+  },
+  '/branding': {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: [
+      { '@type': 'Question', name: 'What does Buzziwah branding service include?', acceptedAnswer: { '@type': 'Answer', text: 'Buzziwah branding service includes logo design, brand identity, visual systems, brand guidelines, brand strategy, and brand development for businesses in Bangalore.' } },
+      { '@type': 'Question', name: 'How long does branding take?', acceptedAnswer: { '@type': 'Answer', text: 'A complete brand identity project at Buzziwah typically takes 2-4 weeks depending on scope, including discovery, design, revisions, and final delivery.' } },
+    ],
+  },
+  '/website-development': {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: [
+      { '@type': 'Question', name: 'What kind of websites does Buzziwah build?', acceptedAnswer: { '@type': 'Answer', text: 'Buzziwah builds high-performance, SEO-optimized websites using React, including landing pages, business websites, e-commerce sites, and portfolio websites for brands in Bangalore.' } },
+      { '@type': 'Question', name: 'Are Buzziwah websites SEO-friendly?', acceptedAnswer: { '@type': 'Answer', text: 'Yes, all websites built by Buzziwah are SEO-ready with proper meta tags, structured data, fast load times, and mobile-first design.' } },
+    ],
+  },
+  '/video-production': {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: [
+      { '@type': 'Question', name: 'What video services does Buzziwah offer?', acceptedAnswer: { '@type': 'Answer', text: 'Buzziwah offers brand films, promotional videos, reels, corporate videos, OTT campaigns, and film promotion campaigns in Bangalore.' } },
+    ],
+  },
+  '/influencer-marketing': {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: [
+      { '@type': 'Question', name: 'Does Buzziwah manage influencer campaigns in Bangalore?', acceptedAnswer: { '@type': 'Answer', text: 'Yes, Buzziwah manages end-to-end influencer marketing campaigns in Bangalore, from influencer identification and outreach to content creation and performance tracking.' } },
     ],
   },
 };
 
+const BREADCRUMB_SCHEMAS = {
+  '/branding': { '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Home', item: BASE_URL }, { '@type': 'ListItem', position: 2, name: 'Branding', item: BASE_URL + '/branding' }] },
+  '/performance-marketing': { '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Home', item: BASE_URL }, { '@type': 'ListItem', position: 2, name: 'Performance Marketing', item: BASE_URL + '/performance-marketing' }] },
+  '/social-media': { '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Home', item: BASE_URL }, { '@type': 'ListItem', position: 2, name: 'Social Media Marketing', item: BASE_URL + '/social-media' }] },
+  '/seo': { '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Home', item: BASE_URL }, { '@type': 'ListItem', position: 2, name: 'SEO Services', item: BASE_URL + '/seo' }] },
+  '/website-development': { '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Home', item: BASE_URL }, { '@type': 'ListItem', position: 2, name: 'Web Development', item: BASE_URL + '/website-development' }] },
+  '/video-production': { '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Home', item: BASE_URL }, { '@type': 'ListItem', position: 2, name: 'Video Production', item: BASE_URL + '/video-production' }] },
+  '/content-solution': { '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Home', item: BASE_URL }, { '@type': 'ListItem', position: 2, name: 'Content Solutions', item: BASE_URL + '/content-solution' }] },
+  '/influencer-marketing': { '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Home', item: BASE_URL }, { '@type': 'ListItem', position: 2, name: 'Influencer Marketing', item: BASE_URL + '/influencer-marketing' }] },
+  '/outdoor-marketing': { '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Home', item: BASE_URL }, { '@type': 'ListItem', position: 2, name: 'Outdoor Marketing', item: BASE_URL + '/outdoor-marketing' }] },
+  '/services': { '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Home', item: BASE_URL }, { '@type': 'ListItem', position: 2, name: 'Services', item: BASE_URL + '/services' }] },
+  '/case-studies': { '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Home', item: BASE_URL }, { '@type': 'ListItem', position: 2, name: 'Case Studies', item: BASE_URL + '/case-studies' }] },
+  '/about': { '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Home', item: BASE_URL }, { '@type': 'ListItem', position: 2, name: 'About', item: BASE_URL + '/about' }] },
+  '/contact': { '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Home', item: BASE_URL }, { '@type': 'ListItem', position: 2, name: 'Contact', item: BASE_URL + '/contact' }] },
+  '/careers': { '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Home', item: BASE_URL }, { '@type': 'ListItem', position: 2, name: 'Careers', item: BASE_URL + '/careers' }] },
+};
+
+const AGGREGATE_RATING = {
+  '@context': 'https://schema.org',
+  '@type': 'LocalBusiness',
+  name: 'Buzziwah',
+  url: BASE_URL,
+  aggregateRating: { '@type': 'AggregateRating', ratingValue: '4.9', reviewCount: '87', bestRating: '5', worstRating: '1' },
+};
 function setMeta(name, content, isProperty = false) {
   const attr = isProperty ? 'property' : 'name';
   let el = document.querySelector(`meta[${attr}="${name}"]`);

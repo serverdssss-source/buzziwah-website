@@ -59,8 +59,11 @@ const ClienteleSection = () => {
                     <img
                       className="clientele-logo"
                       src={encodeURI(`/CLIENTS/${item}`)}
-                      alt="Client logo"
+                      alt={`${item.replace('.png', '').replace('.webp', '')} — Buzziwah Client`}
                       loading="lazy"
+                      decoding="async"
+                      width="120"
+                      height="60"
                     />
                   </div>
                 ))}

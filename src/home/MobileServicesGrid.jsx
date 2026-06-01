@@ -19,42 +19,42 @@ const MobileServicesGrid = () => {
         <div className="ssd-grid">
           <div className="ssd-card c2" onClick={() => window.location.href = links.photography}>
             <div className="ssd-card__img-wrap">
-              <img className="ssd-card__img" src={encodeURI('/grid/photograpohy.png')} alt="Photography" />
+              <img className="ssd-card__img" src={encodeURI('/grid/photograpohy.png')} alt="Photography & Visual Content Services — Buzziwah" loading="lazy" decoding="async" />
             </div>
             <div className="ssd-card__shimmer"></div>
           </div>
 
           <div className="ssd-card c3" onClick={() => window.location.href = links.content}>
             <div className="ssd-card__img-wrap">
-              <img className="ssd-card__img" src={encodeURI('/grid/content solutions.png')} alt="Content Solutions" />
+              <img className="ssd-card__img" src={encodeURI('/grid/content solutions.png')} alt="Content Marketing Solutions — Buzziwah" loading="lazy" decoding="async" />
             </div>
             <div className="ssd-card__shimmer"></div>
           </div>
 
           <div className="ssd-card c4" onClick={() => window.location.href = links.social}>
             <div className="ssd-card__img-wrap">
-              <img className="ssd-card__img" src={encodeURI('/grid/social media managemnt .png')} alt="Social Media Management" />
+              <img className="ssd-card__img" src={encodeURI('/grid/social media managemnt .png')} alt="Social Media Management Services Bangalore — Buzziwah" loading="lazy" decoding="async" />
             </div>
             <div className="ssd-card__shimmer"></div>
           </div>
 
           <div className="ssd-card c5" onClick={() => window.location.href = links.video}>
             <div className="ssd-card__img-wrap">
-              <img className="ssd-card__img" src={encodeURI('/grid/video.png')} alt="Video Production" />
+              <img className="ssd-card__img" src={encodeURI('/grid/video.png')} alt="Video Production Services Bangalore — Buzziwah" loading="lazy" decoding="async" />
             </div>
             <div className="ssd-card__shimmer"></div>
           </div>
 
           <div className="ssd-card c7" onClick={() => window.location.href = links.seo}>
             <div className="ssd-card__img-wrap">
-              <img className="ssd-card__img" src={encodeURI('/grid/seo.png')} alt="SEO" />
+              <img className="ssd-card__img" src={encodeURI('/grid/seo.png')} alt="SEO Services Bangalore — Buzziwah" loading="lazy" decoding="async" />
             </div>
             <div className="ssd-card__shimmer"></div>
           </div>
 
           <div className="ssd-card c8" onClick={() => window.location.href = links.performance}>
             <div className="ssd-card__img-wrap">
-              <img className="ssd-card__img" src={encodeURI('/grid/performance marketing.png')} alt="Performance Marketing" />
+              <img className="ssd-card__img" src={encodeURI('/grid/performance marketing.png')} alt="Performance Marketing Agency Bangalore — Buzziwah" loading="lazy" decoding="async" />
             </div>
             <div className="ssd-card__shimmer"></div>
           </div>

@@ -378,8 +378,10 @@ const ParallaxCard = ({ card, start, end, style = {} }) => {
             ) : (
                 <img
                     src={card.img}
-                    alt={card.title}
+                    alt={`${card.title} — ${card.tag} Case Study by Buzziwah Digital Marketing Agency Bangalore`}
                     className="w-full h-auto block transition-transform duration-700 group-hover:scale-105"
+                    loading="lazy"
+                    decoding="async"
                 />
             )}
             
