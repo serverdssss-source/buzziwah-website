@@ -636,24 +636,24 @@ const FunnyCardWall = ({ teamMembers, blackImages, onSelectMember }) => {
   const [hoveredIdx, setHoveredIdx] = React.useState(null);
 
   const funnyQuips = [
-    "Ships code & reels at 3AM. Help. 💀",
-    "Deleted the timeline. Made it look intentional. 😈",
-    "Wrote this bio while on a deadline. ⏰",
-    "ROAS? More like R-O-A-SLAY! 🔥",
-    "Figma > Sleep. Non-negotiable. 😤",
-    "Do NOT delete his raw files. Ever. 😤",
-    "Premiere Pro is her native language. 🎬",
-    "Posted 4 Reels before breakfast. 📱",
-    "It works on his machine ✅ Obviously.",
-    "Therapist for the whole office. 🛋️",
-    "His transitions slap harder than ur playlist. 🎵",
-    "Knows every trending audio 0.2s in. 👂",
-    "CTR > 40%? Just a Tuesday. 📊",
-    "Color graded ur fave brand. You're welcome. 🎨",
-    "Comments back faster than ur WhatsApp. 💬",
-    "Hook, intro, CTA. Already done. ✍️",
-    "B-roll king 👑 No contest.",
-    "Stack Overflow's most loyal customer. 🙏",
+    "CEO & Founder. Ships code, edits reels, runs the show. 🎬👑",
+    "Co-Founder & UX Designer. Designs for humans, not screens. 🎨✨",
+    "Content Writer Team Lead. Words that hook, hold & convert. ✍️🔥",
+    "Performance Marketer Team Lead. Your ROAS just went up. 📊🚀",
+    "Finance Head. Every rupee has a purpose here. 💰🧮",
+    "Photographer. Frames moments with cinematic precision. 📸🎞️",
+    "Video Editor. Transitions smoother than your morning coffee. 🎬✂️",
+    "SM Team Lead & Influencer Marketer. Viral is just the baseline. 📱🌟",
+    "Web Dev Team Lead. Built this website. Literally. ⚙️💻",
+    "Human Resource. Keeps the team sane & culture alive. 💼🌿",
+    "Video Editor. B-roll king 👑 No contest. 🎞️",
+    "Social Media Executive. Knows every trend before it trends. 👂🌐",
+    "Ad Ops Executive. CTR > 40%? Just a Tuesday. 📣📊",
+    "Designer. Brands that look as good as they perform. 🎭🎨",
+    "Social Media Executive. Comments back faster than ur WhatsApp. 💬📱",
+    "Content Writer & Strategist. Hook, intro, CTA. Already done. 📝✅",
+    "Associate Video Editor. B-roll sorted. Always. ✂️🎬",
+    "Junior Web Developer. Fixing grids at 2AM. Stack Overflow's fav. 🌐🔧",
   ];
 
   const roleEmojis = ["💻", "🎨", "✍️", "📊", "🖌️", "📸", "🎬", "📱", "⚙️", "💼", "🎞️", "🌟", "📣", "🎭", "🗣️", "📝", "✂️", "🌐"];
@@ -1255,28 +1255,28 @@ const About = () => {
               const teamMembers = [
                 {
                   name: 'PHANI SRIVATSA PV',
-                  role: 'EDITOR | DEVELOPER',
-                  desc: 'Crafts seamless digital platforms, cuts high-impact cinematic edits, and codes with relentless energy.'
+                  role: 'CEO | FOUNDER & FILMMAKER',
+                  desc: 'Leads Buzziwah with a filmmaker\'s eye and a founder\'s grit. Crafts strategy, code, and cinema in one breath.'
                 },
                 {
                   name: 'SATISH MS',
-                  role: 'UX DESIGNER | EDITOR',
+                  role: 'CO-FOUNDER | UX DESIGNER',
                   desc: 'Fuses user psychology with clean aesthetics, shaping intuitive digital flows and master cuts.'
                 },
                 {
                   name: 'RAKSHA S',
-                  role: 'CONTENT WRITER',
-                  desc: 'Weaves viral hooks and immersive storytelling narratives that keep audiences hooked.'
+                  role: 'CONTENT WRITER TEAM LEAD',
+                  desc: 'Leads the content team with sharp hooks, immersive storytelling and conversion-first copy.'
                 },
                 {
                   name: 'SATHWIK NJ',
-                  role: 'PERFORMANCE MARKETER',
-                  desc: 'Decodes algorithms, optimizes ad spends, and scales ROI with data-backed precision.'
+                  role: 'PERFORMANCE MARKETER TEAM LEAD',
+                  desc: 'Leads performance marketing — decodes algorithms, scales ROI and turns ad spend into growth.'
                 },
                 {
                   name: 'GOUTHAM SRINAG',
-                  role: 'UI DESIGNER',
-                  desc: 'Molds glowing user interfaces, vibrant interaction vectors, and next-level layout grids.'
+                  role: 'FINANCE HEAD',
+                  desc: 'Keeps the numbers sharp and the business grounded — every rupee invested with intent.'
                 },
                 {
                   name: 'MANISH N',
@@ -1290,13 +1290,13 @@ const About = () => {
                 },
                 {
                   name: 'HEMASHREE K',
-                  role: 'SOCIAL MEDIA MANAGER',
-                  desc: 'Orchestrates feed schedules, tracks real-time trends, and drives daily brand engagement.'
+                  role: 'SM TEAM LEAD | INFLUENCER MARKETER',
+                  desc: 'Leads the social media team and drives influencer campaigns that make brands go viral.'
                 },
                 {
                   name: 'ASHOK KUMAR S',
-                  role: 'FULL STACK DEVELOPER',
-                  desc: 'Builds robust server-side structures and styles interactive frontends with perfection.'
+                  role: 'WEB DEV TEAM LEAD',
+                  desc: 'Leads the web development team — builds robust server-side structures and pixel-perfect frontends.'
                 },
                 {
                   name: 'ARPITHA M',
@@ -1310,7 +1310,7 @@ const About = () => {
                 },
                 {
                   name: 'NAYANA CN',
-                  role: 'SOCIAL MEDIA ASSOCIATIVE',
+                  role: 'SOCIAL MEDIA EXECUTIVE',
                   desc: 'Monitors viral platform trends, creating high-reach daily content strategies.'
                 },
                 {
@@ -1340,8 +1340,8 @@ const About = () => {
                 },
                 {
                   name: 'ADITYA NAYAK',
-                  role: 'JUNIOR WEB DEVELOPER',
-                  desc: 'Polishes responsive stylesheet code-structures, fixing interface grids with speed.'
+                  role: 'FRONTEND DEVELOPER',
+                  desc: 'Crafts responsive, pixel-perfect web experiences with speed and precision.'
                 },
               ];
 
