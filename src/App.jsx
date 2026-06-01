@@ -1,6 +1,7 @@
-import { lazy, Suspense } from 'react';
+import { lazy, Suspense, useEffect } from 'react';
 import Navbar from './Navbar';
 import './App.css';
+import { applySEO } from './seo/useSEO';
 
 const Home = lazy(() => import('./home'));
 const About = lazy(() => import('./about'));
@@ -24,6 +25,10 @@ const Careers = lazy(() => import('./carrer/carrer'));
 function App() {
   const path = window.location.pathname.replace(/\/$/, '');
   const isCaseStudy = path.startsWith('/case-study/');
+
+  useEffect(() => {
+    applySEO(path || '/');
+  }, [path]);
 
   return (
     <>
