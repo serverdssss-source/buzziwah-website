@@ -62,8 +62,6 @@ const ClienteleSection = () => {
                       alt={`${item.replace('.png', '').replace('.webp', '')} — Buzziwah Client`}
                       loading="lazy"
                       decoding="async"
-                      width="120"
-                      height="60"
                     />
                   </div>
                 ))}
