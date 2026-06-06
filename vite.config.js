@@ -3,26 +3,11 @@ import react from '@vitejs/plugin-react';
 
 export default defineConfig({
   plugins: [
-    react({
-      babel: {
-        plugins: [
-          ['babel-plugin-transform-remove-console', { exclude: ['error', 'warn'] }],
-        ],
-      },
-    }),
+    react(),
   ],
   build: {
     target: 'es2018',
-    minify: 'terser',
-    terserOptions: {
-      compress: {
-        drop_console: true,
-        drop_debugger: true,
-        pure_funcs: ['console.log', 'console.info', 'console.debug'],
-        passes: 2,
-      },
-      mangle: true,
-    },
+    minify: 'esbuild',
     rollupOptions: {
       output: {
         manualChunks(id) {
