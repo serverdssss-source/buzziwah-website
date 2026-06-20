@@ -21,10 +21,15 @@ const CaseStudiesList = lazy(() => import('./case-studies/CaseStudiesList'));
 const SeoCaseStudies = lazy(() => import('./case-studies/SeoCaseStudies'));
 const PageEnding = lazy(() => import('./components/PageEnding'));
 const Careers = lazy(() => import('./carrer/carrer'));
+const BlogsList = lazy(() => import('./blogs/BlogsList'));
+const BlogPage = lazy(() => import('./blogs'));
+
 
 function App() {
   const path = window.location.pathname.replace(/\/$/, '');
   const isCaseStudy = path.startsWith('/case-study/');
+  const isBlog = path.startsWith('/blog/');
+
 
   useEffect(() => {
     applySEO(path || '/');
@@ -40,6 +45,12 @@ function App() {
               const caseId = path.substring('/case-study/'.length);
               return <CaseStudyPage id={caseId} />;
             }
+
+            if (isBlog) {
+              const blogId = path.substring('/blog/'.length);
+              return <BlogPage id={blogId} />;
+            }
+
 
             switch (path) {
               case '/about':
@@ -73,11 +84,14 @@ function App() {
               case '/careers':
               case '/carrer':
                 return <Careers />;
+              case '/blogs':
+                return <BlogsList />;
               default:
                 return <Home />;
             }
           })()}
-          {path !== '/about' && !isCaseStudy && <PageEnding showContactForm={path !== '/contact' && path !== '/case-studies' && path !== '/seo-case-studies'} isCareers={path === '/careers' || path === '/carrer'} />}
+          {path !== '/about' && !isCaseStudy && <PageEnding showContactForm={path !== '/contact' && path !== '/case-studies' && path !== '/seo-case-studies' && !isBlog} isCareers={path === '/careers' || path === '/carrer'} />}
+
         </Suspense>
       </>
     </>

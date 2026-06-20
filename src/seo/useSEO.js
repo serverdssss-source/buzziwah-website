@@ -115,7 +115,22 @@ const PAGE_SEO = {
     image: `${BASE_URL}/careers/joining_kit.png`,
     type: 'website',
   },
+  '/blogs': {
+    title: 'Blogs & Insights | Buzziwah — Digital Marketing & Branding Intelligence',
+    description: 'Explore insights on branding, SEO, performance marketing, and creative production from the experts at Buzziwah, Bangalore\'s top digital agency.',
+    keywords: 'Buzziwah blogs, marketing insights, branding strategies, SEO tips, performance marketing guide',
+    image: `${BASE_URL}/blog_imgs/why_need_PMM.png`,
+    type: 'website',
+  },
+  '/blog/why-you-need-paid-media-marketing': {
+    title: 'Why You Need Paid Media Marketing | Buzziwah Insights',
+    description: 'Learn why paid media marketing is essential for business success. Discover search ads, social ads, and tips to maximize ROI and scale visibility.',
+    keywords: 'paid media marketing, Google Ads, Meta Ads, social media advertising, PPC, ROI marketing, Buzziwah blogs',
+    image: `${BASE_URL}/blog_imgs/why_need_PMM.png`,
+    type: 'article',
+  },
 };
+
 
 // Schema.org structured data per page
 const SCHEMAS = {
@@ -353,7 +368,10 @@ const BREADCRUMB_SCHEMAS = {
   '/about': { '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Home', item: BASE_URL }, { '@type': 'ListItem', position: 2, name: 'About', item: BASE_URL + '/about' }] },
   '/contact': { '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Home', item: BASE_URL }, { '@type': 'ListItem', position: 2, name: 'Contact', item: BASE_URL + '/contact' }] },
   '/careers': { '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Home', item: BASE_URL }, { '@type': 'ListItem', position: 2, name: 'Careers', item: BASE_URL + '/careers' }] },
+  '/blogs': { '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Home', item: BASE_URL }, { '@type': 'ListItem', position: 2, name: 'Blogs', item: BASE_URL + '/blogs' }] },
+  '/blog/why-you-need-paid-media-marketing': { '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Home', item: BASE_URL }, { '@type': 'ListItem', position: 2, name: 'Blogs', item: BASE_URL + '/blogs' }, { '@type': 'ListItem', position: 3, name: 'Why You Need Paid Media Marketing', item: BASE_URL + '/blog/why-you-need-paid-media-marketing' }] },
 };
+
 
 const AGGREGATE_RATING = {
   '@context': 'https://schema.org',

@@ -28,6 +28,7 @@ const footerSections = [
       { label: 'Video Production', href: '/video-production' },
       { label: 'Search Engine Optimization', href: '/seo' },
       { label: 'Influencer Marketing', href: '/influencer-marketing' },
+      { label: 'Blogs & Insights', href: '/blogs' },
     ],
   },
   {

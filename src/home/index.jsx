@@ -10,6 +10,8 @@ const Section10 = React.lazy(() => import('../WebDevSections/Section10'));
 const NearbyStudioSection = React.lazy(() => import('./NearbyStudioSection'));
 const StatsSection = React.lazy(() => import('./StatsSection'));
 const ShuffleCards = React.lazy(() => import('./projects'));
+const BlogsSection = React.lazy(() => import('./BlogsSection'));
+
 
 const LazySection = ({ children }) => (
   <React.Suspense fallback={<div style={{ minHeight: '200px' }} />}>
@@ -199,6 +201,10 @@ const Home = () => {
 
       <div className="scroll-reveal reveal-fade-in">
         <LazySection><VisibleOnlineSection /></LazySection>
+      </div>
+
+      <div className="scroll-reveal reveal-slide-up">
+        <LazySection><BlogsSection /></LazySection>
       </div>
 
       <section className="faq-showcase" id="faq">
