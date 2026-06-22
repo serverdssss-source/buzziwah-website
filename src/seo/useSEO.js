@@ -129,6 +129,13 @@ const PAGE_SEO = {
     image: `${BASE_URL}/blog_imgs/why_need_PMM.png`,
     type: 'article',
   },
+  '/blog/wordpress-vs-shopify-which-one-is-more-powerful': {
+    title: 'WordPress vs Shopify: Which One is More Powerful? | Buzziwah Insights',
+    description: 'An in-depth comparison between WordPress and Shopify to determine which platform is more powerful for your e-commerce requirements, flexibility, scalability, and budget.',
+    keywords: 'WordPress vs Shopify, WooCommerce vs Shopify, e-commerce platforms, Shopify store setup, WordPress customization, e-commerce scalability, website development Bengaluru, Buzziwah blogs',
+    image: `${BASE_URL}/blog_imgs/why_need_PMM.png`,
+    type: 'article',
+  },
 };
 
 
@@ -353,6 +360,7 @@ const FAQ_SCHEMAS = {
   },
 };
 
+// eslint-disable-next-line no-unused-vars
 const BREADCRUMB_SCHEMAS = {
   '/branding': { '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Home', item: BASE_URL }, { '@type': 'ListItem', position: 2, name: 'Branding', item: BASE_URL + '/branding' }] },
   '/performance-marketing': { '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Home', item: BASE_URL }, { '@type': 'ListItem', position: 2, name: 'Performance Marketing', item: BASE_URL + '/performance-marketing' }] },
@@ -370,9 +378,11 @@ const BREADCRUMB_SCHEMAS = {
   '/careers': { '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Home', item: BASE_URL }, { '@type': 'ListItem', position: 2, name: 'Careers', item: BASE_URL + '/careers' }] },
   '/blogs': { '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Home', item: BASE_URL }, { '@type': 'ListItem', position: 2, name: 'Blogs', item: BASE_URL + '/blogs' }] },
   '/blog/why-you-need-paid-media-marketing': { '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Home', item: BASE_URL }, { '@type': 'ListItem', position: 2, name: 'Blogs', item: BASE_URL + '/blogs' }, { '@type': 'ListItem', position: 3, name: 'Why You Need Paid Media Marketing', item: BASE_URL + '/blog/why-you-need-paid-media-marketing' }] },
+  '/blog/wordpress-vs-shopify-which-one-is-more-powerful': { '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Home', item: BASE_URL }, { '@type': 'ListItem', position: 2, name: 'Blogs', item: BASE_URL + '/blogs' }, { '@type': 'ListItem', position: 3, name: 'WordPress vs Shopify: Which One is More Powerful?', item: BASE_URL + '/blog/wordpress-vs-shopify-which-one-is-more-powerful' }] },
 };
 
 
+// eslint-disable-next-line no-unused-vars
 const AGGREGATE_RATING = {
   '@context': 'https://schema.org',
   '@type': 'LocalBusiness',
