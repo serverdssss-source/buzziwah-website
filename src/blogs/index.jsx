@@ -3,6 +3,83 @@ import { useEffect } from "react";
 import "./Blogs.css";
 
 export const BLOGS_DATA = {
+  "building-a-content-pillar-system": {
+    title: "Building a Content Pillar System: The 3-4 Buckets Every Brand Account Needs to Stay Consistent",
+    slug: "building-a-content-pillar-system",
+    date: "July 14, 2026",
+    readTime: "4 min read",
+    author: "Buzziwah",
+    category: "Social Media",
+    image: "/blog_imgs/Building a Content Pillar System blog.png",
+    description: "Most brand accounts don't have a content problem. They have a decision problem. A content pillar system fixes this before it starts.",
+    content: (
+      <div className="blog-content-body">
+        <p>
+          Most brand accounts don&apos;t have a content problem. They have a decision problem.
+        </p>
+        <p>
+          Every day, someone on the team sits down to post and asks the same question: &quot;What do we put up today?&quot; With no system, that question gets answered by whatever&apos;s easiest — a random product shot, a trending reel format, a quote card nobody remembers approving. Six months later, the grid looks like six different brands took turns running it.
+        </p>
+        <p>
+          A content pillar system fixes this before it starts. It&apos;s not a content calendar. It&apos;s the filter that decides what&apos;s allowed on the calendar in the first place.
+        </p>
+
+        <h2>What a content pillar actually is</h2>
+        <p>
+          A pillar is a recurring theme your brand consistently shows up as. Not a content type (that&apos;s a format — reels, carousels, stories). A pillar is a <em>reason</em> to post. Strip away the platform and the format, and a pillar should still make sense as a sentence: &quot;We show people how our product is used in real life.&quot; &quot;We explain one industry myth every week.&quot; &quot;We introduce the humans behind the brand.&quot;
+        </p>
+        <p>
+          Most brands don&apos;t need more than 3 to 4 of these. Fewer, and the account feels one-note. More, and nobody on the team can remember what they&apos;re supposed to post next — which puts you right back at square one.
+        </p>
+
+        <h2>The four buckets that hold up across most brands</h2>
+
+        <h3>1. Proof — Show the work, not the claim</h3>
+        <p>
+          This is the bucket that answers &quot;does this actually work?&quot; before anyone asks. Before/after shots, client results, behind-the-scenes of the process, real reviews on screen instead of paraphrased. A restaurant&apos;s proof bucket is the food coming off the tawa, not a poster saying &quot;authentic taste.&quot; A film promotion&apos;s proof bucket is the crowd reaction at a screening, not a graphic that says &quot;blockbuster.&quot;
+        </p>
+
+        <h3>2. Perspective — Say something, don&apos;t just show something</h3>
+        <p>
+          This is where a brand earns authority instead of just visibility. One clear opinion, one myth corrected, one industry insight explained simply. It&apos;s the hardest bucket to fill consistently because it requires actual expertise — which is also exactly why it&apos;s the one that builds trust fastest.
+        </p>
+
+        <h3>3. People — The humans behind the name</h3>
+        <p>
+          Founders, staff, students, the acting school&apos;s next batch, the chef, the team on a shoot day. Accounts that skip this bucket end up feeling like a catalog. Accounts that lean into it build the kind of familiarity that turns followers into customers who feel like they already know you.
+        </p>
+
+        <h3>4. Moment — Timely, not evergreen</h3>
+        <p>
+          Festivals, launches, local events, a trending audio used <em>on-brand</em> instead of just because it&apos;s trending. This bucket keeps the account feeling alive and present — but it should never be more than a quarter of what you post. A feed that&apos;s all moments and no substance forgets to actually tell people what you do.
+        </p>
+
+        <h2>Why 3-4 and not more</h2>
+        <p>
+          A fifth or sixth pillar usually isn&apos;t a new idea — it&apos;s a stray post from last month getting mistaken for a pattern. The constraint is the point. When there are only four buckets to choose from, planning a week of content takes ten minutes instead of a meeting. And when every post clearly belongs to one of four recognizable buckets, followers start to <em>expect</em> certain things from the account — which is a different thing entirely from just seeing it.
+        </p>
+
+        <h2>Putting it into a weekly rhythm</h2>
+        <p>
+          A simple starting split for most brands, posting 4-5 times a week:
+        </p>
+        <ul>
+          <li>2 Proof</li>
+          <li>1 Perspective</li>
+          <li>1 People</li>
+          <li>1 Moment (when relevant — skip it in a quiet week rather than forcing one)</li>
+        </ul>
+        <p>
+          The exact ratio should shift depending on what stage the brand is at. A new account leans harder on Proof to build credibility fast. An established brand with a loyal following can afford to lean into Perspective and People, because trust is already there — now it&apos;s about depth.
+        </p>
+
+        <h2>The real test of a good pillar system</h2>
+        <p>
+          You should be able to hand someone on the team a blank content calendar and one sentence — &quot;this week we need 2 Proof, 1 Perspective, 1 People&quot; — and they should be able to fill it without asking you what to post. That&apos;s the actual output of doing this work properly: not a prettier grid, but a team that doesn&apos;t need you in the room to stay consistent.
+        </p>
+      </div>
+    )
+  },
   "social-media-content-calendar-template": {
     title: "Social Media Content Calendar Template for Service Businesses",
     slug: "social-media-content-calendar-template",
