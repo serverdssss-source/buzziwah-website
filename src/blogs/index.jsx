@@ -3,6 +3,150 @@ import { useEffect } from "react";
 import "./Blogs.css";
 
 export const BLOGS_DATA = {
+  "social-media-content-calendar-template": {
+    title: "Social Media Content Calendar Template for Service Businesses",
+    slug: "social-media-content-calendar-template",
+    date: "July 14, 2026",
+    readTime: "4 min read",
+    author: "Buzziwah",
+    category: "Social Media",
+    image: "/blog_imgs/Content Calendar Template blog.png",
+    description: "A practical social media calendar structure for service businesses you can copy and start using this week.",
+    content: (
+      <div className="blog-content-body">
+        <p>
+          If you run a service business — a salon, a clinic, a consultancy, an agency — your social media probably looks like this: silence for two weeks, then three posts in one day because someone finally remembered. A content calendar fixes that. Not with more work, but with less decision-making in the moment.
+        </p>
+        <p>
+          Here&apos;s a practical calendar structure you can copy and start using this week.
+        </p>
+
+        <h2>Why service businesses need a different calendar than product brands</h2>
+        <p>
+          Product brands can post the same product photo from ten angles and still get engagement. Service businesses sell trust, expertise, and outcomes — things you can&apos;t photograph directly. Your calendar needs to work harder to make the invisible visible: the process, the people, the results.
+        </p>
+        <p>
+          That means your content mix should lean less on &ldquo;here&apos;s our offer&rdquo; and more on proof, personality, and problem-solving.
+        </p>
+
+        <h2>The 5-bucket weekly framework</h2>
+        <p>
+          Instead of planning post-by-post, plan by bucket. Assign each day of the week a content type, and you never start from a blank page.
+        </p>
+        
+        <h3>Monday — Educational</h3>
+        <p>
+          Answer one question your customers actually ask you. A skincare clinic might post &ldquo;how often should you actually get a facial.&rdquo; A consultancy might post &ldquo;the one metric most founders ignore.&rdquo; This builds authority and is your most shareable content type.
+        </p>
+
+        <h3>Tuesday — Behind the scenes</h3>
+        <p>
+          Show the process, the team, or the workspace. People trust businesses they can see inside. This is also your easiest content to shoot — no scripting required.
+        </p>
+
+        <h3>Wednesday — Social proof</h3>
+        <p>
+          Client testimonials, before/afters, results, reviews. For service businesses, this is the single highest-converting content type because it does the trust-building your sales page can&apos;t.
+        </p>
+
+        <h3>Thursday — Engagement/Community</h3>
+        <p>
+          Polls, questions, &ldquo;this or that,&rdquo; local events, or reacting to something relevant in your industry or city. Lower production effort, higher interaction.
+        </p>
+
+        <h3>Friday — Offer/CTA</h3>
+        <p>
+          This is the only day you directly promote — a service, an offer, a booking link, a seasonal push. Because you&apos;ve spent four days building trust, this post doesn&apos;t feel like an ad.
+        </p>
+
+        <p>
+          Weekends can be lighter — reshare top-performing content, or skip if your audience isn&apos;t active then (check your insights instead of assuming).
+        </p>
+
+        <h2>Monthly theme layer</h2>
+        <p>
+          On top of the weekly buckets, assign each month a theme tied to your business calendar — a seasonal service, a local event, a new team member, an anniversary. This keeps content from feeling repetitive month over month even though the bucket structure stays the same.
+        </p>
+
+        <h2>A simple tracking template</h2>
+        <div style={{ overflowX: 'auto' }}>
+          <table>
+            <thead>
+              <tr>
+                <th>Date</th>
+                <th>Bucket</th>
+                <th>Platform</th>
+                <th>Format (Reel/Post/Story)</th>
+                <th>Caption idea</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td></td>
+                <td>Educational</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>Draft/Scheduled/Posted</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>Behind the scenes</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>Social proof</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>Engagement</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>Offer/CTA</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p>
+          Run this in a simple Sheet or Notion table. You don&apos;t need scheduling software until you&apos;re posting on 3+ platforms consistently — a spreadsheet with a status column is enough to start.
+        </p>
+
+        <h2>Batching: the real unlock</h2>
+        <p>
+          The calendar only works if you batch content instead of creating daily. Block 2–3 hours every two weeks to shoot behind-the-scenes clips, collect testimonials, and draft captions for the next two weeks in one sitting. Posting daily in real time is what causes the burnout that kills consistency in the first place.
+        </p>
+
+        <h2>Common mistake to avoid</h2>
+        <p>
+          Don&apos;t let the calendar become 80% promotional. If every post is &ldquo;book now,&rdquo; you&apos;re asking for attention without earning it first. The 1-in-5 offer ratio above exists because service businesses need to demonstrate expertise and trust before asking for the sale — unlike impulse-buy products.
+        </p>
+        
+        <hr className="my-8 border-gray-700" />
+
+        <p>
+          <strong>Quick start:</strong> Pick your five weekly buckets, fill next week&apos;s slots in the tracking table, and batch-shoot on a Sunday. Consistency beats creativity for the first 90 days — the polish can come later.
+        </p>
+      </div>
+    )
+  },
   "wordpress-vs-shopify-which-one-is-more-powerful": {
     title: "WordPress vs Shopify: Which One is More Powerful?",
     slug: "wordpress-vs-shopify-which-one-is-more-powerful",
