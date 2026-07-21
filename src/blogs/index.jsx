@@ -464,6 +464,140 @@ export const BLOGS_DATA = {
         </p>
       </div>
     )
+  },
+  "reels-first-content-calendar": {
+    title: "Reels-First Content Calendar: Adapting Your Pillars for Short-Form Video",
+    slug: "reels-first-content-calendar",
+    date: "July 21, 2026",
+    readTime: "4 min read",
+    author: "Buzziwah",
+    category: "Social Media",
+    image: "/blog_imgs/img-Reels-First Content Calendar blog.png",
+    description: "Most content calendars are built the same way: pick a pillar, pick a day, fill in a caption. That works fine when your main output is static posts. It breaks down the moment Reels becomes your main growth channel.",
+    content: (
+      <div className="blog-content-body">
+        <p>
+          Most content calendars are built the same way: pick a pillar, pick a day, fill in a caption. That works fine when your main output is static posts. It breaks down the moment Reels becomes your main growth channel — because a Reel isn&apos;t a caption with a video attached. It needs its own planning logic.
+        </p>
+        <p>
+          If you&apos;ve already built out your content pillars and a general calendar, this is about rebuilding that calendar around Reels as the primary format, not an afterthought squeezed in between static posts.
+        </p>
+
+        <h2>Why a Regular Calendar Doesn&apos;t Work for Reels</h2>
+        <p>
+          A static post calendar usually plans by <em>topic</em> — Monday is educational, Wednesday is a testimonial, Friday is an offer. That&apos;s fine when execution is just &quot;write a caption and pick an image.&quot;
+        </p>
+        <p>
+          Reels add three extra layers a normal calendar doesn&apos;t account for:
+        </p>
+        <ul>
+          <li><strong>Format</strong> — talking head, voiceover + b-roll, text-on-screen, POV, before/after</li>
+          <li><strong>Production complexity</strong> — some Reels take 10 minutes to shoot, others need a full setup, multiple takes, or editing time</li>
+          <li><strong>Trend timing</strong> — a sound or format only has a short window before it&apos;s stale</li>
+        </ul>
+        <p>
+          Plan Reels the same way you plan static posts, and you&apos;ll end up either overcommitting to elaborate shoots every single day, or defaulting to the same one or two easy formats out of fatigue.
+        </p>
+
+        <h2>Rebuilding the Calendar Around Reels</h2>
+
+        <h3>1. Assign a format to each pillar, not just a topic</h3>
+        <p>
+          For every pillar, decide in advance which Reels formats it naturally fits. This removes the &quot;what do I even film&quot; decision on shoot day.
+        </p>
+        <ul>
+          <li><strong>Educational</strong> → talking head or text-on-screen with voiceover</li>
+          <li><strong>Behind-the-scenes</strong> → raw b-roll, minimal editing, POV style</li>
+          <li><strong>Testimonial/social proof</strong> → voiceover over client footage or screenshots, or a quick client quote on screen</li>
+          <li><strong>Offer/promotional</strong> → before/after, quick demo, or a direct-to-camera pitch</li>
+        </ul>
+        <p>
+          Now when your calendar says &quot;Tuesday: educational pillar,&quot; you already know it means a 30-second talking-head Reel — not a blank page.
+        </p>
+
+        <h3>2. Group by production effort, not by day of week</h3>
+        <p>
+          Instead of assigning pillars evenly across the week, group your week by how much effort each Reel takes:
+        </p>
+        <ul>
+          <li><strong>Low effort</strong> (phone, no setup, one take) — good for 3-4 days a week</li>
+          <li><strong>Medium effort</strong> (some editing, b-roll, voiceover) — good for 1-2 days a week</li>
+          <li><strong>High effort</strong> (scripted, multiple shots, trending audio sync) — good for 1 day a week, maximum</li>
+        </ul>
+        <p>
+          This keeps your week realistic. Most service businesses fail at Reels consistency not because they lack ideas, but because they plan a week that assumes every day is a high-effort shoot day.
+        </p>
+
+        <h3>3. Build in a trend slot, separate from your pillar slots</h3>
+        <p>
+          Trending sounds and formats don&apos;t respect your pillar schedule — they show up when they show up, and they expire fast. Rather than forcing a trend into whatever pillar&apos;s turn it is, keep one flexible slot per week specifically for &quot;whatever&apos;s trending right now, adapted to our brand.&quot; This is where your Reels Idea Bank&apos;s hook and sound notes get used in real time.
+        </p>
+
+        <h3>4. Batch by format, not by pillar</h3>
+        <p>
+          When it&apos;s time to actually film, batch all your talking-head Reels together in one sitting, then all your b-roll/demo Reels in another. Switching formats mid-shoot (changing lighting, setup, energy) wastes far more time than switching topics. Your calendar should tell you which format day it is, so you know exactly what to set up for.
+        </p>
+
+        <h3>5. Leave room to post outside the plan</h3>
+        <p>
+          Reels rewards reacting fast to what&apos;s working right now — a comment that blew up, a trend that&apos;s moving. Don&apos;t fill every single day in advance. Leave 1 flexible slot a week that isn&apos;t pre-assigned to a pillar or format, so you can post something timely without disrupting the rest of the calendar.
+        </p>
+
+        <h2>What a Reels-First Week Might Look Like</h2>
+        <div style={{ overflowX: 'auto' }}>
+          <table>
+            <thead>
+              <tr>
+                <th>Day</th>
+                <th>Pillar</th>
+                <th>Format</th>
+                <th>Effort</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Mon</td>
+                <td>Educational</td>
+                <td>Talking head</td>
+                <td>Low</td>
+              </tr>
+              <tr>
+                <td>Tue</td>
+                <td>Behind-the-scenes</td>
+                <td>Raw b-roll/POV</td>
+                <td>Low</td>
+              </tr>
+              <tr>
+                <td>Wed</td>
+                <td>Testimonial</td>
+                <td>Voiceover + client footage</td>
+                <td>Medium</td>
+              </tr>
+              <tr>
+                <td>Thu</td>
+                <td>Trending/flexible</td>
+                <td>Whatever fits that week&apos;s trend</td>
+                <td>Low-Medium</td>
+              </tr>
+              <tr>
+                <td>Fri</td>
+                <td>Offer</td>
+                <td>Before/after or demo</td>
+                <td>Medium-High</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p>
+          This is a starting template, not a rulebook — the point is that every day already tells you the format and effort level, so there&apos;s no fresh decision-making required on shoot day.
+        </p>
+
+        <h2>Where This Fits</h2>
+        <p>
+          Your pillars tell you <em>what</em> to post about. Your general calendar tells you <em>when</em>. This Reels-first version tells you <em>how</em> to actually produce it — format, effort, and timing — which is where most content plans quietly fall apart. Pair this with your Reels Idea Bank, and shoot day becomes: open the bank, filter by today&apos;s pillar and format, film, done.
+        </p>
+      </div>
+    )
   }
 };
 
