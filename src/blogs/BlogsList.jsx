@@ -54,7 +54,9 @@ export default function BlogsList() {
     window.scrollTo(0, 0);
   }, []);
 
-  const filteredBlogs = Object.keys(BLOGS_DATA).filter((key) => {
+  const filteredBlogs = Object.keys(BLOGS_DATA)
+    .sort((a, b) => new Date(BLOGS_DATA[b].date) - new Date(BLOGS_DATA[a].date))
+    .filter((key) => {
     const item = BLOGS_DATA[key];
     const matchesSearch =
       item.title.toLowerCase().includes(searchQuery.toLowerCase()) ||

@@ -678,6 +678,7 @@ export default function BlogPage({ id }) {
             <h3>Related Articles</h3>
             <div className="blogs-grid">
               {Object.keys(BLOGS_DATA)
+                .sort((a, b) => new Date(BLOGS_DATA[b].date) - new Date(BLOGS_DATA[a].date))
                 .filter((key) => key !== blogId)
                 .slice(0, 3)
                 .map((key) => {
