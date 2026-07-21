@@ -472,7 +472,7 @@ export const BLOGS_DATA = {
     readTime: "4 min read",
     author: "Buzziwah",
     category: "Social Media",
-    image: "/blog_imgs/img-Reels-First Content Calendar blog.png",
+    image: "/blog_imgs/Reels-First Content Calendar blog.png",
     description: "Most content calendars are built the same way: pick a pillar, pick a day, fill in a caption. That works fine when your main output is static posts. It breaks down the moment Reels becomes your main growth channel.",
     content: (
       <div className="blog-content-body">
