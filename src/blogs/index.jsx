@@ -3,6 +3,121 @@ import { useEffect } from "react";
 import "./Blogs.css";
 
 export const BLOGS_DATA = {
+  "full-funnel-marketing-stack-bengaluru": {
+    title: "Full-Funnel Marketing Stack for a Bengaluru Service Business: SEO + Paid + Social + Content Working Together",
+    slug: "full-funnel-marketing-stack-bengaluru",
+    date: "July 22, 2026",
+    readTime: "5 min read",
+    author: "Buzziwah",
+    category: "Marketing Strategy",
+    image: "/blog_imgs/You Don't Have a Marketing Problem blog.png",
+    description: "Most service businesses in Bengaluru run marketing like a buffet. A full-funnel stack means SEO, paid, social, and content are built to hand off to each other.",
+    content: (
+      <div className="blog-content-body">
+        <p>
+          Most service businesses in Bengaluru run marketing like a buffet. A bit of Instagram here, a Google ad there, an SEO guy on retainer who never talks to the social team, and a freelance copywriter who&apos;s never seen the ad copy. Everyone&apos;s doing their piece. Nobody&apos;s looking at the whole plate.
+        </p>
+        <p>
+          That&apos;s not a strategy. That&apos;s four vendors sending four invoices.
+        </p>
+        <p>
+          A full-funnel stack means SEO, paid, social, and content are built to hand off to each other — not run as four separate businesses under one brand name. Here&apos;s what that actually looks like, and why most Bengaluru service businesses (clinics, salons, gyms, consultancies, agencies, real estate, anything local-service) are leaving money on the table by not connecting them.
+        </p>
+
+        <h2>Why &quot;full-funnel&quot; isn&apos;t just a buzzword</h2>
+        <p>
+          Think about how a real customer actually finds and picks a service business:
+        </p>
+        <ol>
+          <li>They see something on Instagram or a friend mentions you — <strong>awareness</strong></li>
+          <li>They Google your name or your category (&quot;best dermatologist Indiranagar&quot;) — <strong>research</strong></li>
+          <li>They land on your website or Google Business profile and decide if you&apos;re legit — <strong>consideration</strong></li>
+          <li>They click an ad, DM you, or call — <strong>conversion</strong></li>
+          <li>If it went well, they post about you or refer someone — <strong>advocacy</strong>, which feeds back into step 1</li>
+        </ol>
+        <p>
+          Every one of these steps is a different channel. If your channels don&apos;t talk to each other, you get gaps: great Instagram content that no one can find on Google, a website that doesn&apos;t match your ad promise, paid campaigns that drive traffic to a page with weak copy. Each gap costs you a customer who was <em>this close</em>.
+        </p>
+
+        <h2>The four pieces, and what each one is actually for</h2>
+
+        <h3>SEO: the piece that works while you sleep</h3>
+        <p>
+          SEO isn&apos;t about ranking for its own sake — it&apos;s about being findable at the exact moment someone&apos;s ready to buy. For a Bengaluru service business, that mostly means local SEO: showing up when someone searches &quot;[your service] near me&quot; or &quot;[your service] in [your neighbourhood].&quot;
+        </p>
+        <p>
+          What this actually requires: a Google Business Profile that&apos;s fully filled out and updated, on-page content that matches how people actually search (not how you&apos;d describe your own business), and a handful of genuinely useful blog posts that answer the questions your front desk gets asked every week.
+        </p>
+        <p>
+          SEO is slow. It&apos;s also the only channel where you stop paying rent once you rank.
+        </p>
+
+        <h3>Paid media: the piece that works right now</h3>
+        <p>
+          Paid is the opposite of SEO — it&apos;s rent, not equity. You pay, you get shown, you stop paying, you disappear. That&apos;s not a flaw, it&apos;s the point: paid is for when you need results <em>this month</em>, not in six.
+        </p>
+        <p>
+          Use paid to fill gaps SEO can&apos;t fill yet (you&apos;re new, you&apos;re in a hyper-competitive category) and to retarget people who&apos;ve already shown interest — visited your site, watched a reel, opened a DM and went quiet. Retargeting budgets almost always outperform cold targeting for local service businesses, and most people skip it entirely.
+        </p>
+
+        <h3>Social: the piece that builds trust before the sale</h3>
+        <p>
+          Social rarely closes the sale directly. What it does is answer the question every prospect is silently asking: <em>is this a real, competent business I can trust?</em> Reels, before-afters, behind-the-scenes, client stories — all of it is trust-building inventory that gets checked the moment someone considers buying, even if they found you through Google or a friend.
+        </p>
+        <p>
+          This is also where your content pillar system earns its keep — if you&apos;ve already built one, this is the channel it should be feeding first.
+        </p>
+
+        <h3>Content: the connective tissue</h3>
+        <p>
+          Content is the one piece that isn&apos;t really its own channel — it&apos;s the raw material the other three run on. The blog post that ranks on SEO. The caption that makes the reel land. The landing page copy the paid ad points to. The FAQ that pre-answers objections before a DM conversation starts.
+        </p>
+        <p>
+          Weak content is why the other three channels underperform even when the strategy is right. A perfectly targeted ad pointing to a page with generic copy is still a wasted ad.
+        </p>
+
+        <h2>How the four actually connect (the part everyone skips)</h2>
+        <p>
+          Here&apos;s what a connected stack looks like in practice, using a made-up but typical example — a Bengaluru physiotherapy clinic:
+        </p>
+        <ul>
+          <li><strong>Content</strong> produces a blog post: &quot;Lower Back Pain After Long Work-From-Home Hours: When to See a Physio&quot;</li>
+          <li><strong>SEO</strong> makes sure that post is structured to rank for the searches people actually type in</li>
+          <li><strong>Social</strong> turns the same post into a 3-part reel series and a carousel — same message, different format</li>
+          <li><strong>Paid</strong> retargets everyone who watched the reel or read the blog with a &quot;book a free consult&quot; ad</li>
+          <li>Anyone who books and has a good experience becomes the review and referral that feeds back into <strong>SEO</strong> (Google reviews) and <strong>social</strong> (a client story)</li>
+        </ul>
+        <p>
+          Notice: one piece of content, four channels, one funnel. Nobody made this content four separate times. Nobody&apos;s guessing what the other team is doing.
+        </p>
+
+        <h2>What to actually do with this if you&apos;re running the marketing yourself</h2>
+        <p>
+          You don&apos;t need to launch all four channels perfectly on day one. Sequence it:
+        </p>
+        <ol>
+          <li><strong>Start with content and SEO together</strong> — they&apos;re the cheapest and most durable. Pick 4-6 questions your customers actually ask and answer them properly on your site.</li>
+          <li><strong>Layer in social</strong> using the same core ideas from your content, reformatted. Don&apos;t write two separate content calendars — one source, multiple formats.</li>
+          <li><strong>Add paid last</strong>, and point it only at pages/content that already exist and already convert. Paid budget spent on a weak landing page is paid budget wasted.</li>
+          <li><strong>Close the loop</strong> by asking every happy customer for a review or a shareable moment — feed it back into step 1 and 2.</li>
+        </ol>
+
+        <h2>The real cost of not doing this</h2>
+        <p>
+          The businesses that treat these four as separate line items usually aren&apos;t failing loudly — they&apos;re just quietly overpaying. Paid ads with worse conversion rates because the landing page is thin. Social accounts with decent engagement that never converts to enquiries. SEO content that ranks for the wrong questions because nobody checked what the paid team&apos;s keyword data was already showing.
+        </p>
+        <p>
+          None of it&apos;s broken. It&apos;s just disconnected. And disconnected marketing costs more per customer than connected marketing, every single time — you&apos;re just paying for it in inefficiency instead of a bigger invoice.
+        </p>
+
+        <hr className="my-8 border-gray-700" />
+
+        <p>
+          <em>Need this stack figured out for your business? That&apos;s exactly the kind of connected strategy we build at Buzziwah.</em>
+        </p>
+      </div>
+    )
+  },
   "building-a-content-pillar-system": {
     title: "Building a Content Pillar System: The 3-4 Buckets Every Brand Account Needs to Stay Consistent",
     slug: "building-a-content-pillar-system",
