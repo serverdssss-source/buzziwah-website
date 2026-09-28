@@ -3,6 +3,104 @@ import { useEffect } from "react";
 import "./Blogs.css";
 
 export const BLOGS_DATA = {
+  "digital-marketing-agency-in-bengaluru": {
+    title: "Digital Marketing Agency in Bengaluru That Connects SEO, Ads, Social and Content",
+    slug: "digital-marketing-agency-in-bengaluru",
+    date: "September 28, 2026",
+    readTime: "5 min read",
+    author: "Buzziwah",
+    category: "Digital Marketing",
+    image: "/blog_imgs/digital marketing.png",
+    description: "Buzziwah is a digital marketing agency in Bengaluru that runs branding, SEO, performance marketing, social media, websites, video, and content as one connected system — so each piece makes the others work harder.",
+    content: (
+      <div className="blog-content-body">
+        <p>
+          You&apos;re probably here because something isn&apos;t working. The website gets visits but no enquiries. The Instagram page is active but nobody&apos;s booking. The ads run every month and the numbers never quite justify the spend.
+        </p>
+        <p>
+          That&apos;s the moment most Bengaluru businesses start searching for a digital marketing agency. Buzziwah is a digital marketing agency in Bengaluru that runs branding, SEO, performance marketing, social media, websites, video, and content as one connected system, so each piece makes the others work harder. Here&apos;s what that looks like in practice.
+        </p>
+
+        <h2>The real problem isn&apos;t &quot;more marketing&quot;</h2>
+        <p>
+          Most businesses that come to an agency don&apos;t have a shortage of marketing activity. They have a shortage of connection between the activity.
+        </p>
+        <p>
+          The ads point to a page that doesn&apos;t match the promise. The social content says one thing and the website says another. The SEO writer has never spoken to the person running the campaigns. Every vendor is doing their job. Nobody is looking at the whole picture, and the customer feels that gap even if they can&apos;t name it.
+        </p>
+        <p>
+          That&apos;s the gap we&apos;re built to close.
+        </p>
+
+        <h2>What we actually do for you</h2>
+        <p>
+          <strong>Branding &amp; Identity.</strong> Before anything gets promoted, it needs a point of view. We build the name, visual system, and messaging that answer one question: why should someone choose you over the five other options on their screen?
+        </p>
+        <p>
+          <strong>Website Development.</strong> Fast, responsive sites built to convert visitors into enquiries, not just to look good in a portfolio.
+        </p>
+        <p>
+          <strong>SEO.</strong> The technical and on-page work that gets you found by people already searching for what you sell, and keeps you found.
+        </p>
+        <p>
+          <strong>Performance Marketing.</strong> Paid campaigns across search, social, and display, built around your cost per lead and return on spend, with reporting you can read without a translator.
+        </p>
+        <p>
+          <strong>Social Media Management.</strong> Consistent, on-brand presence with real community management, so your page builds trust before the sale ever happens.
+        </p>
+        <p>
+          <strong>Content Solutions.</strong> Website copy, blogs, and campaign content that sound like your business and give every other channel something worth amplifying.
+        </p>
+        <p>
+          <strong>Video Production.</strong> Brand films, product videos, and ad creative made to stop the scroll, with a background in cinema-level storytelling.
+        </p>
+        <p>
+          <strong>Influencer Marketing.</strong> The right creators, matched to your audience, so you borrow trust instead of buying it from scratch.
+        </p>
+        <p>
+          <strong>Outdoor Marketing.</strong> High-visibility placements that give your digital efforts a physical presence in the city.
+        </p>
+        <p>
+          You don&apos;t need all nine. Most businesses start with two or three and add as results come in.
+        </p>
+
+        <h2>Why the connected approach wins</h2>
+        <p>
+          Here&apos;s the simplest way to see it. When one team handles your website, your ads, and your content, three things happen:
+        </p>
+        <ul>
+          <li>The ad promise matches the landing page, so fewer clicks get wasted</li>
+          <li>The content that ranks in search is also the content that performs on social</li>
+          <li>The data from paid campaigns tells the content team what people actually respond to</li>
+        </ul>
+        <p>
+          Split those across three vendors and each one optimises its own number while the customer journey leaks in between. Connected work costs less per customer over time, because you stop paying for the same gaps twice.
+        </p>
+
+        <h2>What working with Buzziwah looks like</h2>
+        <p>
+          We start by understanding your business, your customers, and what&apos;s currently holding growth back, before recommending anything. If a service isn&apos;t what you need right now, we&apos;ll say so.
+        </p>
+        <p>
+          From there, we agree on priorities, build the plan, and report on what&apos;s moving, in plain language. We work with businesses across sectors including healthcare, hospitality, education, e-commerce, construction, and entertainment, so we&apos;ve seen what tends to work in very different customer journeys.
+        </p>
+
+        <h2>Ready to fix the gap?</h2>
+        <p>
+          If your marketing feels busy but disconnected, the fastest next step is a conversation. Tell us what you sell, who you&apos;re trying to reach, and what&apos;s not working, and we&apos;ll tell you where we&apos;d start.
+        </p>
+        <p>
+          <strong><a href="/contact">Book a free strategy call →</a></strong>
+        </p>
+
+        <hr className="my-8 border-gray-700" />
+
+        <p>
+          <em>Buzziwah is the digital marketing arm of Sripada Studios, based in Bengaluru.</em>
+        </p>
+      </div>
+    )
+  },
   "gpt-6-astra-what-actually-matters-for-marketing": {
     title: "GPT-6 Astra Just Changed What \"Marketing Agency\" Means. Here's What Actually Matters.",
     slug: "gpt-6-astra-what-actually-matters-for-marketing",
