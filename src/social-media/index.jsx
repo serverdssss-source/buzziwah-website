@@ -191,8 +191,8 @@ const HeroSection = () => {
         </div>
 
         {/* Hero headline with icons */}
-        <div style={{
-          marginBottom: '24px',
+        <h1 style={{
+          margin: '0 0 24px',
           display: 'inline-flex',
           flexDirection: 'row',
           alignItems: 'center',
@@ -209,8 +209,9 @@ const HeroSection = () => {
         }}>
 
           <span>Social Media Marketing</span>
+          <span className="sr-only"> Agency in Bengaluru</span>
 
-        </div>
+        </h1>
 
         {/* Subtitle */}
         <p style={{

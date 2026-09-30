@@ -23,6 +23,7 @@ const PageEnding = lazy(() => import('./components/PageEnding'));
 const Careers = lazy(() => import('./carrer/carrer'));
 const BlogsList = lazy(() => import('./blogs/BlogsList'));
 const BlogPage = lazy(() => import('./blogs'));
+const NotFound = lazy(() => import('./components/NotFound'));
 
 
 function App() {
@@ -86,8 +87,10 @@ function App() {
                 return <Careers />;
               case '/blogs':
                 return <BlogsList />;
-              default:
+              case '':
                 return <Home />;
+              default:
+                return <NotFound />;
             }
           })()}
           {path !== '/about' && !isCaseStudy && <PageEnding showContactForm={path !== '/contact' && path !== '/case-studies' && path !== '/seo-case-studies' && !isBlog} isCareers={path === '/careers' || path === '/carrer'} />}

@@ -145,7 +145,7 @@ export default function CaseStudiesList() {
         {/* Header Block */}
         <header className="csl-header">
           <span className="csl-kicker">STRATEGY · CREATIVE · RESULTS</span>
-          <h1 className="csl-title">Our Case Studies</h1>
+          <h1 className="csl-title">Our Case Studies<span className="sr-only">: Buzziwah Digital Marketing Results</span></h1>
           <p className="csl-desc">
             Explore how we build digital ecosystems, scale high-impact paid campaigns, and craft memorable visual branding that drives business velocity.
           </p>

@@ -4,8 +4,8 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "node scripts/generate-sitemap.js && vite build && node scripts/prerender.js",
+    "dev": "node scripts/optimize-blog-images.js && vite",
+    "build": "node scripts/optimize-blog-images.js && vite build && node scripts/prerender.js",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
     "optimize-images": "node scripts/optimize-images.js"

@@ -14,6 +14,8 @@ export default defineConfig({
     sourcemap: false,
     assetsInlineLimit: 4096,
     reportCompressedSize: false,
+    // Used by scripts/prerender.js to preload each page's CSS/JS chunk
+    manifest: true,
   },
   optimizeDeps: {
     include: ['react', 'react-dom'],

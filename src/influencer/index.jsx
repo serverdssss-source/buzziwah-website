@@ -398,6 +398,7 @@ const InfluencerPage = () => {
                   radius={100}
                   falloff="linear"
                 />
+                <span className="sr-only"> Services in Bengaluru</span>
               </h1>
               <div className="h-[2px] w-24 bg-[#adfa3b] my-4 rounded-full" />
               <p className="coded-page-banner-subtitle text-center max-w-[650px] mx-auto">

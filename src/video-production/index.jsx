@@ -207,6 +207,7 @@ const VPHeroSection = () => {
         {/* Main heading */}
         <div style={{ textAlign: 'center', marginBottom: '16px' }}>
           <h1 style={{ fontFamily: "'Bebas Neue',Impact,sans-serif", fontSize: 'clamp(52px,9vw,110px)', lineHeight: 0.88, margin: 0, letterSpacing: '0.02em' }}>
+            <span className="sr-only">Video Production Agency in Bengaluru: </span>
             <span style={{ color: '#adfa3b', WebkitTextStroke: '2px white', display: 'block' }}>CONTENT IS KING.</span>
             <span style={{ color: 'transparent', WebkitTextStroke: '2px #a855f7', display: 'block' }}>PRODUCTION IS CROWN.</span>
           </h1>

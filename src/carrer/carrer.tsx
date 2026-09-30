@@ -36,9 +36,9 @@ export default function Careers() {
     const filtered = filter === "All" ? openings : openings.filter(o => o.dept === filter)
 
     const heroRef = useRef<HTMLElement>(null)
-    const h1aRef = useRef<HTMLDivElement>(null)
-    const h1bRef = useRef<HTMLDivElement>(null)
-    const h1cRef = useRef<HTMLDivElement>(null)
+    const h1aRef = useRef<HTMLSpanElement>(null)
+    const h1bRef = useRef<HTMLSpanElement>(null)
+    const h1cRef = useRef<HTMLSpanElement>(null)
     const subRef = useRef<HTMLDivElement>(null)
     const ctaRef = useRef<HTMLDivElement>(null)
     const mainRef = useRef<HTMLElement>(null)
@@ -250,32 +250,35 @@ export default function Careers() {
 
                 <div className="relative z-10 px-5 sm:px-8 md:px-10 lg:pr-12 lg:py-24 lg:ml-[18%] py-16">
 
-                    <div className="overflow-hidden mb-1">
-                        <div ref={h1aRef} className="opacity-0">
-                            <h1
-                                className="font-[family-name:var(--font-display)] font-black uppercase text-white leading-[0.85]"
+                    {/* One <h1> for the page; the three lines are block spans so they still animate separately */}
+                    <h1>
+                    <span className="sr-only">Careers at Buzziwah, Bengaluru: </span>
+                    <span className="block overflow-hidden mb-1">
+                        <span ref={h1aRef} className="block opacity-0">
+                            <span
+                                className="block font-[family-name:var(--font-display)] font-black uppercase text-white leading-[0.85]"
                                 style={{ fontSize: "clamp(64px,11vw,80px)", letterSpacing: "-0.02em" }}
                             >
                                 DON&apos;T
-                            </h1>
-                        </div>
-                    </div>
+                            </span>
+                        </span>
+                    </span>
 
-                    <div className="overflow-hidden mb-1" style={{ paddingLeft: "clamp(20px,4vw,72px)" }}>
-                        <div ref={h1bRef} className="opacity-0">
-                            <h1
-                                className="font-[family-name:var(--font-display)] font-black uppercase italic leading-[0.85] text-[#adfa3b]"
+                    <span className="block overflow-hidden mb-1" style={{ paddingLeft: "clamp(20px,4vw,72px)" }}>
+                        <span ref={h1bRef} className="block opacity-0">
+                            <span
+                                className="block font-[family-name:var(--font-display)] font-black uppercase italic leading-[0.85] text-[#adfa3b]"
                                 style={{ fontSize: "clamp(64px,11vw,80px)", letterSpacing: "-0.02em" }}
                             >
-                                APPLY.
-                            </h1>
-                        </div>
-                    </div>
+                                {" "}APPLY.
+                            </span>
+                        </span>
+                    </span>
 
-                    <div className="overflow-hidden">
-                        <div ref={h1cRef} className="opacity-0">
-                            <h1
-                                className="font-[family-name:var(--font-display)] font-black uppercase leading-[0.85]"
+                    <span className="block overflow-hidden">
+                        <span ref={h1cRef} className="block opacity-0">
+                            <span
+                                className="block font-[family-name:var(--font-display)] font-black uppercase leading-[0.85]"
                                 style={{
                                     fontSize: "clamp(64px,11vw,80px)",
                                     letterSpacing: "-0.02em",
@@ -283,10 +286,11 @@ export default function Careers() {
                                     color: "transparent",
                                 }}
                             >
-                                BELONG.
-                            </h1>
-                        </div>
-                    </div>
+                                {" "}BELONG.
+                            </span>
+                        </span>
+                    </span>
+                    </h1>
 
                     <div ref={subRef} className="opacity-0 mt-2 sm:mt-2 md:mt-6 flex flex-col md:flex-row gap-6 sm:gap-8 md:gap-10 items-start">
                         <div className="flex items-start gap-4 max-w-sm">

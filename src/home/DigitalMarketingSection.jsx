@@ -108,6 +108,7 @@ const DigitalMarketingSection = () => {
                 transform: 'skewX(-8deg)',
               }}
             >
+              <span className="sr-only">Buzziwah, a digital marketing agency in Bengaluru: </span>
               {isMobile ? (
                 <>
                   We're the

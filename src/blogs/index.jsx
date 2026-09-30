@@ -1,8 +1,74 @@
 /* eslint-disable react/prop-types */
 import { useEffect } from "react";
 import "./Blogs.css";
+import { optimizedBlogImage, fallbackToOriginal } from "./blogImage";
 
 export const BLOGS_DATA = {
+  "meta-business-agent-instagram-customer-replies": {
+    title: "Meta Business Agents Are Coming to Instagram: What That Means for Customer Replies",
+    slug: "meta-business-agent-instagram-customer-replies",
+    date: "September 30, 2026",
+    readTime: "4 min read",
+    author: "Buzziwah",
+    category: "Social Media",
+    image: "/blog_imgs/Meta.png",
+    description: "Meta Business Agent is an AI assistant that answers customer DMs on Instagram, WhatsApp, and Messenger. Here's what it does, whether it's free, and what Bengaluru businesses should do about it today.",
+    content: (
+      <div className="blog-content-body">
+        <p>
+          Meta Business Agent is an AI assistant that businesses can use to handle customer conversations directly inside Instagram DMs, WhatsApp, and Messenger. It can answer questions, recommend products, schedule appointments, qualify leads, and complete transactions on a business&apos;s behalf, without a person manually replying to every message.
+        </p>
+        <p>
+          Meta launched it globally on June 3, 2026, after testing it first with small businesses in India, Mexico, and Brazil. That means Bengaluru businesses were part of the earliest group Meta built this for, not an afterthought added later.
+        </p>
+
+        <h2>What does Meta Business Agent actually do?</h2>
+        <p>
+          Inside Instagram DMs, the agent can field incoming customer questions, suggest items from a business&apos;s product catalog, schedule appointments, vet potential leads before they reach a human, and complete a sale end to end. Meta describes the long-term goal as agents that eventually help run more of a business&apos;s day-to-day operations, though the company has said that depends on further AI improvements.
+        </p>
+
+        <h2>Is Meta Business Agent available on Instagram right now?</h2>
+        <p>
+          Access is rolling out in phases. The first phase went to selected businesses already using WhatsApp Business, Instagram Pro accounts, Messenger, and Meta Business Suite, rather than to every business account at once. If it isn&apos;t available in your account yet, that&apos;s expected, not a sign something&apos;s wrong on your end.
+        </p>
+
+        <h2>Is Meta Business Agent free?</h2>
+        <p>
+          It&apos;s currently free to use. Meta has said it plans to introduce subscription pricing for these AI tools in the coming months, so free access now isn&apos;t guaranteed to stay that way. Businesses that start using it early get to build their setup before any cost is attached.
+        </p>
+
+        <h2>What does this actually change for how a business handles Instagram DMs?</h2>
+        <p>
+          Right now, most Bengaluru service businesses handle Instagram DMs the same way: a person checks messages a few times a day, replies when they can, and hopes nobody who messaged at 11 PM gives up and goes to a competitor instead. Meta Business Agent changes the default from &quot;reply when someone&apos;s free&quot; to &quot;reply instantly, then hand off to a person when it matters.&quot;
+        </p>
+        <p>
+          For a business that gets enquiries through DMs, that gap between message and reply is often the exact moment a customer decides whether to wait or move on. An instant, accurate first response doesn&apos;t replace a human conversation. It keeps the customer from leaving before that conversation has a chance to happen.
+        </p>
+
+        <h2>What should a business actually do about this today?</h2>
+        <p>
+          You don&apos;t need to overhaul anything immediately, but a few things are worth doing now rather than waiting:
+        </p>
+        <p>
+          <strong>Check whether it&apos;s available on your account.</strong> If you&apos;re on Instagram Pro or already using Meta Business Suite, you may already have access to test.
+        </p>
+        <p>
+          <strong>Get your product catalog and FAQs in order.</strong> The agent works from whatever information it&apos;s given. A messy or outdated catalog means messy or outdated answers going out under your business&apos;s name.
+        </p>
+        <p>
+          <strong>Decide where the handoff to a human happens.</strong> Simple questions like hours, pricing, and availability are safe for an agent to answer alone. Anything involving a complaint, a custom request, or a genuinely unhappy customer should route to a person quickly, not get stuck in an automated loop.
+        </p>
+        <p>
+          <strong>Don&apos;t wait for it to be perfect before trying it.</strong> Early access while it&apos;s free is a low-risk way to learn how it behaves with your specific customers, before a subscription cost or wider competition makes that testing window less convenient.
+        </p>
+
+        <h2>The takeaway</h2>
+        <p>
+          Meta Business Agent isn&apos;t a future feature to plan around eventually. It&apos;s live now, was tested first in markets that include India, and it directly targets the exact gap most local businesses have on Instagram: DMs that don&apos;t get answered fast enough. Businesses that test it early, with a clean catalog and a clear sense of when to hand off to a human, will have a real head start once it stops being optional to compete with.
+        </p>
+      </div>
+    )
+  },
   "digital-marketing-agency-in-bengaluru": {
     title: "Digital Marketing Agency in Bengaluru That Connects SEO, Ads, Social and Content",
     slug: "digital-marketing-agency-in-bengaluru",
@@ -1792,7 +1858,7 @@ export default function BlogPage({ id }) {
         {/* Featured Image */}
         <div className="blog-detail-hero-frame">
           <div className="blog-detail-hero-glow" />
-          <img src={data.image} alt={data.title} className="blog-detail-hero-img" />
+          <img src={optimizedBlogImage(data.image)} onError={fallbackToOriginal(data.image)} alt={data.title} className="blog-detail-hero-img" fetchpriority="high" />
         </div>
 
         {/* Article Body Content */}
@@ -1827,7 +1893,7 @@ export default function BlogPage({ id }) {
                       <div className="blog-card-glow" />
                       <div className="blog-media-frame">
                         <span className="blog-category-pill">{item.category}</span>
-                        <img src={item.image} alt={item.title} className="blog-media" />
+                        <img src={optimizedBlogImage(item.image)} onError={fallbackToOriginal(item.image)} alt={item.title} className="blog-media" loading="lazy" decoding="async" />
                         <div className="blog-media-overlay" />
                       </div>
                       <div className="blog-card-content">

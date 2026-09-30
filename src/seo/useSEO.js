@@ -1,8 +1,8 @@
-const BASE_URL = 'https://www.buzziwah.com';
-const DEFAULT_IMAGE = `${BASE_URL}/Buzziwah_FInal_Logo_White.png`;
+export const BASE_URL = 'https://www.buzziwah.com';
+export const DEFAULT_IMAGE = `${BASE_URL}/Buzziwah_FInal_Logo_White.png`;
 const SITE_NAME = 'Buzziwah';
 
-const PAGE_SEO = {
+export const PAGE_SEO = {
   '/': {
     title: 'Buzziwah — Digital Marketing Agency in Bengaluru | Branding, SEO & Performance Marketing',
     description: 'Buzziwah is Bengaluru\'s top digital marketing agency. We deliver branding, performance marketing, SEO, social media, web development, and cinema-to-digital campaigns that actually convert.',
@@ -140,7 +140,7 @@ const PAGE_SEO = {
 
 
 // Schema.org structured data per page
-const SCHEMAS = {
+export const SCHEMAS = {
   '/': [
     {
       '@context': 'https://schema.org',
@@ -290,7 +290,7 @@ const SCHEMAS = {
 };
 
 // AEO: FAQ schema for key pages (Answer Engine Optimization)
-const FAQ_SCHEMAS = {
+export const FAQ_SCHEMAS = {
   '/': {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
@@ -424,6 +424,11 @@ function injectSchema(schemas) {
 }
 
 export function applySEO(path) {
+  // Pages built by scripts/prerender.js already ship complete, page-specific
+  // head tags and schema. Overwriting them here would fall back to the
+  // homepage title for any blog/case study not listed in PAGE_SEO.
+  if (document.documentElement.hasAttribute('data-prerendered')) return;
+
   const normalizedPath = path.replace(/\/$/, '') || '/';
   const seo = PAGE_SEO[normalizedPath] || PAGE_SEO['/'];
   const canonical = `${BASE_URL}${normalizedPath === '/' ? '' : normalizedPath}`;

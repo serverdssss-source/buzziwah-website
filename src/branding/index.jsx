@@ -237,9 +237,9 @@ const Branding = () => {
               </figure>
               {page.cover ? (
                 <figure className="absolute inset-0 overflow-hidden bg-gradient-to-br from-[#0d0b1a] to-[#1a0f2e] [backface-visibility:hidden] rounded-r-[10px] shadow-[2px_2px_15px_-2px_rgba(0,0,0,0.2)] text-left px-6 py-8 sm:px-8 sm:py-10 border border-[#a855f7]/20">
-                  <h1 className="text-xl font-bold tracking-wide text-white sm:text-2xl font-['Montserrat']">
+                  <p className="text-xl font-bold tracking-wide text-white sm:text-2xl" style={{ fontFamily: "'Geom', sans-serif", fontWeight: 800 }}>
                     BUZZIWAH
-                  </h1>
+                  </p>
                   <p className="mt-2 text-xs uppercase tracking-[0.28em] text-[#adfa3b]">
                     Branding
                   </p>
@@ -417,9 +417,10 @@ const BrandingSolutionsSection = () => {
             </span>
             <IoSparkles className="text-3xl text-[#adfa3b]" />
           </div>
-          <h2 className="font-['Bebas_Neue','Impact',sans-serif] text-[clamp(48px,8vw,96px)] font-black uppercase leading-[0.9] mb-4 text-white">
+          <h1 className="font-['Bebas_Neue','Impact',sans-serif] text-[clamp(48px,8vw,96px)] font-black uppercase leading-[0.9] mb-4 text-white">
             <span className="text-[#a855f7]">BRAND</span> <span className="text-[#adfa3b]">SOLUTIONS</span>
-          </h2>
+            <span className="sr-only"> — Branding Agency in Bengaluru</span>
+          </h1>
           <p className="text-white/60 text-base max-w-2xl mx-auto leading-relaxed">
             Building brands that resonate, connect, and dominate their markets
           </p>

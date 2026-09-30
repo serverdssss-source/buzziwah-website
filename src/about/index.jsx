@@ -936,8 +936,9 @@ const About = () => {
 
         {/* ── FUNKY ABOUT HERO HEADING ── */}
         <div ref={containerRef} style={{ textAlign: 'center', position: 'relative', zIndex: 10, paddingBottom: '36px', paddingLeft: '16px', paddingRight: '16px' }}>
-          <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', alignItems: 'center', gap: 'clamp(12px, 2vw, 24px)', marginBottom: '18px' }}>
-            <div style={{ fontFamily: "'Bebas Neue','Impact','Arial Black',sans-serif", fontSize: 'clamp(58px,11vw,130px)', color: '#adfa3b', WebkitTextStroke: '3px white', textShadow: '8px 8px 0 rgba(0,0,0,0.65)', letterSpacing: '0.04em', lineHeight: 0.85, animation: 'aboutBebasIn 0.8s ease-out both' }}>
+          <h1 style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', alignItems: 'center', gap: 'clamp(12px, 2vw, 24px)', margin: '0 0 18px' }}>
+            <span className="sr-only">About Buzziwah, a digital marketing agency in Bengaluru: </span>
+            <span style={{ display: 'block', fontFamily: "'Bebas Neue','Impact','Arial Black',sans-serif", fontSize: 'clamp(58px,11vw,130px)', color: '#adfa3b', WebkitTextStroke: '3px white', textShadow: '8px 8px 0 rgba(0,0,0,0.65)', letterSpacing: '0.04em', lineHeight: 0.85, animation: 'aboutBebasIn 0.8s ease-out both' }}>
               <VariableProximity
                 label="WHO WE ARE"
                 fromFontVariationSettings="'wght' 400, 'opsz' 9"
@@ -946,8 +947,9 @@ const About = () => {
                 radius={100}
                 falloff="linear"
               />
-            </div>
-            <div style={{ fontFamily: "'Bebas Neue','Impact','Arial Black',sans-serif", fontSize: 'clamp(58px,11vw,130px)', color: 'transparent', WebkitTextStroke: '3px #adfa3b', letterSpacing: '0.04em', lineHeight: 0.85, animation: 'aboutBebasIn 0.8s 0.15s ease-out both' }}>
+            </span>
+            <span style={{ display: 'block', fontFamily: "'Bebas Neue','Impact','Arial Black',sans-serif", fontSize: 'clamp(58px,11vw,130px)', color: 'transparent', WebkitTextStroke: '3px #adfa3b', letterSpacing: '0.04em', lineHeight: 0.85, animation: 'aboutBebasIn 0.8s 0.15s ease-out both' }}>
+              {' '}
               <VariableProximity
                 label="THE MAD ONES"
                 fromFontVariationSettings="'wght' 400, 'opsz' 9"
@@ -956,8 +958,8 @@ const About = () => {
                 radius={100}
                 falloff="linear"
               />
-            </div>
-          </div>
+            </span>
+          </h1>
           <p style={{ fontFamily: "'DM Sans',sans-serif", fontSize: 'clamp(12px,1.4vw,16px)', color: 'rgba(255,255,255,0.45)', letterSpacing: '0.32em', textTransform: 'uppercase', fontWeight: 700 }}>
             Bengaluru's Most Chaotic Creative Agency ✨
           </p>

@@ -179,6 +179,7 @@ const Services = () => {
           </div>
 
           <h1 className="services-hero-title">
+            <span className="sr-only">Digital Marketing Services in Bengaluru: </span>
             <div style={{ marginBottom: '8px' }}>
               <VariableProximity
                 label="Everything you need"

@@ -1328,6 +1328,7 @@ const PerformanceMarketing = () => {
                 radius={100}
                 falloff="linear"
               />
+              <span className="sr-only"> Services in Bengaluru</span>
             </h1>
             <div className="h-[2px] w-24 bg-[#adfa3b] my-4 rounded-full" />
             <p className="coded-page-banner-subtitle text-center max-w-[650px] mx-auto">
@@ -1747,7 +1748,7 @@ const PerformanceMarketing = () => {
           Our Workflow
         </span>
 
-        <h1
+        <h2
           style={{
             fontSize: 'clamp(36px, 6vw, 64px)',
             fontWeight: 900,
@@ -1761,7 +1762,7 @@ const PerformanceMarketing = () => {
           }}
         >
           Performance Marketing Process
-        </h1>
+        </h2>
 
         <p
           style={{

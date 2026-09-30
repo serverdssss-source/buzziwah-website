@@ -3,6 +3,7 @@ import React, { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { BLOGS_DATA } from "./index";
 import "./Blogs.css";
+import { optimizedBlogImage, fallbackToOriginal } from "./blogImage";
 
 const BlogCard = ({ id, data, index }) => {
   const cardRef = useRef(null);
@@ -29,7 +30,7 @@ const BlogCard = ({ id, data, index }) => {
     >
       <div className="blog-card-glow" />
       <div className="blog-media-frame">
-        <img src={data.image} alt={data.title} className="blog-media" />
+        <img src={optimizedBlogImage(data.image)} onError={fallbackToOriginal(data.image)} alt={data.title} className="blog-media" />
       </div>
       <div className="blog-card-content">
         <div className="blog-card-meta">
@@ -83,7 +84,7 @@ export default function BlogsList() {
       <div className="blogs-container">
         {/* Header Block */}
         <header className="blogs-header">
-          <h1 className="blogs-title">Blogs</h1>
+          <h1 className="blogs-title"><span className="sr-only">Buzziwah Digital Marketing </span>Blogs</h1>
         </header>
 
         {/* Search Controls Hub */}
