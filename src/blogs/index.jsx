@@ -4,6 +4,82 @@ import "./Blogs.css";
 import { optimizedBlogImage, fallbackToOriginal } from "./blogImage";
 
 export const BLOGS_DATA = {
+  "digital-marketing-company-in-bangalore-full-service": {
+    title: "Digital Marketing Company in Bangalore: What \"Full Service\" Should Actually Mean",
+    slug: "digital-marketing-company-in-bangalore-full-service",
+    date: "October 6, 2026",
+    readTime: "5 min read",
+    author: "Buzziwah",
+    category: "Digital Marketing",
+    image: "/blog_imgs/digital marketing 2.png",
+    description: "Almost every digital marketing company in Bangalore calls itself \"full service.\" Here's what the phrase should actually mean, from branding and SEO to video and paid campaigns, and the one question to ask before you believe the claim.",
+    content: (
+      <div className="blog-content-body">
+        <p>
+          Almost every digital marketing company in Bangalore calls itself &quot;full service&quot; somewhere on its homepage. Scroll through a few of them and the phrase starts to mean nothing specific, sometimes it means three services bundled together, sometimes it means a long list of buzzwords with one person actually delivering all of it. If you&apos;re evaluating agencies right now, &quot;full service&quot; is a claim worth pressure-testing before you believe it.
+        </p>
+        <p>
+          Here&apos;s what the phrase should actually mean, and what we think it looks like in practice.
+        </p>
+
+        <h2>Full service shouldn&apos;t mean &quot;a list of things we can technically do&quot;</h2>
+        <p>
+          The lazy version of full service is a services page with nine or ten items, each handled by whoever&apos;s free that week. The useful version is a set of services that were designed to connect to each other from the start, so a client isn&apos;t stitching together results from people who&apos;ve never spoken to one another.
+        </p>
+        <p>
+          That distinction matters more than the list itself. A business can hire nine freelancers and technically get &quot;full service&quot; too. What they can&apos;t get that way is a single point of view running through all of it.
+        </p>
+
+        <h2>It starts with who you are, not what you post</h2>
+        <p>
+          Before anything gets promoted, it needs a point of view. Branding and identity work, naming, visual systems, messaging, has to come first, because every other service either reinforces that identity or quietly works against it. An agency that jumps straight to running ads or posting content without this step is usually filling a gap it never actually closed.
+        </p>
+
+        <h2>It means your website and your SEO were never separate conversations</h2>
+        <p>
+          A beautifully designed website that nobody finds, and a well-ranked page that loads slowly or confuses visitors the moment they land, fail for the same underlying reason: website development and SEO were treated as two different projects instead of one. Full service means the people building your site and the people optimizing it for search are working from the same brief, not handing off a finished product and hoping the other team can fix it later.
+        </p>
+
+        <h2>It means content isn&apos;t an afterthought bolted onto ads</h2>
+        <p>
+          Content, the blog posts, the website copy, the captions, is the raw material almost everything else runs on. An ad pointing to a page with generic copy is still a wasted ad, no matter how well it was targeted. Full service means the same team (or at least the same strategy) is shaping your written voice everywhere it shows up, not writing a tagline once and reusing it badly for three years.
+        </p>
+
+        <h2>It means social media is managed, not just scheduled</h2>
+        <p>
+          There&apos;s a real difference between a posting calendar and social media management. Management includes the content itself, consistent visual identity, and actual community engagement, replying, listening, adjusting. A business that gets daily posts but no community response isn&apos;t getting full service, it&apos;s getting a content calendar with a service label attached.
+        </p>
+
+        <h2>It means video isn&apos;t treated as a one-off extra</h2>
+        <p>
+          This is where we&apos;d argue most agencies in Bangalore fall short of their own claim. Video production usually gets bolted on as an upsell rather than built into the strategy from day one. We come at this differently, because Buzziwah operates alongside Sripada Studios, a filmmaking house, so cinema-level storytelling isn&apos;t a favor we call in occasionally, it&apos;s part of how campaigns get built from the brief stage onward. A product video or brand film made by people who think in scenes and pacing, not just in deliverables, tends to look and perform differently.
+        </p>
+
+        <h2>It means paid campaigns amplify something that&apos;s already working</h2>
+        <p>
+          Performance marketing, search, social, and display, should extend content and offers that have already shown signs of working, not substitute for a brand or message that hasn&apos;t been figured out yet. Full service means someone is checking that connection before spending your budget, not treating ad performance as disconnected from everything else happening on your brand&apos;s behalf.
+        </p>
+
+        <h2>It means influencer and outdoor marketing are options, not padding</h2>
+        <p>
+          Not every business needs influencer marketing or outdoor placements, and a genuinely full-service agency should be honest about that rather than pushing every client toward every service to round out an invoice. These exist as real options for businesses that need them, borrowing trust through the right creators, or building real-world presence in high-traffic zones, not as line items added to look comprehensive.
+        </p>
+
+        <h2>What this has actually looked like for us</h2>
+        <p>
+          We&apos;ve worked across 500+ projects for 100+ clients, spanning small businesses, startups, personal branding clients, and larger brands, with the digital marketing work sitting alongside filmmaking and audience research as two other core parts of what Sripada Studios does. That combination, marketing, filmmaking, and research operating under one roof, is close to what we think &quot;full service&quot; should actually mean, services that inform each other because the people doing them already talk to each other, not because a services page says so.
+        </p>
+
+        <h2>What to actually ask before you believe the claim</h2>
+        <p>
+          If you&apos;re comparing digital marketing companies in Bangalore and &quot;full service&quot; is part of the pitch, ask directly: do the people handling my branding, content, and ads actually work together, or will I be the one connecting the dots between them? The answer tells you more about what you&apos;re buying than the services list ever will.
+        </p>
+        <p>
+          <em>Curious what full service actually looks like for your specific business? That&apos;s exactly the conversation we&apos;d want to have at Buzziwah.</em>
+        </p>
+      </div>
+    )
+  },
   "reels-vs-carousels-vs-text-content-format-2026": {
     title: "Which Content Format Actually Works in 2026: Reels, Carousels, or Text?",
     slug: "reels-vs-carousels-vs-text-content-format-2026",
