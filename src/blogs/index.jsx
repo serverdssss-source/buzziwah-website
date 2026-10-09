@@ -4,6 +4,142 @@ import "./Blogs.css";
 import { optimizedBlogImage, fallbackToOriginal } from "./blogImage";
 
 export const BLOGS_DATA = {
+  "why-are-my-reels-stuck-at-200-views": {
+    title: "Why Are My Reels Stuck at 200 Views While Others Get 10K+?",
+    slug: "why-are-my-reels-stuck-at-200-views",
+    date: "October 9, 2026",
+    readTime: "6 min read",
+    author: "Buzziwah",
+    category: "Social Media",
+    image: "/blog_imgs/reels.png",
+    description: "Reels stuck at 200 views aren't shadowbanned. They failed Instagram's first audience test. Here's why it happens and seven fixes, in order of impact.",
+    content: (
+      <div className="blog-content-body">
+        <p>
+          You post a Reel. In the first hour it climbs to 180, then 200, maybe 240. Then it stops. Not slows down. Stops. Meanwhile someone in your niche posts something that looks no better than yours and wakes up to 10K.
+        </p>
+        <p>
+          The explanations arrive fast: shadowban, wrong hashtags, bad posting time, an algorithm that hates small accounts. Almost none of them hold up. The real answer is less dramatic and far more fixable. Your Reel was given a small audition, and it didn&apos;t pass.
+        </p>
+
+        <h2>Reels stuck at 200 views are in an audition, not a jail</h2>
+        <p>
+          Instagram has never published a 200-view cap, and there isn&apos;t one. What exists is a testing phase. Every Reel is first shown to a small group of people, many of whom don&apos;t follow you but have watched similar content. Instagram doesn&apos;t say how big that group is. What creators see is a stall somewhere in the low hundreds, which is why the number looks so consistent.
+        </p>
+        <p>
+          If that group stays, rewatches, likes, and sends the Reel to someone, Instagram releases it to a bigger group, then a bigger one, in waves. If they swipe away in the first couple of seconds, the Reel never leaves the first room.
+        </p>
+        <p>
+          So 200 views isn&apos;t a punishment. It&apos;s roughly the size of the room your Reel auditioned in. The 10K Reel auditioned in a room the same size. It just got called back.
+        </p>
+
+        <h2>What the 10K Reels do differently</h2>
+        <p>
+          Instagram head Adam Mosseri has named the signals that matter most, and follower count isn&apos;t one of them. Three carry the weight.
+        </p>
+        <p>
+          <strong>Watch time.</strong> How much of the Reel people actually watch. A 12-second Reel watched twice beats a 60-second Reel abandoned at second four.
+        </p>
+        <p>
+          <strong>Sends per reach.</strong> The share of viewers who forward the Reel to someone in a DM. It&apos;s the strongest signal for reaching people who don&apos;t already follow you, and it counts for far more than a like.
+        </p>
+        <p>
+          <strong>Likes per reach.</strong> A ratio, not a total. Fifty likes from 500 viewers says more than 200 likes from 10,000.
+        </p>
+        <p>
+          All three are percentages of the people who saw the Reel. That&apos;s why a 900-follower account can out-reach a 90,000-follower account on a given day. The test doesn&apos;t ask how big you are. It asks what fraction of a small room cared.
+        </p>
+
+        <h2>Why your Reel fails the audition</h2>
+        <p>
+          <strong>The first two seconds are a warm-up.</strong> A logo sting, &quot;Hi guys, welcome back,&quot; a slow pan before anything happens. The test audience doesn&apos;t know you and owes you nothing. If the first frame doesn&apos;t say why to stay, they leave, and a fast swipe is the worst signal a Reel can send.
+        </p>
+        <p>
+          <strong>The hook works, but the middle doesn&apos;t.</strong> Open Insights and look at the retention graph. A cliff at second one is a hook problem. A slow slide through the middle is a pacing problem: too much setup, a repeated point, a shot held two beats too long.
+        </p>
+        <p>
+          <strong>Instagram can&apos;t tell who the Reel is for.</strong> If your last ten Reels covered a recipe, a festival wish, a meme, and an office tour, the system has no clear picture of your audience, so your test group is a random crowd. Random crowds swipe.
+        </p>
+        <p>
+          <strong>Nobody would forward it.</strong> The Reel is pleasant, well shot, and completely unsendable. If you can&apos;t name the specific person a viewer would send it to, the strongest growth signal is switched off before you post.
+        </p>
+        <p>
+          <strong>It isn&apos;t eligible to travel.</strong> Some Reels are held back from recommendations no matter how good they are: a watermark from another app, footage that already circulates on the platform, blurry exports, or a runtime that&apos;s too long. These still reach your followers. They rarely reach anyone else.
+        </p>
+
+        <h2>What to fix first, in order</h2>
+        <p>
+          Start by reading the retention graph on your last five Reels, before you change anything. Find where most viewers leave. That one number tells you whether to rewrite the opening or cut the middle, and it stops you fixing the wrong thing.
+        </p>
+        <p>
+          Then put the payoff in the first frame. Lead with the result, the claim, or the problem, on screen as text and in the first spoken words, and explain the context afterwards. Our guide to <a href="/blog/how-to-write-a-hook-that-stops-the-scroll-in-the-first-3-seconds">writing a hook that stops the scroll</a> covers the formats that work.
+        </p>
+        <p>
+          Cut the Reel shorter than feels comfortable. If the idea lands in 14 seconds, don&apos;t stretch it to 30. Remove every pause, repeated line, and sign-off. Shorter Reels get finished, and finished Reels get rewatched.
+        </p>
+        <p>
+          Build each one for a specific person to send. Before you shoot, finish this sentence: &quot;Someone will send this to their ___ because ___.&quot; A gym owner&apos;s Reel on three signs your trainer is guessing gets forwarded. &quot;Monday motivation&quot; doesn&apos;t.
+        </p>
+        <p>
+          Stay in one lane for 30 days. Pick three or four topics and post only inside them, and say the topic plainly in the caption and on screen so Instagram can match the Reel to people who want it. A <a href="/blog/reels-first-content-calendar">Reels-first content calendar</a> makes this easier to hold.
+        </p>
+        <p>
+          Export clean: vertical, 1080 x 1920, original footage, no watermark from another app, and comfortably under three minutes.
+        </p>
+        <p>
+          Finally, test openings if you can. If Trial Reels is available on your account, it shows a Reel to non-followers first, so you can post two versions of the same idea with different openings and keep the one that holds attention.
+        </p>
+
+        <h2>What not to spend time on</h2>
+        <p>
+          <strong>Shadowban panic.</strong> Check Account Status in your settings. If nothing is flagged, you aren&apos;t restricted. Your Reels are being tested and not passing.
+        </p>
+        <p>
+          <strong>More hashtags.</strong> Instagram has said hashtags help categorise a post, not increase its reach. Three to five relevant ones is enough, and a clear caption does more.
+        </p>
+        <p>
+          <strong>Deleting and reposting.</strong> The same Reel shown to a similar test group gets a similar result. Change the opening first.
+        </p>
+        <p>
+          <strong>The perfect posting time.</strong> Timing helps your followers see a Reel. It doesn&apos;t rescue one that strangers swipe past. We covered whether a best time really exists in <a href="/blog/best-time-to-post-reels-for-maximum-reach">best time to post Reels for maximum reach</a>.
+        </p>
+        <p>
+          <strong>Bought views and engagement pods.</strong> They add numbers from people who don&apos;t watch, which lowers the exact ratios Instagram is measuring.
+        </p>
+
+        <h2>Is there a 200-view limit on Instagram Reels?</h2>
+        <p>
+          No. Instagram hasn&apos;t announced a fixed cap. A Reel that stalls around 200 views was shown to a small test audience and didn&apos;t earn wider distribution.
+        </p>
+
+        <h2>Am I shadowbanned if my Reels get low views?</h2>
+        <p>
+          Almost certainly not. Check Account Status in Settings. If no content is marked as limited, low views are a performance issue: weak watch time, few sends, or content that isn&apos;t eligible for recommendations.
+        </p>
+
+        <h2>How long does a Reel take to pick up views?</h2>
+        <p>
+          Most of the decision is made in the first hours after posting. Reels can occasionally take off days later, but that&apos;s the exception, so don&apos;t plan around it.
+        </p>
+
+        <h2>Do small accounts get less reach on Reels?</h2>
+        <p>
+          Not by design. Reels are ranked on ratios like watch time and sends per reach, not follower count, and they&apos;re tested on people who don&apos;t follow you.
+        </p>
+
+        <h2>The takeaway</h2>
+        <p>
+          A Reel stuck at 200 views hasn&apos;t been hidden. It was shown to a small group of strangers, and they didn&apos;t stay, finish, or send it. The accounts getting 10K aren&apos;t luckier. They pass the same small test more often because they open faster, cut tighter, stay on one topic, and make things worth forwarding.
+        </p>
+        <p>
+          Fix the first two seconds and the reason to send. Most of the rest follows.
+        </p>
+        <p>
+          <em>If your Reels keep stalling, send us your last five and we&apos;ll tell you which of these problems is yours. Our social media team has delivered 200M+ views across 60+ brands, and we&apos;d rather show you what&apos;s holding your content back than guess. If your Reel stalled for a different reason, read <a href="/blog/why-your-reels-get-views-but-no-comments-and-how-to-fix-it">why your Reels get views but no comments</a> next.</em>
+        </p>
+      </div>
+    )
+  },
   "digital-marketing-company-in-bangalore-full-service": {
     title: "Digital Marketing Company in Bangalore: What \"Full Service\" Should Actually Mean",
     slug: "digital-marketing-company-in-bangalore-full-service",
