@@ -4,6 +4,72 @@ import "./Blogs.css";
 import { optimizedBlogImage, fallbackToOriginal } from "./blogImage";
 
 export const BLOGS_DATA = {
+  "navaratri-reel-series-100k-views": {
+    title: "How We Turned Navaratri Into a 100K-View Reel Series",
+    slug: "navaratri-reel-series-100k-views",
+    date: "October 14, 2026",
+    readTime: "4 min read",
+    author: "Buzziwah",
+    category: "Social Media",
+    image: "/blog_imgs/wmn case study blog.jpg",
+    description: "The story behind a Navaratri Reel series that crossed 100K views for a healthcare brand: why we built a series, how we made it, and what worked.",
+    content: (
+      <div className="blog-content-body">
+        <p>
+          Every Navaratri, brand feeds fill up with the same thing: a festive graphic, a greeting, a colour of the day. It&apos;s pleasant, and almost nobody remembers it by day three.
+        </p>
+        <p>
+          For our healthcare client, that wasn&apos;t enough. A healthcare brand earns attention through trust and usefulness, and a &quot;Happy Navaratri&quot; post does neither. So we skipped the greeting and built a series.
+        </p>
+
+        <h2>Why a series, not a single post</h2>
+        <p>
+          A single festive post gets one shot at a stranger&apos;s attention. A series gets many, and it gives people a reason to come back. If someone enjoys one episode, they have a reason to watch the next and to follow for more.
+        </p>
+        <p>
+          That matters on Instagram, where a Reel is tested on a small group of viewers before it spreads, and where watch time and sends count for more than likes. A series is a natural way to earn both. Viewers who liked one episode watch the next one longer, and a Reel built around something relatable is easy to send to someone.
+        </p>
+
+        <h2>How we approached it</h2>
+        <p>
+          We treated it the way we treat all our work: with the craft of a film, not a template. Buzziwah works alongside Sripada Studios, a filmmaking house, so cinema-level storytelling is part of how we build content from the start. The pacing, the framing, and the edit were handled like a short film, and the tone stayed true to who the client is, so the series felt like it belonged to the brand and not like a borrowed festival trend.
+        </p>
+        <p>
+          That last part matters more than it sounds. Festival content that could belong to any brand gets scrolled past. Content that sounds like one specific brand gets remembered.
+        </p>
+
+        <h2>What happened</h2>
+        <p>
+          The series crossed 100K views. <a href="https://www.instagram.com/reel/Dea-2IkIPuF/" target="_blank" rel="noopener noreferrer">Watch one of the Reels from the series on Instagram →</a>
+        </p>
+        <p>
+          For a healthcare brand&apos;s festival content, that&apos;s the kind of reach we were aiming for: a lot of new people seeing the brand in a warm, human way, in the weeks when everyone&apos;s feed is at its most crowded.
+        </p>
+
+        <h2>What we took from it</h2>
+        <p>
+          <strong>Festival content works best when it&apos;s a story.</strong> A series gives the audience something to follow, not just something to scroll past.
+        </p>
+        <p>
+          <strong>Craft is a differentiator.</strong> When every brand posts the same greeting, a well-made film-style Reel stands out without trying hard.
+        </p>
+        <p>
+          <strong>Stay in character.</strong> The Reels that travel are the ones that sound like the brand. A festival is a moment to show who you are, not to borrow someone else&apos;s voice.
+        </p>
+        <p>
+          A strong festival series won&apos;t replace the rest of your marketing, but it can bring a lot of new people to your page in a single season. What turns them into patients, customers, or loyal followers is everything around it: a profile that explains what you do, content that keeps them interested, and a clear next step.
+        </p>
+
+        <h2>Planning your next festival campaign?</h2>
+        <p>
+          If you want a series that people watch to the end and send on, we&apos;d like to hear about your brand. <strong><a href="/contact">Start a Project →</a></strong>
+        </p>
+        <p>
+          See how our <a href="/social-media">social media management</a> works, or explore our <a href="/video-production">video production</a> work. You can also read the <a href="/case-study/wmn-healthcare">full case study</a> of our work with this client.
+        </p>
+      </div>
+    )
+  },
   "why-are-my-reels-stuck-at-200-views": {
     title: "Why Are My Reels Stuck at 200 Views While Others Get 10K+?",
     slug: "why-are-my-reels-stuck-at-200-views",
