@@ -4,84 +4,84 @@ const SITE_NAME = 'Buzziwah';
 
 export const PAGE_SEO = {
   '/': {
-    title: 'Buzziwah — Digital Marketing Agency in Bengaluru | Branding, SEO & Performance Marketing',
-    description: 'Buzziwah is Bengaluru\'s top digital marketing agency. We deliver branding, performance marketing, SEO, social media, web development, and cinema-to-digital campaigns that actually convert.',
+    title: 'Digital Marketing Agency in Bengaluru | Buzziwah',
+    description: 'Buzziwah is a Bengaluru digital marketing agency for branding, performance marketing, SEO, social media, web development and video campaigns that convert.',
     keywords: 'Digital Marketing Company Bangalore, Digital Marketing Agency Bangalore, Best Digital Marketing Company Bangalore, Top Digital Marketing Agency Bangalore, Digital Marketing Services Bangalore, Online Marketing Agency Bangalore, Internet Marketing Company Bangalore, Digital Marketing Consultant Bangalore, Digital Growth Agency Bangalore, Creative Digital Agency Bangalore, Brand Development Agency Bangalore, Digital Transformation Services Bangalore, Full Service Digital Agency Bangalore, Integrated Marketing Agency Bangalore, Marketing Automation Bangalore, ROI Driven Marketing Bangalore, Data Driven Marketing Bangalore, B2B Digital Marketing Bangalore, Ecommerce Marketing Services Bangalore, Startup Marketing Services Bangalore, Small Business Marketing Bangalore, Digital Advertising Company Bangalore, Digital Strategy Consulting Bangalore, Corporate Digital Marketing Bangalore, Digital Marketing Packages Bangalore, Marketing Analytics Services Bangalore, Inbound Marketing Agency Bangalore, Growth Hacking Agency Bangalore, Digital Marketing Near Me, Digital Marketing Whitefield, Digital Marketing Electronic City, Digital Marketing Marathahalli, Digital Marketing BTM Layout, Digital Marketing Koramangala, Digital Marketing Indiranagar, Digital Marketing Hebbal, Digital Marketing Yelahanka, Content Marketing Services Bangalore, Email Marketing Agency Bangalore, Video Marketing Services Bangalore, Mobile Marketing Agency Bangalore, Affiliate Marketing Services Bangalore, Conversion Rate Optimization Bangalore, Online Reputation Management Bangalore, Local Marketing Services Bangalore, Lead Generation Agency Bangalore, Buzziwah digital marketing Bengaluru',
-    image: `${BASE_URL}/home-digital-marketing-hero-image.png`,
+    image: `${BASE_URL}/og-image.jpg`,
     type: 'website',
   },
   '/about': {
-    title: 'About Buzziwah — Bengaluru\'s Creative & Performance Marketing Conglomerate',
-    description: 'Meet the team behind Buzziwah — a Bengaluru-based creative conglomerate powered by Sripada Studios. Sharp minds, fast execution, cinema-level storytelling meets data-driven marketing.',
+    title: 'About Buzziwah | Creative & Performance Marketing Team',
+    description: 'Meet Buzziwah, the Bengaluru creative and performance marketing team powered by Sripada Studios, where cinema-level storytelling meets data-driven marketing.',
     keywords: 'about Buzziwah, Sripada Studios, digital marketing team Bengaluru, creative agency about us',
     image: `${BASE_URL}/founders image about us.png`,
     type: 'website',
   },
   '/branding': {
-    title: 'Branding Agency in Bengaluru | Brand Identity & Strategy — Buzziwah',
+    title: 'Branding Agency in Bengaluru | Brand Identity — Buzziwah',
     description: 'Build a brand that commands attention. Buzziwah crafts bold brand identities, logos, visual systems, and brand strategies for businesses in Bengaluru and beyond.',
     keywords: 'Branding Agency Bangalore, Brand Identity Design Bangalore, Logo Design Bangalore, Brand Strategy Bangalore, Visual Identity Bangalore, Brand Development Agency Bangalore, Creative Digital Agency Bangalore, Corporate Branding Bangalore, Brand Awareness Campaigns Bangalore, Online Brand Management Bangalore, Buzziwah branding Bengaluru',
     image: `${BASE_URL}/banners/branding-page-banner.png`,
     type: 'website',
   },
   '/performance-marketing': {
-    title: 'Performance Marketing Agency Bengaluru | ROI-Driven Ads — Buzziwah',
+    title: 'Performance Marketing Agency in Bengaluru | Buzziwah',
     description: 'Drive real results with Buzziwah\'s performance marketing. Meta Ads, Google Ads, and data-driven campaigns that deliver 300%+ ROI for brands in Bengaluru.',
     keywords: 'Performance Marketing Agency Bangalore, Google Ads Agency Bangalore, PPC Company Bangalore, PPC Services Bangalore, Pay Per Click Agency Bangalore, Best PPC Agency Bangalore, Google Advertising Company Bangalore, Search Engine Marketing Bangalore, SEM Services Bangalore, Google Ads Expert Bangalore, Google Ads Consultant Bangalore, Performance Marketing Bangalore, Lead Generation PPC Bangalore, Lead Generation Agency Bangalore, ROI Driven Marketing Bangalore, Data Driven Marketing Bangalore, Conversion Rate Optimization Bangalore, Meta Ads Bangalore, Paid Advertising Bangalore, Buzziwah performance marketing',
     image: `${BASE_URL}/banners/performance-marketing-page-banner.png`,
     type: 'website',
   },
   '/social-media': {
-    title: 'Social Media Management Agency Bengaluru | Content & Growth — Buzziwah',
+    title: 'Social Media Marketing Agency in Bengaluru | Buzziwah',
     description: 'Grow your brand on Instagram, YouTube, and LinkedIn with Buzziwah\'s social media management. Strategy, content creation, and community management in Bengaluru.',
     keywords: 'Social Media Marketing Company Bangalore, Social Media Marketing Agency Bangalore, Social Media Marketing Bangalore, Best Social Media Marketing Bangalore, SMM Services Bangalore, Social Media Management Bangalore, Instagram Marketing Agency Bangalore, Facebook Advertising Agency Bangalore, LinkedIn Marketing Services Bangalore, Twitter Marketing Agency Bangalore, YouTube Marketing Services Bangalore, Pinterest Marketing Bangalore, Social Media Strategy Bangalore, Brand Awareness Campaigns Bangalore, Community Management Services Bangalore, Social Media Content Creation Bangalore, Paid Social Advertising Bangalore, Social Media ROI Bangalore, Viral Marketing Agency Bangalore, Social Media Consulting Bangalore, Social Media Optimization Bangalore, SMO Services Bangalore, Online Brand Management Bangalore, Social Media Analytics Bangalore, Social Media Audit Services Bangalore, B2B Social Media Marketing Bangalore, B2C Social Media Marketing Bangalore, Social Commerce Services Bangalore, Reels Marketing Bangalore, Short Video Marketing Bangalore, Social Media Marketing Whitefield, Social Media Marketing Electronic City, Social Media Marketing Marathahalli, Social Media Marketing BTM Layout, Social Media Marketing Koramangala, Social Media Marketing Indiranagar, Social Media Marketing Hebbal, Social Media Marketing Yelahanka, Social Media Marketing Near Me, Influencer Marketing Agency Bangalore, Buzziwah social media Bengaluru',
     image: `${BASE_URL}/social media.png`,
     type: 'website',
   },
   '/seo': {
-    title: 'SEO Agency in Bengaluru | Organic Growth & Search Rankings — Buzziwah',
+    title: 'SEO Agency in Bengaluru | Organic Growth — Buzziwah',
     description: 'Rank higher, grow faster. Buzziwah\'s SEO services include technical SEO, on-page optimization, link building, and content strategy for businesses in Bengaluru.',
     keywords: 'SEO Agency Bangalore, Search Engine Optimization Bangalore, Technical SEO Bangalore, Local SEO Bangalore, Organic Growth Bangalore, On Page SEO Bangalore, Off Page SEO Bangalore, Link Building Services Bangalore, SEO Consultant Bangalore, SEO Expert Bangalore, SEO Services Bangalore, Google Ranking Bangalore, Keyword Research Bangalore, SEO Audit Bangalore, Content SEO Bangalore, Buzziwah SEO Bengaluru',
     image: `${BASE_URL}/seo/Buzziwah SEO page.png`,
     type: 'website',
   },
   '/website-development': {
-    title: 'Web Development Agency Bengaluru | Fast, SEO-Ready Websites — Buzziwah',
+    title: 'Website Development Company in Bengaluru | Buzziwah',
     description: 'Get a high-performance, SEO-optimized website built by Buzziwah. React, custom design, and conversion-focused web development for brands in Bengaluru.',
     keywords: 'web development Bengaluru, website design Bangalore, React development, custom website, SEO website Bengaluru, Buzziwah web',
     image: `${BASE_URL}/website dev.png`,
     type: 'website',
   },
   '/content-solution': {
-    title: 'Content Marketing Agency Bengaluru | Reels, Blogs & Copywriting — Buzziwah',
+    title: 'Content Marketing Agency Bengaluru | Reels & Blogs — Buzziwah',
     description: 'From viral reels to SEO blogs and ad copy — Buzziwah creates content that converts. Full-stack content solutions for brands in Bengaluru.',
     keywords: 'content marketing Bengaluru, content creation agency Bangalore, reels production, copywriting, blog writing, Buzziwah content',
     image: `${BASE_URL}/content solutions.png`,
     type: 'website',
   },
   '/video-production': {
-    title: 'Video Production Agency Bengaluru | Brand Films & Reels — Buzziwah',
+    title: 'Video Production Company in Bengaluru | Buzziwah',
     description: 'Cinema-quality video production for brands and films. Buzziwah produces brand films, promotional videos, reels, and OTT campaigns in Bengaluru.',
     keywords: 'video production Bengaluru, brand film Bangalore, reel production, corporate video, film promotion, Buzziwah video',
     image: `${BASE_URL}/banners/video-production-page-banner.png`,
     type: 'website',
   },
   '/influencer-marketing': {
-    title: 'Influencer Marketing Agency Bengaluru | Creator Campaigns — Buzziwah',
+    title: 'Influencer Marketing Agency in Bengaluru | Buzziwah',
     description: 'Connect with the right creators. Buzziwah manages end-to-end influencer marketing campaigns for brands in Bengaluru — from micro to macro influencers.',
     keywords: 'Influencer Marketing Agency Bangalore, Influencer Marketing Bangalore, Creator Campaigns Bangalore, Brand Collaborations Bangalore, Micro Influencer Marketing Bangalore, Macro Influencer Bangalore, Social Media Influencer Agency Bangalore, Instagram Influencer Marketing Bangalore, YouTube Influencer Bangalore, Buzziwah influencer marketing',
     image: `${BASE_URL}/banners/influencer-marketing-page-banner.png`,
     type: 'website',
   },
   '/outdoor-marketing': {
-    title: 'Outdoor Marketing Agency Bengaluru | Hoardings & OOH Campaigns — Buzziwah',
+    title: 'Outdoor Advertising Agency Bengaluru | OOH — Buzziwah',
     description: 'Make your brand impossible to miss. Buzziwah plans and executes outdoor marketing, hoarding campaigns, and OOH advertising across Bengaluru.',
     keywords: 'outdoor marketing Bengaluru, OOH advertising Bangalore, hoarding advertising, billboard marketing, Buzziwah outdoor',
     image: `${BASE_URL}/outdoor/outdoor1.png`,
     type: 'website',
   },
   '/services': {
-    title: 'All Digital Marketing Services | Bengaluru\'s Full-Stack Agency — Buzziwah',
+    title: 'Digital Marketing Services in Bengaluru | Buzziwah',
     description: 'Explore all services by Buzziwah — branding, SEO, performance marketing, social media, video production, web development, influencer marketing, and more.',
     keywords: 'Digital Marketing Services Bangalore, Full Service Digital Agency Bangalore, Integrated Marketing Agency Bangalore, Online Marketing Agency Bangalore, Internet Marketing Company Bangalore, Digital Advertising Company Bangalore, Digital Strategy Consulting Bangalore, Marketing Automation Bangalore, Growth Hacking Agency Bangalore, Startup Marketing Services Bangalore, Small Business Marketing Bangalore, Ecommerce Marketing Services Bangalore, B2B Digital Marketing Bangalore, Corporate Digital Marketing Bangalore, Digital Marketing Packages Bangalore, Buzziwah services Bengaluru',
     image: `${BASE_URL}/banners/services-page-banner.png`,
@@ -102,8 +102,8 @@ export const PAGE_SEO = {
     type: 'website',
   },
   '/contact': {
-    title: 'Contact Buzziwah | Start Your Digital Marketing Project in Bengaluru',
-    description: 'Ready to grow? Contact Buzziwah — Bengaluru\'s leading digital marketing agency. Let\'s build something bold together.',
+    title: 'Contact Buzziwah | Digital Marketing Agency Bengaluru',
+    description: 'Contact Buzziwah, a digital marketing agency in Rajajinagar, Bengaluru. Call +91 99806 87439 or send a brief to start your branding, SEO or ads project.',
     keywords: 'contact Buzziwah, digital marketing agency contact Bengaluru, hire marketing agency Bangalore',
     image: `${BASE_URL}/conactimage.png`,
     type: 'website',
@@ -116,7 +116,7 @@ export const PAGE_SEO = {
     type: 'website',
   },
   '/blogs': {
-    title: 'Blogs & Insights | Buzziwah — Digital Marketing & Branding Intelligence',
+    title: 'Digital Marketing Blog & Insights | Buzziwah',
     description: 'Explore insights on branding, SEO, performance marketing, and creative production from the experts at Buzziwah, Bangalore\'s top digital agency.',
     keywords: 'Buzziwah blogs, marketing insights, branding strategies, SEO tips, performance marketing guide',
     image: `${BASE_URL}/blog_imgs/why_need_PMM.png`,
@@ -140,81 +140,113 @@ export const PAGE_SEO = {
 
 
 // Schema.org structured data per page
+// One business entity, referenced by @id from every other schema on the site.
+// NAP (name, address, phone) must match the contact page and Google Business Profile exactly.
+export const ORG_ID = `${BASE_URL}/#organization`;
+export const ORG_REF = { '@type': 'Organization', '@id': ORG_ID, name: 'Buzziwah', url: BASE_URL };
+const ADDRESS = {
+  '@type': 'PostalAddress',
+  streetAddress: 'No.4/2, 1st Main Road, West of Chord Road, Rajajinagar Industrial Town',
+  addressLocality: 'Bengaluru',
+  addressRegion: 'Karnataka',
+  postalCode: '560010',
+  addressCountry: 'IN',
+};
+const SERVICE_NAMES = [
+  'Branding & Identity', 'Performance Marketing', 'SEO', 'Social Media Management', 'Web Development',
+  'Video Production', 'Content Marketing', 'Influencer Marketing', 'Outdoor Advertising',
+];
+
+const service = (path, name, serviceType, description) => [{
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name,
+  serviceType,
+  provider: ORG_REF,
+  areaServed: [{ '@type': 'City', name: 'Bengaluru' }, { '@type': 'Country', name: 'India' }],
+  description,
+  url: `${BASE_URL}${path}`,
+}];
+
+// Schema.org structured data per page
 export const SCHEMAS = {
   '/': [
     {
       '@context': 'https://schema.org',
-      '@type': 'Organization',
+      '@type': ['Organization', 'ProfessionalService'],
+      '@id': ORG_ID,
       name: 'Buzziwah',
       alternateName: 'Buzziwah Digital',
       url: BASE_URL,
-      logo: `${BASE_URL}/Buzziwah_FInal_Logo_White.png`,
-      description: 'Bengaluru\'s premier digital marketing agency specializing in branding, performance marketing, SEO, social media, and cinema-to-digital campaigns.',
-      foundingLocation: { '@type': 'Place', name: 'Bengaluru, Karnataka, India' },
-      areaServed: ['Bengaluru', 'Karnataka', 'India'],
+      logo: { '@type': 'ImageObject', url: `${BASE_URL}/logo-white-bg.png` },
+      image: `${BASE_URL}/og-image.jpg`,
+      description: 'Bengaluru digital marketing agency specialising in branding, performance marketing, SEO, social media, web development, video production and cinema-to-digital campaigns.',
+      parentOrganization: { '@type': 'Organization', name: 'Sripada Studios' },
+      email: 'connect@sripadastudios.com',
+      telephone: '+91-99806-87439',
+      priceRange: '₹₹',
+      address: ADDRESS,
+      hasMap: 'https://www.google.com/maps?q=No.4/2,+1st+Main+Road,+West+of+Chord+Road,+Rajajinagar+Industrial+Town,+Bengaluru+560010',
+      areaServed: [{ '@type': 'City', name: 'Bengaluru' }, { '@type': 'State', name: 'Karnataka' }, { '@type': 'Country', name: 'India' }],
       sameAs: [
         'https://www.instagram.com/buzziwah',
         'https://www.linkedin.com/company/buzziwah',
         'https://www.youtube.com/@buzziwah',
+        'https://facebook.com/share/1GNdsTUeQs',
       ],
       contactPoint: {
         '@type': 'ContactPoint',
-        contactType: 'customer service',
+        contactType: 'sales',
+        telephone: '+91-99806-87439',
+        email: 'connect@sripadastudios.com',
         areaServed: 'IN',
         availableLanguage: ['English', 'Kannada', 'Hindi'],
       },
-      hasOfferCatalog: {
-        '@type': 'OfferCatalog',
-        name: 'Digital Marketing Services',
-        itemListElement: [
-          { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Branding & Identity' } },
-          { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Performance Marketing' } },
-          { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'SEO' } },
-          { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Social Media Management' } },
-          { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Web Development' } },
-          { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Video Production' } },
-        ],
-      },
-    },
-    {
-      '@context': 'https://schema.org',
-      '@type': 'WebSite',
-      name: 'Buzziwah',
-      url: BASE_URL,
-      potentialAction: {
-        '@type': 'SearchAction',
-        target: { '@type': 'EntryPoint', urlTemplate: `${BASE_URL}/?q={search_term_string}` },
-        'query-input': 'required name=search_term_string',
-      },
-    },
-    {
-      '@context': 'https://schema.org',
-      '@type': 'LocalBusiness',
-      '@id': `${BASE_URL}/#localbusiness`,
-      name: 'Buzziwah',
-      image: `${BASE_URL}/Buzziwah_FInal_Logo_White.png`,
-      url: BASE_URL,
-      priceRange: '₹₹',
-      address: {
-        '@type': 'PostalAddress',
-        addressLocality: 'Bengaluru',
-        addressRegion: 'Karnataka',
-        addressCountry: 'IN',
-      },
-      geo: { '@type': 'GeoCoordinates', latitude: 12.9716, longitude: 77.5946 },
       openingHoursSpecification: {
         '@type': 'OpeningHoursSpecification',
         dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
         opens: '09:00',
         closes: '19:00',
       },
+      knowsAbout: ['Digital marketing', 'Search engine optimization', 'Performance marketing', 'Brand identity', 'Social media marketing', 'Instagram Reels', 'Video production', 'Web development'],
+      hasOfferCatalog: {
+        '@type': 'OfferCatalog',
+        name: 'Digital Marketing Services',
+        itemListElement: SERVICE_NAMES.map((name) => ({ '@type': 'Offer', itemOffered: { '@type': 'Service', name } })),
+      },
+    },
+    {
+      '@context': 'https://schema.org',
+      '@type': 'WebSite',
+      '@id': `${BASE_URL}/#website`,
+      name: 'Buzziwah',
+      url: BASE_URL,
+      inLanguage: 'en-IN',
+      publisher: ORG_REF,
     },
   ],
+  '/about': [{
+    '@context': 'https://schema.org',
+    '@type': 'AboutPage',
+    name: 'About Buzziwah',
+    url: `${BASE_URL}/about`,
+    about: ORG_REF,
+  }],
+  '/services': [{
+    '@context': 'https://schema.org',
+    '@type': 'CollectionPage',
+    name: 'Buzziwah Digital Marketing Services',
+    url: `${BASE_URL}/services`,
+    about: ORG_REF,
+  }],
+  '/content-solution': service('/content-solution', 'Content Marketing', 'Content marketing', 'Reels, short-form video, SEO blogs, copywriting and content strategy for brands.'),
+  '/influencer-marketing': service('/influencer-marketing', 'Influencer Marketing', 'Influencer marketing', 'End-to-end influencer campaigns, from creator discovery and outreach to content and performance tracking.'),
+  '/outdoor-marketing': service('/outdoor-marketing', 'Outdoor Advertising', 'Out-of-home advertising', 'Hoardings, billboards and OOH campaigns planned and executed across Bengaluru.'),
   '/branding': [{
     '@context': 'https://schema.org',
     '@type': 'Service',
     name: 'Branding & Identity Design',
-    provider: { '@type': 'Organization', name: 'Buzziwah', url: BASE_URL },
+    provider: ORG_REF,
     areaServed: 'Bengaluru',
     description: 'Brand identity, logo design, visual systems, and brand strategy for businesses.',
     url: `${BASE_URL}/branding`,
@@ -223,7 +255,7 @@ export const SCHEMAS = {
     '@context': 'https://schema.org',
     '@type': 'Service',
     name: 'Performance Marketing',
-    provider: { '@type': 'Organization', name: 'Buzziwah', url: BASE_URL },
+    provider: ORG_REF,
     areaServed: 'Bengaluru',
     description: 'ROI-driven Meta Ads, Google Ads, and data-driven paid campaigns.',
     url: `${BASE_URL}/performance-marketing`,
@@ -232,7 +264,7 @@ export const SCHEMAS = {
     '@context': 'https://schema.org',
     '@type': 'Service',
     name: 'SEO Services',
-    provider: { '@type': 'Organization', name: 'Buzziwah', url: BASE_URL },
+    provider: ORG_REF,
     areaServed: 'Bengaluru',
     description: 'Technical SEO, on-page optimization, link building, and content strategy.',
     url: `${BASE_URL}/seo`,
@@ -241,7 +273,7 @@ export const SCHEMAS = {
     '@context': 'https://schema.org',
     '@type': 'Service',
     name: 'Social Media Management',
-    provider: { '@type': 'Organization', name: 'Buzziwah', url: BASE_URL },
+    provider: ORG_REF,
     areaServed: 'Bengaluru',
     description: 'Instagram, YouTube, and LinkedIn management, content creation, and growth.',
     url: `${BASE_URL}/social-media`,
@@ -250,7 +282,7 @@ export const SCHEMAS = {
     '@context': 'https://schema.org',
     '@type': 'Service',
     name: 'Web Development',
-    provider: { '@type': 'Organization', name: 'Buzziwah', url: BASE_URL },
+    provider: ORG_REF,
     areaServed: 'Bengaluru',
     description: 'High-performance, SEO-optimized websites built with React and custom design.',
     url: `${BASE_URL}/website-development`,
@@ -259,7 +291,7 @@ export const SCHEMAS = {
     '@context': 'https://schema.org',
     '@type': 'Service',
     name: 'Video Production',
-    provider: { '@type': 'Organization', name: 'Buzziwah', url: BASE_URL },
+    provider: ORG_REF,
     areaServed: 'Bengaluru',
     description: 'Brand films, promotional videos, reels, and OTT campaigns.',
     url: `${BASE_URL}/video-production`,
@@ -273,12 +305,25 @@ export const SCHEMAS = {
   }],
   '/careers': [{
     '@context': 'https://schema.org',
-    '@type': 'JobPosting',
-    title: 'Digital Marketing & Creative Roles',
-    hiringOrganization: { '@type': 'Organization', name: 'Buzziwah', sameAs: BASE_URL },
-    jobLocation: { '@type': 'Place', address: { '@type': 'PostalAddress', addressLocality: 'Bengaluru', addressCountry: 'IN' } },
-    description: 'Join Buzziwah\'s sharp, fast-moving team. We\'re hiring creative minds, marketers, and developers.',
-    employmentType: 'FULL_TIME',
+    '@type': 'WebPage',
+    name: 'Careers at Buzziwah',
+    url: `${BASE_URL}/careers`,
+    about: ORG_REF,
+  }],
+  '/blogs': [{
+    '@context': 'https://schema.org',
+    '@type': 'Blog',
+    name: 'Buzziwah Blog',
+    url: `${BASE_URL}/blogs`,
+    publisher: ORG_REF,
+    inLanguage: 'en-IN',
+  }],
+  '/seo-case-studies': [{
+    '@context': 'https://schema.org',
+    '@type': 'CollectionPage',
+    name: 'Buzziwah SEO Case Studies',
+    url: `${BASE_URL}/seo-case-studies`,
+    about: ORG_REF,
   }],
   '/case-studies': [{
     '@context': 'https://schema.org',
@@ -360,8 +405,7 @@ export const FAQ_SCHEMAS = {
   },
 };
 
-// eslint-disable-next-line no-unused-vars
-const BREADCRUMB_SCHEMAS = {
+export const BREADCRUMB_SCHEMAS = {
   '/branding': { '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Home', item: BASE_URL }, { '@type': 'ListItem', position: 2, name: 'Branding', item: BASE_URL + '/branding' }] },
   '/performance-marketing': { '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Home', item: BASE_URL }, { '@type': 'ListItem', position: 2, name: 'Performance Marketing', item: BASE_URL + '/performance-marketing' }] },
   '/social-media': { '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Home', item: BASE_URL }, { '@type': 'ListItem', position: 2, name: 'Social Media Marketing', item: BASE_URL + '/social-media' }] },
@@ -382,14 +426,6 @@ const BREADCRUMB_SCHEMAS = {
 };
 
 
-// eslint-disable-next-line no-unused-vars
-const AGGREGATE_RATING = {
-  '@context': 'https://schema.org',
-  '@type': 'LocalBusiness',
-  name: 'Buzziwah',
-  url: BASE_URL,
-  aggregateRating: { '@type': 'AggregateRating', ratingValue: '4.9', reviewCount: '87', bestRating: '5', worstRating: '1' },
-};
 function setMeta(name, content, isProperty = false) {
   const attr = isProperty ? 'property' : 'name';
   let el = document.querySelector(`meta[${attr}="${name}"]`);
@@ -463,8 +499,6 @@ export function applySEO(path) {
   setMeta('twitter:title', seo.title);
   setMeta('twitter:description', seo.description);
   setMeta('twitter:image', image);
-  setMeta('twitter:site', '@buzziwah');
-  setMeta('twitter:creator', '@buzziwah');
 
   // AIO / GEO signals — helps AI engines (ChatGPT, Perplexity, Gemini) understand the page
   setMeta('geo.region', 'IN-KA');
@@ -473,6 +507,10 @@ export function applySEO(path) {
   setMeta('ICBM', '12.9716, 77.5946');
 
   // Structured data (Schema + FAQ for AEO)
-  const schemas = [...(SCHEMAS[normalizedPath] || SCHEMAS['/']), ...(FAQ_SCHEMAS[normalizedPath] ? [FAQ_SCHEMAS[normalizedPath]] : [])];
+  const schemas = [
+    ...(SCHEMAS[normalizedPath] || SCHEMAS['/']),
+    ...(FAQ_SCHEMAS[normalizedPath] ? [FAQ_SCHEMAS[normalizedPath]] : []),
+    ...(BREADCRUMB_SCHEMAS[normalizedPath] ? [BREADCRUMB_SCHEMAS[normalizedPath]] : []),
+  ];
   injectSchema(schemas);
 }

@@ -1,4 +1,5 @@
 {
+  "trailingSlash": false,
   "redirects": [
     {
       "source": "/:path*",
@@ -9,6 +10,11 @@
         }
       ],
       "destination": "https://www.buzziwah.com/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/carrer",
+      "destination": "/careers",
       "permanent": true
     }
   ],

@@ -4,6 +4,187 @@ import "./Blogs.css";
 import { optimizedBlogImage, fallbackToOriginal } from "./blogImage";
 
 export const BLOGS_DATA = {
+  "instagram-trial-reels-test-two-hooks": {
+    title: "Instagram Trial Reels: How to Test Two Hooks Before Your Followers See Either",
+    seoTitle: "Instagram Trial Reels: How to Test Two Hooks Before Followers See Either",
+    slug: "instagram-trial-reels-test-two-hooks",
+    date: "October 17, 2026",
+    readTime: "6 min read",
+    author: "Buzziwah",
+    category: "Social Media",
+    image: "/blog_imgs/hooks.jpg",
+    description: "Trial Reels show your Reel to non-followers first. Here's how to test two hooks side by side, read the results, and only share the winner.",
+    content: (
+      <div className="blog-content-body">
+        <h2>Stop guessing which opening works</h2>
+        <p>
+          You have two openings for the same Reel. One leads with the result. The other leads with the problem. You argue with yourself for twenty minutes, pick one, post it, and never find out whether the other would have done better.
+        </p>
+        <p>
+          That&apos;s how most Reels get made. And it&apos;s why so many of them stall in the low hundreds. As we covered in <a href="/blog/why-are-my-reels-stuck-at-200-views">why your Reels are stuck at 200 views</a>, every Reel gets a small audition with strangers first. The opening decides whether it gets called back.
+        </p>
+        <p>
+          Trial Reels let you run that audition twice, once per hook, before your followers see either version. You keep the winner and quietly drop the loser. Here&apos;s how to do it properly.
+        </p>
+
+        <h2>What Trial Reels are (and what they aren&apos;t)</h2>
+        <p>
+          A Trial Reel is a normal Reel with one switch flipped. Instagram shows it to people who don&apos;t follow you first. It stays off your grid and your Reels tab, and your followers won&apos;t get it in Feed or Reels unless you choose Share to everyone. Instagram launched the feature in December 2024 for exactly this kind of testing (Instagram for Creators).
+        </p>
+        <p>What you get back:</p>
+        <ul>
+          <li><strong>Insights in about 24 hours:</strong> views, likes, comments and shares, plus a comparison against your earlier trials.</li>
+          <li><strong>A choice:</strong> share the trial with everyone manually, or turn on automatic sharing so Instagram publishes it if it performs well.</li>
+          <li><strong>No penalty for a flop:</strong> Instagram ranks trials separately from your regular Reels, so a weak trial doesn&apos;t drag the rest of your account down.</li>
+        </ul>
+        <p>Two things it isn&apos;t:</p>
+        <ul>
+          <li><strong>It isn&apos;t private.</strong> A follower can still see a trial if someone DMs it to them, or on a page for the same audio or location. Don&apos;t trial anything confidential.</li>
+          <li><strong>It isn&apos;t a re-post button.</strong> Instagram may limit reach on a trial it recognises as content you&apos;ve already shared. Every trial should be a fresh edit.</li>
+        </ul>
+        <p>
+          <strong>Who can use it (as of October 2026):</strong> a public account that&apos;s eligible to appear in recommendations, with at least 200 followers on a professional (creator or business) account, or 1,000 on a personal account (Instagram Help). If the Trial toggle is missing, check Account Status in settings before anything else. An account with a recommendations issue loses access until it&apos;s fixed.
+        </p>
+
+        <h2>Why the hook is the thing to test</h2>
+        <p>
+          You could trial anything: length, music, format, topic. Start with the hook, because it decides whether the rest of the Reel gets watched at all.
+        </p>
+        <p>
+          Trial audiences are strangers by design. They don&apos;t know your brand, so they give you nothing on credit. If the first two seconds don&apos;t tell them why to stay, they swipe, and that early swipe is the signal Instagram reads most harshly.
+        </p>
+        <p>
+          The hook is also the cheapest part to change. You film the body once and shoot two openings. One extra take, maybe ten minutes in the edit, and you get a real answer instead of a hunch. If you need opening ideas, start with our guide to <a href="/blog/how-to-write-a-hook-that-stops-the-scroll-in-the-first-3-seconds">writing a hook that stops the scroll</a>.
+        </p>
+
+        <h2>How to test two hooks with Trial Reels, step by step</h2>
+        <p>
+          Here&apos;s the method we use with clients. The example is a physiotherapy clinic in Bengaluru making a Reel on desk-related back pain.
+        </p>
+        <ol>
+          <li><strong>Write down the question first.</strong> Not &quot;which is better?&quot; but something specific: &quot;Does opening on the result beat opening on the problem?&quot; One question per test.</li>
+          <li><strong>Film the body once.</strong> Same explanation, same length, same audio, same captions. Everything after the first two or three seconds stays identical, so the hook is the only thing being judged.</li>
+          <li>
+            <strong>Shoot two genuinely different openings.</strong>
+            <ul>
+              <li>Hook A, problem first: &quot;If your lower back aches by 4pm, it&apos;s probably not your mattress.&quot;</li>
+              <li>Hook B, result first: on-screen text reading &quot;60 seconds. Back pain gone.&quot; over the stretch already in motion.</li>
+            </ul>
+          </li>
+          <li><strong>Export two separate edits.</strong> Change the opening shot, not just the caption text. Instagram may limit trials it reads as content you&apos;ve already shared, so a caption-only swap risks weakening the second test.</li>
+          <li><strong>Post both as trials.</strong> In the Reel composer, tap Trial before sharing. Open Trial settings and turn automatic sharing off for both. You want to make this call yourself.</li>
+          <li><strong>Keep conditions equal.</strong> Post at the same time on consecutive days, or schedule both so neither gets a better time slot. Don&apos;t boost either one.</li>
+          <li><strong>Wait at least 24 hours after the second trial before you compare.</strong> Trials can be slower to pick up views, because Instagram has to find strangers to show them to.</li>
+          <li><strong>Share the winner to everyone.</strong> Open the trial from your profile, tap View insights, then Share to everyone. The losing version stays as a trial and your followers never see it.</li>
+        </ol>
+        <p>
+          Both trials go to non-followers, so you&apos;re comparing like with like. Don&apos;t compare a trial against one of your regular Reels. Regular Reels also reach followers who already know you, which skews every number.
+        </p>
+
+        <h2>How to pick the winner</h2>
+        <p>
+          Don&apos;t crown the version with more views. Views are the outcome, not the reason. Divide each metric by views so both versions are judged on the same scale, then read them in this order:
+        </p>
+        <div style={{ overflowX: 'auto' }}>
+          <table>
+            <thead>
+              <tr>
+                <th>Check</th>
+                <th>What it tells you about the hook</th>
+                <th>How to read it</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1. Shares per view</td>
+                <td>Would a stranger send this to someone?</td>
+                <td>The strongest signal. Instagram head Adam Mosseri has said sends count slightly more for people who don&apos;t follow you, which is exactly the trial audience.</td>
+              </tr>
+              <tr>
+                <td>2. Average watch time / skip rate</td>
+                <td>Did the opening hold people past the first seconds?</td>
+                <td>Where your insights show skip rate, it&apos;s the most direct read on the hook itself. Lower is better.</td>
+              </tr>
+              <tr>
+                <td>3. Likes per view</td>
+                <td>Did people enjoy it?</td>
+                <td>Expect lower rates than your regular Reels, since strangers like less than followers do.</td>
+              </tr>
+              <tr>
+                <td>4. Comments per view</td>
+                <td>Did it start a conversation?</td>
+                <td>Useful as a tiebreaker. A divisive hook can lift comments while cutting shares.</td>
+              </tr>
+              <tr>
+                <td>5. Instagram&apos;s comparison with past trials</td>
+                <td>How this trial did against your history</td>
+                <td>A useful sanity check once you&apos;ve run a few tests.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p>
+          <strong>When it&apos;s a tie, it&apos;s a tie.</strong> If both versions reached only a few hundred people and the gap is small, you don&apos;t have a winner yet. You have noise. Rerun the test with a new idea before you change how you open every Reel.
+        </p>
+        <p>
+          <strong>Look for patterns, not one-off wins.</strong> One result-first hook beating one problem-first hook proves very little. Three wins in a row for result-first openings is a rule worth adding to your <a href="/blog/reels-first-content-calendar">Reels-first content calendar</a>.
+        </p>
+
+        <h2>Mistakes that ruin a hook test</h2>
+        <ul>
+          <li><strong>Changing three things at once.</strong> New hook, new song and a shorter cut. If version B wins, you won&apos;t know why. Change only the opening.</li>
+          <li><strong>Leaving auto-share on.</strong> That setting carries over to every future trial until you turn it off. Check it each time, or you might find both versions on your grid.</li>
+          <li><strong>Re-uploading an old Reel as a trial.</strong> Instagram may hold back reach on content it has already seen from you. Re-edit it or film it fresh.</li>
+          <li><strong>Testing a Reel that can&apos;t travel.</strong> Instagram doesn&apos;t recommend Reels over three minutes to new audiences, and trials only reach new audiences. Watermarks from other apps and blurry exports hurt too.</li>
+          <li><strong>Judging after six hours.</strong> Trials pick up slowly. Give each one at least a full day.</li>
+          <li><strong>Treating a trial win as a promise.</strong> A trial tells you how strangers reacted on one day. Your followers may respond differently once you share it.</li>
+        </ul>
+
+        <h2>FAQs</h2>
+
+        <h2>Can my followers see a Trial Reel?</h2>
+        <p>
+          Not in their Feed or Reels tab, and it won&apos;t sit on your grid. They can still come across it if someone sends it to them or on a page for the same audio or location.
+        </p>
+
+        <h2>How many followers do I need for Trial Reels?</h2>
+        <p>
+          As of October 2026, Instagram&apos;s help page asks for a public account with 200 followers on a creator or business account, or 1,000 on a personal account. The account must also be eligible for recommendations.
+        </p>
+
+        <h2>Can I post both hook versions on the same day?</h2>
+        <p>
+          You can, but it&apos;s cleaner to post at the same time on consecutive days. Two trials going out together compete for the same pool of strangers. Trial Reels can be scheduled, which makes equal timing easy.
+        </p>
+
+        <h2>Will a failed trial hurt my account?</h2>
+        <p>
+          No. Instagram evaluates trials separately from your standard Reels, so a weak trial doesn&apos;t affect how your regular content ranks.
+        </p>
+
+        <h2>Should I use auto-share or share manually?</h2>
+        <p>
+          For hook tests, share manually. Auto-share could publish both versions if both perform reasonably, and then your followers see the same Reel twice.
+        </p>
+
+        <h2>Do hashtags matter on Trial Reels?</h2>
+        <p>
+          No more than on any Reel. A clear caption that says what the Reel is about does more than a long hashtag list. Keep the caption identical across both versions so it doesn&apos;t skew the test.
+        </p>
+
+        <h2>The takeaway</h2>
+        <p>
+          You don&apos;t need to guess which opening works. Film the Reel once, shoot two hooks, trial both with strangers, and let shares and watch time decide. Your followers only ever see the version that already passed the audition.
+        </p>
+        <p>
+          Run it as a habit, one test a week, and in a month you&apos;ll know how your audience likes to be opened to. That&apos;s worth more than any single viral Reel.
+        </p>
+        <p>
+          <em>Want a second pair of eyes on your hooks? <a href="/contact">Send us two openings</a> for your next Reel and our <a href="/social-media">social media team</a> will tell you which one we&apos;d trial first, and why. If your Reels are getting reach but no reaction, read <a href="/blog/why-your-reels-get-views-but-no-comments-and-how-to-fix-it">why your Reels get views but no comments</a> next.</em>
+        </p>
+      </div>
+    )
+  },
   "navaratri-reel-series-100k-views": {
     title: "How We Turned Navaratri Into a 100K-View Reel Series",
     slug: "navaratri-reel-series-100k-views",

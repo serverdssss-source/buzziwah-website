@@ -46,6 +46,7 @@ const STATIC_PAGES = {
 };
 const STATIC_ROUTES = Object.keys(STATIC_PAGES);
 const HOME_MODULE = 'src/home/index.jsx';
+const NAVBAR_MODULE = 'src/Navbar.jsx';
 const PAGE_ENDING_MODULE = 'src/components/PageEnding.jsx';
 const NOT_FOUND_MODULE = 'src/components/NotFound.jsx';
 // Extra paths App.jsx serves that are aliases of a STATIC_PAGES route
@@ -195,8 +196,6 @@ function buildPage(template, page) {
       `<meta property="article:section" content="${escapeHtml(page.article.section)}" />`,
     ] : []),
     `<meta name="twitter:card" content="summary_large_image" />`,
-    `<meta name="twitter:site" content="@buzziwah" />`,
-    `<meta name="twitter:creator" content="@buzziwah" />`,
     `<meta name="twitter:title" content="${escapeHtml(page.title)}" />`,
     `<meta name="twitter:description" content="${escapeHtml(page.description)}" />`,
     `<meta name="twitter:image" content="${image}" />`,
@@ -252,7 +251,7 @@ async function run() {
       vite.ssrLoadModule('/src/seo/useSEO.js'),
       vite.ssrLoadModule('/src/blogs/blogImage.js'),
     ]);
-    for (const mod of [HOME_MODULE, PAGE_ENDING_MODULE, NOT_FOUND_MODULE, ...Object.values(STATIC_PAGES)]) {
+    for (const mod of [HOME_MODULE, NAVBAR_MODULE, PAGE_ENDING_MODULE, NOT_FOUND_MODULE, ...Object.values(STATIC_PAGES)]) {
       try {
         pageComponents[mod] = (await vite.ssrLoadModule('/' + mod)).default;
       } catch (err) {
@@ -263,11 +262,14 @@ async function run() {
     await vite.close();
   }
 
-  // Renders a page the way App.jsx lays it out (page + optional PageEnding).
+  // Renders a page the way App.jsx lays it out (Navbar + page + optional PageEnding),
+  // so crawlers that skip JavaScript still see the site navigation links.
   // Falls back to an empty #root (head tags only) if rendering fails.
   const renderBody = (routePath, Component, props = {}) => {
     try {
-      let html = renderToStaticMarkup(React.createElement(Component, props));
+      const Navbar = pageComponents[NAVBAR_MODULE];
+      let html = Navbar ? renderToStaticMarkup(React.createElement(Navbar)) : '';
+      html += renderToStaticMarkup(React.createElement(Component, props));
       const endingProps = pageEndingProps(routePath);
       const PageEnding = pageComponents[PAGE_ENDING_MODULE];
       if (endingProps && PageEnding) html += renderToStaticMarkup(React.createElement(PageEnding, endingProps));
@@ -286,18 +288,23 @@ async function run() {
 
   const { BLOGS_DATA, default: BlogPage } = blogsMod;
   const { CASE_STUDIES_DATA, default: CaseStudyPage } = casesMod;
-  const { BASE_URL, DEFAULT_IMAGE, PAGE_SEO, SCHEMAS, FAQ_SCHEMAS } = seoMod;
+  const { BASE_URL, DEFAULT_IMAGE, PAGE_SEO, SCHEMAS, FAQ_SCHEMAS, BREADCRUMB_SCHEMAS, ORG_REF } = seoMod;
 
   const today = toIsoDate(new Date().toString());
-  const sitemap = [{ loc: '/', lastmod: today, priority: '1.0', changefreq: 'weekly' }];
   let count = 0;
 
-  const orgRef = { '@type': 'Organization', name: SITE_NAME, url: BASE_URL, logo: { '@type': 'ImageObject', url: DEFAULT_IMAGE } };
+  const orgRef = { ...ORG_REF, logo: { '@type': 'ImageObject', url: `${BASE_URL}/logo-white-bg.png` } };
 
   // --- Blogs ---
   const blogs = Object.entries(BLOGS_DATA)
-    .map(([slug, data]) => ({ slug, ...data, iso: toIsoDate(data.date) || today }))
+    .map(([slug, data]) => {
+      const iso = toIsoDate(data.date) || today;
+      // Optional `updated: "Month D, YYYY"` on a blog marks a real content refresh
+      return { slug, ...data, iso, modified: (data.updated && toIsoDate(data.updated)) || iso };
+    })
     .sort((a, b) => b.iso.localeCompare(a.iso));
+
+  const sitemap = [{ loc: '/', lastmod: blogs.length ? blogs[0].iso : undefined, priority: '1.0', changefreq: 'weekly' }];
 
   for (const blog of blogs) {
     const routePath = `/blog/${blog.slug}`;
@@ -316,8 +323,10 @@ async function run() {
         description: blog.description,
         image: [image],
         datePublished: blog.iso,
-        dateModified: blog.iso,
-        author: { '@type': 'Organization', name: blog.author || SITE_NAME, url: BASE_URL },
+        dateModified: blog.modified,
+        author: !blog.author || blog.author === SITE_NAME
+          ? orgRef
+          : { '@type': 'Person', name: blog.author, worksFor: ORG_REF },
         publisher: orgRef,
         mainEntityOfPage: { '@type': 'WebPage', '@id': url },
         url,
@@ -342,15 +351,16 @@ async function run() {
 
     writeRoute(routePath, buildPage(template, {
       BASE_URL, path: routePath,
-      title: `${blog.title} | ${SITE_NAME}`,
-      description: blog.description,
+      // Google truncates titles around 60 chars — drop the brand suffix when it won't fit
+      title: blog.seoTitle || (blog.title.length > 48 ? blog.title : `${blog.title} | ${SITE_NAME}`),
+      description: truncate(blog.description),
       image: socialImage,
       heroImage: imageMod.optimizedBlogImage(blog.image),
       ogType: 'article',
-      article: { published: blog.iso, modified: blog.iso, author: blog.author || SITE_NAME, section: blog.category },
+      article: { published: blog.iso, modified: blog.modified, author: blog.author || SITE_NAME, section: blog.category },
       schemas, body, assets: pageAssets(routePath, 'src/blogs/index.jsx'),
     }));
-    sitemap.push({ loc: routePath, lastmod: blog.iso, priority: '0.8', changefreq: 'monthly' });
+    sitemap.push({ loc: routePath, lastmod: blog.modified, priority: '0.8', changefreq: 'monthly' });
     count++;
   }
 
@@ -381,7 +391,7 @@ async function run() {
       ],
       body, assets: pageAssets(routePath, 'src/case-studies/index.jsx'),
     }));
-    sitemap.push({ loc: routePath, lastmod: today, priority: '0.8', changefreq: 'monthly' });
+    sitemap.push({ loc: routePath, priority: '0.8', changefreq: 'monthly' });
     count++;
   }
 
@@ -393,7 +403,11 @@ async function run() {
       BASE_URL, path: routePath,
       title: seo.title, description: seo.description, keywords: seo.keywords,
       image: seo.image || DEFAULT_IMAGE,
-      schemas: [...(SCHEMAS[routePath] || []), ...(FAQ_SCHEMAS[routePath] ? [FAQ_SCHEMAS[routePath]] : [])],
+      schemas: [
+        ...(SCHEMAS[routePath] || []),
+        ...(FAQ_SCHEMAS[routePath] ? [FAQ_SCHEMAS[routePath]] : []),
+        ...(BREADCRUMB_SCHEMAS[routePath] ? [BREADCRUMB_SCHEMAS[routePath]] : []),
+      ],
       body: Component ? renderBody(routePath, Component) : '',
       assets: pageAssets(routePath, moduleKey),
       ...extra,
@@ -414,7 +428,7 @@ async function run() {
     const isHub = routePath === '/blogs' || routePath === '/case-studies';
     sitemap.push({
       loc: routePath,
-      lastmod: routePath === '/blogs' && blogs.length ? blogs[0].iso : today,
+      lastmod: routePath === '/blogs' && blogs.length ? blogs[0].iso : undefined,
       priority: '0.9', changefreq: isHub ? 'weekly' : 'monthly',
     });
     count++;
@@ -439,7 +453,7 @@ async function run() {
   // --- sitemap.xml ---
   const xml = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n` +
     sitemap.map((u) =>
-      `  <url>\n    <loc>${BASE_URL}${u.loc === '/' ? '/' : u.loc}</loc>\n    <lastmod>${u.lastmod}</lastmod>\n    <changefreq>${u.changefreq}</changefreq>\n    <priority>${u.priority}</priority>\n  </url>\n`
+      `  <url>\n    <loc>${BASE_URL}${u.loc === '/' ? '/' : u.loc}</loc>\n${u.lastmod ? `    <lastmod>${u.lastmod}</lastmod>\n` : ''}    <changefreq>${u.changefreq}</changefreq>\n    <priority>${u.priority}</priority>\n  </url>\n`
     ).join('') + `</urlset>\n`;
   fs.writeFileSync(path.join(DIST_DIR, 'sitemap.xml'), xml, 'utf-8');
 
@@ -461,7 +475,7 @@ async function run() {
     '',
     '## Company',
     `- [About](${BASE_URL}/about)`,
-    `- [Contact](${BASE_URL}/contact)`,
+    `- [Contact](${BASE_URL}/contact): No.4/2, 1st Main Road, West of Chord Road, Rajajinagar Industrial Town, Bengaluru 560010 · +91 99806 87439 · connect@sripadastudios.com`,
     '',
   ].join('\n');
   fs.writeFileSync(path.join(DIST_DIR, 'llms.txt'), llms, 'utf-8');

@@ -115,7 +115,8 @@ const Navbar = () => {
   const [openDropdown, setOpenDropdown] = useState(null);
   const [openMobileSub, setOpenMobileSub] = useState(false);
 
-  const path = window.location.pathname.replace(/\/$/, '');
+  // `window` is undefined when scripts/prerender.js renders this on the server
+  const path = typeof window === 'undefined' ? '' : window.location.pathname.replace(/\/$/, '');
   const servicesActive = path === '/services' || serviceLinks.some((s) => s.href === path);
 
   useEffect(() => {
