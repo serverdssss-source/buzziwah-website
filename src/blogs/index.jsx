@@ -4,6 +4,108 @@ import "./Blogs.css";
 import { optimizedBlogImage, fallbackToOriginal } from "./blogImage";
 
 export const BLOGS_DATA = {
+  "why-isnt-my-website-getting-organic-traffic": {
+    title: "Why Isn't My Website Getting Organic Traffic? What SEO Actually Fixes",
+    seoTitle: "Why Isn't My Website Getting Organic Traffic? What SEO Fixes | Buzziwah",
+    slug: "why-isnt-my-website-getting-organic-traffic",
+    date: "October 23, 2026",
+    readTime: "6 min read",
+    author: "Buzziwah",
+    category: "SEO",
+    image: "/blog_imgs/23-10-26.jpg",
+    description: "A website with no organic traffic usually has one of five problems. Here's how to find yours in 30 minutes and what SEO actually fixes.",
+    content: (
+      <div className="blog-content-body">
+        <p>
+          A website that gets no organic traffic usually has one of five problems: Google hasn&apos;t indexed the pages, the site targets keywords it can&apos;t win, the content doesn&apos;t match what searchers want, technical issues are holding the site back, or nobody else on the internet vouches for it. SEO fixes all five, but not at the same speed, and not in the order most businesses try.
+        </p>
+        <p>
+          Most owners start by writing more blog posts. That helps only if the real problem is content. If the problem is somewhere else, more posts just add more pages nobody sees.
+        </p>
+
+        <h2>Why isn&apos;t my website getting organic traffic?</h2>
+        <p>
+          The honest answer is that &quot;no traffic&quot; is a symptom, not a diagnosis. The cause sits in one of five places, and you can check them in order, starting with the cheapest.
+        </p>
+
+        <h2>1. Is Google showing your pages at all?</h2>
+        <p>
+          Before anything else, confirm your pages are indexed. Search your exact page title in Google, or open Google Search Console and use URL Inspection on a page that should be getting traffic.
+        </p>
+        <p>
+          If a page isn&apos;t indexed, nothing else matters yet. Check the Pages report in Search Console for &quot;Discovered, not indexed&quot; or &quot;Crawled, not indexed,&quot; and make sure your sitemap is submitted and loads properly. For a newer site, a few days to a few weeks of waiting is normal, but a page that stays unindexed for longer needs a proper look.
+        </p>
+
+        <h2>2. Are you chasing keywords you can&apos;t win?</h2>
+        <p>
+          A new or small site trying to rank for &quot;digital marketing&quot; is competing with brands that have been building authority for years. That page will sit on page five and get no visits, however well it&apos;s written.
+        </p>
+        <p>
+          The way in is narrower. Specific problems, named tools, and local searches have far fewer competitors, and winning them builds the authority that makes broader terms possible later. If your site&apos;s pages are all aimed at the biggest, most obvious terms in your field, that&apos;s often the whole explanation.
+        </p>
+
+        <h2>3. Does your page answer what the searcher actually wanted?</h2>
+        <p>
+          Google ranks pages that match what someone meant, not just the words they typed. Someone searching &quot;why is my website not showing up on Google&quot; wants a diagnosis. If your page is a sales pitch for SEO services, it won&apos;t rank, because it doesn&apos;t answer the question.
+        </p>
+        <p>
+          Read your page the way a stranger would. Does the first screen answer the question? Is the answer easy to find? Would they get what they came for without scrolling past an advert for your business?
+        </p>
+
+        <h2>4. Can Google crawl and trust your site?</h2>
+        <p>
+          This is the <a href="/blog/what-is-seo-and-what-are-the-different-types-of-seo">technical layer</a>, and it&apos;s where many sites quietly fall short. The common causes are slow loading, a poor mobile experience, broken links, pages buried many clicks from the homepage, and no clear links between related pages.
+        </p>
+        <p>
+          None of this is glamorous, but it matters. A page that&apos;s slow or hard to reach gets crawled less often and ranks lower than an equally good page that&apos;s fast and well linked. If you&apos;ve published several related posts and never linked them to each other, fixing that is one of the cheapest improvements available. A <a href="/blog/building-a-content-pillar-system">content pillar system</a> makes those links part of how you publish.
+        </p>
+
+        <h2>5. Does anyone vouch for you?</h2>
+        <p>
+          Search engines use links from other websites as a sign of trust. A site with no backlinks, no mentions, and inconsistent business details across the web looks unproven, even when the content is good.
+        </p>
+        <p>
+          For a local business, start with the basics: a complete Google Business Profile, the same name, address, and phone number everywhere you&apos;re listed, and mentions from local directories and publications. These build trust slowly, which is why they&apos;re the part most businesses skip.
+        </p>
+
+        <h2>What SEO actually fixes, and what it doesn&apos;t</h2>
+        <p>
+          SEO fixes discoverability. It gets the right pages in front of people who are already searching for what you offer. It makes your site easier to find, easier to understand, and easier to trust.
+        </p>
+        <p>
+          It doesn&apos;t fix a weak offer, a confusing website, or a slow reply to enquiries. Traffic is only the first step. If visitors arrive and don&apos;t contact you, the problem has moved to the page itself, and that&apos;s a <a href="/website-development">website development</a> and content problem, not a traffic one.
+        </p>
+
+        <h2>How long does it take?</h2>
+        <p>
+          Usually weeks to months, not days. On a newer site, impressions tend to rise before clicks do, because Google first starts showing your pages and only later ranks them high enough to earn visits. That&apos;s why checking Search Console weekly, not daily, gives you a clearer picture.
+        </p>
+        <p>
+          If you&apos;ve published steadily for a few months and see no impressions at all, that points to an indexing or technical problem. If you see impressions but few clicks, look at your titles, descriptions, and how high you&apos;re ranking.
+        </p>
+
+        <h2>A 30-minute check you can do today</h2>
+        <ol>
+          <li>Search your page title and confirm the page appears.</li>
+          <li>Open Search Console and check the Pages report for unindexed pages.</li>
+          <li>Look at the Queries report to see what you&apos;re actually showing up for.</li>
+          <li>Run a page speed test on your most important page, on mobile.</li>
+          <li>Check that each page links to two or three related pages on your site.</li>
+        </ol>
+        <p>
+          Those five steps will show you which of the five problems you have.
+        </p>
+
+        <h2>Want someone to find the cause for you?</h2>
+        <p>
+          If you&apos;ve been publishing and promoting with no traffic to show for it, our <a href="/seo">SEO</a> team can find where the problem sits and fix it in the right order. We work on the technical side, the content, and the structure together, so you&apos;re not paying separate people to fix separate parts of the same problem.
+        </p>
+        <p>
+          <strong><a href="/contact">Start a Project →</a></strong> or explore our <a href="/content-solution">content solutions</a>.
+        </p>
+      </div>
+    )
+  },
   "instagram-trial-reels-test-two-hooks": {
     title: "Instagram Trial Reels: How to Test Two Hooks Before Your Followers See Either",
     seoTitle: "Instagram Trial Reels: How to Test Two Hooks Before Followers See Either",
