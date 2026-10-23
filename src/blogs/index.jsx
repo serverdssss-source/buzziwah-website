@@ -12,7 +12,7 @@ export const BLOGS_DATA = {
     readTime: "6 min read",
     author: "Buzziwah",
     category: "SEO",
-    image: "/blog_imgs/23-10-26.jpg",
+    image: "/blog_imgs/optimized/23-10-26.jpg",
     description: "A website with no organic traffic usually has one of five problems. Here's how to find yours in 30 minutes and what SEO actually fixes.",
     content: (
       <div className="blog-content-body">
