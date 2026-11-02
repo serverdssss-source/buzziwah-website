@@ -4,6 +4,192 @@ import "./Blogs.css";
 import { optimizedBlogImage, fallbackToOriginal } from "./blogImage";
 
 export const BLOGS_DATA = {
+  "optimize-your-website-for-ai-search": {
+    title: "Your Website Now Has Two Audiences: How to Get Found by Humans and AI Search",
+    seoTitle: "How to Optimize Your Website for AI Search | Buzziwah",
+    slug: "optimize-your-website-for-ai-search",
+    date: "November 2, 2026",
+    readTime: "6 min read",
+    author: "Buzziwah",
+    category: "Digital Marketing",
+    image: "/blog_imgs/2-11-26.png",
+    description: "People now ask ChatGPT, Gemini and Google AI Overviews before they click. Here's how Bengaluru businesses can make their website work for both humans and AI.",
+    content: (
+      <div className="blog-content-body">
+        <p>
+          Someone in Rajajinagar wants a physiotherapist. Five years ago, they&apos;d Google it, open three tabs and call the one that looked right.
+        </p>
+        <p>
+          Today, many of them type the question into ChatGPT, Gemini or Google&apos;s AI Overview and read one summarised answer. That answer names two or three businesses. If yours isn&apos;t one of them, the customer never even reaches your website.
+        </p>
+        <p>
+          So your website now has two audiences: humans who decide, and AI systems that decide who humans get to see. You need to impress both.
+        </p>
+        <p>
+          The good news: this isn&apos;t a rebuild. Most of it is clarity, and clarity is good for people too.
+        </p>
+
+        <h2>First, a reality check</h2>
+        <p>
+          AI search is changing fast, and nobody can honestly guarantee you a spot in an AI answer. Be wary of any agency that does. What we can do is remove the obvious reasons AI tools would skip you.
+        </p>
+        <p>
+          The fundamentals haven&apos;t been replaced. A site that is fast, clear, trusted and well-structured does well in Google and in AI answers. Think of this as <a href="/blog/what-is-seo-and-what-are-the-different-types-of-seo">SEO</a>&apos;s next chapter, not a new game.
+        </p>
+
+        <h2>What humans want vs what AI wants</h2>
+        <div style={{ overflowX: 'auto' }}>
+          <table>
+            <thead>
+              <tr>
+                <th>Humans want</th>
+                <th>AI systems want</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>A clear offer in 5 seconds</td>
+                <td>A clear, direct answer they can lift and quote</td>
+              </tr>
+              <tr>
+                <td>Proof: reviews, work, faces</td>
+                <td>Consistent facts about you across the web</td>
+              </tr>
+              <tr>
+                <td>Fast, easy-to-use pages</td>
+                <td>Pages they can crawl and read without friction</td>
+              </tr>
+              <tr>
+                <td>Confidence to call or buy</td>
+                <td>Signals that you&apos;re a real, trusted business</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p>
+          Notice the overlap. Almost everything on the right helps the left.
+        </p>
+
+        <h2>7 ways to make your website work for both</h2>
+
+        <h3>1. Answer the question in the first two lines</h3>
+        <p>
+          AI tools love pages that answer directly. If your service page says &quot;We are passionate about excellence,&quot; there&apos;s nothing to quote. If it says &quot;We provide home physiotherapy in Rajajinagar. Call us now to book a visit today,&quot; there is.
+        </p>
+        <p>
+          Open each page with a plain-language answer to the question your customer is actually asking. Then add the detail.
+        </p>
+
+        <h3>2. Write headings like real questions</h3>
+        <p>
+          People ask AI full questions: &quot;Which digital marketing agency in Bengaluru is good for startups?&quot; Use headings and FAQ sections that mirror this: How much does a website cost? How long does SEO take? Do you work with small budgets? Keep each answer short and honest.
+        </p>
+
+        <h3>3. Keep your business facts identical everywhere</h3>
+        <p>
+          Your name, address, phone number, services and timings should match across your website, Google Business Profile, Instagram, JustDial, LinkedIn and directories. When sources disagree, both Google and AI tools get less sure about you.
+        </p>
+        <p>
+          This is the most boring item on the list and one of the most effective.
+        </p>
+
+        <h3>4. Add structured data (schema)</h3>
+        <p>
+          Schema is code that tells machines what your page is about: that you&apos;re a LocalBusiness, what your services are, your FAQs, your reviews. Google has said it doesn&apos;t need special markup for AI features, but structured data still helps search engines understand your content accurately. It&apos;s cheap insurance.
+        </p>
+        <p>
+          Start with Organization, LocalBusiness, Service and FAQ schema.
+        </p>
+
+        <h3>5. Don&apos;t accidentally block the crawlers</h3>
+        <p>
+          Check your robots.txt and security settings. Some sites block AI crawlers (like OpenAI&apos;s and Perplexity&apos;s) without the owner knowing, usually through a plugin or firewall setting. If you block them, they can&apos;t read you.
+        </p>
+        <p>
+          It also helps to know which crawler does what. OpenAI, for example, uses OAI-SearchBot for ChatGPT search and GPTBot for model training, so you can stay visible in search while opting out of training.
+        </p>
+        <p>
+          Whether you want to be accessible is a business decision. Some publishers choose to block. For most service businesses that depend on being found, staying open makes sense. Just make it a decision, not an accident.
+        </p>
+
+        <h3>6. Build trust outside your own website</h3>
+        <p>
+          AI tools don&apos;t only read your site. They pick up what others say about you: Google reviews, press mentions, directory listings, YouTube, Reddit threads, LinkedIn posts.
+        </p>
+        <p>
+          Ask happy customers for reviews. Get listed in credible local directories. Publish videos and case studies. A brand that&apos;s talked about in many places looks more trustworthy than one that only talks about itself. (More on this in <a href="/blog/social-proof-isnt-just-reviews-5-ways-to-show-it-without-asking-for-a-testimonial">5 ways to show social proof</a>.)
+        </p>
+
+        <h3>7. Make the site fast and easy to read</h3>
+        <p>
+          Heavy, script-loaded pages are harder to crawl and slower for people, who on mobile in Bengaluru traffic will abandon them. Use real text (not text baked into images), clean heading structure and quick-loading pages. Fix the basics before chasing anything fancy. If your site is the bottleneck, read <a href="/blog/the-real-cost-of-an-outdated-website-beyond-how-it-looks">the real cost of an outdated website</a>.
+        </p>
+
+        <h2>A 5-minute test you can do today</h2>
+        <p>Open ChatGPT, Gemini and Google, and ask:</p>
+        <ul>
+          <li>&quot;Best [your service] in [your area]?&quot;</li>
+          <li>&quot;What does [your business name] do?&quot;</li>
+          <li>&quot;How much does [your service] cost in Bengaluru?&quot;</li>
+        </ul>
+        <p>
+          Check whether you&apos;re mentioned, whether the details are right, and who shows up instead. Whatever you find (wrong phone number, outdated service, a competitor everywhere), that&apos;s your to-do list.
+        </p>
+
+        <h2>A word on llms.txt and other new tricks</h2>
+        <p>
+          You&apos;ll see advice about special files and &quot;AI-only&quot; tactics. Treat these carefully. There&apos;s little solid evidence that they move the needle today. Spend your time on clear content, consistent facts, good reviews and a fast site before anything experimental.
+        </p>
+
+        <h2>Quick checklist</h2>
+        <ul>
+          <li>Each key page answers its main question in the first two lines</li>
+          <li>FAQs written the way customers actually ask</li>
+          <li>Name, address and phone identical across the web</li>
+          <li>Schema added for business, services and FAQs</li>
+          <li>Crawlers not blocked by accident</li>
+          <li>Fresh reviews and credible mentions</li>
+          <li>Fast, mobile-friendly, text-based pages</li>
+          <li>Tested your brand in ChatGPT, Gemini and Google</li>
+        </ul>
+
+        <h2>The bottom line</h2>
+        <p>
+          Your next customer may meet your brand through a search box, a chatbot or a summary box. They might never see your homepage first. The businesses that win will be the ones whose websites are easy for people to trust and easy for machines to understand.
+        </p>
+
+        <h2>Find out what AI says about you</h2>
+        <p>
+          At Buzziwah, we connect <a href="/seo">SEO</a>, content, social and paid so each piece strengthens the others, including how your brand shows up in AI search. Not sure what ChatGPT says about your business today? Talk to us and we&apos;ll run the check with you.
+        </p>
+        <p>
+          <strong><a href="/contact">Start a Project →</a></strong>
+        </p>
+
+        <h2>FAQs</h2>
+
+        <h2>What is AI search optimization?</h2>
+        <p>
+          It&apos;s making your website and online presence clear, consistent and trustworthy enough that AI tools like ChatGPT, Gemini and Google AI Overviews can understand and recommend your business.
+        </p>
+
+        <h2>Is it different from SEO?</h2>
+        <p>
+          It builds on SEO. Good SEO fundamentals (quality content, technical health, trust signals) still matter most. AI search adds emphasis on direct answers and consistent information.
+        </p>
+
+        <h2>Can anyone guarantee I&apos;ll appear in AI answers?</h2>
+        <p>
+          No. AI systems vary and change often. You can improve your chances, but not guarantee them.
+        </p>
+
+        <h2>How long does it take to see results?</h2>
+        <p>
+          Often weeks to months, similar to SEO. Fixing errors and blocked pages can help sooner.
+        </p>
+      </div>
+    )
+  },
   "how-to-grow-on-instagram-in-2026": {
     title: "How to Grow on Instagram in 2026: 10 Steps That Work",
     seoTitle: "How to Grow on Instagram in 2026: 10 Steps That Work | Buzziwah",
