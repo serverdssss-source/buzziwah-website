@@ -1,5 +1,6 @@
 import { lazy, Suspense, useEffect } from 'react';
 import Navbar from './Navbar';
+import PreorderPopup from './components/PreorderPopup';
 import './App.css';
 import { applySEO } from './seo/useSEO';
 
@@ -40,6 +41,7 @@ function App() {
     <>
       <>
         <Navbar />
+        <PreorderPopup />
         <Suspense fallback={<div style={{ minHeight: '100vh', background: '#050508' }} />}>
           {(() => {
             if (isCaseStudy) {
