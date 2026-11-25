@@ -1,9 +1,890 @@
-/* eslint-disable react/prop-types */
+/* eslint-disable react/prop-types, react/no-unescaped-entities */
 import { useEffect } from "react";
 import "./Blogs.css";
 import { optimizedBlogImage, fallbackToOriginal } from "./blogImage";
 
 export const BLOGS_DATA = {
+  "logo-vs-brand-identity": {
+    title: "Logo vs Brand Identity: What You Should Actually Get from a Branding Agency",
+    seoTitle: "Logo vs Brand Identity: What a Branding Agency Delivers",
+    slug: "logo-vs-brand-identity",
+    date: "November 25, 2026",
+    readTime: "7 min read",
+    author: "Buzziwah",
+    category: "Branding",
+    image: "/blog_imgs/25-11-26 branding.png",
+    description: "A logo is one file. A brand identity is the system that makes every post, signboard and package look like you. Here's what a proper branding project should include.",
+    content: (
+      <div className="blog-content-body">
+        <p>
+          Many businesses ask for "branding" and get back a logo in three colours and a PNG file. Six months later, their Instagram looks different from their signboard, the brochure looks different from the website, and every designer they hire does something new.
+        </p>
+        <p>
+          That's not a design problem. It's because they bought a logo when they needed a brand identity.
+        </p>
+
+        <h2>The simple difference</h2>
+        <div style={{ overflowX: 'auto' }}>
+          <table>
+            <thead>
+              <tr>
+                <th>A logo</th>
+                <th>A brand identity</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>One mark that identifies you</td>
+                <td>A complete system of how you look and sound everywhere</td>
+              </tr>
+              <tr>
+                <td>Answers "what's your symbol?"</td>
+                <td>Answers "who are you, who is it for, and why should they care?"</td>
+              </tr>
+              <tr>
+                <td>Delivered as a few files</td>
+                <td>Delivered with rules, templates and a brand guide</td>
+              </tr>
+              <tr>
+                <td>Looks good on its own</td>
+                <td>Makes everything you publish look like it came from one place</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p>
+          A logo is part of a brand identity. On its own, it won't do the job.
+        </p>
+
+        <h2>How we run a branding project at Buzziwah</h2>
+        <p>
+          Every branding project at Buzziwah follows the same eight steps. Here's what we do at each one, and why.
+        </p>
+
+        <h3>Step 1: We start with strategy, not design</h3>
+        <p>
+          Before we open any design software, we sit with you to understand your business. Who is your customer? Who are you competing with? What should people feel when they see you: premium, friendly, bold, trustworthy? We study your competitors and your market, then agree on a clear positioning with you. Every design decision after this is checked against it, not against personal taste.
+        </p>
+
+        <h3>Step 2: We design the logo, with every version you'll need</h3>
+        <p>
+          Once the strategy is set, we create logo concepts and refine the chosen one with you. You don't get just one logo. We deliver a primary logo, a short version or icon for profile pictures, and versions that work in one colour, on dark backgrounds and at very small sizes.
+        </p>
+
+        <h3>Step 3: We build your colour palette</h3>
+        <p>
+          We define primary and secondary colours with exact codes for screen and print, so your signboard printer and your social media designer use exactly the same shade.
+        </p>
+
+        <h3>Step 4: We set your typography</h3>
+        <p>
+          We choose the fonts for headings and body text, including Kannada or other language fonts if you communicate in more than one language, so your brand looks the same in every language.
+        </p>
+
+        <h3>Step 5: We create your visual style</h3>
+        <p>
+          We define your photo style, icon style, patterns and graphic elements. This is what makes your posts recognisable before anyone reads your name.
+        </p>
+
+        <h3>Step 6: We write your brand voice</h3>
+        <p>
+          We decide with you how your brand sounds: formal or casual, punchy or warm. We give you example lines and a list of do's and don'ts, so everyone who writes for you, from your social media team to your front desk, sounds like one brand.
+        </p>
+
+        <h3>Step 7: We test it on real applications</h3>
+        <p>
+          We apply the identity to the things you'll actually use: visiting cards, letterheads, signboards, social media templates, packaging, uniforms and vehicle branding. This is where we make sure the system works in the real world, not just on a presentation slide.
+        </p>
+
+        <h3>Step 8: We hand over a complete brand guide</h3>
+        <p>
+          Finally, we put everything into one brand guide, along with all logo files, templates and editable source files. Hand it to any designer, printer or agency and they can produce on-brand work without asking you twenty questions.
+        </p>
+
+        <h2>Why this matters for your business</h2>
+        <ul>
+          <li><strong>Trust:</strong> a consistent brand looks established. Inconsistent branding looks like a business that might not be around next year.</li>
+          <li><strong>Recall:</strong> people need to see you several times before they remember you. If you look different each time, they start from zero each time.</li>
+          <li><strong>Better marketing results:</strong> ads, Reels and hoardings all work harder when they reinforce the same look.</li>
+          <li><strong>Saves time and money:</strong> with templates and rules, every new post or brochure takes less back-and-forth.</li>
+          <li><strong>Pricing power:</strong> a strong brand lets you charge what you're worth instead of competing only on price.</li>
+        </ul>
+        <p>
+          When we built the brand for <a href="/case-study/kovedaa">Kovedaa</a>, an Ayurveda brand, we started with identity, tone and positioning, then built the website and content on top of it. The result was +220% revenue growth. The brand came first, and everything else became easier.
+        </p>
+
+        <h2>Signs you need a brand identity, not just a new logo</h2>
+        <ul>
+          <li>Your Instagram, website and printed material all look different</li>
+          <li>You're launching a new business, branch or product line</li>
+          <li>You've grown, but your brand still looks like a small startup</li>
+          <li>Customers confuse you with competitors</li>
+          <li>Every new designer reinvents your look</li>
+        </ul>
+
+        <h2>Questions to ask a branding agency before you hire them</h2>
+        <ul>
+          <li>What research do you do before design?</li>
+          <li>How many logo concepts and revision rounds are included?</li>
+          <li>Will I get a brand guide and editable source files?</li>
+          <li>Will you show the identity on real applications, like signage and social posts?</li>
+          <li>Who owns the final designs?</li>
+        </ul>
+        <p>
+          If the answer to most of these is vague, you're probably buying a logo.
+        </p>
+
+        <h2>Build a brand, not just a logo</h2>
+        <p>
+          At Buzziwah, every <a href="/branding">branding</a> project follows these eight steps, from strategy to a complete brand guide your whole team can use. We've built identities for hospitals, gyms, food brands, construction companies and media houses in Bengaluru. Tell us where your brand is today.
+        </p>
+        <p>
+          <strong><a href="/contact">Start a Project →</a></strong>
+        </p>
+
+        <h2>FAQs</h2>
+
+        <h2>How long does a branding project take?</h2>
+        <p>
+          A full brand identity usually takes a few weeks, depending on research, the number of concepts and how quickly feedback comes back. A logo alone is faster, but you'll miss the system around it.
+        </p>
+
+        <h2>Can I rebrand without losing existing customers?</h2>
+        <p>
+          Yes. Many rebrands are an evolution: keeping the recognisable parts of your current look and cleaning up the rest. Announce the change clearly so customers know it's still you.
+        </p>
+
+        <h2>Is branding worth it for a small business?</h2>
+        <p>
+          Yes, especially early. Getting the identity right once is cheaper than redesigning every time you print something or hire a new designer.
+        </p>
+
+        <h2>What files should I receive at the end?</h2>
+        <p>
+          Logo files in all versions and formats (vector and image), colour codes, font details, templates and a brand guide, plus the editable source files.
+        </p>
+      </div>
+    )
+  },
+  "brand-film-vs-ad-film-vs-reels": {
+    title: "Brand Film vs Ad Film vs Reels: Which Video Does Your Business Actually Need?",
+    seoTitle: "Brand Film vs Ad Film vs Reels: Which Video Do You Need?",
+    slug: "brand-film-vs-ad-film-vs-reels",
+    date: "November 25, 2026",
+    readTime: "8 min read",
+    author: "Buzziwah",
+    category: "Video Production",
+    image: "/blog_imgs/25-11-26 ad reel brand.png",
+    description: "Brand films build trust, ad films drive action, Reels keep you visible. Here's how to choose the right video for your goal and budget, and how to plan one shoot for all three.",
+    content: (
+      <div className="blog-content-body">
+        <p>
+          "We need a video." It's one of the most common things clients tell us, and one of the most unclear. A 90-second brand film, a 20-second ad, and a month of Reels are completely different jobs, with different scripts, crews, budgets and results.
+        </p>
+        <p>
+          Pick the wrong one and you end up with a beautiful film nobody watches, or ads that get clicks but make your brand look cheap. Here's how to choose.
+        </p>
+
+        <h2>The three types at a glance</h2>
+        <div style={{ overflowX: 'auto' }}>
+          <table>
+            <thead>
+              <tr>
+                <th></th>
+                <th>Brand film</th>
+                <th>Ad film</th>
+                <th>Reels / short-form</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Main job</td>
+                <td>Build trust and tell your story</td>
+                <td>Get a specific action</td>
+                <td>Stay visible, every week</td>
+              </tr>
+              <tr>
+                <td>Typical length</td>
+                <td>1–3 minutes</td>
+                <td>6–30 seconds</td>
+                <td>15–60 seconds</td>
+              </tr>
+              <tr>
+                <td>Where it lives</td>
+                <td>Website, YouTube, presentations, events</td>
+                <td>Meta, YouTube, OTT and TV ads</td>
+                <td>Instagram, YouTube Shorts</td>
+              </tr>
+              <tr>
+                <td>Shelf life</td>
+                <td>Years</td>
+                <td>Weeks to months</td>
+                <td>Days</td>
+              </tr>
+              <tr>
+                <td>Production style</td>
+                <td>Cinematic, planned, high polish</td>
+                <td>Tight script, strong hook, clear offer</td>
+                <td>Fast, native, personality-led</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h2>When you need a brand film</h2>
+        <p>
+          A brand film answers "Who are you and why should I trust you?" It's the video a hospital plays at its launch, a builder shows to buyers, or a company sends to investors and big clients.
+        </p>
+        <ul>
+          <li>You're launching a new business, branch or product</li>
+          <li>You sell something high-value where trust decides the deal</li>
+          <li>Your website or pitch deck needs something to show, not just tell</li>
+          <li>You want an asset that will still be relevant in two or three years</li>
+        </ul>
+        <p>
+          What makes it work: a real story (founders, people, customers), not a list of features over drone shots. Emotion first, information second.
+        </p>
+
+        <h2>When you need an ad film</h2>
+        <p>
+          An ad film has one job: make someone do something. Book, buy, call, sign up. Every second has to earn its place.
+        </p>
+        <ul>
+          <li>You're running Meta, YouTube or OTT ad campaigns</li>
+          <li>You have a clear offer: a launch, a sale, an admission season</li>
+          <li>You want to measure results in leads and sales, not just views</li>
+        </ul>
+        <p>
+          What makes it work: the hook in the first three seconds, one clear message, and a clear call to action. Shoot several hooks and versions so you can test what performs. (More on hooks in <a href="/blog/how-to-write-a-hook-that-stops-the-scroll-in-the-first-3-seconds">how to stop the scroll in 3 seconds</a>.)
+        </p>
+
+        <h2>When you need Reels and short-form content</h2>
+        <p>
+          Reels are about showing up consistently. They keep your brand in people's feeds between the big moments.
+        </p>
+        <ul>
+          <li>You want steady growth on Instagram and YouTube</li>
+          <li>Your business has a personality, a founder or a team people can connect with</li>
+          <li>You need a regular flow of content, not a one-time asset</li>
+        </ul>
+        <p>
+          What makes it work: volume and authenticity. Over-produced Reels often perform worse than simple, well-hooked ones. Batch-shooting 10–15 Reels in one day is usually the most efficient approach.
+        </p>
+
+        <h2>How we produce a video at Buzziwah</h2>
+        <p>
+          You don't always have to choose between the three. At Buzziwah, every video project follows these steps, and we plan each shoot so one production day gives you more than one type of video.
+        </p>
+
+        <h3>Step 1: We start with the brief</h3>
+        <p>
+          Before we talk about cameras, we ask what the video needs to do: build trust, drive sales, or keep you visible. We agree on the audience, where the video will run, and what viewers should do after watching.
+        </p>
+
+        <h3>Step 2: We write the concept and script</h3>
+        <p>
+          Our team writes the concept and script for your goal. For ad films we write several hooks to test. For brand films we find the real story: founders, people, customers.
+        </p>
+
+        <h3>Step 3: We plan one shoot for every output</h3>
+        <p>
+          In pre-production we build the storyboard, shot list, casting and locations. This is where we plan your extra outputs. Because the ad cuts and Reels are in the shot list from day one, the footage fits vertical frames and the hooks get filmed. One production day can give you:
+        </p>
+        <ul>
+          <li>A brand film for your website and YouTube</li>
+          <li>Several 15–30 second ad cuts, in vertical and horizontal formats</li>
+          <li>A batch of Reels from behind-the-scenes, interviews and extra shots</li>
+          <li>Stills for social media and print</li>
+        </ul>
+
+        <h3>Step 4: We shoot</h3>
+        <p>
+          We shoot at our studio floor or on location, with a crew sized for the project. Our directors make sure every planned shot, angle and hook is captured before we wrap.
+        </p>
+
+        <h3>Step 5: We edit and finish</h3>
+        <p>
+          In post-production we handle editing, colour grading, sound, music and motion graphics, then share drafts with you for feedback.
+        </p>
+
+        <h3>Step 6: We deliver every version you need</h3>
+        <p>
+          We deliver final files in every length, format and aspect ratio you need, with subtitles and language versions if required, ready to upload to your website, ads and social media.
+        </p>
+
+        <h2>What drives the cost of a video</h2>
+        <ul>
+          <li><strong>Pre-production:</strong> concept, script, storyboard, casting, locations</li>
+          <li><strong>Shoot days:</strong> crew size, cameras, lighting, studio or location</li>
+          <li><strong>Talent:</strong> actors, models, voice-over artists, influencers</li>
+          <li><strong>Post-production:</strong> editing, colour grading, sound, music licensing, motion graphics</li>
+          <li><strong>Versions:</strong> each extra language, length and aspect ratio adds editing time</li>
+        </ul>
+        <p>
+          A clear brief is the best way to control cost. Know your goal, your audience, where the video will run and what action you want people to take.
+        </p>
+
+        <h2>Before you call a production house, answer these</h2>
+        <ol>
+          <li>What is this video supposed to do: build trust, drive sales, or keep us visible?</li>
+          <li>Where will people watch it, and on which screen?</li>
+          <li>Who is the audience?</li>
+          <li>What do we want them to do after watching?</li>
+          <li>Do we need language versions or subtitles?</li>
+        </ol>
+
+        <h2>Shoot with Buzziwah</h2>
+        <p>
+          Buzziwah's <a href="/video-production">video production</a> is powered by Sripada Studios, with a 600 sq. ft. studio floor in Bengaluru. We handle brand films, ad films, Reels, podcasts, product shoots and motion graphics, from script to final edit. Every project follows the six steps above, so one production day works across your website, ads and social media.
+        </p>
+        <p>
+          <strong><a href="/contact">Start a Project →</a></strong>
+        </p>
+
+        <h2>FAQs</h2>
+
+        <h2>How long should a brand film be?</h2>
+        <p>
+          Usually 1–3 minutes. Make a shorter 30–60 second cut as well for social media and ads.
+        </p>
+
+        <h2>Can I use my brand film as an ad?</h2>
+        <p>
+          You can, but it rarely performs as well as an ad made for the purpose. Brand films build slowly; ads need a hook and a clear offer in the first few seconds. Cut dedicated ad versions from the same footage.
+        </p>
+
+        <h2>Should Reels be shot professionally or on a phone?</h2>
+        <p>
+          Both work. Phone-shot Reels feel native and are fast to produce. Professional shoots give better quality and let you batch many Reels at once. Many brands mix the two.
+        </p>
+
+        <h2>How long does video production take?</h2>
+        <p>
+          Reels can be turned around in days. Ad films typically take one to three weeks, and brand films take longer depending on script, locations and post-production.
+        </p>
+      </div>
+    )
+  },
+  "micro-vs-macro-influencers": {
+    title: "Micro vs Macro Influencers: How to Pick Creators Who Actually Sell",
+    seoTitle: "Micro vs Macro Influencers: How to Pick Creators That Sell",
+    slug: "micro-vs-macro-influencers",
+    date: "November 25, 2026",
+    readTime: "8 min read",
+    author: "Buzziwah",
+    category: "Influencer Marketing",
+    image: "/blog_imgs/25-11-26 influencers.png",
+    description: "Follower count is the worst way to choose an influencer. How to pick between nano, micro, macro and celebrity creators, what to check before paying, and how to measure results.",
+    content: (
+      <div className="blog-content-body">
+        <p>
+          A brand pays a creator with 500K followers. The Reel gets views, a few hundred likes, a lot of fire emojis, and almost no sales. Meanwhile, a creator with 25K followers in the right niche brings in more orders in a week.
+        </p>
+        <p>
+          This happens constantly. The problem isn't influencer marketing. It's choosing creators by follower count instead of fit.
+        </p>
+
+        <h2>The creator tiers, simply explained</h2>
+        <div style={{ overflowX: 'auto' }}>
+          <table>
+            <thead>
+              <tr>
+                <th>Tier</th>
+                <th>Rough follower range</th>
+                <th>Best for</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Nano</td>
+                <td>1K–10K</td>
+                <td>Hyperlocal trust, reviews, word of mouth</td>
+              </tr>
+              <tr>
+                <td>Micro</td>
+                <td>10K–100K</td>
+                <td>Niche audiences, conversions, steady content</td>
+              </tr>
+              <tr>
+                <td>Macro</td>
+                <td>100K–1M</td>
+                <td>Reach, launches, building awareness fast</td>
+              </tr>
+              <tr>
+                <td>Celebrity / mega</td>
+                <td>1M+</td>
+                <td>Big launches, brand credibility, mass recall</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p>
+          These ranges vary by industry and region. What matters is what each tier is good at.
+        </p>
+
+        <h2>When micro influencers win</h2>
+        <ul>
+          <li><strong>You want sales or leads, not just views.</strong> Smaller creators often have closer relationships with their followers, so recommendations feel personal.</li>
+          <li><strong>Your product is niche.</strong> A fitness coach, a Bengaluru food page, a skincare creator. Their audience already cares about your category.</li>
+          <li><strong>You're local.</strong> A Bengaluru creator with 30K local followers beats a national creator with 300K spread across India if you run a restaurant in Jayanagar.</li>
+          <li><strong>You want to test.</strong> Working with 10 micro creators shows you which angles and audiences convert, for less than one big name.</li>
+        </ul>
+
+        <h2>When macro and celebrity creators win</h2>
+        <ul>
+          <li><strong>Launches:</strong> when you need lots of people to hear about something at once.</li>
+          <li><strong>Credibility:</strong> a known face instantly makes a new brand feel bigger.</li>
+          <li><strong>Mass products:</strong> when nearly everyone is a potential customer.</li>
+          <li><strong>Ad content:</strong> a recognisable face in your paid ads can lift performance.</li>
+        </ul>
+        <p>
+          For <a href="/performance-marketing">Fitness Factory</a>, a celebrity wellness collaboration built authority and trust that smaller creators alone couldn't. The best campaigns often combine both: one known face for credibility, plus many micro creators for reach and conversions.
+        </p>
+
+        <h2>How we run influencer campaigns at Buzziwah</h2>
+        <p>
+          At Buzziwah, we never pick a creator by follower count alone. Every campaign follows these steps.
+        </p>
+
+        <h3>Step 1: We set the goal and the right mix of creators</h3>
+        <p>
+          We start by agreeing on what the campaign must achieve: awareness, sign-ups, store visits or sales. Then we decide the mix: micro creators for conversions, a bigger name for credibility, or both.
+        </p>
+
+        <h3>Step 2: We check audience location and language</h3>
+        <p>
+          We ask every shortlisted creator for audience insights. If you sell in Bengaluru and most of their followers are elsewhere, they don't make our list.
+        </p>
+
+        <h3>Step 3: We check engagement quality, not just rate</h3>
+        <p>
+          We read the comments. Real questions ("Where is this?", "How much?") are a great sign. A wall of generic emojis can mean engagement pods or bought activity, so we look closer.
+        </p>
+
+        <h3>Step 4: We check consistency and growth</h3>
+        <p>
+          We review their last 15–20 Reels to see typical views, not one viral hit. We also check follower growth, because sudden overnight jumps without a viral post are a red flag for bought followers.
+        </p>
+
+        <h3>Step 5: We check content fit</h3>
+        <p>
+          We make sure your product will feel natural on their page. If a creator has promoted three competing brands this month, their audience has learned to ignore sponsored posts.
+        </p>
+
+        <h3>Step 6: We handle contracts and briefs</h3>
+        <p>
+          We handle outreach, pricing and contracts, then write a brief that gives creators direction without over-scripting them. Our briefs cover:
+        </p>
+        <ul>
+          <li>The goal of the campaign</li>
+          <li>Two or three key messages, not ten</li>
+          <li>Must-haves: tag, link, discount code, disclosure</li>
+          <li>Don'ts: claims they shouldn't make</li>
+          <li>Freedom to say it in their own style</li>
+        </ul>
+        <p>
+          We make sure every post is clearly marked as a paid partnership. ASCI guidelines in India require influencers to disclose brand collaborations, and Instagram's paid partnership label also makes it easier to boost the post as an ad.
+        </p>
+
+        <h3>Step 7: We review content before it goes live</h3>
+        <p>
+          We review every draft for brand fit, accuracy and disclosure before it's published, and coordinate posting dates so the campaign builds momentum.
+        </p>
+
+        <h3>Step 8: We measure every collaboration</h3>
+        <p>
+          We track each creator separately so you know exactly who delivered:
+        </p>
+        <ul>
+          <li><strong>Unique discount codes</strong> or links for each creator</li>
+          <li><strong>Reach and views</strong> from the creator's insights</li>
+          <li><strong>Saves and shares:</strong> stronger signals of interest than likes</li>
+          <li><strong>Profile visits and follows</strong> on your page during the campaign</li>
+          <li><strong>Leads, orders or bookings</strong> tracked back to each creator</li>
+        </ul>
+
+        <h3>Step 9: We scale what works</h3>
+        <p>
+          Creators who perform get longer partnerships. With their permission, we also run their best Reels as paid ads to new audiences. Creator videos often beat brand-made ads because they look like normal content, which makes this one of the highest-return moves in influencer marketing.
+        </p>
+
+        <h2>Run creator campaigns with Buzziwah</h2>
+        <p>
+          Buzziwah's <a href="/influencer-marketing">influencer marketing</a> team works with an active roster of 350+ creators. Every campaign follows the nine steps above, from matching creators by niche, audience fit and brand values to contracts, briefs, content review and reporting. Every collaboration is measured.
+        </p>
+        <p>
+          <strong><a href="/contact">Start a Project →</a></strong>
+        </p>
+
+        <h2>FAQs</h2>
+
+        <h2>Are micro influencers better than macro influencers?</h2>
+        <p>
+          Neither is better in general. Micro creators are usually better for niche products, local businesses and conversions. Macro and celebrity creators are better for reach and launches.
+        </p>
+
+        <h2>How do I know if an influencer has fake followers?</h2>
+        <p>
+          Watch for low views compared to followers, generic or repetitive comments, and sudden follower spikes. Ask for audience insights before you pay.
+        </p>
+
+        <h2>Should I pay influencers or send free products?</h2>
+        <p>
+          Gifting can work with nano creators, but reliable results usually need a paid agreement with clear deliverables, timelines and usage rights.
+        </p>
+
+        <h2>Do influencers need to disclose paid posts?</h2>
+        <p>
+          Yes. ASCI guidelines in India require clear disclosure of brand collaborations, such as the paid partnership label or #ad.
+        </p>
+      </div>
+    )
+  },
+  "is-outdoor-advertising-worth-it-bengaluru": {
+    title: "Is Outdoor Advertising Still Worth It in Bengaluru? How Hoardings and Digital Work Together",
+    seoTitle: "Is Outdoor Advertising Still Worth It in Bengaluru?",
+    slug: "is-outdoor-advertising-worth-it-bengaluru",
+    date: "November 25, 2026",
+    readTime: "7 min read",
+    author: "Buzziwah",
+    category: "Outdoor Marketing",
+    image: "/blog_imgs/25-11-26 outdoor.png",
+    description: "Hoardings can't be skipped, scrolled past or ad-blocked. When outdoor advertising makes sense in Bengaluru, how to choose locations, and how to combine it with digital campaigns.",
+    content: (
+      <div className="blog-content-body">
+        <p>
+          Everyone is "digital first" now. So why do the biggest brands in India still pay for hoardings, metro branding and bus shelters?
+        </p>
+        <p>
+          Because a billboard does something no Instagram ad can: it can't be skipped, scrolled past or ad-blocked. And in a city where people spend a long time stuck in traffic, it gets seen.
+        </p>
+        <p>
+          But outdoor isn't right for every business, and done badly it's an expensive way to be ignored. Here's how to tell if it's worth it for you.
+        </p>
+
+        <h2>What outdoor does better than digital</h2>
+        <ul>
+          <li><strong>Can't be avoided:</strong> no skip button, no ad blocker, no scroll.</li>
+          <li><strong>Repetition:</strong> commuters pass the same spots every day, which builds recall over weeks.</li>
+          <li><strong>Local dominance:</strong> a hoarding near your store or clinic tells the neighbourhood you're here.</li>
+          <li><strong>Credibility:</strong> people assume a brand on a big hoarding is established and serious.</li>
+          <li><strong>Reaches everyone:</strong> including people who don't use the platforms you advertise on.</li>
+        </ul>
+
+        <h2>What digital does better</h2>
+        <ul>
+          <li>Precise targeting by age, interest and behaviour</li>
+          <li>Easy measurement of clicks, leads and sales</li>
+          <li>Quick changes to creative and budget</li>
+          <li>Lower minimum spend to get started</li>
+        </ul>
+        <p>
+          The real answer isn't one or the other. It's using outdoor to make people aware of you and digital to turn that awareness into action.
+        </p>
+
+        <h2>When outdoor advertising makes sense</h2>
+        <ul>
+          <li><strong>Local businesses with a physical location:</strong> hospitals, clinics, schools, showrooms, restaurants, gyms. A hoarding on the route to your door works hard.</li>
+          <li><strong>Launches:</strong> a new branch, a new project, a film release. Outdoor makes it feel like an event.</li>
+          <li><strong>Seasonal pushes:</strong> admissions season, festival sales, wedding season.</li>
+          <li><strong>Real estate:</strong> site-direction hoardings and project boards near the location.</li>
+          <li><strong>Brand building:</strong> when you want to look bigger than your competitors in a particular area.</li>
+        </ul>
+
+        <h2>When it probably doesn't</h2>
+        <ul>
+          <li>You sell only online to customers across India</li>
+          <li>Your audience is very niche and hard to reach in one area</li>
+          <li>Your budget only allows one short placement. Outdoor works through repetition, and one week rarely moves anything.</li>
+        </ul>
+
+        <h2>How we plan an outdoor campaign at Buzziwah</h2>
+        <p>
+          At Buzziwah, every outdoor campaign follows these steps, from the first map to the final report.
+        </p>
+
+        <h3>Step 1: We map the right locations</h3>
+        <p>
+          Location is everything in outdoor. We analyse high-traffic corridors, local footfall and audience demographics, and check every shortlisted site for:
+        </p>
+        <ul>
+          <li><strong>Who passes it:</strong> office commuters, families, students, two-wheeler riders?</li>
+          <li><strong>How they pass it:</strong> slow traffic means more time to read. A flyover at speed gives a second or two.</li>
+          <li><strong>Visibility:</strong> trees, other hoardings, wires and angles can hide a site, so we check it at the times your audience travels.</li>
+          <li><strong>Distance to you:</strong> for local businesses, we prioritise routes near your location.</li>
+          <li><strong>Lighting:</strong> whether the site is lit at night.</li>
+        </ul>
+
+        <h3>Step 2: We buy the media</h3>
+        <p>
+          We negotiate and book the sites and formats that fit your audience and budget, through legitimate, approved placements.
+        </p>
+
+        <h3>Step 3: We design for a few seconds of attention</h3>
+        <p>
+          Most hoardings fail because they're designed like a brochure. People get a few seconds, often while driving. Our designers follow strict rules:
+        </p>
+        <ul>
+          <li><strong>Few words:</strong> as a rule of thumb, under seven words in the headline</li>
+          <li><strong>One message:</strong> not your full list of services</li>
+          <li><strong>Big, clear logo</strong></li>
+          <li><strong>High contrast:</strong> readable in bright sun and at night</li>
+          <li><strong>One simple next step:</strong> a short name to search, a landmark, or "Next left"</li>
+        </ul>
+        <p>
+          We skip long phone numbers and full website addresses. Almost nobody notes them down while riding.
+        </p>
+
+        <h3>Step 4: We print, install and validate</h3>
+        <p>
+          We handle printing and installation, then check every placement to confirm it's up, visible and in good condition, with photo proof for you.
+        </p>
+
+        <h3>Step 5: We connect it to digital</h3>
+        <p>
+          This is where outdoor becomes measurable and much more effective:
+        </p>
+        <ul>
+          <li><strong>Same creative everywhere:</strong> the hoarding and your Instagram ads look the same, so each one reminds people of the other.</li>
+          <li><strong>Geo-targeted ads:</strong> we run Meta and Google ads to people in the same areas as your hoardings during the campaign.</li>
+          <li><strong>Ready for search:</strong> people who see your hoarding will Google you, so we make sure your Google Business Profile, reviews and website are ready.</li>
+          <li><strong>QR codes, where they make sense:</strong> at bus shelters, metro stations and places people stand still, never on a flyover.</li>
+        </ul>
+
+        <h3>Step 6: We measure the lift</h3>
+        <p>
+          We compare branded searches, direction requests, website visits, calls and walk-ins from the campaign areas before and during the campaign, so you can see what the outdoor spend actually did.
+        </p>
+
+        <h2>Outdoor formats to consider</h2>
+        <ul>
+          <li>Hoardings and billboards</li>
+          <li>Transit advertising: buses, metro, auto branding</li>
+          <li>Bus shelters and street furniture</li>
+          <li>Outdoor branding and installations at your own location</li>
+          <li>Event and on-ground branding</li>
+        </ul>
+
+        <h2>Plan your outdoor campaign with Buzziwah</h2>
+        <p>
+          Buzziwah handles <a href="/outdoor-marketing">outdoor advertising</a> across Bengaluru end to end, following the six steps above: location mapping, media buying, large-format creative, printing, installation, validation and measurement. And because we also run <a href="/performance-marketing">performance marketing</a> and <a href="/social-media">social media</a>, your hoardings and your digital campaigns work together from day one.
+        </p>
+        <p>
+          <strong><a href="/contact">Start a Project →</a></strong>
+        </p>
+
+        <h2>FAQs</h2>
+
+        <h2>How long should an outdoor campaign run?</h2>
+        <p>
+          Longer than most people think. Outdoor builds recall through repetition, so a placement of at least a month is usually more effective than a short burst.
+        </p>
+
+        <h2>How do I measure the results of a hoarding?</h2>
+        <p>
+          Compare branded Google searches, direction requests, website visits, calls and walk-ins from the target area before and during the campaign. Matching geo-targeted digital ads make the effect easier to track.
+        </p>
+
+        <h2>Is outdoor advertising expensive?</h2>
+        <p>
+          Costs vary widely by location, size, format and duration. Prime city locations cost much more than local neighbourhood sites. For local businesses, a few well-chosen nearby sites often work better than one expensive premium spot.
+        </p>
+
+        <h2>Do I need permission for outdoor ads in Bengaluru?</h2>
+        <p>
+          Outdoor advertising is regulated by local authorities. Working with an agency that handles media buying through legitimate, approved sites avoids problems with illegal hoardings.
+        </p>
+      </div>
+    )
+  },
+  "meta-ads-vs-google-ads": {
+    title: "Meta Ads vs Google Ads: Where Should Your First Ad Budget Go?",
+    seoTitle: "Meta Ads vs Google Ads: Which Is Better for Your Business?",
+    slug: "meta-ads-vs-google-ads",
+    date: "November 25, 2026",
+    readTime: "8 min read",
+    author: "Buzziwah",
+    category: "Paid Media",
+    image: "/blog_imgs/25-11-26 ads.png",
+    description: "Google Ads catch people already searching. Meta Ads create demand people didn't know they had. How to choose, how to split your budget, and what to track so every rupee counts.",
+    content: (
+      <div className="blog-content-body">
+        <p>
+          You've decided to run ads. Now the big question: Facebook and Instagram, or Google?
+        </p>
+        <p>
+          Ask five people and you'll get five strong opinions. The truth is simpler: they do different jobs. Once you understand the difference, the choice for your business usually becomes obvious.
+        </p>
+
+        <h2>The one-line difference</h2>
+        <ul>
+          <li><strong>Google Ads</strong> show up when someone is <strong>searching</strong> for what you sell. You're catching existing demand.</li>
+          <li><strong>Meta Ads</strong> (Facebook and Instagram) show up while someone is <strong>scrolling</strong>. You're creating demand by showing people something they weren't looking for yet.</li>
+        </ul>
+
+        <h2>Side by side</h2>
+        <div style={{ overflowX: 'auto' }}>
+          <table>
+            <thead>
+              <tr>
+                <th></th>
+                <th>Google Ads</th>
+                <th>Meta Ads</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Intent</td>
+                <td>High: they're actively looking</td>
+                <td>Lower: they're browsing</td>
+              </tr>
+              <tr>
+                <td>Targeting</td>
+                <td>By search keywords and location</td>
+                <td>By interests, behaviour, age, location</td>
+              </tr>
+              <tr>
+                <td>Creative</td>
+                <td>Mostly text; video on YouTube</td>
+                <td>Visual: Reels, images, carousels</td>
+              </tr>
+              <tr>
+                <td>Cost per click</td>
+                <td>Often higher in competitive categories</td>
+                <td>Often lower</td>
+              </tr>
+              <tr>
+                <td>Best for</td>
+                <td>Urgent, searched-for needs</td>
+                <td>Visual products, impulse buys, awareness</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h2>Start with Google Ads if...</h2>
+        <ul>
+          <li><strong>People already search for what you sell:</strong> "dentist near me", "AC repair", "interior designer in Bengaluru", "CA for GST filing".</li>
+          <li><strong>The need is urgent:</strong> emergency services, repairs, healthcare.</li>
+          <li><strong>You sell a service, not something visual:</strong> legal, accounting, B2B, software.</li>
+          <li><strong>You want leads quickly:</strong> high-intent searchers convert faster.</li>
+        </ul>
+        <p>
+          The catch: you can only reach as many people as are searching. If few people search for your product, Google can't create demand for you.
+        </p>
+
+        <h2>Start with Meta Ads if...</h2>
+        <ul>
+          <li><strong>Your product is visual:</strong> fashion, jewellery, food, decor, fitness, beauty.</li>
+          <li><strong>People don't know they need you yet:</strong> a new product, a new concept, a new brand.</li>
+          <li><strong>You're selling to a lifestyle or interest:</strong> new parents, fitness enthusiasts, home buyers.</li>
+          <li><strong>You need lots of leads at a low cost:</strong> admissions, events, offers.</li>
+        </ul>
+        <p>
+          The catch: people aren't ready to buy when they see you, so you need strong creative and good follow-up. Leads can be cheaper but less ready.
+        </p>
+        <p>
+          For <a href="/performance-marketing">Fitness Factory</a>, a Bengaluru gym, Meta Ads with strong video hooks and targeted local audiences turned casual viewers into members, delivering 10x ROAS. A gym is visual, local and interest-driven, which is exactly where Meta shines.
+        </p>
+
+        <h2>Most businesses eventually need both</h2>
+        <p>
+          The strongest setup uses each platform for what it's best at:
+        </p>
+        <ol>
+          <li><strong>Meta</strong> makes people aware of you with Reels and visual ads.</li>
+          <li>Some of them later <strong>search for you on Google</strong>, where your search ad or listing catches them.</li>
+          <li><strong>Retargeting</strong> on both platforms brings back people who visited but didn't buy. (See <a href="/blog/retargeting-101-why-the-second-ad-matters-more-than-the-first">why the second ad matters more than the first</a>.)</li>
+        </ol>
+
+        <h2>How we run your ads at Buzziwah</h2>
+        <p>
+          At Buzziwah, we don't start by picking a platform. Every ad account we take on goes through these steps.
+        </p>
+
+        <h3>Step 1: We study your business and competitors</h3>
+        <p>
+          We look at what you sell, who buys it, how people search for it, and what your competitors are running. This tells us whether demand already exists (Google) or needs to be created (Meta).
+        </p>
+
+        <h3>Step 2: We choose the platform and split the budget</h3>
+        <p>
+          We don't spread a limited budget across every platform. We start where your business fits best, prove it works, then expand:
+        </p>
+        <ul>
+          <li><strong>Searched-for services:</strong> most of the budget on Google Search, with a little Meta retargeting.</li>
+          <li><strong>Visual or new products:</strong> most of the budget on Meta, plus Google Search for your brand name and top keywords.</li>
+          <li><strong>Local businesses:</strong> we test both for a month with location targeting around your area, then move money to whichever brings cheaper leads.</li>
+        </ul>
+
+        <h3>Step 3: We set up tracking before spending a rupee</h3>
+        <p>
+          We install the Meta Pixel, Google conversion tracking and lead tracking, so every result can be traced back to the ad that produced it. Without this, nobody knows what's working.
+        </p>
+
+        <h3>Step 4: We build landing pages that convert</h3>
+        <p>
+          We never send ad traffic to your homepage. Each campaign gets a focused landing page or lead form with one offer and one clear action.
+        </p>
+
+        <h3>Step 5: We create and test the creative</h3>
+        <p>
+          We write the ad copy and produce scroll-stopping creatives, with several hooks and versions to test. On Google, we choose keywords carefully and add negative keywords so you don't pay for irrelevant searches.
+        </p>
+
+        <h3>Step 6: We let the campaign learn, then optimise</h3>
+        <p>
+          We give each campaign two to four weeks before judging it, because the first days are the platform learning who to show your ads to. Then we optimise every week: cutting what doesn't work, refreshing tired creative and moving budget to what does.
+        </p>
+
+        <h3>Step 7: We track what actually matters</h3>
+        <p>
+          We report on business results, not vanity numbers:
+        </p>
+        <ul>
+          <li><strong>Cost per lead or cost per sale:</strong> not cost per click or likes</li>
+          <li><strong>Lead quality:</strong> how many leads turn into paying customers</li>
+          <li><strong>ROAS:</strong> revenue earned for every rupee spent</li>
+          <li><strong>Customer value:</strong> a customer who comes back for years is worth a higher cost to acquire</li>
+        </ul>
+
+        <h3>Step 8: We help you close the loop</h3>
+        <p>
+          The best campaign can't fix a sales team that calls back two days later. We help you set up quick lead follow-up, so the leads you pay for turn into customers.
+        </p>
+
+        <h2>Not sure where to start?</h2>
+        <p>
+          Buzziwah's <a href="/performance-marketing">performance marketing</a> team runs Meta Ads and Google Ads for brands in Bengaluru, following the eight steps above, with every rupee tracked from first view to sale. We'll look at your business, your competitors and your goals, and tell you honestly which platform to start with.
+        </p>
+        <p>
+          <strong><a href="/contact">Start a Project →</a></strong>
+        </p>
+
+        <h2>FAQs</h2>
+
+        <h2>Which is cheaper, Meta Ads or Google Ads?</h2>
+        <p>
+          Meta usually has a lower cost per click, but Google's clicks often come from people closer to buying. Compare cost per customer, not cost per click.
+        </p>
+
+        <h2>Which is better for small businesses?</h2>
+        <p>
+          It depends on whether people search for your product. Searched-for local services often do better on Google. Visual or new products often do better on Meta.
+        </p>
+
+        <h2>How much should I spend on ads to start?</h2>
+        <p>
+          Enough to get meaningful data in two to four weeks. Spending very small amounts across many campaigns makes it impossible to learn what's working. Focus the budget on one platform and one offer first.
+        </p>
+
+        <h2>Do I need a website to run ads?</h2>
+        <p>
+          Not always. Meta lead forms and WhatsApp ads work without one. But a fast, focused landing page usually improves results and is essential for Google Ads.
+        </p>
+      </div>
+    )
+  },
   "optimize-your-website-for-ai-search": {
     title: "Your Website Now Has Two Audiences: How to Get Found by Humans and AI Search",
     seoTitle: "How to Optimize Your Website for AI Search | Buzziwah",
